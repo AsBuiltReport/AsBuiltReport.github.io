@@ -8,6 +8,7 @@ theme:
     favicon: https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport/master/AsBuiltReport.png
     features:
       - content.code.annotate
+      - navigation.sections
     palette:
       primary: amber
     locale: en
@@ -44,7 +45,7 @@ nav:
     - Contributing: dev-guide/contributing.md
   - Support:
     - FAQ: support/faq.md
-    - Donate: support.donate.md
+    - Donate: support/donate.md
   - About:
     - Contact: about/contact.md
     - Acknowledgements: about/acknowledgements.md

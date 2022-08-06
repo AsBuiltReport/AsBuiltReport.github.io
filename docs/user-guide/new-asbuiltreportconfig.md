@@ -30,7 +30,7 @@ This is an optional parameter.
 
 Creates a new report JSON for VMware vSphere in the C:\Reports folder.
 
-```powershell
+```powershell linenums="1"
 New-AsBuiltReportConfig -Report VMware.vSphere -Folderpath 'C:\Reports'
 ```
 
