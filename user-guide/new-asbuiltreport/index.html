@@ -12,7 +12,7 @@
         <meta name="author" content="Tim Carman">
       
       
-      <link rel="icon" href="https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport/master/AsBuiltReport.png">
+      <link rel="icon" href="../../assets/images/logos/AsBuiltReport.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
     
     
@@ -60,7 +60,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="amber" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="amber" data-md-color-accent="blue">
   
     
     
@@ -86,7 +86,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="AsBuiltReport" class="md-header__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
       
-  <img src="https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport/master/AsBuiltReport.png" alt="logo">
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -171,7 +171,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="AsBuiltReport" class="md-nav__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
       
-  <img src="https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport/master/AsBuiltReport.png" alt="logo">
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
 
     </a>
     AsBuiltReport
@@ -839,76 +839,76 @@
 
   <h1>New-AsBuiltReport</h1>
 
-<h3 id="description">Description</h3>
+<h2 id="description">Description</h2>
 <p><code>New-AsBuiltReport</code> creates as-built configuration reports for one or more target systems and exports the report in to one or more supported document formats, such as DOCX, HTML and Text.</p>
 <p><code>New-AsBuiltReport</code> provides additional parameters, allowing users to generate and customise a report to their requirements.</p>
-<h3 id="parameters">Parameters</h3>
-<h4 id="report">Report</h4>
+<h2 id="parameters">Parameters</h2>
+<h3 id="report">Report</h3>
 <p>Specifies the type of report that will be generated.</p>
 <p>This is a mandatory parameter.</p>
-<h4 id="target">Target</h4>
+<h3 id="target">Target</h3>
 <p>Specifies the IP/FQDN of the system to connect.</p>
 <p>This is a mandatory parameter.</p>
-<h4 id="credential">Credential</h4>
+<h3 id="credential">Credential</h3>
 <p>Specifies the stored credential of the target system.</p>
 <p>This is a mandatory parameter.</p>
-<h4 id="username">Username</h4>
+<h3 id="username">Username</h3>
 <p>Specifies the username of the target system.</p>
 <p>This is a mandatory parameter.</p>
-<h4 id="password">Password</h4>
+<h3 id="password">Password</h3>
 <p>Specifies the password of the target system.</p>
 <p>This is a mandatory parameter.</p>
-<h4 id="token">Token</h4>
+<h3 id="token">Token</h3>
 <p>Specifies an API token to authenticate to the target system.</p>
 <p>This is an optional parameter.</p>
-<h4 id="mfa">MFA</h4>
+<h3 id="mfa">MFA</h3>
 <p>Use multifactor authentication to authenticate to the target system.</p>
 <p>This is an optional parameter.</p>
-<h4 id="format">Format</h4>
+<h3 id="format">Format</h3>
 <p>Specifies the output format of the report.</p>
 <p>The supported output formats are Word, HTML &amp; Text.</p>
 <p>Multiple output formats may be specified, separated by a comma.</p>
 <p>This is an optional parameter.</p>
 <p>If the parameter is not specified, the document format will default to Word.</p>
-<h4 id="orientation">Orientation</h4>
+<h3 id="orientation">Orientation</h3>
 <p>Sets the page orientation of the report to Portrait or Landscape.</p>
 <p>This is an optional parameter.</p>
 <p>If the parameter is not specified, page orientation will be set to Portrait.</p>
-<h4 id="stylefilepath">StyleFilePath</h4>
+<h3 id="stylefilepath">StyleFilePath</h3>
 <p>Specifies the file path to a custom style .ps1 script for the report to use.</p>
 <p>This is an optional parameter and does not have a default value.</p>
-<h4 id="outputfolderpath">OutputFolderPath</h4>
+<h3 id="outputfolderpath">OutputFolderPath</h3>
 <p>Specifies the folder path to save the report.</p>
 <p>This is a mandatory parameter.</p>
-<h4 id="asbuiltconfigfilepath">AsBuiltConfigFilePath</h4>
+<h3 id="asbuiltconfigfilepath">AsBuiltConfigFilePath</h3>
 <p>Specifies the file path to the As Built Report configuration JSON file.</p>
 <p>This is an optional parameter.</p>
 <p>If this parameter is not specified, the user will be prompted for this configuration information on first run, with the option to save the configuration to a file.</p>
-<h4 id="reportconfigfilepath">ReportConfigFilePath</h4>
+<h3 id="reportconfigfilepath">ReportConfigFilePath</h3>
 <p>Specifies the file path to a report JSON configuration file.</p>
 <p>This is an optional parameter.</p>
 <p>If this parameter is not specified, a default report configuration JSON is copied to the specified user folder.</p>
 <p>If this parameter is specified and the path to a JSON file is invalid, the script will terminate.</p>
-<h4 id="timestamp">Timestamp</h4>
+<h3 id="timestamp">Timestamp</h3>
 <p>Specifies whether to append a timestamp string to the report filename.</p>
 <p>This is an optional parameter.</p>
 <p>By default, the timestamp string is not added to the report filename.</p>
-<h4 id="enablehealthcheck">EnableHealthcheck</h4>
+<h3 id="enablehealthcheck">EnableHealthcheck</h3>
 <p>Highlights certain issues within the system report.</p>
 <p>Some reports may not provide this functionality.</p>
 <p>This is an optional parameter.</p>
 <p>If the parameter is not specified, health checks are not enabled.</p>
-<h4 id="sendemail">SendEmail</h4>
+<h3 id="sendemail">SendEmail</h3>
 <p>Sends report to specified recipients as email attachments.</p>
 <p>This is an optional parameter.</p>
-<h3 id="examples">Examples</h3>
+<h2 id="examples">Examples</h2>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H1.75zM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.75.75 0 1 1-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 1 1 1.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3z"/></svg></span> Creates an as-built report for a VMware vSphere environment. The report is generated in Word and Text formats and saved to the <code>C:\Reports</code> folder. Health checks will be enabled.</p>
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.vSphere&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;vcenter.domain.local&#39;</span> <span class="n">-Username</span> <span class="s1">&#39;administrator@vsphere.local&#39;</span> <span class="n">-Password</span> <span class="s1">&#39;VMware1!&#39;</span> <span class="n">-Format</span> <span class="s1">&#39;Word&#39;</span><span class="p">,</span><span class="s1">&#39;Text&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-EnableHealthCheck</span>
 </code></pre></div>
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H1.75zM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.75.75 0 1 1-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 1 1 1.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3z"/></svg></span> Creates an as-built report for two Pure Storage FlashArrays. The report is generated in HTML format, saved to the <code>C:\Reports</code> folder and sent via email.</p>
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;PureStorage.FlashArray&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;192.168.10.100&#39;</span><span class="p">,</span><span class="s1">&#39;192.168.10.110&#39;</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-Format</span> <span class="s1">&#39;HTML&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-SendEmail</span>
 </code></pre></div>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H1.75zM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.75.75 0 1 1-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 1 1 1.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3z"/></svg></span> Creates an as-built report for two VMware ESXi hosts. Authentication to VMware ESXi uses stored credentials. The report is generated in Word (DOCX) format (by default). A customized stylesheet is specified to style the report in the company’s brand colours and fonts. The report is saved to the user’s documents folder with a timestamp appended to the filename to identify when the report was generated. The <code>AsBuiltConfigFilePath</code> parameter is specified to bypass the menu driven questionnaire.</p>
+<p>Creates an as-built report for two VMware ESXi hosts. Authentication to VMware ESXi uses stored credentials. The report is generated in Word (DOCX) format (by default). A customized stylesheet is specified to style the report in the company’s brand colours and fonts. The report is saved to the user’s documents folder with a timestamp appended to the filename to identify when the report was generated. The <code>AsBuiltConfigFilePath</code> parameter is specified to bypass the menu driven questionnaire.</p>
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.ESXi&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;corp-esxi01&#39;</span><span class="p">,</span><span class="s1">&#39;corp-esxi02&#39;</span> <span class="n">-Credential</span> <span class="nv">$creds</span> <span class="n">-OutputFolderPath</span> <span class="s2">&quot;$env:USERPROFILE\Documents&quot;</span> <span class="n">-StyleFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyStyle.ps1&#39;</span> <span class="n">-AsBuiltConfigFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyConfig.json&#39;</span> <span class="n">-Timestamp</span>
 </code></pre></div>
 
@@ -961,6 +961,10 @@
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2022 AsBuiltReport
+    </div>
   
   
     Made with
