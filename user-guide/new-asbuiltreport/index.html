@@ -902,10 +902,10 @@
 <p>Sends report to specified recipients as email attachments.</p>
 <p>This is an optional parameter.</p>
 <h2 id="examples">Examples</h2>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H1.75zM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.75.75 0 1 1-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 1 1 1.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3z"/></svg></span> Creates an as-built report for a VMware vSphere environment. The report is generated in Word and Text formats and saved to the <code>C:\Reports</code> folder. Health checks will be enabled.</p>
+<p>Creates an as-built report for a VMware vSphere environment. The report is generated in Word and Text formats and saved to the <code>C:\Reports</code> folder. Health checks will be enabled.</p>
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.vSphere&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;vcenter.domain.local&#39;</span> <span class="n">-Username</span> <span class="s1">&#39;administrator@vsphere.local&#39;</span> <span class="n">-Password</span> <span class="s1">&#39;VMware1!&#39;</span> <span class="n">-Format</span> <span class="s1">&#39;Word&#39;</span><span class="p">,</span><span class="s1">&#39;Text&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-EnableHealthCheck</span>
 </code></pre></div>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75zm1.75-.25a.25.25 0 0 0-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H1.75zM7.25 8a.75.75 0 0 1-.22.53l-2.25 2.25a.75.75 0 1 1-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 1 1 1.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3z"/></svg></span> Creates an as-built report for two Pure Storage FlashArrays. The report is generated in HTML format, saved to the <code>C:\Reports</code> folder and sent via email.</p>
+<p>Creates an as-built report for two Pure Storage FlashArrays. The report is generated in HTML format, saved to the <code>C:\Reports</code> folder and sent via email.</p>
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;PureStorage.FlashArray&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;192.168.10.100&#39;</span><span class="p">,</span><span class="s1">&#39;192.168.10.110&#39;</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-Format</span> <span class="s1">&#39;HTML&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-SendEmail</span>
 </code></pre></div>
 <p>Creates an as-built report for two VMware ESXi hosts. Authentication to VMware ESXi uses stored credentials. The report is generated in Word (DOCX) format (by default). A customized stylesheet is specified to style the report in the company’s brand colours and fonts. The report is saved to the user’s documents folder with a timestamp appended to the filename to identify when the report was generated. The <code>AsBuiltConfigFilePath</code> parameter is specified to bypass the menu driven questionnaire.</p>
@@ -963,7 +963,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2016 - 2022 AsBuiltReport
+      Copyright &copy; 2016 - 2022 Tim Carman
     </div>
   
   
