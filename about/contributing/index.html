@@ -1,0 +1,1307 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Document Your Datacenter With PowerShell">
+      
+      
+        <meta name="author" content="Tim Carman">
+      
+      
+      <link rel="icon" href="../../assets/images/logos/AsBuiltReport.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Contributing - AsBuiltReport</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffc105">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="amber" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro-to-git-and-github" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="AsBuiltReport" class="md-header__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
+      
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AsBuiltReport
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Contributing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/installation/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-guide/new-asbuiltconfig/" class="md-tabs__link">
+        User Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../dev-guide/creating-a-report-module/" class="md-tabs__link">
+        Developer Guide
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../support/faq/" class="md-tabs__link">
+        Support
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../acknowledgements/" class="md-tabs__link md-tabs__link--active">
+        About
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="AsBuiltReport" class="md-nav__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
+      
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
+
+    </a>
+    AsBuiltReport
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          User Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          User Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/new-asbuiltconfig/" class="md-nav__link">
+        New-AsBuiltConfig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/new-asbuiltreport/" class="md-nav__link">
+        New-AsBuiltReport
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/new-asbuiltreportconfig/" class="md-nav__link">
+        New-AsBuiltReportConfig
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/custom-styling/" class="md-nav__link">
+        Custom Styling
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Developer Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Guide" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-guide/creating-a-report-module/" class="md-nav__link">
+        Creating a report module
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dev-guide/creating-a-report-style/" class="md-nav__link">
+        Creating a report style
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/donate/" class="md-nav__link">
+        Donate
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          About
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="About" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../acknowledgements/" class="md-nav__link">
+        Acknowledgements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Contributing
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-git-and-github" class="md-nav__link">
+     Intro to Git and GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#develop-with-github" class="md-nav__link">
+     Develop with GitHub
+  </a>
+  
+    <nav class="md-nav" aria-label=" Develop with GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forks-and-pull-requests" class="md-nav__link">
+    Forks and Pull Requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-branching" class="md-nav__link">
+    Version control branching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-submit-a-contribution" class="md-nav__link">
+     How to submit a contribution
+  </a>
+  
+    <nav class="md-nav" aria-label=" How to submit a contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-quality-pull-requests" class="md-nav__link">
+    Creating quality pull requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-pull-requests" class="md-nav__link">
+    Submitting pull requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues-and-bugs" class="md-nav__link">
+     Reporting Issues and Bugs
+  </a>
+  
+    <nav class="md-nav" aria-label=" Reporting Issues and Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#due-diligence" class="md-nav__link">
+    Due diligence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-your-issue-report" class="md-nav__link">
+    What to include in your issue report
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+     Code Contributions
+  </a>
+  
+    <nav class="md-nav" aria-label=" Code Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-editor" class="md-nav__link">
+    Code Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-consistent-coding-style" class="md-nav__link">
+    Use a Consistent Coding Style
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+     License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-git-and-github" class="md-nav__link">
+     Intro to Git and GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#develop-with-github" class="md-nav__link">
+     Develop with GitHub
+  </a>
+  
+    <nav class="md-nav" aria-label=" Develop with GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forks-and-pull-requests" class="md-nav__link">
+    Forks and Pull Requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-branching" class="md-nav__link">
+    Version control branching
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-submit-a-contribution" class="md-nav__link">
+     How to submit a contribution
+  </a>
+  
+    <nav class="md-nav" aria-label=" How to submit a contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-quality-pull-requests" class="md-nav__link">
+    Creating quality pull requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-pull-requests" class="md-nav__link">
+    Submitting pull requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues-and-bugs" class="md-nav__link">
+     Reporting Issues and Bugs
+  </a>
+  
+    <nav class="md-nav" aria-label=" Reporting Issues and Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#due-diligence" class="md-nav__link">
+    Due diligence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-your-issue-report" class="md-nav__link">
+    What to include in your issue report
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+     Code Contributions
+  </a>
+  
+    <nav class="md-nav" aria-label=" Code Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-editor" class="md-nav__link">
+    Code Editor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-consistent-coding-style" class="md-nav__link">
+    Use a Consistent Coding Style
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+     License
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>Contributing</h1>
+
+<p>Your contribution is welcomed and appreciated. Contributing to this project is as easy as:</p>
+<ul>
+<li>Discussing the current state of the code</li>
+<li>Proposing new features</li>
+<li>Reporting an issue or bug</li>
+<li>Submitting a fix</li>
+<li>Creating a new report module</li>
+</ul>
+<h3 id="intro-to-git-and-github"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25zM4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM3.5 3.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0z"/></svg></span> Intro to Git and GitHub</h3>
+<ul>
+<li>Make sure you have a <a href="https://github.com/signup/free" target="_blank">GitHub account</a>.</li>
+<li>Learning Git:<ul>
+<li><a href="https://help.github.com/articles/good-resources-for-learning-git-and-github/" target="_blank">Learning Git and GitHub</a></li>
+<li><a href="https://learngitbranching.js.org/" target="_blank">Git Branching</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="develop-with-github"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></span> Develop with GitHub</h3>
+<p>This project uses GitHub to host code, to track issues and feature requests, as well as accept pull requests.</p>
+<p>We use <a href="https://docs.github.com/get-started/quickstart/github-flow" target="_blank">GitHub Flow</a> to collaborate and to propose changes to the codebase. We actively welcome your pull requests.</p>
+<h4 id="forks-and-pull-requests">Forks and Pull Requests</h4>
+<p>GitHub fosters collaboration through the notion of <a href="https://help.github.com/articles/using-pull-requests/" target="_blank">pull requests</a>. On GitHub, anyone can <a href="https://help.github.com/articles/fork-a-repo/" target="_blank">fork</a> an existing repository into their own user account, where they can make private changes to their fork. To contribute these changes back into the original repository, a user simply creates a pull request in order to "request" that the changes be taken "upstream".</p>
+<p>Additional references:</p>
+<ul>
+<li>GitHub's guide on <a href="https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks" target="_blank">Forking</a></li>
+<li>GitHub's guide on <a href="https://docs.github.com/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github" target="_blank">Contributing to Open Source</a></li>
+<li>GitHub's guide on <a href="https://docs.github.com/get-started/quickstart/github-flow" target="_blank">Understanding the GitHub Flow</a></li>
+</ul>
+<h4 id="version-control-branching">Version control branching</h4>
+<ul>
+<li>Always <a href="https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests" target="_blank">create a new branch</a> for your work, no matter how small.</li>
+<li>Avoid submitting unrelated changes (bug fixes &amp; new features) in the same branch/pull request.</li>
+<li>Base your new branch off of the appropriate branch on the <code>dev</code> repository.</li>
+</ul>
+<h3 id="how-to-submit-a-contribution"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.823.177 4.927 3.073a.25.25 0 0 0 .177.427H7.25v5.75a.75.75 0 0 0 1.5 0V3.5h2.146a.25.25 0 0 0 .177-.427L8.177.177a.25.25 0 0 0-.354 0zM3.75 6.5a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-6.5a.25.25 0 0 0-.25-.25h-1a.75.75 0 0 1 0-1.5h1c.966 0 1.75.784 1.75 1.75v6.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-6.5C2 5.784 2.784 5 3.75 5h1a.75.75 0 1 1 0 1.5h-1z"/></svg></span> How to submit a contribution</h3>
+<p>If you wish to discuss ways in which to contribute to the AsBuiltReport project, you may raise an <a href="https://docs.github.com/issues/tracking-your-work-with-issues/about-issues#working-with-issues" target="_blank">issue</a> within the relevant <a href="https://github.com/AsBuiltReport" target="_blank">repository</a>, or <a href="mailto:support@asbuiltreport.com">email us</a>.</p>
+<h4 id="creating-quality-pull-requests">Creating quality pull requests</h4>
+<p>A good quality pull request will have the following characteristics:</p>
+<ul>
+<li>When you create a pull request, include a summary about your changes in the PR description. The description is used to create change logs, so try to have the first sentence explain the benefit to end users. If the changes are related to an existing GitHub issue, please reference the issue in the PR description (e.g. <em>Fix #11</em>)</li>
+<li>It's recommended to avoid a PR with too many changes. A large PR not only stretches the review time, but also makes it much harder to identify issues. In such case, it's better to split the PR to multiple smaller ones. For large features, try to approach it in an incremental way, so that each PR won't be too big.</li>
+<li>
+<p>Add a meaningful title of the PR describing what change you want to check in. Don't simply put: <em>"Fix issue #5"</em>. Also don't directly use the issue title as the PR title. An issue title is to briefly describe what is wrong, while a PR title is to briefly describe what is changed. A better example is: <em>"Add Ensure parameter to New-Item cmdlet"</em>, with <em>"Fix #5"</em> in the PR's body.</p>
+</li>
+<li>
+<p>Please use the present tense and imperative mood when describing your changes:</p>
+<ul>
+<li>Instead of <em>"Adding support for Windows Server 2012 R2"</em>, write <em>"Add support for Windows Server 2012 R2"</em>.</li>
+<li>Instead of <em>"Fixed for server connection issue"</em>, write <em>"Fix server connection issue"</em>.</li>
+</ul>
+</li>
+<li>It will have a title that reflects the work within, and a summary that helps to understand the context of the change.</li>
+<li>There will be well written commit messages, with well crafted commits that tell the story of the development of this work.</li>
+<li>Ideally it will be small and easy to understand. Single commit PRs are usually easy to submit, review, and merge.</li>
+<li>The code contained within will meet the best practices set by the team wherever possible. If in doubt, please <a href="../contact/">contact us</a>.</li>
+</ul>
+<h4 id="submitting-pull-requests">Submitting pull requests</h4>
+<p><strong>Always create a pull request to the <code>dev</code> branch of a repository.</strong></p>
+<ol>
+<li>Fork an <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport repository</a>. The example below uses the main AsBuiltReport.Core repository in the command examples.</li>
+<li>Add <code>https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code> as a remote named <code>upstream</code>.<ul>
+<li><code>git remote add upstream https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code></li>
+</ul>
+</li>
+<li>Create your feature branch from <code>dev</code>.</li>
+<li>Work on your feature.<ul>
+<li>Update <code>CHANGELOG.md</code> in the repository you have worked in with add / remove / fix / change information</li>
+<li>Update <code>README.md</code> in the repository you have worked in with any new information, such as features, instructions, parameters and/or examples</li>
+</ul>
+</li>
+<li>Squash commits into one or two succinct commits.<ul>
+<li><code>git rebase -i HEAD~n</code> # n being the number of previous commits to rebase</li>
+</ul>
+</li>
+<li>Ensure that your branch is up to date with <code>upstream/dev</code>.<ul>
+<li><code>git checkout &lt;branch&gt;</code></li>
+<li><code>git fetch upstream</code></li>
+<li><code>git rebase upstream/dev</code></li>
+</ul>
+</li>
+<li>Push branch to your fork.<ul>
+<li><code>git push --force</code></li>
+</ul>
+</li>
+<li>Open a Pull Request against the <code>dev</code> branch of this repository. We have Pull Requests templates in all repositories for this project. Please follow the template with each Pull Request.</li>
+</ol>
+<p>Pull requests will be reviewed as soon as possible.</p>
+<h3 id="reporting-issues-and-bugs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.492 3.492 0 0 1 2.441 0l.999-1a.75.75 0 1 1 1.06 1.061l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.013 5.013 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.684 1.684 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06zM6.173 5h3.654A.173.173 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173zM5.25 6.5a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75h-5.5z"/></svg></span> Reporting Issues and Bugs</h3>
+<p>GitHub issues is used to track issues and bugs. Report a bug by opening a new <a href="https://docs.github.com/issues/tracking-your-work-with-issues/about-issues#working-with-issues" target="_blank">issue</a> in the relevant <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport repository</a>.</p>
+<h4 id="due-diligence">Due diligence</h4>
+<p>Before submitting a bug, or raising an issue, please do the following;</p>
+<ul>
+<li>Perform <strong>basic troubleshooting</strong> steps:<ul>
+<li><strong>Read the documentation.</strong> Ensure you have read the <code>README</code> documentation within the relevant report repository. Check the <code>Supported Versions</code>, <code>System Requirements</code> and <code>Module Installation</code> sections.</li>
+<li><strong>Make sure you're running the latest version.</strong> If you’re not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.</li>
+<li><strong>Review dependencies.</strong> If the release in question has other dependencies (e.g. vendor PowerShell modules) try upgrading/downgrading those as well.</li>
+<li><strong>Use <code>Verbose</code> parameter.</strong> Add <code>-Verbose</code> parameter to the command line to see if the issue can be identified via the output.</li>
+<li><strong>Disable report InfoLevels.</strong> Edit the report config and set all InfoLevels to 0. Gradually increase InfoLevel values for each section individually, until you are able to recreate the issue.</li>
+<li><strong>Try older versions.</strong> If you’re already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help narrow down when the problem first arose in the commit log.</li>
+</ul>
+</li>
+<li><strong>Search the open and closed issues within the relevant repository</strong> to make sure it’s not a current or previous known issue.</li>
+</ul>
+<h4 id="what-to-include-in-your-issue-report">What to include in your issue report</h4>
+<p>To make sure your issue gets the attention it deserves, please consider the information requested below as the bare minimum; more information is almost always better! Issues with missing information may be ignored or pushed back to you, delaying a resolution.</p>
+<p>Great issue and bug reports tend to have:</p>
+<ul>
+<li>A quick summary and/or background of the issue</li>
+<li>Software versions you are using;<ul>
+<li>AsBuiltReport module versions (e.g. AsBuiltReport.Core v1.2.0 &amp; AsBuiltReport.VMware.vSphere v1.3.1)</li>
+<li>PowerShell versions (e.g. Windows PowerShell 5.1)</li>
+<li>Operating System versions (e.g. Windows Server 2016 Version 1607)</li>
+</ul>
+</li>
+<li>Steps to reproduce the issue;<ul>
+<li>Be specific</li>
+<li>Provide the full command line you are executing</li>
+<li>Give sample code if you can</li>
+<li>Upload a screenshot if possible</li>
+</ul>
+</li>
+<li>What you expected would happen</li>
+<li>What actually happens</li>
+<li>Notes (possibly including why you think this might be happening, or steps you have performed to resolve the issue)</li>
+</ul>
+<h3 id="code-contributions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0v-2.5zm7.5-.188V4.25c0 .138.112.25.25.25h2.688a.252.252 0 0 0-.011-.013l-2.914-2.914a.272.272 0 0 0-.013-.011zM5.72 6.72a.75.75 0 0 0 0 1.06l1.47 1.47-1.47 1.47a.75.75 0 1 0 1.06 1.06l2-2a.75.75 0 0 0 0-1.06l-2-2a.75.75 0 0 0-1.06 0zM3.28 7.78a.75.75 0 0 0-1.06-1.06l-2 2a.75.75 0 0 0 0 1.06l2 2a.75.75 0 0 0 1.06-1.06L1.81 9.25l1.47-1.47z"/></svg></span> Code Contributions</h3>
+<h4 id="code-editor">Code Editor</h4>
+<p>We highly encourage you use the multi-platform code editor <a href="https://code.visualstudio.com/docs" target="_blank">Visual Studio Code (VS Code)</a> when developing code for AsBuiltReport.</p>
+<h4 id="use-a-consistent-coding-style">Use a Consistent Coding Style</h4>
+<p>Code contributors should follow the <a href="https://github.com/PoshCode/PowerShellPracticeAndStyle" target="_blank">PowerShell Guidelines</a> wherever possible to ensure scripts are consistent in style.</p>
+<p>Use <a href="https://github.com/PowerShell/PSScriptAnalyzer" target="_blank">PSScriptAnalyzer</a> to check code quality against PowerShell Best Practices.</p>
+<p><span class="twemoji check-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm3.78-9.72a.75.75 0 0 0-1.06-1.06L6.75 9.19 5.28 7.72a.75.75 0 0 0-1.06 1.06l2 2a.75.75 0 0 0 1.06 0l4.5-4.5z"/></svg></span> Do</p>
+<ul>
+<li>Use <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions" target="_blank">PascalCasing</a> for all public member, type, and namespace names consisting of multiple words.</li>
+<li>Use custom label headers within tables, where required, to make easily readable labels.</li>
+<li>Favour readability over <a href="https://www.dictionary.com/browse/brevity" target="_blank">brevity</a>.</li>
+<li>
+<p>Use <a href="https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7" target="_blank">PSCustomObjects</a> to store data that will be exported to a <a href="https://github.com/iainbrighton/PScribo" target="_blank">PScribo</a> table. This helps with readability.</p>
+<ul>
+<li>
+<p>Use the following structure to create tables</p>
+<div class="highlight"><span class="filename">Creating tables with PSCustomObject</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="c"># Create the PSCustomObject</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nv">$myObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">Name</span>     <span class="p">=</span> <span class="s1">&#39;Tim&#39;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">Language</span> <span class="p">=</span> <span class="s1">&#39;PowerShell&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">City</span> <span class="p">=</span> <span class="s1">&#39;Melbourne&#39;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">State</span>    <span class="p">=</span> <span class="s1">&#39;Victoria&#39;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">Country</span> <span class="p">=</span> <span class="s1">&#39;Australia&#39;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="c"># Set the table parameters - Table name, type &amp; column widths</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="c"># A list table is set and column widths are evenly set at 50% for each column</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;User Info&#39;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">List</span> <span class="p">=</span> <span class="nv">$true</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">50</span><span class="p">,</span> <span class="n">50</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c"># This code snippet must be included for options to show table captions</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="c"># Output PSCustomObject to table using defined parameters</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="nv">$myObject</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Set <code>ColumnWidths</code> for all tables to improve formatting and readability. Try to maintain a consistent style throughout the report. Cell text will word wrap. List tables should generally use column widths of <code>50, 50</code>.</p>
+</li>
+<li>Sort primary object properties in alphanumeric order.</li>
+<li>Try to perform all safe commands (Get-*, Get API call, etc) at the start of a report script so it can easily be seen what data is being collected.</li>
+<li>Use comments written in English, but don't overdo it. Comments should serve to your reasoning and decision-making, not attempt to explain what a command does.</li>
+<li>Maintain a change log as per <a href="https://keepachangelog.com/en/1.0.0/" target="_blank">these guidelines</a>. The change log should be named <code>CHANGELOG.md</code>.</li>
+</ul>
+<p><span class="twemoji x-circle-fill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.343 13.657A8 8 0 1 1 13.657 2.343 8 8 0 0 1 2.343 13.657zM6.03 4.97a.75.75 0 0 0-1.06 1.06L6.94 8 4.97 9.97a.75.75 0 1 0 1.06 1.06L8 9.06l1.97 1.97a.75.75 0 1 0 1.06-1.06L9.06 8l1.97-1.97a.75.75 0 1 0-1.06-1.06L8 6.94 6.03 4.97z"/></svg></span> Do not</p>
+<!-- - Do not include code within report scripts to install or import PowerShell modules. Dependencies should be documented under the `System Requirements` and `Module Installation` sections of the `README`. -->
+<ul>
+<li>Do not include functions within report scripts. Individual script files should be created as a private function and be stored in the <code>\Src\Private</code> folder.</li>
+</ul>
+<h3 id="license"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h3.5a.75.75 0 0 1 0 1.5h-3.5A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8a1.75 1.75 0 0 1 1.508.862.75.75 0 1 1-1.289.768.25.25 0 0 0-.219-.13h-8z"/><path fill-rule="evenodd" d="M8 7a4 4 0 1 1 6.49 3.13l.995 4.973a.75.75 0 0 1-.991.852l-2.409-.876a.25.25 0 0 0-.17 0l-2.409.876a.75.75 0 0 1-.991-.852l.994-4.973A3.993 3.993 0 0 1 8 7zm4-2.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zm0 6.5a4 4 0 0 0 1.104-.154l.649 3.243-1.155-.42c-.386-.14-.81-.14-1.196 0l-1.155.42.649-3.243A4 4 0 0 0 12 11z"/></svg></span> License</h3>
+<p>By contributing, you agree that your contributions will be licensed under the <a href="../license/">MIT License</a>.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../contact/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contact" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Contact
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../license/" class="md-footer__link md-footer__link--next" aria-label="Next: License" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              License
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2016 - 2022 Tim Carman
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/AsBuiltReport" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCi8vPY40jRpr0tZZPgBqpbA/" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://code.vmware.com/join" target="_blank" rel="noopener" title="code.vmware.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

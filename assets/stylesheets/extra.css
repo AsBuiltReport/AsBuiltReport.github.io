@@ -1,4 +1,4 @@
-/* Social Logos */
+/* Icons */
 .twitter {
     color: #1DA1F2;
 }
@@ -9,6 +9,14 @@
 
 .slack {
     color: #1D1C1D;
+}
+
+.check-circle {
+    color: lawngreen
+}
+
+.x-circle-fill {
+    color: red
 }
 
 /* montserrat-alternates-300 - latin */
