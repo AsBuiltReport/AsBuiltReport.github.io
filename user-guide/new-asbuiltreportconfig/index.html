@@ -687,13 +687,13 @@
 <p>Specifies to overwrite an existing JSON configuration.</p>
 <p>This is an optional parameter.</p>
 <h2 id="examples">Examples</h2>
-<p>Creates a new VMware vSphere report JSON configuration file in the <code>C:\Reports</code> folder.
+<p>The following example creates a new VMware vSphere report JSON configuration file in the <code>C:\Reports</code> folder.
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.vSphere&#39;</span> <span class="n">-Folderpath</span> <span class="s1">&#39;C:\Reports&#39;</span>
 </code></pre></div></p>
-<p>Creates a new Microsoft Active Directory report JSON configuration file named <code>ACME.json</code> in the <code>C:\Reports</code> folder.
+<p>The following example creates a new Microsoft Active Directory report JSON configuration file named <code>ACME.json</code> in the <code>C:\Reports</code> folder.
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="s1">&#39;Microsoft.AD&#39;</span> <span class="n">-Filename</span> <span class="s1">&#39;ACME&#39;</span> <span class="n">-Folderpath</span> <span class="s1">&#39;C:\AsBuiltReport&#39;</span>
 </code></pre></div></p>
-<p>Creates a new NetApp ONTAP report JSON configuration file in the <code>C:\Reports</code> folder, and overwrites the existing <code>AsBuiltReport.NetApp.ONTAP.json</code> file.
+<p>The following example creates a new NetApp ONTAP report JSON configuration file in the <code>C:\Reports</code> folder, and overwrites the existing <code>AsBuiltReport.NetApp.ONTAP.json</code> file.
 <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="s1">&#39;NetApp.ONTAP&#39;</span> <span class="n">-Folderpath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-Force</span>
 </code></pre></div></p>
 
