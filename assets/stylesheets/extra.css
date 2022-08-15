@@ -85,6 +85,8 @@ src: local(''),
 }
 
 :root > * {
+    --md-primary-bg-color: #072E58;
+
     --md-accent-bg-color: #FFFFFF;
     --md-accent-fg-color: #00ABE8;
 }
