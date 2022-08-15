@@ -83,3 +83,8 @@ src: local(''),
 .md-typeset h3 {
     font-family: "Montserrat Alternates";
 }
+
+:root > * {
+    --md-accent-bg-color: #FFFFFF;
+    --md-accent-fg-color: #00ABE8;
+}
