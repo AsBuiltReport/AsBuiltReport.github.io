@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#system-requirements" class="md-skip">
+        <a href="#powershell" class="md-skip">
           Skip to content
         </a>
       
@@ -371,6 +371,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    PowerShell
+  </a>
+  
+    <nav class="md-nav" aria-label="PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#system-requirements" class="md-nav__link">
     System Requirements
   </a>
@@ -396,18 +404,23 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#online-installation" class="md-nav__link">
     Online Installation
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#offline-installation" class="md-nav__link">
     Offline Installation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1330,6 +1343,14 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#powershell" class="md-nav__link">
+    PowerShell
+  </a>
+  
+    <nav class="md-nav" aria-label="PowerShell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#system-requirements" class="md-nav__link">
     System Requirements
   </a>
@@ -1355,18 +1376,23 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#online-installation" class="md-nav__link">
     Online Installation
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#offline-installation" class="md-nav__link">
     Offline Installation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1387,8 +1413,9 @@
   <h1>Installation</h1>
 
 <p>Please follow these quick and simple instructions to install As Built Report.</p>
-<h2 id="system-requirements">System Requirements</h2>
-<h3 id="powershell-version">PowerShell Version</h3>
+<h2 id="powershell">PowerShell</h2>
+<h3 id="system-requirements">System Requirements</h3>
+<h4 id="powershell-version">PowerShell Version</h4>
 <p>Open a PowerShell console and run the following command to determine your version of PowerShell.</p>
 <div class="highlight"><span class="filename">Check PowerShell version</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$PSVersionTable</span>
 </code></pre></div>
@@ -1441,13 +1468,13 @@
 </tbody>
 </table>
 </div>
-<h3 id="third-party-powershell-modules">Third Party PowerShell Modules</h3>
+<h4 id="third-party-powershell-modules">Third Party PowerShell Modules</h4>
 <p>Please refer to the <a href="../../user-guide/report-modules/overview/">report module user guide</a> to check the system requirements for each report. Please follow the report module instructions to install any third party PowerShell modules which may be required.</p>
 <div class="highlight"><span class="filename">Install third party PowerShell modules</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Install third party PowerShell module examples</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;VMware.PowerCLI&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PureStoragePowerShellSDK&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
 </code></pre></div>
-<h2 id="online-installation">Online Installation</h2>
+<h3 id="online-installation">Online Installation</h3>
 <p>For an online installation, install As Built Report modules using the <a href="https://www.powershellgallery.com/packages?q=Asbuiltreport*" target="_blank">PowerShell Gallery</a>;</p>
 <div class="highlight"><span class="filename">Find and install As Built Report modules</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Find AsBuiltReport modules published in the PowerShell Gallery</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.*&#39;</span> <span class="n">-Repository</span> <span class="s1">&#39;PSGallery&#39;</span>
@@ -1455,7 +1482,7 @@
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c"># Install AsBuiltReport module example</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
 </code></pre></div>
-<h2 id="offline-installation">Offline Installation</h2>
+<h3 id="offline-installation">Offline Installation</h3>
 <p>For an offline installation, perform the following steps from a machine with internet connectivity;</p>
 <p>Save the required modules to a specified folder.</p>
 <div class="highlight"><span class="filename">Find and save As Built Report modules</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Find AsBuiltReport modules published in the PowerShell Gallery</span>
@@ -1466,7 +1493,7 @@
 </code></pre></div>
 <p>Copy the downloaded PowerShell module folders to a location that can be made accessible to the offline system.
 e.g. USB Flash Drive, Internal File Share etc.</p>
-<p>On the offline system, open a PowerShell command window and run the following command to determine the PowerShell module path.</p>
+<p>On the offline system, open a PowerShell console window and run the following command to determine the PowerShell module path.</p>
 <p><strong>Windows</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>
 </code></pre></div>
