@@ -1591,6 +1591,12 @@
 <p>This is a mandatory parameter.</p>
 <h3 id="target">Target</h3>
 <p>Specifies the IP/FQDN of the system to connect.</p>
+<p>Multiple targets may be specified, separated by a comma.</p>
+<p><code>New-AsBuiltReport -Target system1,system2</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When specifying multiple targets, all systems must use the same credentials.</p>
+</div>
 <p>This is a mandatory parameter.</p>
 <h3 id="credential">Credential</h3>
 <p>Specifies the stored credential of the target system.</p>
@@ -1611,6 +1617,7 @@
 <p>Specifies the output format of the report.</p>
 <p>The supported output formats are Word, HTML &amp; Text.</p>
 <p>Multiple output formats may be specified, separated by a comma.</p>
+<p><code>New-AsBuiltReport -Format HTML,Word,Text</code></p>
 <p>This is an optional parameter.</p>
 <p>If the parameter is not specified, the document format will default to Word.</p>
 <h3 id="orientation">Orientation</h3>
