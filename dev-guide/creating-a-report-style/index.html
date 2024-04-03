@@ -25,7 +25,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/images/logos/AsBuiltReport.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.10">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -72,32 +72,6 @@
   
 
     
-    
-      
-        <meta  property="og:type"  content="website" >
-      
-        <meta  property="og:title"  content="Creating a report style - AsBuiltReport" >
-      
-        <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
-      
-        <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/dev-guide/creating-a-report-style.png" >
-      
-        <meta  property="og:image:type"  content="image/png" >
-      
-        <meta  property="og:image:width"  content="1200" >
-      
-        <meta  property="og:image:height"  content="630" >
-      
-        <meta  property="og:url"  content="https://www.asbuiltreport.com/dev-guide/creating-a-report-style/" >
-      
-        <meta  name="twitter:card"  content="summary_large_image" >
-      
-        <meta  name="twitter:title"  content="Creating a report style - AsBuiltReport" >
-      
-        <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
-      
-        <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/dev-guide/creating-a-report-style.png" >
-      
     
     
   </head>
@@ -2595,8 +2569,7 @@
   <h1>Creating a report style</h1>
 
 <p>When generating an As Built Report, its formatting and style is defined using a PowerShell (.ps1) script which utilises a set of <a href="../../support/faq/#what-is-pscribo">PScribo</a> cmdlets.</p>
-<p>When creating a report style for a new report module, the default colours and logos (if permitted) should align to a vendor's branding guidelines. Most vendors will publish their branding guidelines on their website. A simple Google search should reveal all the information you need to create a report style for a particular vendor. Where a report module already exists for a particular vendor, please ensure you include the existing vendor report style in the new report module.</p>
-<p>This guide may also be used to create custom style scripts which match your individual and/or corporate identities.</p>
+<p>This guide can be used to create custom style scripts which match your individual and/or corporate identities.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This guide assumes you have already <a href="../../user-guide/installation/">installed</a> an AsBuiltReport module.</p>
@@ -2604,7 +2577,7 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Use any report's default style script as a reference for creating a new style script, or download some sample styles from our <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/tree/dev/Samples" target="_blank">GitHub repository</a>.</p>
+<p>Use the <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/blob/master/AsBuiltReport.Core.Style.ps1" target="_blank">default style script</a> as a reference for creating a new style script, or download some sample styles from our <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/tree/master/Samples" target="_blank">GitHub repository</a>.</p>
 <p>A report's default style script is located in the report module root folder and is named <code>AsBuiltReport.&lt;Vendor&gt;.&lt;Product&gt;.Style.ps1</code></p>
 </div>
 <h3 id="global-document-options">Global Document Options</h3>
@@ -2826,9 +2799,6 @@
 
 
 
-  
-  
-
 
 
   
@@ -2899,7 +2869,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2016 - 2023 Tim Carman
+      Copyright &copy; 2016 - 2024 Tim Carman
     </div>
   
   
@@ -2960,7 +2930,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "search.highlight"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>
