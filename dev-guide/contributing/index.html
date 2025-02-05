@@ -12,29 +12,31 @@
         <meta name="author" content="Tim Carman">
       
       
-        <link rel="canonical" href="https://www.asbuiltreport.com/blog/2023/12/05/The-future-of-As-Built-Report/">
+        <link rel="canonical" href="https://www.asbuiltreport.com/dev-guide/contributing/">
       
       
-        <link rel="prev" href="../../../08/25/the-history-of-asbuiltreport/">
+        <link rel="prev" href="../../user-guide/report-modules/overview/">
       
       
+        <link rel="next" href="../creating-a-report-module/">
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../../assets/images/logos/AsBuiltReport.png">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/logos/AsBuiltReport.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.2">
     
     
       
-        <title>The future of As Built Report - AsBuiltReport</title>
+        <title>Contributing - AsBuiltReport</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.d7758b05.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7758b05.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,9 +55,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -74,11 +76,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="The future of As Built Report - AsBuiltReport" >
+        <meta  property="og:title"  content="Contributing - AsBuiltReport" >
       
         <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
       
-        <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/blog/posts/The-future-of-As-Built-Report.png" >
+        <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/dev-guide/contributing.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -86,15 +88,15 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://www.asbuiltreport.com/blog/2023/12/05/The-future-of-As-Built-Report/" >
+        <meta  property="og:url"  content="https://www.asbuiltreport.com/dev-guide/contributing/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="The future of As Built Report - AsBuiltReport" >
+        <meta  name="twitter:title"  content="Contributing - AsBuiltReport" >
       
         <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
       
-        <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/blog/posts/The-future-of-As-Built-Report.png" >
+        <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/dev-guide/contributing.png" >
       
     
     
@@ -115,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-future-of-as-built-report" class="md-skip">
+        <a href="#intro-to-git-and-github" class="md-skip">
           Skip to content
         </a>
       
@@ -131,9 +133,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="AsBuiltReport" class="md-header__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
+    <a href="../.." title="AsBuiltReport" class="md-header__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
       
-  <img src="../../../../../assets/images/logos/AsBuiltReport.png" alt="logo">
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -150,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The future of As Built Report
+              Contributing
             
           </span>
         </div>
@@ -213,7 +215,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -238,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../user-guide/installation/" class="md-tabs__link">
+        <a href="../../user-guide/installation/" class="md-tabs__link">
           
   
     
@@ -257,11 +259,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../dev-guide/contributing/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -281,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../support/faq/" class="md-tabs__link">
+        <a href="../../support/faq/" class="md-tabs__link">
           
   
     
@@ -297,13 +301,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
           
   
     
@@ -323,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/acknowledgements/" class="md-tabs__link">
+        <a href="../../about/acknowledgements/" class="md-tabs__link">
           
   
     
@@ -353,9 +355,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -366,9 +366,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="AsBuiltReport" class="md-nav__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
+    <a href="../.." title="AsBuiltReport" class="md-nav__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
       
-  <img src="../../../../../assets/images/logos/AsBuiltReport.png" alt="logo">
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
 
     </a>
     AsBuiltReport
@@ -383,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -498,7 +498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/installation/" class="md-nav__link">
+      <a href="../../user-guide/installation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/new-asbuiltconfig/" class="md-nav__link">
+      <a href="../../user-guide/new-asbuiltconfig/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -599,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/new-asbuiltreport/" class="md-nav__link">
+      <a href="../../user-guide/new-asbuiltreport/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -621,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/new-asbuiltreportconfig/" class="md-nav__link">
+      <a href="../../user-guide/new-asbuiltreportconfig/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -718,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/report-modules/overview/" class="md-nav__link">
+      <a href="../../user-guide/report-modules/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1769,8 +1769,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1783,19 +1785,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1807,7 +1812,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Developer Guide
@@ -1818,10 +1823,29 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../dev-guide/contributing/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1831,6 +1855,174 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro-to-git-and-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intro to Git and GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#develop-with-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Develop with GitHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Develop with GitHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forks-and-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Forks and Pull Requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-control-branching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version control branching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-submit-a-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to submit a contribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to submit a contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-quality-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating quality pull requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submitting pull requests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues-and-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting Issues and Bugs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reporting Issues and Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#due-diligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Due diligence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-your-issue-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to include in your issue report
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-consistent-coding-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use a Consistent Coding Style
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1843,7 +2035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/creating-a-report-module/" class="md-nav__link">
+      <a href="../creating-a-report-module/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1865,7 +2057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/creating-a-report-style/" class="md-nav__link">
+      <a href="../creating-a-report-style/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1943,7 +2135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/faq/" class="md-nav__link">
+      <a href="../../support/faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1965,7 +2157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/known-issues/" class="md-nav__link">
+      <a href="../../support/known-issues/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1987,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/donate/" class="md-nav__link">
+      <a href="../../support/donate/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2013,8 +2205,6 @@
       
   
   
-    
-  
   
   
     
@@ -2031,24 +2221,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2060,13 +2247,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -2091,20 +2278,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2132,7 +2316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2023/" class="md-nav__link">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2171,20 +2355,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2212,7 +2393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/general/" class="md-nav__link">
+      <a href="../../blog/category/general/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2300,7 +2481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/acknowledgements/" class="md-nav__link">
+      <a href="../../about/acknowledgements/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2322,7 +2503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/contributors.md" class="md-nav__link">
+      <a href="../../about/contributors.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2344,7 +2525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/contact/" class="md-nav__link">
+      <a href="../../about/contact/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2366,7 +2547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/license/" class="md-nav__link">
+      <a href="../../about/license/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2396,8 +2577,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -2407,8 +2586,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2417,82 +2594,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-special-thanks-to-jon" class="md-nav__link">
+  <a href="#intro-to-git-and-github" class="md-nav__link">
     <span class="md-ellipsis">
-      A special thanks to Jon!
+      Intro to Git and GitHub
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-challenges" class="md-nav__link">
+  <a href="#develop-with-github" class="md-nav__link">
     <span class="md-ellipsis">
-      My challenges
+      Develop with GitHub
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#but-what-does-this-all-mean" class="md-nav__link">
-    <span class="md-ellipsis">
-      But... what does this all mean?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#so-how-can-you-help" class="md-nav__link">
-    <span class="md-ellipsis">
-      So how can you help?
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="So how can you help?">
+    <nav class="md-nav" aria-label="Develop with GitHub">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#forks-and-pull-requests" class="md-nav__link">
     <span class="md-ellipsis">
-      Documentation
+      Forks and Pull Requests
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#testing-and-feedback" class="md-nav__link">
+  <a href="#version-control-branching" class="md-nav__link">
     <span class="md-ellipsis">
-      Testing and Feedback
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#code-contributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Contributions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#feature-requests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Feature Requests
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#spread-the-word" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spread the Word
+      Version control branching
     </span>
   </a>
   
@@ -2504,9 +2636,108 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-final-thanks" class="md-nav__link">
+  <a href="#how-to-submit-a-contribution" class="md-nav__link">
     <span class="md-ellipsis">
-      A final thanks!
+      How to submit a contribution
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to submit a contribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-quality-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating quality pull requests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#submitting-pull-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submitting pull requests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-issues-and-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting Issues and Bugs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reporting Issues and Bugs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#due-diligence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Due diligence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-your-issue-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to include in your issue report
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Contributions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Code Contributions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-editor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code Editor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-a-consistent-coding-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use a Consistent Coding Style
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      License
     </span>
   </a>
   
@@ -2521,152 +2752,217 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    Back to index
-                  </span>
-                </a>
-              </div>
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Contributing</h1>
+
+<p>Your contribution is welcomed and appreciated. Contributing to this project is as easy as:</p>
+<ul>
+<li>Discussing the current state of the code</li>
+<li>Proposing new features</li>
+<li>Reporting an issue or bug</li>
+<li>Submitting a fix</li>
+<li>Creating a new report module</li>
+</ul>
+<h3 id="intro-to-git-and-github"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.5 3.25a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.5 2.5 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25m-6 0a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0m8.25-.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5M4.25 12a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5"/></svg></span> Intro to Git and GitHub</h3>
+<ul>
+<li>Make sure you have a <a href="https://github.com/signup/free" target="_blank">GitHub account</a>.</li>
+<li>Learning Git:<ul>
+<li><a href="https://help.github.com/articles/good-resources-for-learning-git-and-github/" target="_blank">Learning Git and GitHub</a></li>
+<li><a href="https://learngitbranching.js.org/" target="_blank">Git Branching</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="develop-with-github"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg></span> Develop with GitHub</h3>
+<p>This project uses GitHub to host code, to track issues and feature requests, as well as accept pull requests.</p>
+<p>We use <a href="https://docs.github.com/get-started/quickstart/github-flow" target="_blank">GitHub Flow</a> to collaborate and to propose changes to the codebase. We actively welcome your pull requests.</p>
+<h4 id="forks-and-pull-requests">Forks and Pull Requests</h4>
+<p>GitHub fosters collaboration through the notion of <a href="https://help.github.com/articles/using-pull-requests/" target="_blank">pull requests</a>. On GitHub, anyone can <a href="https://help.github.com/articles/fork-a-repo/" target="_blank">fork</a> an existing repository into their own user account, where they can make private changes to their fork. To contribute these changes back into the original repository, a user simply creates a pull request in order to "request" that the changes be taken "upstream".</p>
+<p>Additional references:</p>
+<ul>
+<li>GitHub's guide on <a href="https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks" target="_blank">Forking</a></li>
+<li>GitHub's guide on <a href="https://docs.github.com/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github" target="_blank">Contributing to Open Source</a></li>
+<li>GitHub's guide on <a href="https://docs.github.com/get-started/quickstart/github-flow" target="_blank">Understanding the GitHub Flow</a></li>
+</ul>
+<h4 id="version-control-branching">Version control branching</h4>
+<ul>
+<li>Always <a href="https://docs.github.com/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests" target="_blank">create a new branch</a> for your work, no matter how small.</li>
+<li>Avoid submitting unrelated changes (bug fixes &amp; new features) in the same branch/pull request.</li>
+<li>Base your new branch off of the appropriate branch on the <code>dev</code> repository.</li>
+</ul>
+<h3 id="how-to-submit-a-contribution"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 6.5a.25.25 0 0 0-.25.25v6.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-6.5a.25.25 0 0 0-.25-.25h-1a.75.75 0 0 1 0-1.5h1c.966 0 1.75.784 1.75 1.75v6.5A1.75 1.75 0 0 1 12.25 15h-8.5A1.75 1.75 0 0 1 2 13.25v-6.5C2 5.784 2.784 5 3.75 5h1a.75.75 0 0 1 0 1.5ZM7.823.177a.25.25 0 0 1 .354 0l2.896 2.896a.25.25 0 0 1-.177.427H8.75v5.75a.75.75 0 0 1-1.5 0V3.5H5.104a.25.25 0 0 1-.177-.427Z"/></svg></span> How to submit a contribution</h3>
+<p>If you wish to discuss ways in which to contribute to the AsBuiltReport project, you may raise an <a href="https://docs.github.com/issues/tracking-your-work-with-issues/about-issues#working-with-issues" target="_blank">issue</a> within the relevant <a href="https://github.com/AsBuiltReport" target="_blank">repository</a>, or <a href="mailto:support@asbuiltreport.com">email us</a>.</p>
+<h4 id="creating-quality-pull-requests">Creating quality pull requests</h4>
+<p>A good quality pull request will have the following characteristics:</p>
+<ul>
+<li>When you create a pull request, include a summary about your changes in the PR description. The description is used to create change logs, so try to have the first sentence explain the benefit to end users. If the changes are related to an existing GitHub issue, please reference the issue in the PR description (e.g. <em>Fix #11</em>)</li>
+<li>It's recommended to avoid a PR with too many changes. A large PR not only stretches the review time, but also makes it much harder to identify issues. In such case, it's better to split the PR to multiple smaller ones. For large features, try to approach it in an incremental way, so that each PR won't be too big.</li>
+<li>
+<p>Add a meaningful title of the PR describing what change you want to check in. Don't simply put: <em>"Fix issue #5"</em>. Also don't directly use the issue title as the PR title. An issue title is to briefly describe what is wrong, while a PR title is to briefly describe what is changed. A better example is: <em>"Add Ensure parameter to New-Item cmdlet"</em>, with <em>"Fix #5"</em> in the PR's body.</p>
+</li>
+<li>
+<p>Please use the present tense and imperative mood when describing your changes:</p>
+<ul>
+<li>Instead of <em>"Adding support for Windows Server 2012 R2"</em>, write <em>"Add support for Windows Server 2012 R2"</em>.</li>
+<li>Instead of <em>"Fixed for server connection issue"</em>, write <em>"Fix server connection issue"</em>.</li>
+</ul>
+</li>
+<li>It will have a title that reflects the work within, and a summary that helps to understand the context of the change.</li>
+<li>There will be well written commit messages, with well crafted commits that tell the story of the development of this work.</li>
+<li>Ideally it will be small and easy to understand. Single commit PRs are usually easy to submit, review, and merge.</li>
+<li>The code contained within will meet the best practices set by the team wherever possible. If in doubt, please <a href="../../about/contact/">contact us</a>.</li>
+</ul>
+<h4 id="submitting-pull-requests">Submitting pull requests</h4>
+<p><strong>Always create a pull request to the <code>dev</code> branch of a repository.</strong></p>
+<ol>
+<li>Fork an <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport repository</a>. The example below uses the main AsBuiltReport.Core repository in the command examples.</li>
+<li>Add <code>https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code> as a remote named <code>upstream</code>.<ul>
+<li><code>git remote add upstream https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code></li>
+</ul>
+</li>
+<li>Create your feature branch from <code>dev</code>.</li>
+<li>Work on your feature.<ul>
+<li>Update <code>CHANGELOG.md</code> in the repository you have worked in with add / remove / fix / change information</li>
+<li>Update <code>README.md</code> in the repository you have worked in with any new information, such as features, instructions, parameters and/or examples</li>
+</ul>
+</li>
+<li>Squash commits into one or two succinct commits.<ul>
+<li><code>git rebase -i HEAD~n</code> # n being the number of previous commits to rebase</li>
+</ul>
+</li>
+<li>Ensure that your branch is up to date with <code>upstream/dev</code>.<ul>
+<li><code>git checkout &lt;branch&gt;</code></li>
+<li><code>git fetch upstream</code></li>
+<li><code>git rebase upstream/dev</code></li>
+</ul>
+</li>
+<li>Push branch to your fork.<ul>
+<li><code>git push --force</code></li>
+</ul>
+</li>
+<li>Open a Pull Request against the <code>dev</code> branch of a repository. We have Pull Requests templates in all repositories for this project. Please follow the template with each Pull Request.</li>
+</ol>
+<p>Pull requests will be reviewed as soon as possible.</p>
+<h3 id="reporting-issues-and-bugs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.5 3.5 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327q0 .15-.025.292c.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5q-.002.615-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A5 5 0 0 1 8 16a5 5 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5 5 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.7 1.7 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06m.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.17.17 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173"/></svg></span> Reporting Issues and Bugs</h3>
+<p>GitHub issues is used to track issues and bugs. Report a bug by opening a new <a href="https://docs.github.com/issues/tracking-your-work-with-issues/about-issues#working-with-issues" target="_blank">issue</a> in the relevant <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport repository</a>.</p>
+<h4 id="due-diligence">Due diligence</h4>
+<p>Before submitting a bug, or raising an issue, please do the following;</p>
+<ul>
+<li>Perform <strong>basic troubleshooting</strong> steps:<ul>
+<li><strong>Read the documentation.</strong> Ensure you have read the <code>README</code> documentation within the relevant report repository. Check the <code>Supported Versions</code>, <code>System Requirements</code> and <code>Module Installation</code> sections.</li>
+<li><strong>Make sure you're running the latest version.</strong> If you’re not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.</li>
+<li><strong>Review dependencies.</strong> If the release in question has other dependencies (e.g. vendor PowerShell modules) try upgrading/downgrading those as well.</li>
+<li><strong>Use <code>Verbose</code> parameter.</strong> Add <code>-Verbose</code> parameter to the command line to see if the issue can be identified via the output.</li>
+<li><strong>Disable report InfoLevels.</strong> Edit the report config and set all InfoLevels to 0. Gradually increase InfoLevel values for each section individually, until you are able to recreate the issue.</li>
+<li><strong>Try older versions.</strong> If you’re already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help narrow down when the problem first arose in the commit log.</li>
+</ul>
+</li>
+<li><strong>Search the open and closed issues within the relevant repository</strong> to make sure it’s not a current or previous known issue.</li>
+</ul>
+<h4 id="what-to-include-in-your-issue-report">What to include in your issue report</h4>
+<p>To make sure your issue gets the attention it deserves, please consider the information requested below as the bare minimum; more information is almost always better! Issues with missing information may be ignored or pushed back to you, delaying a resolution.</p>
+<p>Great issue and bug reports tend to have:</p>
+<ul>
+<li>A quick summary and/or background of the issue</li>
+<li>Software versions you are using;<ul>
+<li>AsBuiltReport module versions (e.g. AsBuiltReport.Core v1.2.0 &amp; AsBuiltReport.VMware.vSphere v1.3.1)</li>
+<li>PowerShell versions (e.g. Windows PowerShell 5.1)</li>
+<li>Operating System versions (e.g. Windows Server 2016 Version 1607)</li>
+</ul>
+</li>
+<li>Steps to reproduce the issue;<ul>
+<li>Be specific</li>
+<li>Provide the full command line you are executing</li>
+<li>Give sample code if you can</li>
+<li>Upload a screenshot if possible</li>
+</ul>
+</li>
+<li>What you expected would happen</li>
+<li>What actually happens</li>
+<li>Notes (possibly including why you think this might be happening, or steps you have performed to resolve the issue)</li>
+</ul>
+<h3 id="code-contributions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4 1.75C4 .784 4.784 0 5.75 0h5.586c.464 0 .909.184 1.237.513l2.914 2.914c.329.328.513.773.513 1.237v8.586A1.75 1.75 0 0 1 14.25 15h-9a.75.75 0 0 1 0-1.5h9a.25.25 0 0 0 .25-.25V6h-2.75A1.75 1.75 0 0 1 10 4.25V1.5H5.75a.25.25 0 0 0-.25.25v2.5a.75.75 0 0 1-1.5 0Zm1.72 4.97a.75.75 0 0 1 1.06 0l2 2a.75.75 0 0 1 0 1.06l-2 2a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734l1.47-1.47-1.47-1.47a.75.75 0 0 1 0-1.06M3.28 7.78 1.81 9.25l1.47 1.47a.75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018l-2-2a.75.75 0 0 1 0-1.06l2-2a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042m8.22-6.218V4.25c0 .138.112.25.25.25h2.688l-.011-.013-2.914-2.914z"/></svg></span> Code Contributions</h3>
+<h4 id="code-editor">Code Editor</h4>
+<p>We highly encourage you use the multi-platform code editor <a href="https://code.visualstudio.com/docs" target="_blank">Visual Studio Code (VS Code)</a> when developing code for AsBuiltReport.</p>
+<h4 id="use-a-consistent-coding-style">Use a Consistent Coding Style</h4>
+<p>Code contributors should follow the <a href="https://github.com/PoshCode/PowerShellPracticeAndStyle" target="_blank">PowerShell Guidelines</a> wherever possible to ensure scripts are consistent in style.</p>
+<p>Use <a href="https://github.com/PowerShell/PSScriptAnalyzer" target="_blank">PSScriptAnalyzer</a> to check code quality against PowerShell Best Practices.</p>
+<p><span class="twemoji check-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16m3.78-9.72a.75.75 0 0 0-.018-1.042.75.75 0 0 0-1.042-.018L6.75 9.19 5.28 7.72a.75.75 0 0 0-1.042.018.75.75 0 0 0-.018 1.042l2 2a.75.75 0 0 0 1.06 0Z"/></svg></span> DO</p>
+<ul>
+<li>Use <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions" target="_blank">PascalCasing</a> for all public member, type, and namespace names consisting of multiple words.</li>
+<li>Use custom label headers within tables, where required, to make easily readable labels.</li>
+<li>Favour readability over <a href="https://www.dictionary.com/browse/brevity" target="_blank">brevity</a>.</li>
+<li>
+<p>Use <a href="https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7" target="_blank">PSCustomObjects</a> to store data that will be exported to a <a href="https://github.com/iainbrighton/PScribo" target="_blank">PScribo</a> table. This helps with readability.</p>
+<ul>
+<li>
+<p>Use the following structure to create tables</p>
+<div class="highlight"><span class="filename">Creating tables with PSCustomObject</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="c"># Create the PSCustomObject</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nv">$myObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">Name</span>     <span class="p">=</span> <span class="s1">&#39;Tim&#39;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">Language</span> <span class="p">=</span> <span class="s1">&#39;PowerShell&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">City</span> <span class="p">=</span> <span class="s1">&#39;Melbourne&#39;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">State</span>    <span class="p">=</span> <span class="s1">&#39;Victoria&#39;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">Country</span> <span class="p">=</span> <span class="s1">&#39;Australia&#39;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">}</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="c"># Set the table parameters - Table name, type &amp; column widths</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="c"># A list table is set and column widths are evenly set at 50% for each column</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;User Info&#39;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">List</span> <span class="p">=</span> <span class="nv">$true</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">50</span><span class="p">,</span> <span class="n">50</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">}</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c"># This code snippet must be included for options to show table captions</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">}</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="c"># Output PSCustomObject to table using defined parameters</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="nv">$myObject</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
+</code></pre></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Set <code>ColumnWidths</code> for all tables to improve formatting and readability. Try to maintain a consistent style throughout the report. Cell text will word wrap. List tables should generally use column widths of <code>50, 50</code>.</p>
+</li>
+<li>Sort primary object properties in alphanumeric order.</li>
+<li>Try to perform all safe commands (Get-*, Get API call, etc) at the start of a report script so it can easily be seen what data is being collected.</li>
+<li>Use comments written in English, but don't overdo it. Comments should serve to your reasoning and decision-making, not attempt to explain what a command does.</li>
+<li>Maintain a change log as per <a href="https://keepachangelog.com/en/1.1.0/" target="_blank">these guidelines</a>. The change log should be named <code>CHANGELOG.md</code>.</li>
+</ul>
+<p><span class="twemoji x-circle-fill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657M6.03 4.97a.75.75 0 0 0-1.042.018.75.75 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.75.75 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.75.75 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.75.75 0 0 0-.734.215L8 6.94Z"/></svg></span> DO NOT</p>
+<!-- - Do not include code within report scripts to install or import PowerShell modules. Dependencies should be documented under the `System Requirements` and `Module Installation` sections of the `README`. -->
+<ul>
+<li>Do not include functions within report scripts. Individual script files should be created as a private function and be stored in the <code>\Src\Private</code> folder.</li>
+</ul>
+<h3 id="license"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h3.5a.75.75 0 0 1 0 1.5h-3.5A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8a1.75 1.75 0 0 1 1.508.862.75.75 0 1 1-1.289.768.25.25 0 0 0-.219-.13z"/><path d="M8 7a3.999 3.999 0 0 1 7.605-1.733 4 4 0 0 1-1.115 4.863l.995 4.973a.75.75 0 0 1-.991.852l-2.409-.876a.25.25 0 0 0-.17 0l-2.409.876a.75.75 0 0 1-.991-.852l.994-4.973A4 4 0 0 1 8 7m4-2.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5m0 6.5c-.373 0-.745-.051-1.104-.154l-.649 3.243 1.155-.42c.386-.14.81-.14 1.196 0l1.155.42-.649-3.243A4 4 0 0 1 12 11"/></svg></span> License</h3>
+<p>By contributing, you agree that your contributions will be licensed under the <a href="../../about/license/">MIT License</a>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+
+                
+              </article>
             </div>
-            
-              <div class="md-post__authors md-typeset">
-                
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="/assets/images/contributors/tim-carman.jpg" alt="Tim Carman">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          Tim Carman
-                        
-                      </strong>
-                      <br>
-                      Creator
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    Metadata
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2023-12-05 00:00:00+00:00" class="md-ellipsis">Dec 5, 2023</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/general/">General</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              5 min read
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
           
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
-  
-
-
-
-
-<h1 id="the-future-of-as-built-report">The future of As Built Report</h1>
-<p>In my <a href="../../../08/25/the-history-of-asbuiltreport/">previous post</a> I shared how I came to start As Built Report and my reasons for doing so. It's been a few years since its inception and some of you may be asking what does the future hold for the project?</p>
-<p>Before I delve into what may lie ahead, let me take a moment to reflect on the project's progression so far, by extending a sincere thank you to all the contributors who have given their time and effort to this project. Whether you have contributed code, reported bugs, provided feedback, written a blog post, or simply participated in discussions, your efforts have not gone unnoticed.</p>
-<!-- more -->
-
-<h2 id="a-special-thanks-to-jon">A special thanks to Jon!</h2>
-<p>I'd also like to give a special thanks to <a href="../../../../../about/acknowledgements/#jonathan-colon">Jonathan Colon</a> for his ongoing contributions to this project. His code contributions have not only significantly expanded and improved the report library, but his ongoing dedication has undoubtedly kept this project alive! I am grateful for his dedication to the project; from bug fixes to feature enhancements, his contributions have been critical in the project's development and has kept it moving forward.</p>
-<h2 id="my-challenges">My challenges</h2>
-<p>While I am extremely grateful for the contributions to As Built Report, I must also be open and honest about some of the current challenges I am facing with the project and how these may impact its future.</p>
-<p>As we all know, life can be hectic, and we all have our own set of priorities. As I sit here in isolation, suffering from the effects for COVID, it's clear that this project is no longer high on my priority list. After experiencing two years of the world's most severe lockdowns here in Melbourne, I realised that spending long periods of time in front of a computer screen, constantly thinking about work, was negatively impacting my mental health. I had no discipline in switching off from any of this. I became exhausted and burnt out!</p>
-<p>Since the end of lockdown, most of us have changed our working habits and work-life balance in some way, whether it's working from home, limiting our screen time, or getting out and about more frequently. I continue to work on incorporating all of these into my daily routine, but the one I'm most strict about is spending less time in front of my computer. While I have always put my family first, I cannot say the same for my health. Changes need to be made.</p>
-<p>When I first started As Built Report, I was working with a wide range of IT infrastructure on a daily basis and would often have the time and access to develop many of the reports you use today. However this is no longer the case, as I have taken on a new job role earlier this year and am now solely focused on Azure-related projects. As a result, I no longer have the time or access to this infrastructure to keep many of these reports up to date.</p>
-<p>So herein lies the challenge! Without access to the IT infrastructure and with less time in my daily schedule, <strong>I can no longer maintain this project and will need more help from you</strong>, the users, to keep this project alive and relevant!</p>
-<p>I created and shared this project in response to the overwhelming positive feedback I received following my <a href="https://www.youtube.com/watch?v=aQqHSEIUHl8" target="_blank">VMworld presentation</a> in 2018. Following my presentation, many people apporached me and asked how they could get involved. I didn't have any set expectations at the time, and I've always wanted this tool to be freely available for everyone to use, but in the past few years, I've noticed that most users expect myself or Jonathan to develop or fix reports, rather than exploring ways to develop or fix a report themselves. While I am grateful for those who have contributed thus far, I continue to believe that there is still a large amount of untapped potential within our user base that could elevate the project further.</p>
-<h2 id="but-what-does-this-all-mean">But... what does this all mean?</h2>
-<p>To be clear, I have no plans to abandon this project, but I would like to take a step back. I'd like to encourage users to become more involved so that this project can be maintained and used by everyone without relying so heavily on me. To do so, I recognise that I must make it easier for people to contribute and remove any barriers to their contribution. I am still committed to further improving the project documentation and have now made it easier for users to seek assistance and collaborate via <a href="https://github.com/orgs/AsBuiltReport/discussions" target="_blank">GitHub Discussions</a>.</p>
-<p><center><iframe src="https://giphy.com/embed/uRb2p09vY8lEs" width="580" height="376" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></center></p>
-<h2 id="so-how-can-you-help">So how can you help?</h2>
-<h3 id="documentation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2c-1.11 0-2 .89-2 2v16a2 2 0 0 0 2 2h4v-1.91L12.09 18H6v-2h8.09l2-2H6v-2h12.09L20 10.09V8l-6-6zm7 1.5L18.5 9H13zm7.15 9.5a.55.55 0 0 0-.4.16l-1.02 1.02 2.09 2.08 1.02-1.01c.21-.22.21-.58 0-.79l-1.3-1.3a.54.54 0 0 0-.39-.16m-2.01 1.77L12 20.92V23h2.08l6.15-6.15z"/></svg></span> Documentation</h3>
-<p>Despite my best efforts, the documentation may not be as user-friendly as it could be. Clear and accessible documentation is a shared responsibility, and I invite users to contribute by improving and expanding on the  documentation on this website and within each of the <a href="https://github.com/AsBuiltReport/" target="_blank">GitHub repositories</a>.</p>
-<h3 id="testing-and-feedback"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2h12a2 2 0 0 1 2 2zm-6 4v2H4a2 2 0 0 1-2-2V7h2v13zm-3-6 7-7-1.41-1.41L13 11.17 9.91 8.09 8.5 9.5z"/></svg></span> Testing and Feedback</h3>
-<p>Extensive testing is crucial for identifying and addressing issues, and I encourage users to volunteer in testing code in different environments, and providing feedback prior to code being released. Testing the project in different environments, providing insights, and reporting issues helps improve its reliability and performance.</p>
-<h3 id="code-contributions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.83 4c.49 0 .8.4.67.89l-3.16 14.22c-.11.49-.59.89-1.08.89H2.17c-.49 0-.8-.4-.67-.89L4.66 4.89C4.77 4.4 5.25 4 5.74 4zm-6 12h-4c-.46 0-.83.38-.83.84 0 .47.37.85.83.85h4c.47 0 .85-.38.85-.85 0-.46-.38-.84-.85-.84m-10.05.28a.87.87 0 0 0-.21 1.22c.28.42.84.5 1.24.23 7.35-5.17 7.4-5.23 7.45-5.26.18-.16.27-.38.28-.6.01-.2-.04-.37-.16-.56L9.46 6.03A.867.867 0 0 0 8.21 6c-.36.32-.38.88-.05 1.24l4.15 4.44z"/></svg></span> Code Contributions</h3>
-<p>I've noticed a significant gap in code contributions, issue resolution, and report maintenance and development. Contributing directly to the codebase is a fantastic way for those with coding skills to make a significant impact. Whether it's fixing bugs, adding new features, or optimising existing code, your knowledge is highly valued and sought after.</p>
-<h3 id="feature-requests"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m-7 12h-2v-2h2zm1.8-5c-.3.4-.7.6-1.1.8-.3.2-.4.3-.5.5-.2.2-.2.4-.2.7h-2c0-.5.1-.8.3-1.1.2-.2.6-.5 1.1-.8.3-.1.5-.3.6-.5s.2-.5.2-.7c0-.3-.1-.5-.3-.7s-.5-.3-.8-.3-.5.1-.7.2q-.3.15-.3.6h-2c.1-.7.4-1.3.9-1.7s1.2-.5 2.1-.5 1.7.2 2.2.6.8 1 .8 1.7q.15.6-.3 1.2"/></svg></span> Feature Requests</h3>
-<p>If there is something you'd like to see in the project, please share your ideas and suggestions; however, please keep in mind that contributors are donating their time to this project, so there are no guarantees that your request will be met.</p>
-<h3 id="spread-the-word"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 17V7H4v10zm0-14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm5.5 0h5A1.5 1.5 0 0 1 23 4.5v3A1.5 1.5 0 0 1 21.5 9H18l-3 3V4.5A1.5 1.5 0 0 1 16.5 3"/></svg></span> Spread the Word</h3>
-<p>Help expand our community by sharing your positive experiences with this project. Whether through social media, blog posts, or word of mouth, your advocacy contributes to the project's growth.</p>
-<h2 id="a-final-thanks">A final thanks!</h2>
-<p>In closing, I'd like to again thank all of the awesome people who have contributed to this project. Your help and contributions are invaluable, and I look forward to welcoming more contributors in the future who are willing to donate their time and energy to developing and expanding the As Built Report project.</p>
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-
-
-  
-
-
-
-      
-    </article>
-  </div>
-
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -2683,12 +2979,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../08/25/the-history-of-asbuiltreport/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The history of As Built Report">
+          <a href="../../user-guide/report-modules/overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2698,11 +2992,27 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                The history of As Built Report
+                Overview
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../creating-a-report-module/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating a report module">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Creating a report module
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
@@ -2770,10 +3080,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "search.highlight"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "search.highlight"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.f13b1293.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f13b1293.min.js"></script>
       
     
   </body>
