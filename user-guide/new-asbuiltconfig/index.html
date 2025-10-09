@@ -2006,6 +2006,8 @@
       
         
       
+        
+      
     
     
     
@@ -2055,6 +2057,29 @@
   
   <span class="md-ellipsis">
     FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/orgs/AsBuiltReport/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion Board
     
   </span>
   
@@ -2516,8 +2541,8 @@
   <h1>New-AsBuiltConfig</h1>
 
 <h2 id="description">Description</h2>
-<p><code>New-AsBuiltConfig</code> starts a menu-driven procedure in the PowerShell console asking the user a series of questions to create a JSON configuration file. The JSON configuration file may be saved and referenced by the <code>AsBuiltConfigPath</code> parameter in <code>New-AsBuiltReport</code>.</p>
-<p><code>New-AsBuiltConfig</code> is automatically called by <code>New-AsBuiltReport</code> if the <code>AsBuiltConfigPath</code> parameter is not specified. If a user wishes to generate a new AsBuiltReport configuration without generating a new report, this command can be called as a standalone cmdlet.</p>
+<p><code>New-AsBuiltConfig</code> starts a menu-driven procedure in the PowerShell console asking the user a series of questions to create a JSON configuration file. The JSON configuration file may be saved and referenced by the <code>AsBuiltConfigFilePath</code> parameter in <code>New-AsBuiltReport</code>.</p>
+<p><code>New-AsBuiltConfig</code> is automatically called by <code>New-AsBuiltReport</code> if the <code>AsBuiltConfigFilePath</code> parameter is not specified. If a user wishes to generate a new AsBuiltReport configuration without generating a new report, this command can be called as a standalone cmdlet.</p>
 <h2 id="parameters">Parameters</h2>
 <p>There are no additional parameters for this command.</p>
 <h2 id="examples">Examples</h2>
@@ -2532,12 +2557,12 @@
 <p>Enter the name of the Author for this AsBuiltReport [Tim]: <code>Tim Carman</code></p>
 <p><strong>Company Information</strong></p>
 <p>Would you like to enter Company information for the AsBuiltReport? (y/n): <code>y</code></p>
-<p>Enter the Full Company Name: <code>ACME Inc</code></p>
-<p>Enter the Company Short Name: <code>ACME</code></p>
-<p>Enter the Company Contact: <code>Wile E. Coyote</code></p>
-<p>Enter the Company Email Address: <code>wile.e.coyote@acme.inc</code></p>
+<p>Enter the Full Company Name: <code>Wayne Enterprises</code></p>
+<p>Enter the Company Short Name: <code>WayneCorp</code></p>
+<p>Enter the Company Contact: <code>Bruce Wayne</code></p>
+<p>Enter the Company Email Address: <code>bruce.wayne@waynecorp.com</code></p>
 <p>Enter the Company Phone: <code>555-555-5555</code></p>
-<p>Enter the Company Address: <code>1 Looney Tunes Street</code></p>
+<p>Enter the Company Address: <code>Wayne Tower, Gotham City</code></p>
 <p><strong>Email Configuration</strong></p>
 <p>Would you like to enter SMTP configuration? (y/n): <code>y</code></p>
 <p>Enter the mail server FQDN / IP address: <code>172.16.10.30</code></p>
@@ -2545,13 +2570,13 @@
 <p>Use SSL for mail server connection? (true/false): <code>true</code></p>
 <p>Require mail server authentication? (true/false): <code>false</code></p>
 <p>Enter the mail sender address: <code>support@asbuiltreport.com</code></p>
-<p>Enter the mail server recipient address: <code>wile.e.coyote@acme.inc</code></p>
+<p>Enter the mail server recipient address: <code>bruce.wayne@waynecorp.com</code></p>
 <p>Do you want to enter another recipient? (y/n): <code>n</code></p>
 <p>Enter the email message body content: <code>AsBuiltReport attached</code></p>
 <p><strong>AsBuiltReport Configuration</strong></p>
 <p>Would you like to save the AsBuiltReport configuration file? (y/n): <code>y</code></p>
-<p>Enter a name for the AsBuiltReport configuration file [AsBuiltReport]: <code>ACME</code></p>
-<p>Enter the path to save the AsBuiltReport configuration file [C:\Users\Tim\AsBuiltReport]: <code>C:\Documents\Clients\ACME\AsBuiltReport</code></p>
+<p>Enter a name for the AsBuiltReport configuration file [AsBuiltReport]: <code>WayneCorp</code></p>
+<p>Enter the path to save the AsBuiltReport configuration file [C:\Users\Tim\AsBuiltReport]: <code>C:\Documents\Clients\WayneCorp\AsBuiltReport</code></p>
 <table>
 <thead>
 <tr>
@@ -2586,7 +2611,7 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">            </span><span class="nt">&quot;Body&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AsBuiltReport attached&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&quot;UseSSL&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">            </span><span class="nt">&quot;To&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="s2">&quot;wile.e.coyote@acme.inc&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">            </span><span class="s2">&quot;bruce.wayne@waynecorp.com&quot;</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">            </span><span class="p">],</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">            </span><span class="nt">&quot;Credentials&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="nt">&quot;From&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;support@asbuiltreport.com&quot;</span>
@@ -2595,12 +2620,12 @@
 <a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">            </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Documents\\Clients\\ACME\\AsBuiltReport&quot;</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="p">},</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="nt">&quot;Company&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACME&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WayneCorp&quot;</span><span class="p">,</span>
 <a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">            </span><span class="nt">&quot;Phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;555-555-5555&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="nt">&quot;Contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wile E. Coyote&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="nt">&quot;Email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;wile.e.coyote@acme.inc&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1 Looney Tunes Street&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nt">&quot;FullName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACME Inc&quot;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">            </span><span class="nt">&quot;Contact&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bruce Wayne&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">            </span><span class="nt">&quot;Email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bruce.wayne@waynecorp.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">            </span><span class="nt">&quot;Address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wayne Tower, Gotham City&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">            </span><span class="nt">&quot;FullName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wayne Enterprises&quot;</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="p">},</span>
 <a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">        </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">            </span><span class="nt">&quot;Author&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tim Carman&quot;</span>
@@ -2629,7 +2654,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 5, 2025 23:51:08 UTC">September 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 23:13:41 UTC">October 9, 2025</span>
   </span>
 
     

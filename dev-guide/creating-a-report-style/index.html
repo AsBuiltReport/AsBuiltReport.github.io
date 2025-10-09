@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#global-document-options" class="md-skip">
+        <a href="#language-support" class="md-skip">
           Skip to content
         </a>
       
@@ -1936,6 +1936,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#global-document-options" class="md-nav__link">
     <span class="md-ellipsis">
       Global Document Options
@@ -2074,6 +2083,8 @@
       
         
       
+        
+      
     
     
     
@@ -2123,6 +2134,29 @@
   
   <span class="md-ellipsis">
     FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/orgs/AsBuiltReport/discussions" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Discussion Board
     
   </span>
   
@@ -2539,6 +2573,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#language-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Language Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#global-document-options" class="md-nav__link">
     <span class="md-ellipsis">
       Global Document Options
@@ -2673,8 +2716,37 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Use the <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/blob/master/AsBuiltReport.Core.Style.ps1" target="_blank">default style script</a> as a reference for creating a new style script, or download some sample styles from our <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/tree/master/Samples" target="_blank">GitHub repository</a>.</p>
+<p>Use the <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/blob/master/AsBuiltReport.Core.Style.ps1" target="_blank">default style script</a> as a reference for creating a new style script.</p>
 </div>
+<h3 id="language-support">Language Support</h3>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Language support is <strong>coming soon</strong>! This feature is currently in development and will be included in AsBuiltReport.Core v1.5.0.</p>
+</div>
+<p>To support report language translations in AsBuiltReport v1.5.0 or higher, ensure the following code is added to the top of your style scripts.</p>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">try</span> <span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c"># Try to initialize localized data for style elements</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="c"># Use the report language from parent scope if available, otherwise fallback to OS language</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$PSScriptRoot</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">if</span> <span class="p">(</span><span class="nv">$FinalReportLanguage</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="nb">Initialize-LocalizedData</span> <span class="n">-ModuleBasePath</span> <span class="nv">$PSScriptRoot</span> <span class="n">-LanguageFile</span> <span class="p">&lt;</span><span class="n">StyleScriptName</span><span class="p">&gt;</span> <span class="n">-ModuleType</span> <span class="s1">&#39;Core&#39;</span> <span class="n">-Language</span> <span class="nv">$FinalReportLanguage</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="nb">Initialize-LocalizedData</span> <span class="n">-ModuleBasePath</span> <span class="nv">$PSScriptRoot</span> <span class="n">-LanguageFile</span> <span class="p">&lt;</span><span class="n">StyleScriptName</span><span class="p">&gt;</span> <span class="n">-ModuleType</span> <span class="s1">&#39;Core&#39;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="c"># Fallback if $PSScriptRoot is not available</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="nv">$StyleModulePath</span> <span class="p">=</span> <span class="nb">Split-Path</span> <span class="n">-Path</span> <span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">MyCommand</span><span class="p">.</span><span class="n">Path</span> <span class="n">-Parent</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="k">if</span> <span class="p">(</span><span class="nv">$FinalReportLanguage</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>            <span class="nb">Initialize-LocalizedData</span> <span class="n">-ModuleBasePath</span> <span class="nv">$StyleModulePath</span> <span class="n">-LanguageFile</span> <span class="p">&lt;</span><span class="n">StyleScriptName</span><span class="p">&gt;</span> <span class="n">-ModuleType</span> <span class="s1">&#39;Core&#39;</span> <span class="n">-Language</span> <span class="nv">$FinalReportLanguage</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>            <span class="nb">Initialize-LocalizedData</span> <span class="n">-ModuleBasePath</span> <span class="nv">$StyleModulePath</span> <span class="n">-LanguageFile</span> <span class="p">&lt;</span><span class="n">StyleScriptName</span><span class="p">&gt;</span> <span class="n">-ModuleType</span> <span class="s1">&#39;Core&#39;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="p">}</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="p">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="c"># If localization fails, continue with default style (don&#39;t break report generation)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;Could not load style localization: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="global-document-options">Global Document Options</h3>
 <p>The <code>DocumentOption</code> cmdlet is used to set global document options, including default font, page size, margins and orientation.</p>
 <p><code>EnableSectionNumbering</code> enables automatic numbering of document sections.</p>
@@ -2683,205 +2755,206 @@
 <p><code>MarginLeftAndRight</code> sets the left and right page margins to the points (pt) specified.</p>
 <p><code>MarginTopAndBottom</code> sets the top and bottom page margins to the points (pt) specified.</p>
 <p><code>Orientation</code> sets the document's default page orientation. It is highly recommended that you do not modify the <code>$Orientation</code> parameter value.</p>
-<div class="highlight"><span class="filename">Additonal Information</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">get-help</span> <span class="n">about_PScriboDocument</span>
+<div class="highlight"><span class="filename">Additonal Information</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">get-help</span> <span class="n">about_PScriboDocument</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">DocumentOption</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Default DocumentOption</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">DocumentOption</span> <span class="n">-EnableSectionNumbering</span> <span class="n">-PageSize</span> <span class="s1">&#39;A4&#39;</span> <span class="n">-DefaultFont</span> <span class="s1">&#39;Arial&#39;</span> <span class="n">-MarginLeftAndRight</span> <span class="n">71</span> <span class="n">-MarginTopAndBottom</span> <span class="n">71</span> <span class="n">-Orientation</span> <span class="nv">$Orientation</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c"># Custom DocumentOption</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c"># Disable automatic section numbering. Set page size to Letter. Set default font to Tahoma. Set custom page margins.</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">DocumentOption</span> <span class="n">-PageSize</span> <span class="s1">&#39;Letter&#39;</span> <span class="n">-DefaultFont</span> <span class="s1">&#39;Tahoma&#39;</span> <span class="n">-MarginLeftAndRight</span> <span class="n">74</span> <span class="n">-MarginTopAndBottom</span> <span class="n">65</span> <span class="n">-Orientation</span> <span class="nv">$Orientation</span>
+<div class="highlight"><span class="filename">DocumentOption</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Default DocumentOption</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">DocumentOption</span> <span class="n">-EnableSectionNumbering</span> <span class="n">-PageSize</span> <span class="s1">&#39;A4&#39;</span> <span class="n">-DefaultFont</span> <span class="s1">&#39;Arial&#39;</span> <span class="n">-MarginLeftAndRight</span> <span class="n">71</span> <span class="n">-MarginTopAndBottom</span> <span class="n">71</span> <span class="n">-Orientation</span> <span class="nv">$Orientation</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c"># Custom DocumentOption</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c"># Disable automatic section numbering. Set page size to Letter. Set default font to Tahoma. Set custom page margins.</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">DocumentOption</span> <span class="n">-PageSize</span> <span class="s1">&#39;Letter&#39;</span> <span class="n">-DefaultFont</span> <span class="s1">&#39;Tahoma&#39;</span> <span class="n">-MarginLeftAndRight</span> <span class="n">74</span> <span class="n">-MarginTopAndBottom</span> <span class="n">65</span> <span class="n">-Orientation</span> <span class="nv">$Orientation</span>
 </code></pre></div>
 <h3 id="styles">Styles</h3>
 <p>The <code>Style</code> cmdlet defines a custom formatting style which can be applied to section headings, paragraphs and within table styles. Styles need to be defined before any formatting can be applied within a document (with the exception of paragraphs). Each style permits the setting of the font to use, the font size and colour.</p>
-<div class="highlight"><span class="filename">Additonal Information</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">get-help</span> <span class="n">about_PScriboStyles</span>
+<div class="highlight"><span class="filename">Additonal Information</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">get-help</span> <span class="n">about_PScriboStyles</span>
 </code></pre></div>
 <h4 id="default-styles">Default Styles</h4>
 <p>A style script uses a standard set of styles for a report. These styles are defined below and must be included in every style script.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>## Title &amp; Heading Styles
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Normal              - Default text style
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Title               - Cover Page Title text style
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Title 2             - Cover Page Subtitle 1 text style
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Title 3             - Cover Page Subtitle 2 text style
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>TOC                 - Section heading Table of Contents text style
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Heading 1           - Section heading level 1 text style
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Heading 2           - Section heading level 2 text style
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Heading 3           - Section heading level 3 text style
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Heading 4           - Section heading level 4 text style
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>NO TOC Heading 4    - Section heading level 4 text style - Exclude From TOC
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>Heading 5           - Section heading level 5 text style
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>NO TOC Heading 5    - Section heading level 5 text style - Exclude From TOC
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Heading 6           - Section heading level 6 text style
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>NO TOC Heading 6    - Section heading level 6 text style - Exclude From TOC
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>NO TOC Heading 7    - Section heading level 7 text style - Exclude From TOC
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>## Header &amp; Footer Styles
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Header              - Document header style
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>Footer              - Document footer style
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>## Table Heading &amp; Row Styles
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>TableDefaultHeading - Table heading row style
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>TableDefaultRow     - Table row style
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>TableDefaultAltRow  - Table alternating row style
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a># Table Caption Style
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>Caption             - Table caption style
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>## Table Row/Cell Highlight Styles
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>Critical            - Table row/cell highlight style for critical alerts
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>Warning             - Table row/cell highlight style for warning alerts
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>Info                - Table row/cell highlight style for informational alerts
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>OK                  - Table row/cell highlight style for known good alerts
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>## Title &amp; Heading Styles
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Normal              - Default text style
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Title               - Cover Page Title text style
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Title 2             - Cover Page Subtitle 1 text style
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Title 3             - Cover Page Subtitle 2 text style
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>TOC                 - Section heading Table of Contents text style
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Heading 1           - Section heading level 1 text style
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Heading 2           - Section heading level 2 text style
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>Heading 3           - Section heading level 3 text style
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Heading 4           - Section heading level 4 text style
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>NO TOC Heading 4    - Section heading level 4 text style - Exclude From TOC
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Heading 5           - Section heading level 5 text style
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>NO TOC Heading 5    - Section heading level 5 text style - Exclude From TOC
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>Heading 6           - Section heading level 6 text style
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>NO TOC Heading 6    - Section heading level 6 text style - Exclude From TOC
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>NO TOC Heading 7    - Section heading level 7 text style - Exclude From TOC
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>## Header &amp; Footer Styles
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>Header              - Document header style
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>Footer              - Document footer style
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>## Table Heading &amp; Row Styles
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>TableDefaultHeading - Table heading row style
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>TableDefaultRow     - Table row style
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>TableDefaultAltRow  - Table alternating row style
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a># Table Caption Style
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>Caption             - Table caption style
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>## Table Row/Cell Highlight Styles
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>Critical            - Table row/cell highlight style for critical alerts
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>Warning             - Table row/cell highlight style for warning alerts
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>Info                - Table row/cell highlight style for informational alerts
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>OK                  - Table row/cell highlight style for known good alerts
 </code></pre></div>
 <h4 id="custom-styles">Custom Styles</h4>
 <p>Using the default style names, these styles can be customised to suit your individual requirements.</p>
 <p>Font, Size, Color and Text alignment are just some of the style properties which can be customised to tailor a report to your liking.</p>
 <p>Additional styles can also be defined for use in custom defined sections, paragraphs and tables.</p>
-<div class="highlight"><span class="filename">Custom Style Definitions Example</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Heading &amp; Font Styles Formatting</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Title&#39;</span> <span class="n">-Size</span> <span class="n">24</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Title 2&#39;</span> <span class="n">-Size</span> <span class="n">18</span> <span class="n">-Color</span> <span class="s1">&#39;204369&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Title 3&#39;</span> <span class="n">-Size</span> <span class="n">12</span> <span class="n">-Color</span> <span class="s1">&#39;395879&#39;</span> <span class="n">-Align</span> <span class="n">Left</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 1&#39;</span> <span class="n">-Size</span> <span class="n">16</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 2&#39;</span> <span class="n">-Size</span> <span class="n">14</span> <span class="n">-Color</span> <span class="s1">&#39;204369&#39;</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 3&#39;</span> <span class="n">-Size</span> <span class="n">13</span> <span class="n">-Color</span> <span class="s1">&#39;395879&#39;</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 4&#39;</span> <span class="n">-Size</span> <span class="n">12</span> <span class="n">-Color</span> <span class="s1">&#39;958026&#39;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 4&#39;</span> <span class="n">-Size</span> <span class="n">12</span> <span class="n">-Color</span> <span class="s1">&#39;958026&#39;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 5&#39;</span> <span class="n">-Size</span> <span class="n">11</span> <span class="n">-Color</span> <span class="s1">&#39;009684&#39;</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 5&#39;</span> <span class="n">-Size</span> <span class="n">11</span> <span class="n">-Color</span> <span class="s1">&#39;009684&#39;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 6&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;009683&#39;</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 6&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;009683&#39;</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 7&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;00EBCD&#39;</span> <span class="n">-Italic</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Normal&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-Default</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c"># Header &amp; Footer Formatting</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Header&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Footer&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="c"># Table of Contents Formatting</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TOC&#39;</span> <span class="n">-Size</span> <span class="n">16</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="c"># Table Heading &amp; Row Formatting</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TableDefaultHeading&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;FAFAFA&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;072E58&#39;</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TableDefaultRow&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TableDefaultAltRow&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;000000&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;EAEAE6&#39;</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="c"># Table Row/Cell Highlight Formatting</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Critical&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;FEDDD7&#39;</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Warning&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;FFF4C7&#39;</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Info&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;E3F5FC&#39;</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;OK&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;DFF0D0&#39;</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="c"># Table Caption Formatting</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Caption&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span> <span class="n">-Italic</span> <span class="n">-Align</span> <span class="n">Left</span>
+<div class="highlight"><span class="filename">Custom Style Definitions Example</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Heading &amp; Font Styles Formatting</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Title&#39;</span> <span class="n">-Size</span> <span class="n">24</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Title 2&#39;</span> <span class="n">-Size</span> <span class="n">18</span> <span class="n">-Color</span> <span class="s1">&#39;204369&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Title 3&#39;</span> <span class="n">-Size</span> <span class="n">12</span> <span class="n">-Color</span> <span class="s1">&#39;395879&#39;</span> <span class="n">-Align</span> <span class="n">Left</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 1&#39;</span> <span class="n">-Size</span> <span class="n">16</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 2&#39;</span> <span class="n">-Size</span> <span class="n">14</span> <span class="n">-Color</span> <span class="s1">&#39;204369&#39;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 3&#39;</span> <span class="n">-Size</span> <span class="n">13</span> <span class="n">-Color</span> <span class="s1">&#39;395879&#39;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 4&#39;</span> <span class="n">-Size</span> <span class="n">12</span> <span class="n">-Color</span> <span class="s1">&#39;958026&#39;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 4&#39;</span> <span class="n">-Size</span> <span class="n">12</span> <span class="n">-Color</span> <span class="s1">&#39;958026&#39;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 5&#39;</span> <span class="n">-Size</span> <span class="n">11</span> <span class="n">-Color</span> <span class="s1">&#39;009684&#39;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 5&#39;</span> <span class="n">-Size</span> <span class="n">11</span> <span class="n">-Color</span> <span class="s1">&#39;009684&#39;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Heading 6&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;009683&#39;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 6&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;009683&#39;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;NO TOC Heading 7&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;00EBCD&#39;</span> <span class="n">-Italic</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Normal&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-Default</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c"># Header &amp; Footer Formatting</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Header&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Footer&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-Align</span> <span class="n">Center</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c"># Table of Contents Formatting</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TOC&#39;</span> <span class="n">-Size</span> <span class="n">16</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c"># Table Heading &amp; Row Formatting</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TableDefaultHeading&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;FAFAFA&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;072E58&#39;</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TableDefaultRow&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;TableDefaultAltRow&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;000000&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;EAEAE6&#39;</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="c"># Table Row/Cell Highlight Formatting</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Critical&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;FEDDD7&#39;</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Warning&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;FFF4C7&#39;</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Info&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;E3F5FC&#39;</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;OK&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;565656&#39;</span> <span class="n">-BackgroundColor</span> <span class="s1">&#39;DFF0D0&#39;</span>
+<a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a>
+<a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="c"># Table Caption Formatting</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="n">Style</span> <span class="n">-Name</span> <span class="s1">&#39;Caption&#39;</span> <span class="n">-Size</span> <span class="n">10</span> <span class="n">-Color</span> <span class="s1">&#39;072E58&#39;</span> <span class="n">-Italic</span> <span class="n">-Align</span> <span class="n">Left</span>
 </code></pre></div>
 <h3 id="table-styles">Table Styles</h3>
 <p>The <code>TableStyle</code> cmdlet defines a custom formatting style for tables that is comprised of a heading, row and alternate row styles.</p>
 <p>Table styles are a combination of individual styles with some additional formatting options specific to tables, i.e. borders and padding. A table style can specify a style for the heading row, a default row style and an optional alternating row style. The individual styles used by within a table style must first be defined with the <code>Style</code> cmdlet before they can be used within <code>TableStyle</code>.</p>
 <p>Just like individual document styles, it is possible to create your own custom table styles, override the built-in style and set a different table style as the "default".</p>
-<div class="highlight"><span class="filename">Table Style Definitions</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Define Default Table Style Properties</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">$TableDefaultProperties</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">Id</span> <span class="p">=</span> <span class="s1">&#39;TableDefault&#39;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">HeaderStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultHeading&#39;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">RowStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultRow&#39;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">BorderColor</span> <span class="p">=</span> <span class="s1">&#39;072E58&#39;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">Align</span> <span class="p">=</span> <span class="s1">&#39;Left&#39;</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">CaptionStyle</span> <span class="p">=</span> <span class="s1">&#39;Caption&#39;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">CaptionLocation</span> <span class="p">=</span> <span class="s1">&#39;Below&#39;</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">BorderWidth</span> <span class="p">=</span> <span class="n">0</span><span class="p">.</span><span class="n">25</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">PaddingTop</span> <span class="p">=</span> <span class="n">1</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">PaddingBottom</span> <span class="p">=</span> <span class="n">1</span><span class="p">.</span><span class="n">5</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">PaddingLeft</span> <span class="p">=</span> <span class="n">2</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">PaddingRight</span> <span class="p">=</span> <span class="n">2</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c"># Set Default Table Styles</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="n">TableStyle</span> <span class="nv">@TableDefaultProperties</span> <span class="n">-Default</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c"># Create a Table without a border</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="n">TableStyle</span> <span class="n">-Id</span> <span class="s1">&#39;Borderless&#39;</span> <span class="n">-HeaderStyle</span> <span class="n">Normal</span> <span class="n">-RowStyle</span> <span class="n">Normal</span> <span class="n">-BorderWidth</span> <span class="n">0</span>
+<div class="highlight"><span class="filename">Table Style Definitions</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Define Default Table Style Properties</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$TableDefaultProperties</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">Id</span> <span class="p">=</span> <span class="s1">&#39;TableDefault&#39;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">HeaderStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultHeading&#39;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="n">RowStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultRow&#39;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="n">BorderColor</span> <span class="p">=</span> <span class="s1">&#39;072E58&#39;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">Align</span> <span class="p">=</span> <span class="s1">&#39;Left&#39;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">CaptionStyle</span> <span class="p">=</span> <span class="s1">&#39;Caption&#39;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">CaptionLocation</span> <span class="p">=</span> <span class="s1">&#39;Below&#39;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="n">BorderWidth</span> <span class="p">=</span> <span class="n">0</span><span class="p">.</span><span class="n">25</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">PaddingTop</span> <span class="p">=</span> <span class="n">1</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">PaddingBottom</span> <span class="p">=</span> <span class="n">1</span><span class="p">.</span><span class="n">5</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">PaddingLeft</span> <span class="p">=</span> <span class="n">2</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">PaddingRight</span> <span class="p">=</span> <span class="n">2</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">}</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="c"># Set Default Table Styles</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="n">TableStyle</span> <span class="nv">@TableDefaultProperties</span> <span class="n">-Default</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c"># Create a Table without a border</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="n">TableStyle</span> <span class="n">-Id</span> <span class="s1">&#39;Borderless&#39;</span> <span class="n">-HeaderStyle</span> <span class="n">Normal</span> <span class="n">-RowStyle</span> <span class="n">Normal</span> <span class="n">-BorderWidth</span> <span class="n">0</span>
 </code></pre></div>
 <h4 id="table-of-contents">Table of Contents</h4>
 <p>The <code>TOC</code> cmdlet creates a 'Table of Contents' from the document's section headings.</p>
 <p>Each report will include a JSON configuration file which provides an option to enable/disable the Table of Contents.</p>
-<div class="highlight"><span class="filename">Show Table of Contents Option</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VMware vSphere As Built Report&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Released&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">&quot;ShowCoverPageImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="hll"><span class="w">        </span><span class="nt">&quot;ShowTableOfContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="nt">&quot;ShowHeaderFooter&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">        </span><span class="nt">&quot;ShowTableCaptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Show Table of Contents Option</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VMware vSphere As Built Report&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Released&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="nt">&quot;Language&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en-US&quot;</span><span class="p">,</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="hll"><span class="w">        </span><span class="nt">&quot;ShowCoverPageImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="nt">&quot;ShowTableOfContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="nt">&quot;ShowHeaderFooter&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="nt">&quot;ShowTableCaptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">}</span>
 </code></pre></div>
 <p>Should you wish to include an option for a Table of Contents within your style script, ensure you add the following code to the end of your script.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Set TOC, if enabled in report JSON configuration</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">ShowTableOfContents</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="c"># Add Table of Contents</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">TOC</span> <span class="n">-Name</span> <span class="s1">&#39;Table of Contents&#39;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">PageBreak</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Set TOC, if enabled in report JSON configuration</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">ShowTableOfContents</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="c"># Add Table of Contents</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">TOC</span> <span class="n">-Name</span> <span class="s1">&#39;Table of Contents&#39;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">PageBreak</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="table-captions">Table Captions</h4>
 <p>Each report will include a JSON configuration file which provides an option to enable/disable table captions.</p>
 <p>Ensure you configure <code>CaptionStyle</code> and <code>CaptionLocation</code> in your table properties.</p>
-<div class="highlight"><span class="filename">Show Table Caption Option</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VMware vSphere As Built Report&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Released&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="nt">&quot;ShowCoverPageImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="nt">&quot;ShowTableOfContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">        </span><span class="nt">&quot;ShowHeaderFooter&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="hll"><span class="w">        </span><span class="nt">&quot;ShowTableCaptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-</span><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Show Table Caption Option</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VMware vSphere As Built Report&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">        </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">        </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Released&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">        </span><span class="nt">&quot;ShowCoverPageImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="nt">&quot;ShowTableOfContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="nt">&quot;ShowHeaderFooter&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="hll"><span class="w">        </span><span class="nt">&quot;ShowTableCaptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Caption Style & Location Definitions</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Define default Table Style properties</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$TableDefaultProperties</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">Id</span> <span class="p">=</span> <span class="s1">&#39;TableDefault&#39;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">HeaderStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultHeading&#39;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">RowStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultRow&#39;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">BorderColor</span> <span class="p">=</span> <span class="s1">&#39;072E58&#39;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">Align</span> <span class="p">=</span> <span class="s1">&#39;Left&#39;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="hll">    <span class="n">CaptionStyle</span> <span class="p">=</span> <span class="s1">&#39;Caption&#39;</span>
-</span><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="hll">    <span class="n">CaptionLocation</span> <span class="p">=</span> <span class="s1">&#39;Below&#39;</span>
-</span><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">BorderWidth</span> <span class="p">=</span> <span class="n">0</span><span class="p">.</span><span class="n">25</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">PaddingTop</span> <span class="p">=</span> <span class="n">1</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">PaddingBottom</span> <span class="p">=</span> <span class="n">1</span><span class="p">.</span><span class="n">5</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="n">PaddingLeft</span> <span class="p">=</span> <span class="n">2</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="n">PaddingRight</span> <span class="p">=</span> <span class="n">2</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Caption Style & Location Definitions</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Define default Table Style properties</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$TableDefaultProperties</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">Id</span> <span class="p">=</span> <span class="s1">&#39;TableDefault&#39;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">HeaderStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultHeading&#39;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">RowStyle</span> <span class="p">=</span> <span class="s1">&#39;TableDefaultRow&#39;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">BorderColor</span> <span class="p">=</span> <span class="s1">&#39;072E58&#39;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">Align</span> <span class="p">=</span> <span class="s1">&#39;Left&#39;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="hll">    <span class="n">CaptionStyle</span> <span class="p">=</span> <span class="s1">&#39;Caption&#39;</span>
+</span><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="hll">    <span class="n">CaptionLocation</span> <span class="p">=</span> <span class="s1">&#39;Below&#39;</span>
+</span><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">BorderWidth</span> <span class="p">=</span> <span class="n">0</span><span class="p">.</span><span class="n">25</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="n">PaddingTop</span> <span class="p">=</span> <span class="n">1</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="n">PaddingBottom</span> <span class="p">=</span> <span class="n">1</span><span class="p">.</span><span class="n">5</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="n">PaddingLeft</span> <span class="p">=</span> <span class="n">2</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="n">PaddingRight</span> <span class="p">=</span> <span class="n">2</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="headers-and-footers">Headers and Footers</h3>
 <p>The <code>Header</code> and <code>Footer</code> cmdlets define the document header and footer on the first and/or all pages of the document.</p>
 <p>Each report will include a JSON configuration file which provides an option to enable/disable document headers and footers.</p>
-<div class="highlight"><span class="filename">Show Header/Footer Option</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VMware vSphere As Built Report&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">        </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">        </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Released&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="nt">&quot;ShowCoverPageImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="nt">&quot;ShowTableOfContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="hll"><span class="w">        </span><span class="nt">&quot;ShowHeaderFooter&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-</span><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="nt">&quot;ShowTableCaptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Show Header/Footer Option</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VMware vSphere As Built Report&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">        </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">        </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Released&quot;</span><span class="p">,</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">        </span><span class="nt">&quot;ShowCoverPageImage&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">        </span><span class="nt">&quot;ShowTableOfContents&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="hll"><span class="w">        </span><span class="nt">&quot;ShowHeaderFooter&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="nt">&quot;ShowTableCaptions&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
 </code></pre></div>
 <p>The following code should be included in your style script to utilise the report configration option. The highlighted lines can be modified to suit your requirements.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Set Header &amp; Footer, if enabled in report JSON configuration</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">ShowHeaderFooter</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="hll">    <span class="n">Header</span> <span class="n">-Default</span> <span class="p">{</span>
-</span><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="hll">        <span class="n">Paragraph</span> <span class="n">-Style</span> <span class="n">Header</span> <span class="n">-Text</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2"> - v</span><span class="p">$(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">Version</span><span class="p">)</span><span class="s2">&quot;</span>
-</span><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="p">}</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="hll">    <span class="n">Footer</span> <span class="n">-Default</span> <span class="p">{</span>
-</span><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="hll">        <span class="n">Paragraph</span> <span class="n">-Style</span> <span class="n">Footer</span> <span class="n">-Text</span> <span class="s1">&#39;Page &lt;!# PageNumber #!&gt;&#39;</span>
-</span><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="p">}</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Set Header &amp; Footer, if enabled in report JSON configuration</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">ShowHeaderFooter</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="hll">    <span class="n">Header</span> <span class="n">-Default</span> <span class="p">{</span>
+</span><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="hll">        <span class="n">Paragraph</span> <span class="n">-Style</span> <span class="n">Header</span> <span class="n">-Text</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2"> - v</span><span class="p">$(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">Version</span><span class="p">)</span><span class="s2">&quot;</span>
+</span><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="hll">    <span class="n">Footer</span> <span class="n">-Default</span> <span class="p">{</span>
+</span><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="hll">        <span class="n">Paragraph</span> <span class="n">-Style</span> <span class="n">Footer</span> <span class="n">-Text</span> <span class="s1">&#39;Page &lt;!# PageNumber #!&gt;&#39;</span>
+</span><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="p">}</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Additional Information</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">get-help</span> <span class="n">Header</span> <span class="n">-Detailed</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">get-help</span> <span class="n">Footer</span> <span class="n">-Detailed</span>
+<div class="highlight"><span class="filename">Additional Information</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">get-help</span> <span class="n">Header</span> <span class="n">-Detailed</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">get-help</span> <span class="n">Footer</span> <span class="n">-Detailed</span>
 </code></pre></div>
 <h3 id="images">Images</h3>
 <div class="admonition failure">
@@ -2891,18 +2964,18 @@
 <p>The <code>Image</code> cmdlet is used to insert images into a document. An image can be specified using the <code>URI</code> or <code>Base64</code> parameters.</p>
 <p>Images can be converted to a Base64 string using an online image converter such as <a href="https://base64.guru/converter/encode/image" target="_blank">Base64.Guru</a>.</p>
 <p><code>Align</code> and <code>Percent</code> values can be adjusted to horizontally position and size the image.</p>
-<div class="highlight"><span class="filename">Additional Information</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">get-help</span> <span class="n">Image</span> <span class="n">-Detailed</span>
+<div class="highlight"><span class="filename">Additional Information</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">get-help</span> <span class="n">Image</span> <span class="n">-Detailed</span>
 </code></pre></div>
 <h4 id="cover-page">Cover Page</h4>
 <p>The code below should be included in a style script to set a cover image or logo. The highlighted line can be modified to suit your requirements.</p>
-<div class="highlight"><span class="filename">Set Cover Page Image</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># Show Cover page image, if enabled in report JSON configuration</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">ShowCoverPageImage</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="k">Try</span> <span class="p">{</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="hll">        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;My Image&#39;</span> <span class="n">-Align</span> <span class="n">Left</span> <span class="n">-Percent</span> <span class="n">50</span> <span class="n">-Base64</span> <span class="p">&lt;</span><span class="n">Base64</span> <span class="n">string</span><span class="p">&gt;</span>
-</span><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="p">}</span> <span class="k">Catch</span> <span class="p">{</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="n">-Message</span> <span class="s2">&quot;.NET Core is required for cover page image support. Please install .NET Core or disable &#39;ShowCoverPageImage&#39; in the report JSON configuration file.&quot;</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="p">}</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Set Cover Page Image</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Show Cover page image, if enabled in report JSON configuration</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span><span class="p">.</span><span class="n">ShowCoverPageImage</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="k">Try</span> <span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="hll">        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;My Image&#39;</span> <span class="n">-Align</span> <span class="n">Left</span> <span class="n">-Percent</span> <span class="n">50</span> <span class="n">-Base64</span> <span class="p">&lt;</span><span class="n">Base64</span> <span class="n">string</span><span class="p">&gt;</span>
+</span><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="p">}</span> <span class="k">Catch</span> <span class="p">{</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="n">-Message</span> <span class="s2">&quot;.NET Core is required for cover page image support. Please install .NET Core or disable &#39;ShowCoverPageImage&#39; in the report JSON configuration file.&quot;</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="p">}</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">}</span>
 </code></pre></div>
 
 
@@ -2924,7 +2997,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 5, 2025 23:51:08 UTC">September 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2025 23:13:41 UTC">October 9, 2025</span>
   </span>
 
     
