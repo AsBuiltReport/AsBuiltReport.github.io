@@ -2624,7 +2624,7 @@
 
 
 <h1 id="multilingual-support-is-coming-soon-to-asbuiltreport">Multilingual support is coming soon to AsBuiltReport</h1>
-<p>Today I can announce that one of the most requested features for AsBuiltReport is currently in development, with work underway to bring <strong>multilingual support</strong> to the AsBuiltReport framework.</p>
+<p>Today I can announce that one of the most requested features for AsBuiltReport is currently in pre-release, with testing underway to bring <strong>multilingual support</strong> to the AsBuiltReport framework.</p>
 <p><img alt="multilingual" loading="lazy" src="../../../../../assets/images/blog/multilingual.jpg" /></p>
 <h2 id="key-features-in-development">Key Features in Development</h2>
 <p><strong>🌐 Comprehensive Localization Framework</strong></p>
@@ -2648,7 +2648,7 @@
 <p>Automated string extraction and translation</p>
 </li>
 </ul>
-<p><strong>🔧 New Commandline Parameters</strong></p>
+<p><strong>💻 New Commandline Parameters</strong></p>
 <ul>
 <li>
 <p>Dynamic language selection - language selection is determined by what each AsBuiltReport module supports</p>
@@ -2660,7 +2660,7 @@
 <p>Fallback mechanism to ensure reports generate even with incomplete translations</p>
 </li>
 </ul>
-<p><strong>📊 Report Module Integration</strong></p>
+<p><strong><img alt="⚙" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/2699.svg" title=":gear:" /> Report Module Integration</strong></p>
 <ul>
 <li>
 <p>Documentation and templates for new and existing report modules to add multilingual support</p>
@@ -2693,22 +2693,32 @@
 <h2 id="timeline-and-current-status">Timeline and Current Status</h2>
 <p><strong>Development Status</strong>: Active development in progress</p>
 <ol>
-<li>🔄 Localization framework design (in progress)</li>
-<li>🔄 Resource file and folder structures (in progress)</li>
-<li>🔄 Documentation and templates (in progress)</li>
+<li>✅ Localization framework design (complete)</li>
+<li>✅ Resource file and folder structures (complete)</li>
+<li>✅ Documentation and templates (complete)</li>
 <li>🔄 AsBuiltReport Core module implementation and testing (in progress)</li>
-<li>📋 AsBuiltReport report module implementation and testing (planned)</li>
-<li>📋 Community translation coordination (planned)</li>
+<li>🔄 AsBuiltReport report module implementation and testing (in progress)</li>
+<li>🔄 Community translation coordination (in progress)</li>
 </ol>
 <p><strong>Target Completion</strong>: While I don't have a specific release date yet, I can share that the foundational work is well underway.</p>
 <h2 id="how-you-can-help">How You Can Help</h2>
 <p>As an open-source project, AsBuiltReport thrives on community contributions. Here's how you can get involved with the multilingual initiative:</p>
 <h3 id="for-developers">For Developers</h3>
 <ul>
-<li>Review the <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/tree/multilingual-support" target="_blank"><code>multilingual-support</code></a> branch and provide feedback</li>
-<li>Help test the new localization features</li>
+<li>Review the <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/tree/dev" target="_blank"><code>dev</code></a> branch and provide feedback</li>
+<li>
+<p>Download the <code>AsBuiltReport.Core v1.5.0</code> release candidate</p>
+<p><code>Install-Module AsBuiltReport.Core -Repository PSGallery -RequiredVersion 1.5.0 -AllowPrerelease</code></p>
+</li>
+<li>
+<p>Download the <code>AsBuiltReport.System.Resources</code> report module to use for testing the new report language features</p>
+<p><code>Install-Module AsBuiltReport.System.Resources -Repository PSGallery</code></p>
+</li>
+<li>
+<p>Help test the new localization features</p>
+</li>
 <li>Contribute code improvements or bug fixes</li>
-<li>Update existing report modules to support the new framework</li>
+<li><a href="../../../../../dev-guide/creating-a-report-module/#language-support-implementation">Update existing report modules</a> to support the new framework</li>
 </ul>
 <h3 id="for-translators-and-linguists">For Translators and Linguists</h3>
 <ul>
@@ -2761,7 +2771,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 29, 2025 00:41:16 UTC">September 29, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 11, 2025 23:00:01 UTC">October 11, 2025</span>
   </span>
 
     
