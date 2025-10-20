@@ -1957,6 +1957,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Submitting pull requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-pull-requests-to-dev-branch-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submitting Pull Requests to dev branch (Contributors)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#releasing-from-dev-branch-to-master-branch-maintainers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Releasing from dev branch to master branch (Maintainers)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2673,6 +2697,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Submitting pull requests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#submitting-pull-requests-to-dev-branch-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Submitting Pull Requests to dev branch (Contributors)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#releasing-from-dev-branch-to-master-branch-maintainers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Releasing from dev branch to master branch (Maintainers)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2830,36 +2878,46 @@
 <li>The code contained within will meet the best practices set by the team wherever possible. If in doubt, please <a href="../../about/contact/">contact us</a>.</li>
 </ul>
 <h4 id="submitting-pull-requests">Submitting pull requests</h4>
-<p><strong>Always create a pull request to the <code>dev</code> branch of a repository.</strong></p>
+<h5 id="submitting-pull-requests-to-dev-branch-contributors">Submitting Pull Requests to <code>dev</code> branch (Contributors)</h5>
+<p>Always create a pull request to the <code>dev</code> branch of a repository.</p>
 <ol>
-<li>Fork an <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport repository</a>. The example below uses the main AsBuiltReport.Core repository in the command examples.</li>
-<li>Add <code>https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code> as a remote named <code>upstream</code>.<ul>
+<li>Fork an AsBuiltReport repository. The example below uses the main AsBuiltReport.Core repository in the command examples.</li>
+<li>Add <code>https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code> as a remote named <code>upstream</code>.</li>
 <li><code>git remote add upstream https://github.com/AsBuiltReport/AsBuiltReport.Core.git</code></li>
-</ul>
-</li>
 <li>Create your feature branch from <code>dev</code>.</li>
-<li>Work on your feature.<ul>
+<li><code>git checkout dev</code></li>
+<li><code>git checkout -b feature/your-feature-name</code></li>
+<li>Work on your feature.</li>
+<li>Make commits with clear, descriptive messages</li>
 <li>Update <code>CHANGELOG.md</code> in the repository you have worked in with add / remove / fix / change information</li>
 <li>Update <code>README.md</code> in the repository you have worked in with any new information, such as features, instructions, parameters and/or examples</li>
-</ul>
-</li>
-<li>Squash commits into one or two succinct commits.<ul>
-<li><code>git rebase -i HEAD~n</code> # n being the number of previous commits to rebase</li>
-</ul>
-</li>
-<li>Ensure that your branch is up to date with <code>upstream/dev</code>.<ul>
+<li>Ensure that your branch is up to date with <code>upstream/dev</code>.</li>
 <li><code>git checkout &lt;branch&gt;</code></li>
 <li><code>git fetch upstream</code></li>
 <li><code>git rebase upstream/dev</code></li>
-</ul>
-</li>
-<li>Push branch to your fork.<ul>
+<li>Push branch to your fork.</li>
 <li><code>git push --force</code></li>
-</ul>
-</li>
-<li>Open a Pull Request against the <code>dev</code> branch of a repository. We have Pull Requests templates in all repositories for this project. Please follow the template with each Pull Request.</li>
+<li>Open a Pull Request against the <code>dev</code> branch of a repository.</li>
 </ol>
-<p>Pull requests will be reviewed as soon as possible.</p>
+<p>We have Pull Requests templates in all repositories for this project. Please follow the template with each Pull Request.</p>
+<p>Pull requests will be reviewed as soon as possible. Maintainers will handle commit consolidation during the merge process.</p>
+<h5 id="releasing-from-dev-branch-to-master-branch-maintainers">Releasing from <code>dev</code> branch to <code>master</code> branch (Maintainers)</h5>
+<p>When ready to create a release:</p>
+<ol>
+<li>Ensure <code>dev</code> is stable and all tests pass</li>
+<li>Open a Pull Request from <code>dev</code> to <code>master</code></li>
+<li>Review all changes that will be released</li>
+<li>Merge the Pull Request (preserves full commit history)</li>
+<li>After merging, sync <code>dev</code> with <code>master</code>:
+<div class="highlight"><span class="filename">Bash</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">   </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">   </span>git<span class="w"> </span>pull
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span>git<span class="w"> </span>checkout<span class="w"> </span>dev
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span>git<span class="w"> </span>rebase<span class="w"> </span>master
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span>git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>dev
+</code></pre></div></li>
+<li>Tag the release on <code>master</code></li>
+<li>Update release notes</li>
+</ol>
 <h3 id="reporting-issues-and-bugs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.5 3.5 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327q0 .15-.025.292c.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5q-.002.615-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A5 5 0 0 1 8 16a5 5 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5 5 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.7 1.7 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06m.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.17.17 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173"/></svg></span> Reporting Issues and Bugs</h3>
 <p>GitHub issues is used to track issues and bugs. Report a bug by opening a new <a href="https://docs.github.com/issues/tracking-your-work-with-issues/about-issues#working-with-issues" target="_blank">issue</a> in the relevant <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport repository</a>.</p>
 <h4 id="due-diligence">Due diligence</h4>
@@ -2914,27 +2972,27 @@
 <ul>
 <li>
 <p>Use the following structure to create tables</p>
-<div class="highlight"><span class="filename">Creating tables with PSCustomObject</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="c"># Create the PSCustomObject</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nv">$myObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">Name</span>     <span class="p">=</span> <span class="s1">&#39;Tim&#39;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">Language</span> <span class="p">=</span> <span class="s1">&#39;PowerShell&#39;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="n">City</span> <span class="p">=</span> <span class="s1">&#39;Melbourne&#39;</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">State</span>    <span class="p">=</span> <span class="s1">&#39;Victoria&#39;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">Country</span> <span class="p">=</span> <span class="s1">&#39;Australia&#39;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="c"># Set the table parameters - Table name, type &amp; column widths</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="c"># A list table is set and column widths are evenly set at 50% for each column</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;User Info&#39;</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        <span class="n">List</span> <span class="p">=</span> <span class="nv">$true</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">40</span><span class="p">,</span> <span class="n">60</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="p">}</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="c"># This code snippet must be included for options to show table captions</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">}</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="c"># Output PSCustomObject to table using defined parameters</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="nv">$myObject</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
+<div class="highlight"><span class="filename">Creating tables with PSCustomObject</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    <span class="c"># Create the PSCustomObject</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nv">$myObject</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">Name</span>     <span class="p">=</span> <span class="s1">&#39;Tim&#39;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">Language</span> <span class="p">=</span> <span class="s1">&#39;PowerShell&#39;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">City</span> <span class="p">=</span> <span class="s1">&#39;Melbourne&#39;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="n">State</span>    <span class="p">=</span> <span class="s1">&#39;Victoria&#39;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">Country</span> <span class="p">=</span> <span class="s1">&#39;Australia&#39;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="c"># Set the table parameters - Table name, type &amp; column widths</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="c"># A list table is set and column widths are evenly set at 50% for each column</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;User Info&#39;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">List</span> <span class="p">=</span> <span class="nv">$true</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">40</span><span class="p">,</span> <span class="n">60</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="c"># This code snippet must be included for options to show table captions</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="p">}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="c"># Output PSCustomObject to table using defined parameters</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="nv">$myObject</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
 </code></pre></div>
 </li>
 </ul>
@@ -2974,7 +3032,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="September 5, 2025 08:23:35 UTC">September 5, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 20, 2025</span>
   </span>
 
     
