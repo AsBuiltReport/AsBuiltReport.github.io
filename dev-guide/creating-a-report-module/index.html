@@ -4127,13 +4127,14 @@
 <h3 id="language-configuration">Language Configuration</h3>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Language support is <strong>coming soon</strong>! This feature is currently in development and will be included in AsBuiltReport.Core v1.5.0.</p>
+<p>AsBuiltReport.Core v1.5.0+ provides the translation functionality for both core UI prompts and report module content.</p>
+<p>Individual report modules provide their own translation files for report-specific content such as headings, text, and tables.</p>
+<p>Please refer to individual <a href="https://www.asbuiltreport.com/user-guide/report-modules/overview/">report module documentation</a> for their language support.</p>
 </div>
 <p>The <code>Language</code> property in the <code>Report</code> section specifies the default language for report content. This setting can be overridden at runtime using the <a href="../../user-guide/new-asbuiltreport/">New-AsBuiltReport</a> <code>-ReportLanguage</code> parameter when generating reports.</p>
 <p><strong>Language Support Requirements:</strong></p>
 <ul>
 <li><strong>Minimum requirement:</strong> All report modules must provide <code>en-US</code> (English - United States) language support</li>
-<li><strong>Recommended:</strong> Report modules should aim to support as many languages as possible from the available languages list</li>
 <li><strong>Optional:</strong> Additional languages can be provided based on contributor availability and community needs</li>
 </ul>
 <h4 id="languages-supported-by-asbuiltreportcore">Languages supported by AsBuiltReport.Core</h4>
@@ -4530,10 +4531,6 @@
 <li>Implement proper error handling</li>
 </ul>
 <h2 id="language-support-implementation">Language Support Implementation</h2>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Language support is <strong>coming soon</strong>! This feature is currently in development and will be included in AsBuiltReport.Core v1.5.0.</p>
-</div>
 <p>AsBuiltReport v1.5.0+ introduces comprehensive multilingual support, allowing report modules to generate documentation in multiple languages. This section explains how to implement language support in your report module.</p>
 <h3 id="overview">Overview</h3>
 <p>The language support system consists of two components:</p>
@@ -5445,7 +5442,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
   </span>
 
     
