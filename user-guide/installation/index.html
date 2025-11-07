@@ -627,6 +627,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installing-from-github-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing from GitHub Branch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing from GitHub Branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-the-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download the Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-determine-powershell-module-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Determine PowerShell Module Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-extract-and-install-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Extract and Install the Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-verify-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Verify Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2570,6 +2621,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#installing-from-github-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installing from GitHub Branch
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing from GitHub Branch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-download-the-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Download the Branch
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-determine-powershell-module-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Determine PowerShell Module Path
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-extract-and-install-the-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Extract and Install the Module
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-verify-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Verify Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2672,12 +2774,88 @@
 e.g. USB Flash Drive, Internal File Share etc.</p>
 <p>On the offline system, open a PowerShell console window and run the following command to determine the PowerShell module path.</p>
 <p><strong>Windows</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>
+<div class="highlight"><span class="filename">View PowerShell module paths on Windows</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>
 </code></pre></div>
 <p><strong>macOS &amp; Linux</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;:&#39;</span>
+<div class="highlight"><span class="filename">View PowerShell module paths on macOS & Linux</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;:&#39;</span>
 </code></pre></div>
 <p>Copy the downloaded PowerShell module folders to a folder specified in the <code>$env:PSModulePath</code> output.</p>
+<h2 id="installing-from-github-branch">Installing from GitHub Branch</h2>
+<p>To install a development version or specific branch from GitHub, follow these steps to download and install the code into your PowerShell module folder.</p>
+<div class="admonition warning">
+<p class="admonition-title">Development Code</p>
+<p>Code downloaded from GitHub branches (especially development or feature branches) may be incomplete, untested, or in a non-working state. Only use this installation method if you need to test specific features or contribute to development. For production use, always install stable releases from the PowerShell Gallery.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Report Module Naming</p>
+<p>In the examples below, replace <code>AsBuiltReport.Vendor.Technology</code> with the report module name you wish to install (e.g. <code>AsBuiltReport.VMware.vSphere</code>, <code>AsBuiltReport.Microsoft.AD</code>).</p>
+</div>
+<h3 id="step-1-download-the-branch">Step 1: Download the Branch</h3>
+<p>Navigate to the GitHub repository and download the desired branch as a ZIP file:</p>
+<ol>
+<li>Go to the repository (e.g., <code>https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology</code>)</li>
+<li>Click the <strong>Code</strong> button</li>
+<li>Select the branch you want to download from the branch dropdown</li>
+<li>Click <strong>Download ZIP</strong></li>
+</ol>
+<p>Alternatively, use Git to clone the specific branch:</p>
+<div class="highlight"><span class="filename">Clone specific branch using Git</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>branch-name<span class="w"> </span>https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology.git
+</code></pre></div>
+<h3 id="step-2-determine-powershell-module-path">Step 2: Determine PowerShell Module Path</h3>
+<p>Open a PowerShell console and run the following command to find your PowerShell module paths:</p>
+<p><strong>Windows</strong></p>
+<div class="highlight"><span class="filename">View PowerShell module paths on Windows</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>
+</code></pre></div>
+<p><strong>macOS &amp; Linux</strong></p>
+<div class="highlight"><span class="filename">View PowerShell module paths on macOS & Linux</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;:&#39;</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Recommended Module Path</p>
+<p>For user-specific installations, use the path containing your user profile:</p>
+<ul>
+<li><strong>Windows</strong>: <code>C:\Users\YourUsername\Documents\PowerShell\Modules</code> (PowerShell 7) or <code>C:\Users\YourUsername\Documents\WindowsPowerShell\Modules</code> (Windows PowerShell 5.1)</li>
+<li><strong>macOS</strong>: <code>~/.local/share/powershell/Modules</code></li>
+<li><strong>Linux</strong>: <code>~/.local/share/powershell/Modules</code></li>
+</ul>
+</div>
+<h3 id="step-3-extract-and-install-the-module">Step 3: Extract and Install the Module</h3>
+<p><strong>If you downloaded a ZIP file:</strong></p>
+<ol>
+<li>Extract the ZIP file contents</li>
+<li>Locate the module folder (it should contain a <code>.psd1</code> manifest file)</li>
+<li>Copy the module folder to one of the paths from Step 2</li>
+</ol>
+<p><strong>Windows Example:</strong></p>
+<div class="highlight"><span class="filename">Install module from downloaded ZIP on Windows</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Extract ZIP file (adjust paths as needed)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">Expand-Archive</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Downloads\AsBuiltReport.Vendor.Technology-dev.zip&quot;</span> <span class="n">-DestinationPath</span> <span class="s2">&quot;C:\Temp&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c"># Copy module folder to PowerShell modules directory</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Temp\AsBuiltReport.Vendor.Technology-dev&quot;</span> <span class="n">-Destination</span> <span class="s2">&quot;$HOME\Documents\PowerShell\Modules\AsBuiltReport.Vendor.Technology&quot;</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
+</code></pre></div>
+<p><strong>macOS &amp; Linux Example:</strong></p>
+<div class="highlight"><span class="filename">Install module from downloaded ZIP on macOS & Linux</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Extract ZIP file (adjust paths as needed)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>unzip<span class="w"> </span>~/Downloads/AsBuiltReport.Vendor.Technology-dev.zip<span class="w"> </span>-d<span class="w"> </span>/tmp
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># Copy module folder to PowerShell modules directory</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/AsBuiltReport.Vendor.Technology-dev<span class="w"> </span>~/.local/share/powershell/Modules/AsBuiltReport.Vendor.Technology
+</code></pre></div>
+<p><strong>If you cloned with Git:</strong></p>
+<p>Simply copy or move the cloned repository folder to your PowerShell modules directory:</p>
+<div class="highlight"><span class="filename">Install module from Git clone</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Copy cloned repository to PowerShell modules directory</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="s2">&quot;./AsBuiltReport.Vendor.Technology&quot;</span> <span class="n">-Destination</span> <span class="s2">&quot;$HOME/.local/share/powershell/Modules/AsBuiltReport.Vendor.Technology&quot;</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
+</code></pre></div>
+<h3 id="step-4-verify-installation">Step 4: Verify Installation</h3>
+<p>Verify the module is installed correctly:</p>
+<div class="highlight"><span class="filename">Verify module installation</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># List installed AsBuiltReport modules</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.*&#39;</span> <span class="n">-ListAvailable</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c"># Import the module to test</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">Import-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Vendor.Technology&#39;</span> <span class="n">-Force</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Module Version Conflicts</p>
+<p>If you have the same module installed from the PowerShell Gallery, the version in <code>$env:PSModulePath</code> that appears first will take precedence. Use <code>Get-Module -Name Vendor.Technology -ListAvailable</code> to see all installed versions and their locations.</p>
+</div>
 
 
 
@@ -2698,7 +2876,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2025</span>
   </span>
 
     
