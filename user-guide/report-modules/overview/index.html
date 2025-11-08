@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Document Your Datacenter With PowerShell">
+        <meta name="description" content="Browse all available AsBuiltReport modules for documenting your infrastructure across multiple vendors and technologies">
       
       
         <meta name="author" content="Tim Carman">
@@ -78,7 +78,7 @@
       
         <meta  property="og:title"  content="Overview - AsBuiltReport" >
       
-        <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  property="og:description"  content="Browse all available AsBuiltReport modules for documenting your infrastructure across multiple vendors and technologies" >
       
         <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/user-guide/report-modules/overview.png" >
       
@@ -94,7 +94,7 @@
       
         <meta  name="twitter:title"  content="Overview - AsBuiltReport" >
       
-        <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  name="twitter:description"  content="Browse all available AsBuiltReport modules for documenting your infrastructure across multiple vendors and technologies" >
       
         <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/user-guide/report-modules/overview.png" >
       
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#activity-status" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../installation/" class="md-tabs__link">
+        <a href="../../quickstart/" class="md-tabs__link">
           
   
   
@@ -483,6 +483,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -529,12 +533,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practices
     
   </span>
   
@@ -769,6 +819,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -801,6 +853,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -809,9 +863,168 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-are-report-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Report Modules?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-report-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started with Report Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell Compatibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-by-vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start by Vendor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#activity-status" class="md-nav__link">
     <span class="md-ellipsis">
       Activity Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activity Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aruba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aruba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dell-emc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dell EMC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortinet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fortinet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetApp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nutanix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nutanix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pure Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubrik" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrik
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veeam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veeam
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
     </span>
   </a>
   
@@ -1909,7 +2122,7 @@
   
   
   <span class="md-ellipsis">
-    Contributing
+    Contributing Guide
     
   </span>
   
@@ -2495,6 +2708,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2503,9 +2718,168 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-are-report-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      What are Report Modules?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started-with-report-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started with Report Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell Compatibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finding Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-by-vendor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Start by Vendor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#activity-status" class="md-nav__link">
     <span class="md-ellipsis">
       Activity Status
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activity Status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aruba" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aruba
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dell-emc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dell EMC
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fortinet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fortinet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Microsoft
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netapp" class="md-nav__link">
+    <span class="md-ellipsis">
+      NetApp
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nutanix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nutanix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pure-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pure Storage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rubrik" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubrik
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veeam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veeam
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMware
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
     </span>
   </a>
   
@@ -2527,13 +2901,199 @@
 
 
 
-  <h1>Overview</h1>
-
-<p>Please use the left sidebar to reference links to information about each individual report module.</p>
+<h1 id="overview">Overview</h1>
+<p>Report modules are the core of AsBuiltReport - each module provides vendor-specific or technology-specific documentation capabilities. A report module knows how to connect to a system, collect configuration data, and generate comprehensive documentation in multiple formats.</p>
+<h2 id="what-are-report-modules">What are Report Modules?</h2>
+<p>Each report module is a PowerShell module that extends AsBuiltReport to support a specific technology or platform:</p>
+<ul>
+<li><strong>Vendor-Specific</strong> - VMware vSphere, Microsoft Active Directory, Veeam Backup &amp; Replication, etc.</li>
+<li><strong>Self-Contained</strong> - Each module includes all the logic to collect and format data for its technology</li>
+<li><strong>Independently Updated</strong> - Modules are updated on their own schedule to support new product versions</li>
+<li><strong>Community-Driven</strong> - Built and maintained by the AsBuiltReport community</li>
+</ul>
+<h2 id="getting-started-with-report-modules">Getting Started with Report Modules</h2>
+<p><strong>1. Discover Available Modules</strong></p>
+<p>Use PowerShell to find all available report modules:</p>
+<div class="highlight"><span class="filename">Find all AsBuiltReport modules</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># List all available modules</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Search for a specific vendor</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
+</code></pre></div>
+<p><strong>2. Install a Module</strong></p>
+<div class="highlight"><span class="filename">Install a report module</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Install a report module (AsBuiltReport.Core is automatically installed)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<p><strong>3. Check Module Requirements</strong></p>
+<p>Before generating reports, check each module's GitHub README for:</p>
+<ul>
+<li><strong>Supported product versions</strong> - Which versions of the target system are supported</li>
+<li><strong>PowerShell version requirements</strong> - PowerShell 5.1, 7.x compatibility</li>
+<li><strong>Dependencies</strong> - Required vendor PowerShell modules (e.g., VCF.PowerCLI)</li>
+<li><strong>Minimum permissions</strong> - What access rights are needed</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Module Documentation</p>
+<p>Click on any report module name in the table below to access its GitHub repository with detailed documentation, examples, and known issues.</p>
+</div>
+<h2 id="powershell-compatibility">PowerShell Compatibility</h2>
+<p>Most report modules support:</p>
+<ul>
+<li><strong>Windows PowerShell 5.1</strong> - Built into Windows 10/11 and Windows Server 2016+</li>
+<li><strong>PowerShell 7+</strong> - Cross-platform support (Windows, Linux, macOS)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Check Module-Specific Requirements</p>
+<p>Some modules may have specific PowerShell version requirements. Always check the module's README before installation.</p>
+</div>
+<h2 id="finding-modules">Finding Modules</h2>
+<p>There are multiple ways to discover and access report modules:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PowerShell Gallery</strong></td>
+<td>Use <code>Find-Module -Name AsBuiltReport.*</code> to search</td>
+</tr>
+<tr>
+<td><strong>This Documentation</strong></td>
+<td>Browse by vendor in the left sidebar</td>
+</tr>
+<tr>
+<td><strong>GitHub Organization</strong></td>
+<td>View all repositories at <a href="https://github.com/orgs/AsBuiltReport/repositories">github.com/AsBuiltReport</a></td>
+</tr>
+<tr>
+<td><strong>Activity Table</strong></td>
+<td>See the table below for published modules with version and activity status</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quick-start-by-vendor">Quick Start by Vendor</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><input id="__tabbed_1_6" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">VMware</label><label for="__tabbed_1_2">Microsoft</label><label for="__tabbed_1_3">Veeam</label><label for="__tabbed_1_4">Storage</label><label for="__tabbed_1_5">Networking</label><label for="__tabbed_1_6">Other</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>VMware report modules require VMware PowerCLI:</p>
+<div class="highlight"><span class="filename">Install VMware modules</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Install VCF PowerCLI</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VCF</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-AllowClobber</span> <span class="n">-SkipPublisherCheck</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c"># Install VMware vSphere report module</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c"># Generate a report</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Available VMware Modules:</strong></p>
+<ul>
+<li><strong>VMware vSphere</strong> - Document vCenter, clusters, hosts, VMs, networking, storage</li>
+<li><strong>VMware ESXi</strong> - Standalone ESXi host documentation</li>
+<li><strong>VMware Horizon</strong> - VDI environment documentation</li>
+<li><strong>VMware App Volumes</strong> - Application delivery documentation</li>
+<li><strong>VMware Site Recovery Manager</strong> - Disaster recovery configuration</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Microsoft modules may require specific Windows features or modules:</p>
+<div class="highlight"><span class="filename">Install Microsoft modules</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># For Active Directory (requires RSAT-AD-PowerShell feature)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c"># For DHCP (requires RSAT-DHCP feature)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">DHCP</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c"># For Windows Servers</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Windows</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c"># Generate an Active Directory report</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Available Microsoft Modules:</strong></p>
+<ul>
+<li><strong>Active Directory</strong> - Domain controllers, forest, domains, sites, replication</li>
+<li><strong>DHCP</strong> - DHCP server configuration and scope documentation</li>
+<li><strong>Windows</strong> - Windows Server configuration and roles</li>
+<li><strong>Azure</strong> - Azure subscription and resource documentation</li>
+<li><strong>SCVMM</strong> - System Center Virtual Machine Manager</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Veeam modules require Veeam PowerShell snapins:</p>
+<div class="highlight"><span class="filename">Install Veeam modules</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Install Veeam Backup &amp; Replication module</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c"># Install Veeam Backup for Microsoft 365 module</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VB365</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c"># Generate a VBR report</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Target</span> <span class="n">veeam-server</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Available Veeam Modules:</strong></p>
+<ul>
+<li><strong>Veeam VBR</strong> - Backup &amp; Replication infrastructure and jobs</li>
+<li><strong>Veeam VB365</strong> - Backup for Microsoft 365 configuration</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Storage vendor modules:</p>
+<div class="highlight"><span class="filename">Install storage modules</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># NetApp ONTAP</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">NetApp</span><span class="p">.</span><span class="n">ONTAP</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># Pure Storage FlashArray</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">PureStorage</span><span class="p">.</span><span class="n">FlashArray</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c"># Dell EMC VxRail</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">DellEMC</span><span class="p">.</span><span class="n">VxRail</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<p><strong>Available Storage Modules:</strong></p>
+<ul>
+<li><strong>NetApp ONTAP</strong> - Storage system configuration</li>
+<li><strong>Pure Storage FlashArray</strong> - FlashArray configuration</li>
+<li><strong>Dell EMC VxRail</strong> - Hyperconverged infrastructure</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Networking vendor modules:</p>
+<div class="highlight"><span class="filename">Install networking modules</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Fortinet FortiGate</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Fortinet</span><span class="p">.</span><span class="n">FortiGate</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c"># Aruba ClearPass</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Aruba</span><span class="p">.</span><span class="n">ClearPass</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<p><strong>Available Networking Modules:</strong></p>
+<ul>
+<li><strong>Fortinet FortiGate</strong> - Firewall configuration</li>
+<li><strong>Aruba ClearPass</strong> - Network access control</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>Additional infrastructure modules:</p>
+<div class="highlight"><span class="filename">Install other modules</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Nutanix Prism Element</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c"># Rubrik CDM</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Rubrik</span><span class="p">.</span><span class="n">CDM</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c"># System Resources</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">System</span><span class="p">.</span><span class="n">Resources</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</code></pre></div>
+<p><strong>Available Modules:</strong></p>
+<ul>
+<li><strong>Nutanix Prism Element</strong> - Hyperconverged infrastructure</li>
+<li><strong>Rubrik CDM</strong> - Cloud Data Management</li>
+<li><strong>System Resources</strong> - General system resource documentation</li>
+</ul>
+</div>
+</div>
+</div>
 <h2 id="activity-status">Activity Status</h2>
-<p>The table below provides the status of the report modules which are currently published to the <a href="https://www.powershellgallery.com/packages?q=AsBuiltReport*" target="_blank">PowerShell gallery</a>.</p>
-<p>For a complete list of report modules, including those still in development, please refer to the <a href="https://github.com/orgs/AsBuiltReport/repositories?q=&amp;type=all&amp;language=&amp;sort=name" target="_blank">AsBuiltReport GitHub Repository</a>.</p>
-<p>To check the status of a report, click on the report's last updated or contributors links and reach out to the report's last or leading contributor.</p>
+<p>The table below provides the status of report modules currently published to the <a href="https://www.powershellgallery.com/packages?q=AsBuiltReport*" target="_blank">PowerShell Gallery</a>.</p>
+<p>For a complete list of report modules, including those still in development, please refer to the <a href="https://github.com/orgs/AsBuiltReport/repositories?q=&amp;type=all&amp;language=&amp;sort=name" target="_blank">AsBuiltReport GitHub Organization</a>.</p>
+<p>To check the status of a report module, click on the module's last updated or contributors links and reach out to the module's maintainers.</p>
+<h3 id="aruba">Aruba</h3>
 <table>
 <thead>
 <tr>
@@ -2552,6 +3112,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Aruba.ClearPass/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.Aruba.ClearPass?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Aruba.ClearPass/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.Aruba.ClearPass?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="dell-emc">Dell EMC</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.DellEMC.VxRail/tree/master" target="_blank">Dell EMC VxRail</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.DellEMC.VxRail/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.DellEMC.VxRail/master?label=Last%20Updated" /></a></td>
@@ -2559,6 +3133,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.DellEMC.VxRail/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.DellEMC.VxRail?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.DellEMC.VxRail/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.DellEMC.VxRail?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="fortinet">Fortinet</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate/tree/master" target="_blank">Fortinet FortiGate</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate/master?label=Last%20Updated" /></a></td>
@@ -2566,6 +3154,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.Fortinet.FortiGate?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="microsoft">Microsoft</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.AD/tree/master" target="_blank">Microsoft Active Directory</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.AD/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.Microsoft.AD/master?label=Last%20Updated" /></a></td>
@@ -2601,6 +3203,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.Windows/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.Microsoft.Windows?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Microsoft.Windows/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.Microsoft.Windows?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="netapp">NetApp</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP/tree/master" target="_blank">NetApp ONTAP</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.NetApp.ONTAP/master?label=Last%20Updated" /></a></td>
@@ -2608,6 +3224,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.NetApp.ONTAP?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.NetApp.ONTAP/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.NetApp.ONTAP?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="nutanix">Nutanix</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement/tree/master" target="_blank">Nutanix Prism Element</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement/master?label=Last%20Updated" /></a></td>
@@ -2615,6 +3245,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.Nutanix.PrismElement?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="pure-storage">Pure Storage</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray/tree/master" target="_blank">Pure Storage FlashArray</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray/master?label=Last%20Updated" /></a></td>
@@ -2622,6 +3266,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.PureStorage.FlashArray?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="rubrik">Rubrik</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Rubrik.CDM/tree/master" target="_blank">Rubrik CDM</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Rubrik.CDM/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.Rubrik.CDM/master?label=Last%20Updated" /></a></td>
@@ -2629,6 +3287,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Rubrik.CDM/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.Rubrik.CDM?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Rubrik.CDM/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.Rubrik.CDM?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="system">System</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/tree/master" target="_blank">System Resources</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.System.Resources/master?label=Last%20Updated" /></a></td>
@@ -2636,6 +3308,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.System.Resources?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.System.Resources?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="veeam">Veeam</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VB365/tree/master" target="_blank">Veeam VB365</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VB365/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.Veeam.VB365/master?label=Last%20Updated" /></a></td>
@@ -2650,6 +3336,20 @@
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/releases" alt="GitHub Release Date" target="_blank"><img src="https://img.shields.io/github/release-date/AsBuiltReport/AsBuiltReport.Veeam.VBR?label=Release%20Date" /></a></td>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR/graphs/contributors" alt="GitHub Contributors" target="_blank"><img src="https://img.shields.io/github/contributors/AsBuiltReport/AsBuiltReport.Veeam.VBR?label=Contributors"></td>
 </tr>
+</tbody>
+</table>
+<h3 id="vmware">VMware</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Report</th>
+<th style="text-align: center;">Last Updated</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release Date</th>
+<th style="text-align: left;">Contributors</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td style="text-align: left;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.VMware.AppVolumes/tree/master" target="_blank">VMware App Volumes</a></td>
 <td style="text-align: center;"><a href="https://github.com/AsBuiltReport/AsBuiltReport.VMware.AppVolumes/commits/master" alt="Commits" target="_blank"><img src="https://img.shields.io/github/last-commit/AsBuiltReport/AsBuiltReport.VMware.AppVolumes/master?label=Last%20Updated" /></a></td>
@@ -2687,6 +3387,13 @@
 </tr>
 </tbody>
 </table>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li><strong><a href="../../installation/">Installation Guide</a></strong> - Learn how to install report modules</li>
+<li><strong><a href="../../quickstart/">Quickstart Guide</a></strong> - Generate your first report in 5 minutes</li>
+<li><strong><a href="../../best-practices/">Best Practices</a></strong> - Recommended approaches for using report modules</li>
+<li><strong><a href="../../../dev-guide/contributing/">Contributing</a></strong> - Help improve or create new report modules</li>
+</ul>
 
 
 
@@ -2707,7 +3414,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2025</span>
   </span>
 
     
@@ -2762,13 +3469,13 @@
         
         
           
-          <a href="../../../dev-guide/contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing">
+          <a href="../../../dev-guide/contributing/" class="md-footer__link md-footer__link--next" aria-label="Next: Contributing Guide">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Contributing
+                Contributing Guide
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2789,11 +3496,6 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
         
@@ -2803,10 +3505,7 @@
     
     
     
-      
-      
-    
-    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on GitHub" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -2814,10 +3513,7 @@
     
     
     
-      
-      
-    
-    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="AsBuiltReport on Bluesky" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
     </a>
   
@@ -2825,10 +3521,7 @@
     
     
     
-      
-      
-    
-    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on X (Twitter)" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
     </a>
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Document Your Datacenter With PowerShell">
+        <meta name="description" content="Generate as-built configuration reports for multiple systems in Word, HTML, and Text formats">
       
       
         <meta name="author" content="Tim Carman">
@@ -78,7 +78,7 @@
       
         <meta  property="og:title"  content="New-AsBuiltReport - AsBuiltReport" >
       
-        <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  property="og:description"  content="Generate as-built configuration reports for multiple systems in Word, HTML, and Text formats" >
       
         <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/user-guide/new-asbuiltreport.png" >
       
@@ -94,7 +94,7 @@
       
         <meta  name="twitter:title"  content="New-AsBuiltReport - AsBuiltReport" >
       
-        <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  name="twitter:description"  content="Generate as-built configuration reports for multiple systems in Word, HTML, and Text formats" >
       
         <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/user-guide/new-asbuiltreport.png" >
       
@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../installation/" class="md-tabs__link">
+        <a href="../quickstart/" class="md-tabs__link">
           
   
   
@@ -483,6 +483,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -529,12 +533,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practices
     
   </span>
   
@@ -694,6 +744,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
@@ -702,6 +761,24 @@
   
     <nav class="md-nav" aria-label="Parameters">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Parameters
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#report" class="md-nav__link">
@@ -865,6 +942,15 @@
   <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       Examples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
     </span>
   </a>
   
@@ -2086,7 +2172,7 @@
   
   
   <span class="md-ellipsis">
-    Contributing
+    Contributing Guide
     
   </span>
   
@@ -2689,6 +2775,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentication-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentication Methods
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Parameters
@@ -2697,6 +2792,24 @@
   
     <nav class="md-nav" aria-label="Parameters">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detailed-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Detailed Parameters
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#report" class="md-nav__link">
@@ -2865,6 +2978,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2884,9 +3006,194 @@
   <h1>New-AsBuiltReport</h1>
 
 <h2 id="description">Description</h2>
-<p><code>New-AsBuiltReport</code> creates as-built configuration reports for one or more target systems and exports the report in to one or more supported document formats, such as DOCX, HTML and Text.</p>
+<p><code>New-AsBuiltReport</code> creates as-built configuration reports for one or more target systems and exports the report into one or more supported document formats, such as DOCX, HTML and Text.</p>
 <p><code>New-AsBuiltReport</code> provides additional parameters, allowing users to generate and customise a report to their requirements.</p>
+<div class="admonition tip">
+<p class="admonition-title">Quick Start</p>
+<p>For your first report, you only need to specify: <code>-Report</code>, <code>-Target</code>, authentication (credentials), and <code>-OutputFolderPath</code>. The command will prompt you to create configuration files on first run.</p>
+<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">domain</span><span class="p">.</span><span class="n">local</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</code></pre></div>
+</div>
+<h2 id="authentication-methods">Authentication Methods</h2>
+<p>AsBuiltReport supports multiple authentication methods. Choose the method that suits your environment:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When to Use</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credential Object</strong></td>
+<td>Most common - pre-stored credentials</td>
+<td><code>-Credential</code></td>
+</tr>
+<tr>
+<td><strong>Username &amp; Password</strong></td>
+<td>Direct authentication</td>
+<td><code>-Username</code> and <code>-Password</code></td>
+</tr>
+<tr>
+<td><strong>API Token</strong></td>
+<td>Token-based authentication</td>
+<td><code>-Token</code></td>
+</tr>
+<tr>
+<td><strong>Interactive Auth</strong></td>
+<td>Multi-factor authentication (MFA)</td>
+<td><code>-UseInteractiveAuth</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Parameter Combinations</p>
+<p>You must use <strong>one</strong> of the following authentication combinations:</p>
+<ul>
+<li><code>-Credential</code> (recommended)</li>
+<li><code>-Username</code> <strong>and</strong> <code>-Password</code></li>
+<li><code>-Token</code></li>
+<li><code>-UseInteractiveAuth</code></li>
+</ul>
+<p>Do not mix different authentication methods in the same command.</p>
+</div>
 <h2 id="parameters">Parameters</h2>
+<h3 id="quick-reference">Quick Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Report</td>
+<td>String</td>
+<td>Yes</td>
+<td>-</td>
+<td>Report module to run</td>
+</tr>
+<tr>
+<td>Target</td>
+<td>String[]</td>
+<td>Yes</td>
+<td>-</td>
+<td>Target system(s) IP/FQDN</td>
+</tr>
+<tr>
+<td>Credential</td>
+<td>PSCredential</td>
+<td>Yes*</td>
+<td>-</td>
+<td>Stored credentials</td>
+</tr>
+<tr>
+<td>Username</td>
+<td>String</td>
+<td>Yes*</td>
+<td>-</td>
+<td>Username for authentication</td>
+</tr>
+<tr>
+<td>Password</td>
+<td>SecureString</td>
+<td>Yes*</td>
+<td>-</td>
+<td>Password for authentication</td>
+</tr>
+<tr>
+<td>Token</td>
+<td>String</td>
+<td>No</td>
+<td>-</td>
+<td>API token</td>
+</tr>
+<tr>
+<td>UseInteractiveAuth</td>
+<td>Switch</td>
+<td>No</td>
+<td>False</td>
+<td>Interactive/MFA authentication</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>String[]</td>
+<td>No</td>
+<td>Word</td>
+<td>Output format(s)</td>
+</tr>
+<tr>
+<td>ReportLanguage</td>
+<td>String</td>
+<td>No</td>
+<td>en-US</td>
+<td>Report content language</td>
+</tr>
+<tr>
+<td>Orientation</td>
+<td>String</td>
+<td>No</td>
+<td>Portrait</td>
+<td>Page orientation</td>
+</tr>
+<tr>
+<td>StyleFilePath</td>
+<td>String</td>
+<td>No</td>
+<td>-</td>
+<td>Custom style script path</td>
+</tr>
+<tr>
+<td>OutputFolderPath</td>
+<td>String</td>
+<td>Yes</td>
+<td>-</td>
+<td>Report save location</td>
+</tr>
+<tr>
+<td>AsBuiltConfigFilePath</td>
+<td>String</td>
+<td>No</td>
+<td>-</td>
+<td>Core config file path</td>
+</tr>
+<tr>
+<td>ReportConfigFilePath</td>
+<td>String</td>
+<td>No</td>
+<td>-</td>
+<td>Report config file path</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>Switch</td>
+<td>No</td>
+<td>False</td>
+<td>Append timestamp to filename</td>
+</tr>
+<tr>
+<td>EnableHealthCheck</td>
+<td>Switch</td>
+<td>No</td>
+<td>False</td>
+<td>Enable health checks</td>
+</tr>
+<tr>
+<td>SendEmail</td>
+<td>Switch</td>
+<td>No</td>
+<td>False</td>
+<td>Email report to recipients</td>
+</tr>
+</tbody>
+</table>
+<p><em>* At least one authentication method is mandatory</em></p>
+<h3 id="detailed-parameters">Detailed Parameters</h3>
 <h3 id="report">Report</h3>
 <p>Specifies the type of report that will be generated.</p>
 <p>This is a mandatory parameter.</p>
@@ -2965,29 +3272,63 @@
 <ol>
 <li>
 <p>Creates an as-built report for a VMware vSphere environment. The report is generated in Word and Text formats and saved to the <code>C:\Reports</code> folder. Health checks will be enabled for the report.</p>
-<div class="highlight"><span class="filename">Example 1</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.vSphere&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;vcenter.domain.local&#39;</span> <span class="p">`</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">-Username</span> <span class="s1">&#39;administrator@vsphere.local&#39;</span> <span class="n">-Password</span> <span class="s1">&#39;VMware1!&#39;</span> <span class="p">`</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">-Format</span> <span class="s1">&#39;Word&#39;</span><span class="p">,</span><span class="s1">&#39;Text&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-EnableHealthCheck</span>
+<div class="highlight"><span class="filename">Example 1</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.vSphere&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;vcenter.domain.local&#39;</span> <span class="p">`</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">-Username</span> <span class="s1">&#39;administrator@vsphere.local&#39;</span> <span class="n">-Password</span> <span class="s1">&#39;VMware1!&#39;</span> <span class="p">`</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">-Format</span> <span class="s1">&#39;Word&#39;</span><span class="p">,</span><span class="s1">&#39;Text&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-EnableHealthCheck</span>
 </code></pre></div>
 </li>
 <li>
 <p>Creates an as-built report for two Pure Storage FlashArrays. The report is generated in HTML format, saved to the <code>C:\Reports</code> folder and sent via email.</p>
-<div class="highlight"><span class="filename">Example 2</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;PureStorage.FlashArray&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;192.168.10.100&#39;</span><span class="p">,</span><span class="s1">&#39;192.168.10.110&#39;</span> <span class="p">`</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-Format</span> <span class="s1">&#39;HTML&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-SendEmail</span>
+<div class="highlight"><span class="filename">Example 2</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;PureStorage.FlashArray&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;192.168.10.100&#39;</span><span class="p">,</span><span class="s1">&#39;192.168.10.110&#39;</span> <span class="p">`</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-Format</span> <span class="s1">&#39;HTML&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-SendEmail</span>
 </code></pre></div>
 </li>
 <li>
 <p>Creates an as-built report for two VMware ESXi hosts. Authentication to VMware ESXi hosts uses stored credentials. The report is generated in Word (DOCX) format (by default). A customized stylesheet is specified to style the report in the company’s brand colours and fonts. The report is saved to the user’s documents folder with a timestamp appended to the filename to identify when the report was generated. The <code>AsBuiltConfigFilePath</code> parameter is specified to bypass the menu driven questionnaire.</p>
-<p><div class="highlight"><span class="filename">Example 3</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.ESXi&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;corp-esxi01&#39;</span><span class="p">,</span><span class="s1">&#39;corp-esxi02&#39;</span> <span class="p">`</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">-Credential</span> <span class="nv">$creds</span> <span class="n">-OutputFolderPath</span> <span class="s2">&quot;$env:USERPROFILE\Documents&quot;</span> <span class="p">`</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">-StyleFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyStyle.ps1&#39;</span><span class="p">`</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">-AsBuiltConfigFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyConfig.json&#39;</span> <span class="n">-Timestamp</span>
+<p><div class="highlight"><span class="filename">Example 3</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.ESXi&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;corp-esxi01&#39;</span><span class="p">,</span><span class="s1">&#39;corp-esxi02&#39;</span> <span class="p">`</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">-Credential</span> <span class="nv">$creds</span> <span class="n">-OutputFolderPath</span> <span class="s2">&quot;$env:USERPROFILE\Documents&quot;</span> <span class="p">`</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">-StyleFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyStyle.ps1&#39;</span><span class="p">`</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">-AsBuiltConfigFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyConfig.json&#39;</span> <span class="n">-Timestamp</span>
 </code></pre></div>
 4. Creates a Microsoft Azure As Built Report in HTML format with Spanish language content. Authentication to Microsoft Azure uses an external identity provider.</p>
-<div class="highlight"><span class="filename">Example 4</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Azure</span> <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span> <span class="n">-UseIteractiveAuth</span> <span class="n">-Format</span> <span class="n">HTML</span> <span class="n">-ReportLanguage</span> <span class="s1">&#39;es-ES&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;H:\Documents\&#39;</span>
+<div class="highlight"><span class="filename">Example 4</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Azure</span> <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span> <span class="n">-UseInteractiveAuth</span> <span class="n">-Format</span> <span class="n">HTML</span> <span class="n">-ReportLanguage</span> <span class="s1">&#39;es-ES&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;H:\Documents\&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Creates a VMware vSphere report using a stored credential, custom configurations, and sends the report via email. The report includes health checks and is generated in both HTML and Word formats.</p>
+<div class="highlight"><span class="filename">Example 5</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Format</span> <span class="n">HTML</span><span class="p">,</span><span class="n">Word</span> <span class="n">-EnableHealthCheck</span> <span class="n">-SendEmail</span> <span class="p">`</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">-AsBuiltConfigFilePath</span> <span class="s1">&#39;C:\Reports\Config\AsBuiltReport.json&#39;</span> <span class="p">`</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">-ReportConfigFilePath</span> <span class="s1">&#39;C:\Reports\Config\VMware.vSphere.json&#39;</span> <span class="p">`</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports\Output&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Creates a Veeam Backup &amp; Replication report for multiple VBR servers with a timestamp appended to the filename.</p>
+<div class="highlight"><span class="filename">Example 6</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Target</span> <span class="s1">&#39;vbr01.example.com&#39;</span><span class="p">,</span><span class="s1">&#39;vbr02.example.com&#39;</span> <span class="p">`</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">-Username</span> <span class="s1">&#39;administrator&#39;</span> <span class="n">-Password</span> <span class="p">(</span><span class="nb">ConvertTo-SecureString</span> <span class="s1">&#39;P@ssw0rd&#39;</span> <span class="n">-AsPlainText</span> <span class="n">-Force</span><span class="p">)</span> <span class="p">`</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">-Format</span> <span class="n">HTML</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="n">-Timestamp</span>
+</code></pre></div>
+</li>
+<li>
+<p>Creates a NetApp ONTAP report using an API token for authentication with a landscape page orientation.</p>
+<div class="highlight"><span class="filename">Example 7</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">NetApp</span><span class="p">.</span><span class="n">ONTAP</span> <span class="n">-Target</span> <span class="n">cluster01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">-Token</span> <span class="s1">&#39;your-api-token-here&#39;</span> <span class="n">-Format</span> <span class="n">Word</span> <span class="n">-Orientation</span> <span class="n">Landscape</span> <span class="p">`</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span>
 </code></pre></div>
 </li>
 </ol>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../new-asbuiltconfig/">New-AsBuiltConfig</a> - Create AsBuiltReport core configuration files</li>
+<li><a href="../new-asbuiltreportconfig/">New-AsBuiltReportConfig</a> - Create report-specific configuration files</li>
+<li><a href="../installation/">Installation Guide</a> - How to install AsBuiltReport modules</li>
+<li><a href="../../support/faq/#how-do-i-generate-my-first-report">FAQ - How do I generate my first report?</a> - Quick start guide</li>
+<li><a href="../../support/faq/#how-do-i-customise-the-level-of-detail-in-my-reports">FAQ - How do I customise report detail?</a> - InfoLevel configuration</li>
+<li><a href="../../support/troubleshooting/">Troubleshooting</a> - Solutions for common report generation issues</li>
+<li><a href="../../dev-guide/creating-a-report-style/">Creating a Report Style</a> - Customise report appearance</li>
+</ul>
 
 
 
@@ -3008,7 +3349,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 9, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2025</span>
   </span>
 
     
@@ -3090,11 +3431,6 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
         
@@ -3104,10 +3440,7 @@
     
     
     
-      
-      
-    
-    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on GitHub" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -3115,10 +3448,7 @@
     
     
     
-      
-      
-    
-    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="AsBuiltReport on Bluesky" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
     </a>
   
@@ -3126,10 +3456,7 @@
     
     
     
-      
-      
-    
-    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on X (Twitter)" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
     </a>
   

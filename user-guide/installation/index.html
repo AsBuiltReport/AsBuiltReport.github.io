@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Document Your Datacenter With PowerShell">
+        <meta name="description" content="Complete guide for installing AsBuiltReport modules from PowerShell Gallery, offline, or from GitHub">
       
       
         <meta name="author" content="Tim Carman">
@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://www.asbuiltreport.com/user-guide/installation/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../quickstart/">
       
       
-        <link rel="next" href="../new-asbuiltconfig/">
+        <link rel="next" href="../best-practices/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Installation - AsBuiltReport</title>
+        <title>Installation Guide - AsBuiltReport</title>
       
     
     
@@ -76,9 +76,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Installation - AsBuiltReport" >
+        <meta  property="og:title"  content="Installation Guide - AsBuiltReport" >
       
-        <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  property="og:description"  content="Complete guide for installing AsBuiltReport modules from PowerShell Gallery, offline, or from GitHub" >
       
         <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/user-guide/installation.png" >
       
@@ -92,9 +92,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Installation - AsBuiltReport" >
+        <meta  name="twitter:title"  content="Installation Guide - AsBuiltReport" >
       
-        <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  name="twitter:description"  content="Complete guide for installing AsBuiltReport modules from PowerShell Gallery, offline, or from GitHub" >
       
         <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/user-guide/installation.png" >
       
@@ -152,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Installation Guide
             
           </span>
         </div>
@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../quickstart/" class="md-tabs__link">
           
   
   
@@ -485,6 +485,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -523,6 +527,29 @@
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -799,6 +826,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practices
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2119,7 +2169,7 @@
   
   
   <span class="md-ellipsis">
-    Contributing
+    Contributing Guide
     
   </span>
   
@@ -3114,7 +3164,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <p class="admonition-title">Report Module Naming</p>
 <p>In the examples below, replace <code>AsBuiltReport.Vendor.Technology</code> with the report module name you wish to install (e.g. <code>AsBuiltReport.VMware.vSphere</code>, <code>AsBuiltReport.Microsoft.AD</code>).</p>
 </div>
-<h4 id="step-1-download-the-release">Step 1: Download the Release</h4>
+<p><strong>Step 1: Download the Release</strong></p>
 <p><strong>Via GitHub Web Interface:</strong></p>
 <ol>
 <li>Navigate to the repository (e.g., <code>https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology</code>)</li>
@@ -3141,7 +3191,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c"># Download the release</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="nv">$asset</span><span class="p">.</span><span class="n">browser_download_url</span> <span class="n">-OutFile</span> <span class="s2">&quot;$env:TEMP\</span><span class="p">$(</span><span class="nv">$asset</span><span class="p">.</span><span class="n">name</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
-<h4 id="step-2-determine-powershell-module-path">Step 2: Determine PowerShell Module Path</h4>
+<p><strong>Step 2: Determine PowerShell Module Path</strong></p>
 <p>Open a PowerShell console and run the following command to find your PowerShell module paths:</p>
 <p><strong>Windows</strong></p>
 <div class="highlight"><span class="filename">View PowerShell module paths on Windows</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>
@@ -3158,7 +3208,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <li><strong>Linux</strong>: <code>~/.local/share/powershell/Modules</code></li>
 </ul>
 </div>
-<h4 id="step-3-extract-and-install-the-module">Step 3: Extract and Install the Module</h4>
+<p><strong>Step 3: Extract and Install the Module</strong></p>
 <p><strong>Windows Example:</strong></p>
 <div class="highlight"><span class="filename">Install module from GitHub release on Windows</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Extract ZIP file (adjust paths and module name as needed)</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nv">$moduleName</span> <span class="p">=</span> <span class="s2">&quot;AsBuiltReport.Vendor.Technology&quot;</span>
@@ -3178,7 +3228,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Copy module folder to PowerShell modules directory</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/module/*<span class="w"> </span>~/.local/share/powershell/Modules/AsBuiltReport.Vendor.Technology/
 </code></pre></div>
-<h4 id="step-4-verify-installation">Step 4: Verify Installation</h4>
+<p><strong>Step 4: Verify Installation</strong></p>
 <p>Verify the module is installed correctly:</p>
 <div class="highlight"><span class="filename">Verify module installation</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># List installed AsBuiltReport modules</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.*&#39;</span> <span class="n">-ListAvailable</span>
@@ -3199,7 +3249,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <p class="admonition-title">Report Module Naming</p>
 <p>In the examples below, replace <code>AsBuiltReport.Vendor.Technology</code> with the report module name you wish to install (e.g. <code>AsBuiltReport.VMware.vSphere</code>, <code>AsBuiltReport.Microsoft.AD</code>).</p>
 </div>
-<h4 id="step-1-download-the-branch">Step 1: Download the Branch</h4>
+<p><strong>Step 1: Download the Branch</strong></p>
 <p>Navigate to the GitHub repository and download the desired branch as a ZIP file:</p>
 <ol>
 <li>Go to the repository (e.g., <code>https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology</code>)</li>
@@ -3210,7 +3260,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <p>Alternatively, use Git to clone the specific branch:</p>
 <div class="highlight"><span class="filename">Clone specific branch using Git</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>git<span class="w"> </span>clone<span class="w"> </span>-b<span class="w"> </span>branch-name<span class="w"> </span>https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology.git
 </code></pre></div>
-<h4 id="installing-from-pull-requests">Installing from Pull Requests</h4>
+<p><strong>Installing from Pull Requests</strong></p>
 <div class="admonition info">
 <p class="admonition-title">Installing from Pull Requests</p>
 <p>When installing from a pull request, you're testing code submitted by a contributor that hasn't been merged yet. This is useful for testing proposed changes or bug fixes before they're officially released. The code comes from the contributor's fork repository, not the main AsBuiltReport repository.</p>
@@ -3232,7 +3282,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Checkout the pull request branch</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>git<span class="w"> </span>checkout<span class="w"> </span>pr-123
 </code></pre></div>
-<h4 id="step-2-determine-powershell-module-path_1">Step 2: Determine PowerShell Module Path</h4>
+<p><strong>Step 2: Determine PowerShell Module Path</strong></p>
 <p>Open a PowerShell console and run the following command to find your PowerShell module paths:</p>
 <p><strong>Windows</strong></p>
 <div class="highlight"><span class="filename">View PowerShell module paths on Windows</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>
@@ -3249,7 +3299,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <li><strong>Linux</strong>: <code>~/.local/share/powershell/Modules</code></li>
 </ul>
 </div>
-<h4 id="step-3-extract-and-install-the-module_1">Step 3: Extract and Install the Module</h4>
+<p><strong>Step 3: Extract and Install the Module</strong></p>
 <p><strong>If you downloaded a ZIP file:</strong></p>
 <ol>
 <li>Extract the ZIP file contents</li>
@@ -3275,7 +3325,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 <div class="highlight"><span class="filename">Install module from Git clone</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c"># Copy cloned repository to PowerShell modules directory</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">Copy-Item</span> <span class="n">-Path</span> <span class="s2">&quot;./AsBuiltReport.Vendor.Technology&quot;</span> <span class="n">-Destination</span> <span class="s2">&quot;$HOME/.local/share/powershell/Modules/AsBuiltReport.Vendor.Technology&quot;</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
 </code></pre></div>
-<h4 id="step-4-verify-installation_1">Step 4: Verify Installation</h4>
+<p><strong>Step 4: Verify Installation</strong></p>
 <p>Verify the module is installed correctly:</p>
 <div class="highlight"><span class="filename">Verify module installation</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c"># List installed AsBuiltReport modules</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.*&#39;</span> <span class="n">-ListAvailable</span>
@@ -3374,7 +3424,7 @@ e.g. USB Flash Drive, Internal File Share etc.</p>
 </code></pre></div>
 <p><strong>Solution:</strong>
 Set the execution policy for the current user (see <a href="#powershell-execution-policy">PowerShell Execution Policy</a>):</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<div class="highlight"><span class="filename">Set execution policy</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">RemoteSigned</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
 </code></pre></div>
 <h4 id="module-not-found-after-installation">Module Not Found After Installation</h4>
 <p><strong>Symptoms:</strong>
@@ -3384,7 +3434,7 @@ Set the execution policy for the current user (see <a href="#powershell-executio
 <ol>
 <li>
 <p>Verify the module is in the correct location:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>  <span class="c"># Windows</span>
+<div class="highlight"><span class="filename">Check module paths</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;;&#39;</span>  <span class="c"># Windows</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nv">$env:PSModulePath</span> <span class="n">-Split</span> <span class="s1">&#39;:&#39;</span>  <span class="c"># macOS/Linux</span>
 </code></pre></div>
 </li>
@@ -3393,7 +3443,7 @@ Set the execution policy for the current user (see <a href="#powershell-executio
 </li>
 <li>
 <p>Refresh the module cache:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">Get-Module</span> <span class="n">-ListAvailable</span> <span class="n">-Refresh</span>
+<div class="highlight"><span class="filename">Refresh module cache</span><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">Get-Module</span> <span class="n">-ListAvailable</span> <span class="n">-Refresh</span>
 </code></pre></div>
 </li>
 </ol>
@@ -3402,7 +3452,7 @@ Set the execution policy for the current user (see <a href="#powershell-executio
 </code></pre></div>
 <p><strong>Solution:</strong>
 Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Dependencies</a>):</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
+<div class="highlight"><span class="filename">Install AsBuiltReport.Core</span><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
 </code></pre></div>
 <h4 id="cannot-connect-to-powershell-gallery">Cannot Connect to PowerShell Gallery</h4>
 <div class="highlight"><span class="filename">Error Message</span><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Unable to resolve package source &#39;https://www.powershellgallery.com/api/v2&#39;
@@ -3414,12 +3464,12 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
 </li>
 <li>
 <p>Configure TLS 1.2:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
+<div class="highlight"><span class="filename">Configure TLS 1.2</span><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
 </code></pre></div>
 </li>
 <li>
 <p>Use a proxy if required:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Proxy</span> <span class="s1">&#39;http://proxy.company.com:8080&#39;</span>
+<div class="highlight"><span class="filename">Install via proxy</span><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Proxy</span> <span class="s1">&#39;http://proxy.company.com:8080&#39;</span>
 </code></pre></div>
 </li>
 <li>
@@ -3434,12 +3484,12 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
 <ol>
 <li>
 <p>List all installed versions:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-ListAvailable</span>
+<div class="highlight"><span class="filename">List all module versions</span><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-ListAvailable</span>
 </code></pre></div>
 </li>
 <li>
 <p>Remove unwanted versions:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c"># Remove specific version</span>
+<div class="highlight"><span class="filename">Remove specific module versions</span><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c"># Remove specific version</span>
 <a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="nb">Uninstall-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-RequiredVersion</span> <span class="s1">&#39;1.0.0&#39;</span>
 <a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
 <a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="c"># Or remove all and reinstall</span>
@@ -3449,7 +3499,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
 </li>
 <li>
 <p>Import specific version explicitly:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nb">Import-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-RequiredVersion</span> <span class="s1">&#39;1.2.0&#39;</span>
+<div class="highlight"><span class="filename">Import specific module version</span><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nb">Import-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-RequiredVersion</span> <span class="s1">&#39;1.2.0&#39;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -3460,7 +3510,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
 <ol>
 <li>
 <p>Install to CurrentUser scope instead of AllUsers:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
+<div class="highlight"><span class="filename">Install to CurrentUser scope</span><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
 </code></pre></div>
 </li>
 <li>
@@ -3477,7 +3527,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
 <ol>
 <li>
 <p>Check your PowerShell version:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nv">$PSVersionTable</span><span class="p">.</span><span class="n">PSVersion</span>
+<div class="highlight"><span class="filename">Check PowerShell version</span><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nv">$PSVersionTable</span><span class="p">.</span><span class="n">PSVersion</span>
 </code></pre></div>
 </li>
 <li>
@@ -3520,7 +3570,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2025</span>
   </span>
 
     
@@ -3558,7 +3608,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../quickstart/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quickstart">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3568,20 +3618,20 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Quickstart
               </div>
             </div>
           </a>
         
         
           
-          <a href="../new-asbuiltconfig/" class="md-footer__link md-footer__link--next" aria-label="Next: New-AsBuiltConfig">
+          <a href="../best-practices/" class="md-footer__link md-footer__link--next" aria-label="Next: Best Practices">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                New-AsBuiltConfig
+                Best Practices
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3602,11 +3652,6 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
         
@@ -3616,10 +3661,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     
     
     
-      
-      
-    
-    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on GitHub" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -3627,10 +3669,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     
     
     
-      
-      
-    
-    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="AsBuiltReport on Bluesky" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
     </a>
   
@@ -3638,10 +3677,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     
     
     
-      
-      
-    
-    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on X (Twitter)" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
     </a>
   

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Document Your Datacenter With PowerShell">
+        <meta name="description" content="Platform and framework limitations affecting AsBuiltReport functionality across Windows, Linux, and macOS">
       
       
         <meta name="author" content="Tim Carman">
@@ -78,7 +78,7 @@
       
         <meta  property="og:title"  content="Known Issues - AsBuiltReport" >
       
-        <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  property="og:description"  content="Platform and framework limitations affecting AsBuiltReport functionality across Windows, Linux, and macOS" >
       
         <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/support/known-issues.png" >
       
@@ -94,7 +94,7 @@
       
         <meta  name="twitter:title"  content="Known Issues - AsBuiltReport" >
       
-        <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  name="twitter:description"  content="Platform and framework limitations affecting AsBuiltReport functionality across Windows, Linux, and macOS" >
       
         <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/support/known-issues.png" >
       
@@ -115,6 +115,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#known-issues" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -242,7 +247,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user-guide/installation/" class="md-tabs__link">
+        <a href="../../user-guide/quickstart/" class="md-tabs__link">
           
   
   
@@ -471,6 +476,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -514,12 +523,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practices
     
   </span>
   
@@ -1839,7 +1894,7 @@
   
   
   <span class="md-ellipsis">
-    Contributing
+    Contributing Guide
     
   </span>
   
@@ -2022,6 +2077,21 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Known Issues
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -2034,6 +2104,142 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#framework-and-platform-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Framework and Platform Limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework and Platform Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-of-contents-missing-in-word-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents Missing in Word Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images-missing-on-linux-and-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images Missing on Linux and macOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-version-specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell Version-Specific Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PowerShell Version-Specific Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell-51-tls-12-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell 5.1 TLS 1.2 Requirement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-module-specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report Module-Specific Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-only-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-Only Data Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-generation-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report Generation Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-new-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting New Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2438,6 +2644,133 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#framework-and-platform-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Framework and Platform Limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Framework and Platform Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-of-contents-missing-in-word-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents Missing in Word Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images-missing-on-linux-and-macos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Images Missing on Linux and macOS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powershell-version-specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell Version-Specific Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PowerShell Version-Specific Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#powershell-51-tls-12-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      PowerShell 5.1 TLS 1.2 Requirement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#report-module-specific-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report Module-Specific Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Known Limitations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Known Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-only-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-Only Data Collection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-generation-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Report Generation Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-new-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting New Issues
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2453,28 +2786,115 @@
 
 
 
-  <h1>Known Issues</h1>
-
-<p>This section provides information relating to common and/or known issues when generating an As Built Report.</p>
+<h1 id="known-issues">Known Issues</h1>
+<p>This page documents known platform and framework limitations that affect AsBuiltReport functionality. These are issues that cannot be resolved through troubleshooting or configuration changes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Need Help Troubleshooting?</p>
-<p>For guidance on diagnosing and resolving report generation problems, see the <a href="../troubleshooting/">Troubleshooting</a> page. This page documents platform and framework limitations that cannot be resolved through troubleshooting.</p>
+<p>For guidance on diagnosing and resolving report generation problems, see the <a href="../troubleshooting/">Troubleshooting</a> page. Use this page to understand platform-specific limitations and workarounds.</p>
 </div>
-<h4 id="table-of-contents-toc-is-missing-in-word-formatted-report">Table Of Contents (TOC) is missing in Word formatted report</h4>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>When opening a Microsoft Word (DOCX) report for the first time, you will be prompted with the following warning;</p>
-<p><img src='../../assets/images/Word_Warning.jpg'/></p>
-<p>Clicking No will prevent the TOC fields from being updated, leaving the Table of Contents empty.</p>
-<p>Always reply Yes to this message when prompted by Microsoft Word to ensure the Table of Contents is updated.</p>
-<p>Save the document to prevent future prompts when opening the document.</p>
+<h2 id="framework-and-platform-limitations">Framework and Platform Limitations</h2>
+<h3 id="table-of-contents-missing-in-word-reports">Table of Contents Missing in Word Reports</h3>
+<p><strong>Affects</strong>: Microsoft Word (DOCX) format reports on all platforms</p>
+<p><strong>Issue</strong>: When opening a Microsoft Word report for the first time, the Table of Contents appears empty.</p>
+<p><strong>Cause</strong>: Microsoft Word displays a security prompt asking to update fields when opening documents with dynamic content. If you click "No", the TOC fields remain unupdated and the Table of Contents stays empty.</p>
+<p><strong>Resolution</strong>:</p>
+<ol>
+<li>
+<p>When opening the report for the first time, you'll see this prompt:</p>
+<p><img src='../../assets/images/Word_Warning.jpg' alt='Microsoft Word security warning about updating document fields'/></p>
+</li>
+<li>
+<p><strong>Always click "Yes"</strong> to update the document fields</p>
+</li>
+<li>Save the document after the TOC is populated</li>
+<li>Future opens of the saved document won't show the prompt</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Clicking "No" prevents the Table of Contents from populating. If this happens, close the document, reopen it, and click "Yes" when prompted.</p>
 </div>
-<h4 id="images-are-missing-from-reports-generated-using-linux-or-macos">Images are missing from reports generated using Linux or macOS</h4>
-<div class="admonition failure">
-<p class="admonition-title">Not Supported</p>
-<p>Unfortunately due to <a href="https://learn.microsoft.com/en-gb/dotnet/core/compatibility/core-libraries/6.0/system-drawing-common-windows-only" target="_blank">breaking changes</a> in .NET 6, images are no longer supported for reports generated using Linux or macOS.</p>
+<h3 id="images-missing-on-linux-and-macos">Images Missing on Linux and macOS</h3>
+<p><strong>Affects</strong>: All report formats on Linux and macOS operating systems</p>
+<p><strong>Issue</strong>: Reports generated on Linux or macOS do not include any images, charts, or diagrams. These elements appear as blank spaces or are omitted entirely.</p>
+<p><strong>Cause</strong>: Due to <a href="https://learn.microsoft.com/en-gb/dotnet/core/compatibility/core-libraries/6.0/system-drawing-common-windows-only">breaking changes in .NET 6</a>, the <code>System.Drawing.Common</code> library that AsBuiltReport uses for image processing is now only supported on Windows.</p>
+<p><strong>Status</strong>: Not supported - this is a .NET platform limitation, not an AsBuiltReport bug.</p>
+<p><strong>Workarounds</strong>:</p>
+<ul>
+<li><strong>Option 1</strong>: Generate reports on a Windows system if images are required</li>
+<li><strong>Option 2</strong>: Use Linux/macOS for report generation but accept that images won't be included</li>
+<li><strong>Option 3</strong>: Use Windows Subsystem for Linux (WSL2) with PowerShell 7+ on Windows for Linux-style workflow with image support</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Platform Recommendation</p>
+<p>For production reports that require images, charts, and diagrams, we recommend generating reports on Windows systems. Text content, tables, and all other report sections work correctly on Linux and macOS.</p>
 </div>
-<p>For issues related to individual reports, please refer to the <a href="../../user-guide/report-modules/overview/">report documentation pages</a> or the relevent report <a href="https://github.com/orgs/AsBuiltReport/repositories" target="_blank">GitHub repository</a>.</p>
+<h2 id="powershell-version-specific-issues">PowerShell Version-Specific Issues</h2>
+<h3 id="powershell-51-tls-12-requirement">PowerShell 5.1 TLS 1.2 Requirement</h3>
+<p><strong>Affects</strong>: PowerShell 5.1 on Windows (older systems)</p>
+<p><strong>Issue</strong>: Module installation from PowerShell Gallery may fail with TLS/SSL connection errors.</p>
+<p><strong>Cause</strong>: PowerShell 5.1 defaults to TLS 1.0, but PowerShell Gallery requires TLS 1.2.</p>
+<p><strong>Resolution</strong>: Run this command before installing modules:</p>
+<div class="highlight"><span class="filename">Enable TLS 1.2 for PowerShell 5.1</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
+</code></pre></div>
+<p>Add this to your PowerShell profile for permanent configuration.</p>
+<p>See <a href="../../user-guide/installation/#powershell-gallery-access">Installation - PowerShell Gallery Access</a> for details.</p>
+<h2 id="report-module-specific-issues">Report Module-Specific Issues</h2>
+<p>Each report module may have its own known issues and limitations based on:</p>
+<ul>
+<li>Target platform API limitations</li>
+<li>Vendor-specific PowerShell module dependencies</li>
+<li>Version compatibility constraints</li>
+<li>Required permissions and access levels</li>
+</ul>
+<p><strong>Where to Find Module-Specific Issues:</strong></p>
+<ol>
+<li><strong>Report Module README</strong> - Each module's GitHub repository includes a README with known limitations</li>
+<li><strong>GitHub Issues</strong> - Check the Issues tab in the module's repository</li>
+<li><strong>Module Documentation</strong> - Some modules include separate documentation for known issues</li>
+</ol>
+<p><strong>Report Module Repositories</strong>: Visit the <a href="https://github.com/orgs/AsBuiltReport/repositories">AsBuiltReport GitHub organization</a> to find specific report modules.</p>
+<h2 id="known-limitations">Known Limitations</h2>
+<h3 id="read-only-data-collection">Read-Only Data Collection</h3>
+<p><strong>Limitation</strong>: AsBuiltReport only collects and reports information - it cannot modify configurations or remediate issues.</p>
+<p><strong>Rationale</strong>: AsBuiltReport is designed as a documentation and auditing tool with read-only access to prevent accidental changes to production systems.</p>
+<p><strong>Impact</strong>: Health checks can only highlight configuration issues - they cannot fix them automatically.</p>
+<h3 id="report-generation-performance">Report Generation Performance</h3>
+<p><strong>Limitation</strong>: Large environments with thousands of objects may take considerable time to document (30+ minutes for very large infrastructures).</p>
+<p><strong>Cause</strong>: Report modules collect extensive information through API calls and queries, which accumulate for large environments.</p>
+<p><strong>Mitigation</strong>:</p>
+<ul>
+<li>Use lower InfoLevel settings to reduce detail and improve performance</li>
+<li>Schedule reports during off-peak hours</li>
+<li>Consider generating reports for specific subsystems rather than entire environments</li>
+</ul>
+<p>See <a href="../../user-guide/best-practices/#report-generation">Best Practices - Report Generation</a> for optimisation tips.</p>
+<h2 id="reporting-new-issues">Reporting New Issues</h2>
+<p>If you encounter an issue not listed here:</p>
+<ol>
+<li><strong>Check the Troubleshooting page</strong> - <a href="../troubleshooting/">Troubleshooting Guide</a> covers solvable problems</li>
+<li><strong>Search existing issues</strong> - Check if the issue is already reported:<ul>
+<li><a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/issues">AsBuiltReport.Core Issues</a></li>
+<li>Specific report module repository issues</li>
+</ul>
+</li>
+<li><strong>Ask the community</strong> - <a href="https://github.com/orgs/AsBuiltReport/discussions">GitHub Discussions</a></li>
+<li><strong>Report a new issue</strong> - If you've confirmed it's a new issue, create a detailed issue report including:<ul>
+<li>AsBuiltReport.Core version</li>
+<li>Report module version</li>
+<li>PowerShell version (<code>$PSVersionTable</code>)</li>
+<li>Operating system</li>
+<li>Error messages and verbose output</li>
+<li>Steps to reproduce</li>
+</ul>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li><strong><a href="../troubleshooting/">Troubleshooting Guide</a></strong> - Diagnose and resolve report generation problems</li>
+<li><strong><a href="../faq/">FAQ</a></strong> - Common questions answered</li>
+<li><strong><a href="../../user-guide/report-modules/overview/">Report Modules Overview</a></strong> - Browse available report modules</li>
+<li><strong><a href="https://github.com/orgs/AsBuiltReport/discussions">GitHub Discussions</a></strong> - Community support</li>
+</ul>
 
 
 
@@ -2495,7 +2915,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2025</span>
   </span>
 
     
@@ -2577,11 +2997,6 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
         
@@ -2591,10 +3006,7 @@
     
     
     
-      
-      
-    
-    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on GitHub" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -2602,10 +3014,7 @@
     
     
     
-      
-      
-    
-    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="AsBuiltReport on Bluesky" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
     </a>
   
@@ -2613,10 +3022,7 @@
     
     
     
-      
-      
-    
-    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on X (Twitter)" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
     </a>
   

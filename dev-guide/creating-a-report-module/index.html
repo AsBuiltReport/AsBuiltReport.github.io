@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Document Your Datacenter With PowerShell">
+        <meta name="description" content="Comprehensive standards and guidelines for developing AsBuiltReport report modules">
       
       
         <meta name="author" content="Tim Carman">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Creating a report module - AsBuiltReport</title>
+        <title>Creating a Report Module - AsBuiltReport</title>
       
     
     
@@ -76,9 +76,9 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Creating a report module - AsBuiltReport" >
+        <meta  property="og:title"  content="Creating a Report Module - AsBuiltReport" >
       
-        <meta  property="og:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  property="og:description"  content="Comprehensive standards and guidelines for developing AsBuiltReport report modules" >
       
         <meta  property="og:image"  content="https://www.asbuiltreport.com/assets/images/social/dev-guide/creating-a-report-module.png" >
       
@@ -92,9 +92,9 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Creating a report module - AsBuiltReport" >
+        <meta  name="twitter:title"  content="Creating a Report Module - AsBuiltReport" >
       
-        <meta  name="twitter:description"  content="Document Your Datacenter With PowerShell" >
+        <meta  name="twitter:description"  content="Comprehensive standards and guidelines for developing AsBuiltReport report modules" >
       
         <meta  name="twitter:image"  content="https://www.asbuiltreport.com/assets/images/social/dev-guide/creating-a-report-module.png" >
       
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#getting-started" class="md-skip">
+        <a href="#creating-a-report-module" class="md-skip">
           Skip to content
         </a>
       
@@ -152,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Creating a report module
+              Creating a Report Module
             
           </span>
         </div>
@@ -247,7 +247,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../user-guide/installation/" class="md-tabs__link">
+        <a href="../../user-guide/quickstart/" class="md-tabs__link">
           
   
   
@@ -476,6 +476,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -519,12 +523,58 @@
   
   
     <li class="md-nav__item">
+      <a href="../../user-guide/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guide/installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Best Practices
     
   </span>
   
@@ -1849,7 +1899,7 @@
   
   
   <span class="md-ellipsis">
-    Contributing
+    Contributing Guide
     
   </span>
   
@@ -1872,6 +1922,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -1904,6 +1956,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -3163,6 +3217,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3876,8 +3932,7 @@
 
 
 
-  <h1>Creating a report module</h1>
-
+<h1 id="creating-a-report-module">Creating a Report Module</h1>
 <p>This guide provides comprehensive standards and guidelines for developing AsBuiltReport report modules. Following these practices ensures consistency, maintainability, and quality across the AsBuiltReport ecosystem.</p>
 <h2 id="getting-started">Getting Started</h2>
 <p>Before beginning development of a new report module, you should first discuss your plans with the project contributors. This ensures there's no duplication of effort, allows for guidance on implementation approach, and helps coordinate with the broader project roadmap. You can initiate this discussion by:</p>
@@ -3890,7 +3945,7 @@
 <h2 id="module-naming-and-structure">Module Naming and Structure</h2>
 <h3 id="naming-convention">Naming Convention</h3>
 <p>All AsBuiltReport modules must follow the standardised naming pattern:</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AsBuiltReport.Vendor.Technology
+<div class="highlight"><span class="filename">Module naming pattern</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>AsBuiltReport.Vendor.Technology
 </code></pre></div>
 <p><strong>Examples:</strong>
 - <code>AsBuiltReport.VMware.vSphere</code>
@@ -3899,7 +3954,7 @@
 - <code>AsBuiltReport.NetApp.ONTAP</code></p>
 <h3 id="repository-structure">Repository Structure</h3>
 <p>Organise your module repository with the following standard structure:</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>AsBuiltReport.Vendor.Technology/
+<div class="highlight"><span class="filename">Repository folder structure</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>AsBuiltReport.Vendor.Technology/
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── .github/                                       # GitHub workflows and templates
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── .vscode/                                       # VS Code configuration
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── Language/                                      # Language support folders
@@ -3924,7 +3979,7 @@
 <h2 id="powershell-manifest-psd1-requirements">PowerShell Manifest (.psd1) Requirements</h2>
 <h3 id="essential-properties">Essential Properties</h3>
 <p>Your module manifest must include these standardised properties:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">@{</span>
+<div class="highlight"><span class="filename">Module manifest (.psd1) template</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">@{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">&#39;0.1.0&#39;</span>                        <span class="c"># Semantic versioning</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">Author</span> <span class="p">=</span> <span class="s1">&#39;Your Name&#39;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">Description</span> <span class="p">=</span> <span class="s1">&#39;A PowerShell module to generate an as built report on the configuration of [Technology]&#39;</span>
@@ -3955,7 +4010,7 @@
 <h2 id="configuration-file-standards">Configuration File Standards</h2>
 <h3 id="json-configuration-structure">JSON Configuration Structure</h3>
 <p>Create a configuration file using the JSON template provided in the report module repository. The <code>Report</code> section uses standard properties. Avoid modifying the property fields, only values should be customised. The <code>Options</code>, <code>InfoLevel</code>, and <code>HealthCheck</code> sections should be tailored to your specific module requirements. Additional schemas may be added if necessary.</p>
-<div class="highlight"><span class="filename">JSON</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<div class="highlight"><span class="filename">Report configuration JSON template</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">&quot;Report&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">                                         </span><span class="c1">// Avoid modifying the Report parameters, use Options if needed</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Vendor&gt; &lt;Technology&gt; As Built Report&quot;</span><span class="p">,</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
@@ -4142,11 +4197,11 @@
 <li><strong>Write-PScriboMessage</strong>: Writes a formatted verbose output message with the time and PScribo plugin name</li>
 </ul>
 <h3 id="essential-pscribo-commandlets">Essential PScribo Commandlets</h3>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># List all PScribo Commandlets</span>
+<div class="highlight"><span class="filename">List PScribo commands</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># List all PScribo Commandlets</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Get-Command</span> <span class="n">-Module</span> <span class="n">PScribo</span>
 </code></pre></div>
 <h4 id="document-structure">Document Structure</h4>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Create sections for logical organisation</span>
+<div class="highlight"><span class="filename">Create sections for report organisation</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Create sections for logical organisation</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">Section</span> <span class="n">-Name</span> <span class="s1">&#39;Infrastructure Overview&#39;</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="p">{</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="c"># Content goes here</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
@@ -4157,7 +4212,7 @@
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
 </code></pre></div>
 <h4 id="content-creation">Content Creation</h4>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Add descriptive text</span>
+<div class="highlight"><span class="filename">Add content to report sections</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Add descriptive text</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Paragraph</span> <span class="s2">&quot;This section provides detailed information about the virtual infrastructure.&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c"># Add spacing between sections</span>
@@ -4167,7 +4222,7 @@
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nv">$VMData</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
 </code></pre></div>
 <h4 id="messaging-and-logging">Messaging and Logging</h4>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Provide user feedback during report generation</span>
+<div class="highlight"><span class="filename">User feedback and logging</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Provide user feedback during report generation</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Write-PScriboMessage</span> <span class="n">-Plugin</span> <span class="s2">&quot;Module&quot;</span> <span class="n">-Message</span> <span class="s2">&quot;Collecting virtual machine information...&quot;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c"># Warning messages for missing data or errors</span>
@@ -4175,7 +4230,7 @@
 </code></pre></div>
 <h3 id="table-creation-standards">Table Creation Standards</h3>
 <p>PScribo tables are the primary method for presenting structured data:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Collect and structure your data</span>
+<div class="highlight"><span class="filename">Create tables with structured data</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Collect and structure your data</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$ServerData</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Server</span> <span class="k">in</span> <span class="nv">$Servers</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="no">[PSCustomObject]</span><span class="p">@{</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>        <span class="s1">&#39;Server Name&#39;</span> <span class="p">=</span> <span class="nv">$Server</span><span class="p">.</span><span class="n">Name</span>
@@ -4203,7 +4258,7 @@
 </code></pre></div>
 <h3 id="conditional-formatting-and-styling">Conditional Formatting and Styling</h3>
 <p>Use PScribo styling to highlight important information based on health checks:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Apply conditional formatting based on health check results</span>
+<div class="highlight"><span class="filename">Apply conditional formatting for health checks</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Apply conditional formatting based on health check results</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">HealthCheck</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">CPUUtilisation</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Server</span> <span class="k">in</span> <span class="nv">$ServerData</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="k">if</span> <span class="p">(</span><span class="nv">$Server</span><span class="p">.</span><span class="s1">&#39;CPU Usage %&#39;</span> <span class="o">-gt</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">HealthCheck</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">CPUThreshold</span><span class="p">)</span> <span class="p">{</span>
@@ -4217,7 +4272,7 @@
 <h2 id="asbuiltreport-core-integration">AsBuiltReport Core Integration</h2>
 <h3 id="configuration-management">Configuration Management</h3>
 <p>AsBuiltReport modules automatically receive configuration data through the <code>$ReportConfig</code> variable:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Access configuration sections in your module</span>
+<div class="highlight"><span class="filename">Access report configuration</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Access configuration sections in your module</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$Report</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">$InfoLevel</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">$Options</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Options</span>
@@ -4231,17 +4286,17 @@
 </code></pre></div>
 <h3 id="standard-module-messages">Standard Module Messages</h3>
 <p>Include standard informational messages at the beginning of your module using <code>Write-ReportModuleInfo</code></p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Write-ReportModuleInfo</span> <span class="n">-ModuleName</span> <span class="s2">&quot;Vendor.Technology&quot;</span>
+<div class="highlight"><span class="filename">Display module information</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Write-ReportModuleInfo</span> <span class="n">-ModuleName</span> <span class="s2">&quot;Vendor.Technology&quot;</span>
 </code></pre></div>
 <h3 id="version-checking">Version Checking</h3>
 <p>Include version checking for prerequisite PowerShell modules by using <code>Get-RequiredModule</code></p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Check for prerequisite PowerShell module versions</span>
+<div class="highlight"><span class="filename">Check prerequisite module versions</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Check for prerequisite PowerShell module versions</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">Get-RequiredModule</span> <span class="n">-Name</span> <span class="s1">&#39;Az&#39;</span> <span class="n">-Version</span> <span class="s1">&#39;14.4.0&#39;</span>
 </code></pre></div>
 <h2 id="report-structure-and-flow">Report Structure and Flow</h2>
 <h3 id="hierarchical-organisation">Hierarchical Organisation</h3>
 <p>Structure your reports logically using PScribo sections:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c"># Main infrastructure section</span>
+<div class="highlight"><span class="filename">Organise report with nested sections</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c"># Main infrastructure section</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">Section</span> <span class="n">-Name</span> <span class="s1">&#39;Infrastructure&#39;</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="p">{</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="c"># Subsection for compute resources</span>
@@ -4268,7 +4323,7 @@
 </code></pre></div>
 <h3 id="infolevel-driven-content">InfoLevel-Driven Content</h3>
 <p>Use InfoLevel settings to control the depth of information presented:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># Implement progressive information disclosure</span>
+<div class="highlight"><span class="filename">Control content depth with InfoLevel</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c"># Implement progressive information disclosure</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">switch</span> <span class="p">(</span><span class="nv">$InfoLevel</span><span class="p">.</span><span class="n">Storage</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">0</span> <span class="p">{</span>
 <a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="c"># Skip storage section entirely</span>
@@ -4293,7 +4348,7 @@
 </code></pre></div>
 <h3 id="error-handling-in-reports">Error Handling in Reports</h3>
 <p>Implement graceful error handling that doesn't break report generation:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Collect data with error resilience</span>
+<div class="highlight"><span class="filename">Graceful error handling in reports</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Collect data with error resilience</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">try</span> <span class="p">{</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="nb">Write-PScriboMessage</span> <span class="n">-Plugin</span> <span class="s2">&quot;Module&quot;</span> <span class="n">-Message</span> <span class="s2">&quot;Collecting network information...&quot;</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="nv">$NetworkData</span> <span class="p">=</span> <span class="nb">Get-NetworkConfiguration</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
@@ -4319,7 +4374,7 @@
 <h2 id="function-design-and-implementation">Function Design and Implementation</h2>
 <h3 id="main-function-structure">Main Function Structure</h3>
 <p>Every module must export a single main function following this pattern:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">function</span> <span class="nb">Invoke-AsBuiltReport</span><span class="p">.</span><span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">Main module function template</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">function</span> <span class="nb">Invoke-AsBuiltReport</span><span class="p">.</span><span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="p">{</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="cm">&lt;#</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cm">    </span><span class="sd">.SYNOPSIS</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="cm">        A PowerShell function to generate a [Vendor] [Technology] As Built report.</span>
@@ -4399,7 +4454,7 @@
 <h3 id="creating-language-files">Creating Language Files</h3>
 <h4 id="directory-structure">Directory Structure</h4>
 <p>Create a <code>Language</code> folder in your module root with subfolders for each supported language:</p>
-<div class="highlight"><span class="filename">Text Only</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>AsBuiltReport.Vendor.Technology/
+<div class="highlight"><span class="filename">Language folder structure</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>AsBuiltReport.Vendor.Technology/
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>├── Language/
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>│   ├── en-US/
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>│   │   └── VendorTechnology.psd1
@@ -4412,7 +4467,7 @@
 </code></pre></div>
 <h4 id="language-file-format">Language File Format</h4>
 <p>Language files use PowerShell data files (.psd1) with a hashtable structure containing multiple <code>ConvertFrom-StringData</code> blocks. This format allows you to organise translations by function or section:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c"># culture = &#39;en-US&#39;</span>
+<div class="highlight"><span class="filename">Language file template (en-US)</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c"># culture = &#39;en-US&#39;</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">@{</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="c"># Main module translations</span>
 <a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="n">InvokeAsBuiltReportVendorTechnology</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@&#39;</span>
@@ -4462,7 +4517,7 @@
 <a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="p">}</span>
 </code></pre></div>
 <p><strong>Spanish (es-ES) example:</strong>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c"># culture = &#39;es-ES&#39;</span>
+<div class="highlight"><span class="filename">Language file example (es-ES)</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c"># culture = &#39;es-ES&#39;</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">@{</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="c"># Traducciones principales del módulo</span>
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="n">InvokeAsBuiltReportVendorTechnology</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@&#39;</span>
@@ -4522,7 +4577,7 @@
 <li>Include comments to organise sections within the file</li>
 </ul>
 <h3 id="implementing-language-support-in-your-module">Implementing Language Support in Your Module</h3>
-<p>Language support is automatically initialized by the AsBuiltReport.Core module when a report is generated. The Core module loads your language files based on the available and/or configured language and makes translations available through the <code>$reportTranslate</code> global variable.</p>
+<p>Language support is automatically initialised by the AsBuiltReport.Core module when a report is generated. The Core module loads your language files based on the available and/or configured language and makes translations available through the <code>$reportTranslate</code> global variable.</p>
 <p><strong>What you need to do:</strong></p>
 <ol>
 <li>Create language files in the <code>Language/</code> folder structure</li>
@@ -4537,7 +4592,7 @@
 </ul>
 <h4 id="using-translations-in-your-report-module">Using Translations in Your Report Module</h4>
 <p>Reference translation strings using the <code>$reportTranslate</code> global variable. When using the hashtable structure, access translations through the appropriate function/section key:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c"># Access translations for the main module</span>
+<div class="highlight"><span class="filename">Use translations in report code</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c"># Access translations for the main module</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nv">$moduleTranslate</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">InvokeAsBuiltReportVendorTechnology</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
 <a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c"># Access translations for specific functions</span>
@@ -4581,7 +4636,7 @@
 </code></pre></div>
 <p><strong>Alternative approach for simpler modules:</strong></p>
 <p>For smaller modules with fewer translations, you can use a simpler flat structure:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># Simpler language file structure (VendorTechnology.psd1)</span>
+<div class="highlight"><span class="filename">Simpler flat language file structure</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># Simpler language file structure (VendorTechnology.psd1)</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c"># culture = &#39;en-US&#39;</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nb">ConvertFrom-StringData</span> <span class="sh">@&#39;</span>
 <a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="sh">    SectionTitle = Virtual Infrastructure Overview</span>
@@ -4724,7 +4779,7 @@
 <li><strong>Avoid Hardcoded Text</strong>: Never hardcode text in your module - always use translation keys</li>
 <li><strong>Test Fallbacks</strong>: Test your module with various language settings to ensure fallback chains work correctly</li>
 <li><strong>Format Strings</strong>: Use PowerShell format strings (<code>{0}</code>, <code>{1}</code>) for dynamic values:
-   <div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c"># In language file:</span>
+   <div class="highlight"><span class="filename">Format strings for dynamic values</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c"># In language file:</span>
 <a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">VMCount</span> <span class="p">=</span> <span class="n">Found</span> <span class="p">{</span><span class="n">0</span><span class="p">}</span> <span class="n">virtual</span> <span class="n">machines</span>
 <a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c"># In code:</span>
@@ -4734,7 +4789,7 @@
 </ol>
 <h3 id="testing-language-support">Testing Language Support</h3>
 <p>Test your module with different languages:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c"># Test with Spanish</span>
+<div class="highlight"><span class="filename">Test reports with different languages</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c"># Test with Spanish</span>
 <a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="n">-Target</span> <span class="n">server01</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-ReportLanguage</span> <span class="s1">&#39;es-ES&#39;</span>
 <a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
 <a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c"># Test with French (uses configuration file setting)</span>
@@ -4745,7 +4800,7 @@
 </code></pre></div>
 <h3 id="example-complete-language-implementation">Example: Complete Language Implementation</h3>
 <p>Here's a complete example showing language support implementation:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">function</span> <span class="nb">Invoke-AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">Complete language implementation example</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">function</span> <span class="nb">Invoke-AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="p">{</span>
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
 <a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="k">param</span> <span class="p">(</span>
 <a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>        <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">)]</span>
@@ -4755,7 +4810,7 @@
 <a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>        <span class="no">[PSCredential]</span> <span class="nv">$Credential</span>
 <a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>    <span class="p">)</span>
 <a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
-<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>    <span class="c"># Access configuration (language support is automatically initialized by Core module)</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>    <span class="c"># Access configuration (language support is automatically initialised by Core module)</span>
 <a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>    <span class="nv">$Report</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
 <a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>    <span class="nv">$InfoLevel</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
 <a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
@@ -4814,7 +4869,7 @@
 <li>Identify all hardcoded text in your module (section titles, table headers, messages, etc.)</li>
 <li>Add them to the 'en-US' language file using the hashtable structure</li>
 <li>
-<p>Group translations by function name for better organization</p>
+<p>Group translations by function name for better organisation</p>
 </li>
 <li>
 <p><strong>Replace hardcoded strings</strong></p>
@@ -4854,7 +4909,7 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The AsBuiltReport.Core module automatically handles language initialization - you don't need to call <code>Initialize-LocalizedData</code> in your report module.</p>
+<p>The AsBuiltReport.Core module automatically handles language initialisation - you don't need to call <code>Initialize-LocalizedData</code> in your report module.</p>
 </div>
 <h2 id="powershell-best-practices">PowerShell Best Practices</h2>
 <h3 id="naming-conventions">Naming Conventions</h3>
@@ -4867,7 +4922,7 @@
 </ul>
 <h3 id="code-organisation-and-style">Code Organisation and Style</h3>
 <p><span class="twemoji check-circle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16m3.78-9.72a.75.75 0 0 0-.018-1.042.75.75 0 0 0-1.042-.018L6.75 9.19 5.28 7.72a.75.75 0 0 0-1.042.018.75.75 0 0 0-.018 1.042l2 2a.75.75 0 0 0 1.06 0Z"/></svg></span> DO
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c"># Use PascalCasing for functions and parameters</span>
+<div class="highlight"><span class="filename">Good PowerShell practices</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c"># Use PascalCasing for functions and parameters</span>
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="k">function</span> <span class="nb">Get-AbrVirtualMachine</span> <span class="p">{</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
 <a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="k">param</span> <span class="p">(</span>
@@ -4909,14 +4964,14 @@
 <a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a><span class="p">}</span>
 </code></pre></div></p>
 <p><span class="twemoji x-circle-fill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657M6.03 4.97a.75.75 0 0 0-1.042.018.75.75 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.75.75 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.75.75 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.75.75 0 0 0-.734.215L8 6.94Z"/></svg></span> DO NOT
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c"># Avoid functions within report scripts</span>
+<div class="highlight"><span class="filename">Avoid these practices</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c"># Avoid functions within report scripts</span>
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c"># Avoid hardcoded credentials</span>
 <a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c"># Avoid excessive global variables</span>
 <a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="c"># Avoid unclear variable names like $a, $temp, $data</span>
 </code></pre></div></p>
 <h3 id="parameter-validation">Parameter Validation</h3>
 <p>Implement robust parameter validation:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">param</span> <span class="p">(</span>
+<div class="highlight"><span class="filename">Parameter validation examples</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">param</span> <span class="p">(</span>
 <a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">)]</span>
 <a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="p">[</span><span class="k">ValidateSet</span><span class="p">(</span><span class="s1">&#39;Server&#39;</span><span class="p">,</span> <span class="s1">&#39;Cluster&#39;</span><span class="p">,</span> <span class="s1">&#39;Datacenter&#39;</span><span class="p">)]</span>
@@ -4933,7 +4988,7 @@
 </code></pre></div>
 <h3 id="error-handling">Error Handling</h3>
 <p>Implement comprehensive error handling:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">try</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">Comprehensive error handling</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">try</span> <span class="p">{</span>
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="c"># Validate prerequisites</span>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">Get-Module</span> <span class="n">VMware</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-ListAvailable</span><span class="p">))</span> <span class="p">{</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>        <span class="k">throw</span> <span class="s2">&quot;VMware.PowerCLI module is required but not installed&quot;</span>
@@ -4971,7 +5026,7 @@
 </ol>
 <h3 id="comprehensive-module-example">Comprehensive Module Example</h3>
 <p>Here's a complete example showing how to structure a section of an AsBuiltReport module:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c"># Virtual Machine Section Example</span>
+<div class="highlight"><span class="filename">Complete module section example</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c"># Virtual Machine Section Example</span>
 <a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$InfoLevel</span><span class="p">.</span><span class="n">VirtualMachines</span> <span class="o">-gt</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>    <span class="n">Section</span> <span class="n">-Name</span> <span class="s1">&#39;Virtual Machines&#39;</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="p">{</span>
 <a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
@@ -5107,7 +5162,7 @@
 </ul>
 <h3 id="table-formatting-standards">Table Formatting Standards</h3>
 <p>Use consistent table formatting throughout your module:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c"># Create PSCustomObject for structured data</span>
+<div class="highlight"><span class="filename">Consistent table formatting</span><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c"># Create PSCustomObject for structured data</span>
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nv">$ServerInfo</span> <span class="p">=</span> <span class="no">[PSCustomObject]</span><span class="p">@{</span>
 <a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="s1">&#39;Server Name&#39;</span> <span class="p">=</span> <span class="nv">$Server</span><span class="p">.</span><span class="n">Name</span>
 <a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="s1">&#39;Version&#39;</span> <span class="p">=</span> <span class="nv">$Server</span><span class="p">.</span><span class="n">Version</span>
@@ -5134,7 +5189,7 @@
 </code></pre></div>
 <h3 id="health-check-implementation">Health Check Implementation</h3>
 <p>Implement health checks with configurable thresholds:</p>
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">HealthCheck</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">CPUUtilization</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">Health check implementation</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">HealthCheck</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">CPUUtilization</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$Server</span><span class="p">.</span><span class="n">CPUUsage</span> <span class="o">-gt</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">HealthCheck</span><span class="p">.</span><span class="n">Infrastructure</span><span class="p">.</span><span class="n">CPUThreshold</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>        <span class="nv">$ServerInfo</span> <span class="p">|</span> <span class="nb">Set-Style</span> <span class="n">-Style</span> <span class="n">Warning</span> <span class="n">-Property</span> <span class="s1">&#39;CPU Usage&#39;</span>
 <a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="p">}</span>
@@ -5160,7 +5215,7 @@
 <h2 id="documentation-standards">Documentation Standards</h2>
 <h3 id="readmemd-requirements">README.md Requirements</h3>
 <p>Include these sections in your README:</p>
-<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="gh"># AsBuiltReport.Vendor.Technology</span>
+<div class="highlight"><span class="filename">README template structure</span><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="gh"># AsBuiltReport.Vendor.Technology</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>
 <a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="gu">## Installation</span>
 <a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>Instructions for installing required modules
@@ -5247,7 +5302,7 @@
 </ul>
 <h3 id="change-log-maintenance">Change Log Maintenance</h3>
 <p>Maintain <code>CHANGELOG.md</code> following <a href="https://keepachangelog.com/">Keep a Changelog</a> format:</p>
-<div class="highlight"><span class="filename">Markdown</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="gu">## [1.2.0] - 2024-MM-dd</span>
+<div class="highlight"><span class="filename">Changelog format example</span><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="gu">## [1.2.0] - 2024-MM-dd</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="gu">### Added</span>
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="k">-</span><span class="w"> </span>New health check for storage utilisation
 <a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
@@ -5293,7 +5348,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 21, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2025</span>
   </span>
 
     
@@ -5331,7 +5386,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../contributing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contributing">
+          <a href="../contributing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contributing Guide">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5341,7 +5396,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Contributing
+                Contributing Guide
               </div>
             </div>
           </a>
@@ -5375,11 +5430,6 @@
     </div>
   
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
 </div>
       
         
@@ -5389,10 +5439,7 @@
     
     
     
-      
-      
-    
-    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on GitHub" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -5400,10 +5447,7 @@
     
     
     
-      
-      
-    
-    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+    <a href="https://bsky.app/profile/asbuiltreport.com" target="_blank" rel="noopener" title="AsBuiltReport on Bluesky" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3M288 227.1c-26.1-50.7-97.1-145.2-163.1-191.8C61.6-9.4 37.5-1.7 21.6 5.5 3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7 3.3-.5 6.6-.9 10-1.4-3.3.5-6.6 1-10 1.4-93.9 14-177.3 48.2-67.9 169.9C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4 102.4-103.4 28.1-156-65.8-169.9-3.3-.4-6.7-.8-10-1.3 3.4.4 6.7.9 10 1.3 64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1"/></svg>
     </a>
   
@@ -5411,10 +5455,7 @@
     
     
     
-      
-      
-    
-    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="x.com" class="md-social__link">
+    <a href="https://x.com/AsBuiltReport" target="_blank" rel="noopener" title="AsBuiltReport on X (Twitter)" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
     </a>
   
