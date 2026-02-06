@@ -932,6 +932,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tokenparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TokenParameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#useinteractiveauth" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3330,6 +3341,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tokenparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TokenParameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#useinteractiveauth" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3618,7 +3640,14 @@
 <td>String</td>
 <td>No</td>
 <td>-</td>
-<td>API token</td>
+<td>API token authentication</td>
+</tr>
+<tr>
+<td>TokenParameters</td>
+<td>Hashtable</td>
+<td>No</td>
+<td>-</td>
+<td>Additional parameters for API token authentication</td>
 </tr>
 <tr>
 <td>UseInteractiveAuth</td>
@@ -3726,6 +3755,11 @@
 <h3 id="token">Token</h3>
 <p>Specifies an API token to authenticate to the target system.</p>
 <p>This is an optional parameter.</p>
+<h3 id="tokenparameters">TokenParameters</h3>
+<p>Specifies additional parameters required for token authentication as a hashtable.</p>
+<p>The required parameters will vary by report module.</p>
+<p>Consult the specific report module documentation for required token parameters.</p>
+<p>This is an optional parameter.</p>
 <h3 id="useinteractiveauth">UseInteractiveAuth</h3>
 <p>Use interactive authentication (via 3rd party identity provider) to authenticate to the target system.</p>
 <p>This parameter has an alias <code>MFA</code> for backwards compatibility.</p>
@@ -3792,12 +3826,14 @@
 </li>
 <li>
 <p>Creates an as-built report for two VMware ESXi hosts. Authentication to VMware ESXi hosts uses stored credentials. The report is generated in Word (DOCX) format (by default). A customized stylesheet is specified to style the report in the company’s brand colours and fonts. The report is saved to the user’s documents folder with a timestamp appended to the filename to identify when the report was generated. The <code>AsBuiltConfigFilePath</code> parameter is specified to bypass the menu driven questionnaire.</p>
-<p><div class="highlight"><span class="filename">Example 3</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.ESXi&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;corp-esxi01&#39;</span><span class="p">,</span><span class="s1">&#39;corp-esxi02&#39;</span> <span class="p">`</span>
+<div class="highlight"><span class="filename">Example 3</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">&#39;VMware.ESXi&#39;</span> <span class="n">-Target</span> <span class="s1">&#39;corp-esxi01&#39;</span><span class="p">,</span><span class="s1">&#39;corp-esxi02&#39;</span> <span class="p">`</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">-Credential</span> <span class="nv">$creds</span> <span class="n">-OutputFolderPath</span> <span class="s2">&quot;$env:USERPROFILE\Documents&quot;</span> <span class="p">`</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">-StyleFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyStyle.ps1&#39;</span><span class="p">`</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">-AsBuiltConfigFilePath</span> <span class="s1">&#39;C:\AsBuiltReport\MyCompanyConfig.json&#39;</span> <span class="n">-Timestamp</span>
 </code></pre></div>
-4. Creates a Microsoft Azure As Built Report in HTML format with Spanish language content. Authentication to Microsoft Azure uses an external identity provider.</p>
+</li>
+<li>
+<p>Creates a Microsoft Azure As Built Report in HTML format with Spanish language content. Authentication to Microsoft Azure uses an external identity provider.</p>
 <div class="highlight"><span class="filename">Example 4</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Azure</span> <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">corp</span><span class="p">.</span><span class="n">local</span> <span class="n">-UseInteractiveAuth</span> <span class="n">-Format</span> <span class="n">HTML</span> <span class="n">-ReportLanguage</span> <span class="s1">&#39;es-ES&#39;</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;H:\Documents\&#39;</span>
 </code></pre></div>
 </li>
@@ -3823,6 +3859,13 @@
 <div class="highlight"><span class="filename">Example 7</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">NetApp</span><span class="p">.</span><span class="n">ONTAP</span> <span class="n">-Target</span> <span class="n">cluster01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">-Token</span> <span class="s1">&#39;your-api-token-here&#39;</span> <span class="n">-Format</span> <span class="n">Word</span> <span class="n">-Orientation</span> <span class="n">Landscape</span> <span class="p">`</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Creates a Microsoft Azure AsBuiltReport using token authentication with additional parameters. The AccountId parameter is required for Azure token authentication and is passed via the TokenParameters hashtable.</p>
+<div class="highlight"><span class="filename">Example 8</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">Azure</span> <span class="n">-Target</span> <span class="s1">&#39;contoso.onmicrosoft.com&#39;</span> <span class="p">`</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">-Token</span> <span class="s1">&#39;your-api-token-here&#39;</span> <span class="n">-TokenParameters</span> <span class="p">@{</span><span class="n">AccountId</span><span class="p">=</span><span class="s1">&#39;admin@contoso.com&#39;</span><span class="p">}</span> <span class="p">`</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">-Format</span> <span class="n">HTML</span><span class="p">,</span><span class="n">Word</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span>
 </code></pre></div>
 </li>
 </ol>
@@ -3856,7 +3899,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 8, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2026</span>
   </span>
 
     
