@@ -2921,6 +2921,100 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2026-03-03 00:00:00+00:00">Mar 3, 2026</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="./" class="md-meta__link">General</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              7 min read
+            
+          </li>
+        
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="stop-updating-your-design-doc-and-calling-it-an-as-built"><a class="toclink" href="../../2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/">Stop Updating Your Design Doc and Calling It an As-Built</a></h2>
+<p>In nearly 20 years delivering enterprise infrastructure solutions, there is a common misconception I have encountered time and again — that an as-built document is simply a design document updated to reflect what was built, a past-tense version of the original plan. It is an understandable assumption, but it is fundamentally wrong. The two documents serve entirely different purposes, capture entirely different information, and should never be confused with one another.</p>
+<p>This distinction matters. Getting it wrong means critical information goes undocumented, environments become harder to support, and the as-built loses its value as a source of truth.</p>
+<h3 id="what-a-design-document-is-for"><a class="toclink" href="../../2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/#what-a-design-document-is-for">What a Design Document Is For</a></h3>
+<p>A design document is created before a single component is deployed. Its purpose is to record <strong>intent</strong> — to describe what will be built, why it will be built that way, and how the proposed solution meets the requirements of the business.</p>
+<p>A well-structured design document will typically capture:</p>
+<ul>
+<li><strong>Business requirements</strong> and how the proposed architecture meets them</li>
+<li><strong>Assumptions</strong> made during the design process — for example, that a specific network segment will be available, or that a licensing tier will be in place</li>
+<li><strong>Constraints</strong> that influenced design decisions, such as budget limits, existing infrastructure, or compliance obligations</li>
+<li><strong>Risks</strong> identified and how they are mitigated</li>
+<li><strong>Planned architecture</strong> — topology diagrams, component lists, configuration standards</li>
+<li><strong>Design decisions and justifications</strong> — the specific choices made during the design process and the reasoning behind them, such as why a particular platform, topology, or configuration approach was selected over alternatives</li>
+</ul>
+<p>Critically, a design document captures the <strong>why</strong>. Why was this platform chosen over an alternative? Why is the solution architected this way? Why were certain trade-offs made? This reasoning is invaluable for future engineers who need to understand the intent behind a system — but it belongs in the design document, not the as-built.</p>
+<h3 id="what-an-as-built-document-is-for"><a class="toclink" href="../../2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/#what-an-as-built-document-is-for">What an As-Built Document Is For</a></h3>
+<p>An as-built document is not written in advance. It is generated <strong>from the system itself</strong>, after deployment, and its sole purpose is to record reality — what was actually deployed, how it is configured, and what it looks like right now.</p>
+<p>An as-built document does not need to explain the <em>why</em>. Its focus is entirely on the <em>is</em>.</p>
+<p>A thorough as-built document will capture:</p>
+<ul>
+<li>The actual deployed configuration of every component</li>
+<li>Network addressing, VLANs, and routing as they exist in the environment</li>
+<li>Storage configurations, datastores, and volume assignments</li>
+<li>Identity and access configurations</li>
+<li>The current state of services, roles, and features</li>
+</ul>
+<p>And here is the key point that the "updated design" misconception completely misses.</p>
+<h3 id="the-information-that-cannot-exist-until-the-system-is-built"><a class="toclink" href="../../2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/#the-information-that-cannot-exist-until-the-system-is-built">The Information That Cannot Exist Until the System Is Built</a></h3>
+<p>A design document is authored before the environment exists. By definition, it cannot contain information that is only generated at provisioning time. Yet this is precisely the information that is most valuable in an as-built document.</p>
+<p>Consider the following examples:</p>
+<p><strong>VMware environments:</strong>
+- Virtual machine instance UUIDs assigned at creation
+- Managed Object Reference IDs (MOREFs) for vCenter objects
+- Datastore URNs
+- MAC addresses assigned to virtual network adapters</p>
+<p><strong>Microsoft Azure:</strong>
+- Resource GUIDs for every deployed resource
+- Subscription and tenant IDs
+- Managed identity object IDs
+- Auto-generated storage account endpoints and connection strings
+- Deployment correlation IDs</p>
+<p><strong>Active Directory and Windows:</strong>
+- Security Identifiers (SIDs) for users, groups, and computer accounts
+- ObjectGUIDs for directory objects
+- GPO GUIDs</p>
+<p>None of these values exist at design time. No engineer can write them into a design document, and no amount of updating a design document to past tense will produce them. They can only be captured by interrogating the live system after deployment.</p>
+<p>This is why an as-built document must be <strong>generated from the system</strong>, not authored by hand. Manual documentation of these values is error-prone, time-consuming, and almost always incomplete.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/">
+          Continue reading
+        </a>
+      </nav>
+    
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="/assets/images/contributors/tim-carman.jpg" alt="Tim Carman">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-12-05 00:00:00+00:00">Dec 5, 2023</time></li>
         
           <li class="md-meta__item">
