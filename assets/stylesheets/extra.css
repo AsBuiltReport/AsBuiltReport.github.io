@@ -94,7 +94,7 @@ src: local(''),
 /* Code block colours (VS Code Dark+) */
 :root,
 [data-md-color-scheme="default"] {
-    --md-code-bg-color:                  #1e1e1e;
+    --md-code-bg-color:                  #3c3c3c;
     --md-code-fg-color:                  #d4d4d4;
     --md-code-hl-keyword-color:          #c586c0;
     --md-code-hl-string-color:           #ce9178;
@@ -111,7 +111,7 @@ src: local(''),
 
 /* Direct background override — targets the element Material actually backgrounds */
 .md-typeset pre > code {
-    background-color: #1e1e1e;
+    background-color: #3c3c3c;
     color: #d4d4d4;
 }
 
