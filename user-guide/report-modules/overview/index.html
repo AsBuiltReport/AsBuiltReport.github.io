@@ -3397,16 +3397,16 @@
 <h2 id="getting-started-with-report-modules">Getting Started with Report Modules</h2>
 <p><strong>1. Discover Available Modules</strong></p>
 <p>Use PowerShell to find all available report modules:</p>
-<div class="highlight"><span class="filename">Find all AsBuiltReport modules</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># List all available modules</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Search for a specific vendor</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Find all AsBuiltReport modules</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># List all available modules</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Search for a specific vendor</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
+</span></code></pre></div>
 <p><strong>2. Install a Module</strong></p>
-<div class="highlight"><span class="filename">Install a report module</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Install a report module (AsBuiltReport.Core is automatically installed)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install a report module</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># Install a report module (AsBuiltReport.Core is automatically installed)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 <p><strong>3. Check Module Requirements</strong></p>
 <p>Before generating reports, check each module's GitHub README for:</p>
 <ul>
@@ -3462,15 +3462,15 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>VMware report modules require VMware PowerCLI:</p>
-<div class="highlight"><span class="filename">Install VMware modules</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Install VCF PowerCLI</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VCF</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-AllowClobber</span> <span class="n">-SkipPublisherCheck</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c"># Install VMware vSphere report module</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c"># Generate a report</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install VMware modules</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c"># Install VCF PowerCLI</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VCF</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-AllowClobber</span> <span class="n">-SkipPublisherCheck</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c"># Install VMware vSphere report module</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c"># Generate a report</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</span></code></pre></div>
 <p><strong>Available VMware Modules:</strong></p>
 <ul>
 <li><strong>VMware vSphere</strong> - Document vCenter, clusters, hosts, VMs, networking, storage</li>
@@ -3482,18 +3482,18 @@
 </div>
 <div class="tabbed-block">
 <p>Microsoft modules may require specific Windows features or modules:</p>
-<div class="highlight"><span class="filename">Install Microsoft modules</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># For Active Directory (requires RSAT-AD-PowerShell feature)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c"># For DHCP (requires RSAT-DHCP feature)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">DHCP</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c"># For Windows Servers</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Windows</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c"># Generate an Active Directory report</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install Microsoft modules</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># For Active Directory (requires RSAT-AD-PowerShell feature)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c"># For DHCP (requires RSAT-DHCP feature)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">DHCP</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c"># For Windows Servers</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">Windows</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c"># Generate an Active Directory report</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</span></code></pre></div>
 <p><strong>Available Microsoft Modules:</strong></p>
 <ul>
 <li><strong>Active Directory</strong> - Domain controllers, forest, domains, sites, replication</li>
@@ -3505,15 +3505,15 @@
 </div>
 <div class="tabbed-block">
 <p>Veeam modules require Veeam PowerShell snapins:</p>
-<div class="highlight"><span class="filename">Install Veeam modules</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Install Veeam Backup &amp; Replication module</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c"># Install Veeam Backup for Microsoft 365 module</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VB365</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c"># Generate a VBR report</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Target</span> <span class="n">veeam-server</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install Veeam modules</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c"># Install Veeam Backup &amp; Replication module</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c"># Install Veeam Backup for Microsoft 365 module</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VB365</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c"># Generate a VBR report</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Target</span> <span class="n">veeam-server</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span>
+</span></code></pre></div>
 <p><strong>Available Veeam Modules:</strong></p>
 <ul>
 <li><strong>Veeam VBR</strong> - Backup &amp; Replication infrastructure and jobs</li>
@@ -3522,15 +3522,15 @@
 </div>
 <div class="tabbed-block">
 <p>Storage vendor modules:</p>
-<div class="highlight"><span class="filename">Install storage modules</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># NetApp ONTAP</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">NetApp</span><span class="p">.</span><span class="n">ONTAP</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># Pure Storage FlashArray</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">PureStorage</span><span class="p">.</span><span class="n">FlashArray</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c"># Dell EMC VxRail</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">DellEMC</span><span class="p">.</span><span class="n">VxRail</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install storage modules</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># NetApp ONTAP</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">NetApp</span><span class="p">.</span><span class="n">ONTAP</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># Pure Storage FlashArray</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">PureStorage</span><span class="p">.</span><span class="n">FlashArray</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c"># Dell EMC VxRail</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">DellEMC</span><span class="p">.</span><span class="n">VxRail</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 <p><strong>Available Storage Modules:</strong></p>
 <ul>
 <li><strong>NetApp ONTAP</strong> - Storage system configuration</li>
@@ -3540,12 +3540,12 @@
 </div>
 <div class="tabbed-block">
 <p>Networking vendor modules:</p>
-<div class="highlight"><span class="filename">Install networking modules</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Fortinet FortiGate</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Fortinet</span><span class="p">.</span><span class="n">FortiGate</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c"># Aruba ClearPass</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Aruba</span><span class="p">.</span><span class="n">ClearPass</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install networking modules</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Fortinet FortiGate</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Fortinet</span><span class="p">.</span><span class="n">FortiGate</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c"># Aruba ClearPass</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Aruba</span><span class="p">.</span><span class="n">ClearPass</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 <p><strong>Available Networking Modules:</strong></p>
 <ul>
 <li><strong>Fortinet FortiGate</strong> - Firewall configuration</li>
@@ -3554,15 +3554,15 @@
 </div>
 <div class="tabbed-block">
 <p>Additional infrastructure modules:</p>
-<div class="highlight"><span class="filename">Install other modules</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Nutanix Prism Element</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c"># Rubrik CDM</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Rubrik</span><span class="p">.</span><span class="n">CDM</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c"># System Resources</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">System</span><span class="p">.</span><span class="n">Resources</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install other modules</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Nutanix Prism Element</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c"># Rubrik CDM</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Rubrik</span><span class="p">.</span><span class="n">CDM</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c"># System Resources</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">System</span><span class="p">.</span><span class="n">Resources</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 <p><strong>Available Modules:</strong></p>
 <ul>
 <li><strong>Nutanix Prism Element</strong> - Hyperconverged infrastructure</li>

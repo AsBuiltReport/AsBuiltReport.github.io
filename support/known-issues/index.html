@@ -3289,8 +3289,8 @@
 <p><strong>Issue</strong>: Module installation from PowerShell Gallery may fail with TLS/SSL connection errors.</p>
 <p><strong>Cause</strong>: PowerShell 5.1 defaults to TLS 1.0, but PowerShell Gallery requires TLS 1.2.</p>
 <p><strong>Resolution</strong>: Run this command before installing modules:</p>
-<div class="highlight"><span class="filename">Enable TLS 1.2 for PowerShell 5.1</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Enable TLS 1.2 for PowerShell 5.1</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="no">[Net.ServicePointManager]</span><span class="p">::</span><span class="n">SecurityProtocol</span> <span class="p">=</span> <span class="no">[Net.SecurityProtocolType]</span><span class="p">::</span><span class="n">Tls12</span>
+</span></code></pre></div>
 <p>Add this to your PowerShell profile for permanent configuration.</p>
 <h2 id="report-module-specific-issues">Report Module-Specific Issues</h2>
 <p>Each report module may have its own known issues and limitations based on:</p>

@@ -3489,15 +3489,15 @@
 <p>Open PowerShell and install a report module for your environment. AsBuiltReport.Core will be automatically installed as a dependency.</p>
 <h3 id="discover-available-report-modules">Discover Available Report Modules</h3>
 <p>First, see what report modules are available:</p>
-<div class="highlight"><span class="filename">Find available AsBuiltReport modules</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># List all available AsBuiltReport modules in PowerShell Gallery</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-AutoSize</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Or search for a specific vendor (e.g., VMware)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c"># Or search for a specific vendor (e.g., Microsoft)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Find available AsBuiltReport modules</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># List all available AsBuiltReport modules in PowerShell Gallery</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">-AutoSize</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c"># Or search for a specific vendor (e.g., VMware)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c"># Or search for a specific vendor (e.g., Microsoft)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.*</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">Description</span>
+</span></code></pre></div>
 <p>This will display all published report modules you can install.</p>
 <div class="admonition tip">
 <p class="admonition-title">Browse Online</p>
@@ -3508,20 +3508,20 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">VMware vSphere</label><label for="__tabbed_1_2">Microsoft Active Directory</label><label for="__tabbed_1_3">Veeam Backup &amp; Replication</label><label for="__tabbed_1_4">Nutanix Prism</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Install VMware vSphere report module</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install VMware vSphere report module</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Install Active Directory report module</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install Active Directory report module</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Install Veeam VBR report module</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install Veeam VBR report module</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Install Nutanix Prism report module</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install Nutanix Prism report module</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -3532,9 +3532,9 @@
 <p>Browse all <a href="../report-modules/overview/">available report modules</a> for more options.</p>
 <h3 id="verify-installation">Verify Installation</h3>
 <p>Check that both the Core and report module are installed:</p>
-<div class="highlight"><span class="filename">Verify installation</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># List installed AsBuiltReport modules</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="n">-ListAvailable</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Verify installation</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># List installed AsBuiltReport modules</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Get-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span> <span class="n">-ListAvailable</span>
+</span></code></pre></div>
 <p>You should see both AsBuiltReport.Core and your chosen report module listed.</p>
 <h2 id="step-2-check-requirements-1-minute">Step 2: Check Requirements (1 minute)</h2>
 <p>Before generating your first report, check the report module's README for:</p>
@@ -3543,9 +3543,9 @@
 <li><strong>PowerShell module dependencies</strong> - Install any required vendor modules</li>
 <li><strong>Minimum permissions</strong> - Verify your credentials have the necessary access</li>
 </ul>
-<div class="highlight"><span class="filename">Check report module information</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># View the report module&#39;s project URI (links to GitHub README)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">ProjectUri</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Check report module information</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># View the report module&#39;s project URI (links to GitHub README)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">ProjectUri</span>
+</span></code></pre></div>
 <p>Visit the GitHub repository to review the README for specific requirements.</p>
 <div class="admonition example">
 <p class="admonition-title">Common Dependencies</p>
@@ -3555,61 +3555,61 @@
 <li><strong>Veeam VBR</strong> requires <code>Veeam.Backup.PowerShell</code> snapin</li>
 </ul>
 <p>Example installation:
-<div class="highlight"><span class="filename">PowerShell</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Install VMware PowerCLI for vSphere reports</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VCF</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-AllowClobber</span> <span class="n">-SkipPublisherCheck</span>
-</code></pre></div></p>
+<div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># Install VMware PowerCLI for vSphere reports</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VCF</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span> <span class="n">-AllowClobber</span> <span class="n">-SkipPublisherCheck</span>
+</span></code></pre></div></p>
 </div>
 <h2 id="step-3-generate-your-first-report-2-minutes">Step 3: Generate Your First Report (2 minutes)</h2>
 <p>Now generate your first report! Replace the example values with your environment details:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">VMware vSphere</label><label for="__tabbed_2_2">Microsoft Active Directory</label><label for="__tabbed_2_3">Veeam Backup &amp; Replication</label><label for="__tabbed_2_4">Nutanix Prism</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Generate VMware vSphere report</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Store credentials</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c"># Generate the report</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="p">`</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Generate VMware vSphere report</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Store credentials</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c"># Generate the report</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="p">`</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Generate Active Directory report</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Store credentials</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c"># Generate the report</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="p">`</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Generate Active Directory report</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Store credentials</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c"># Generate the report</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">AD</span> <span class="p">`</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">-Target</span> <span class="n">dc01</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Generate Veeam VBR report</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Store credentials</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c"># Generate the report</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="p">`</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">-Target</span> <span class="n">veeam-server</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Generate Veeam VBR report</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Store credentials</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c"># Generate the report</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Veeam</span><span class="p">.</span><span class="n">VBR</span> <span class="p">`</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">-Target</span> <span class="n">veeam-server</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><span class="filename">Generate Nutanix Prism report</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Store credentials</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c"># Generate the report</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="p">`</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">-Target</span> <span class="n">prism</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Generate Nutanix Prism report</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Store credentials</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c"># Generate the report</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Nutanix</span><span class="p">.</span><span class="n">PrismElement</span> <span class="p">`</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">-Target</span> <span class="n">prism</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="p">`</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="n">-Format</span> <span class="n">HTML</span> <span class="p">`</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -3633,25 +3633,25 @@
 <p>Congratulations! You've generated your first AsBuiltReport. Here's what to explore next:</p>
 <h3 id="customise-report-detail">Customise Report Detail</h3>
 <p>Adjust the level of detail in your reports using InfoLevel settings:</p>
-<div class="highlight"><span class="filename">Create a report configuration file</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Generate a configuration file</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-FolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c"># Edit the JSON file to adjust InfoLevel values (0-3)</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c"># Then use it when generating reports</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-ReportConfigFilePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span><span class="p">.</span><span class="n">json</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Create a report configuration file</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># Generate a configuration file</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-FolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c"># Edit the JSON file to adjust InfoLevel values (0-3)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c"># Then use it when generating reports</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-ReportConfigFilePath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span><span class="p">.</span><span class="n">json</span>
+</span></code></pre></div>
 <p>See <a href="../new-asbuiltreportconfig/">New-AsBuiltReportConfig</a> for details on customising reports.</p>
 <h3 id="enable-health-checks">Enable Health Checks</h3>
 <p>Highlight configuration issues with health checks:</p>
-<div class="highlight"><span class="filename">Generate report with health checks</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-EnableHealthCheck</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Generate report with health checks</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-EnableHealthCheck</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span></code></pre></div>
 <h3 id="generate-multiple-formats">Generate Multiple Formats</h3>
 <p>Create reports in Word and HTML simultaneously:</p>
-<div class="highlight"><span class="filename">Generate multiple formats</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Format</span> <span class="n">HTML</span><span class="p">,</span><span class="n">Word</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Generate multiple formats</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Format</span> <span class="n">HTML</span><span class="p">,</span><span class="n">Word</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span></code></pre></div>
 <h3 id="customise-branding">Customise Branding</h3>
 <p>Apply your corporate branding with custom styles:</p>
 <ol>
@@ -3670,25 +3670,25 @@
 <h3 id="forgetting-to-install-dependencies">Forgetting to Install Dependencies</h3>
 <p><strong>Problem</strong>: Report module requires vendor PowerShell modules (e.g., VMware PowerCLI)</p>
 <p><strong>Solution</strong>: Check the report module's README for dependencies and install them:</p>
-<div class="highlight"><span class="filename">Install required dependencies</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Example: VMware vSphere requires PowerCLI</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VMware</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Install required dependencies</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Example: VMware vSphere requires PowerCLI</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">VMware</span><span class="p">.</span><span class="n">PowerCLI</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+</span></code></pre></div>
 <h3 id="using-insufficient-permissions">Using Insufficient Permissions</h3>
 <p><strong>Problem</strong>: "Access Denied" or missing report sections</p>
 <p><strong>Solution</strong>: Ensure your credentials have read access to all components you want to document.</p>
 <h3 id="not-using-verbose-when-troubleshooting">Not Using <code>-Verbose</code> When Troubleshooting</h3>
 <p><strong>Problem</strong>: Report fails with generic error</p>
 <p><strong>Solution</strong>: Always use <code>-Verbose</code> to see detailed progress:</p>
-<div class="highlight"><span class="filename">Use verbose output for troubleshooting</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Verbose</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Use verbose output for troubleshooting</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Verbose</span>
+</span></code></pre></div>
 <h3 id="expecting-instant-results-for-large-environments">Expecting Instant Results for Large Environments</h3>
 <p><strong>Problem</strong>: Report seems to hang</p>
 <p><strong>Solution</strong>: Large environments take time. Start with InfoLevel 1-2 for faster results:</p>
-<div class="highlight"><span class="filename">Create configuration with lower InfoLevels</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c"># Create config with lower InfoLevels for testing</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-FolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c"># Edit the JSON file to set InfoLevel values to 1 or 2</span>
-</code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Create configuration with lower InfoLevels</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c"># Create config with lower InfoLevels for testing</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-FolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c"># Edit the JSON file to set InfoLevel values to 1 or 2</span>
+</span></code></pre></div>
 <h2 id="getting-help">Getting Help</h2>
 <p>If you run into issues:</p>
 <ol>
