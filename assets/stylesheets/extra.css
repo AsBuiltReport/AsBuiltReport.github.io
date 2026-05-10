@@ -91,26 +91,26 @@ src: local(''),
     --md-accent-fg-color: #00ABE8;
 }
 
-/* Syntax Highlighting (VS Code Dark+) */
+/* Syntax Highlighting (VS Code Light+) */
 :root,
 [data-md-color-scheme="default"] {
-    --md-code-hl-keyword-color:          #c586c0;
-    --md-code-hl-string-color:           #ce9178;
-    --md-code-hl-comment-color:          #6a9955;
-    --md-code-hl-number-color:           #b5cea8;
-    --md-code-hl-function-color:         #dcdcaa;
-    --md-code-hl-operator-color:         #569cd6;
-    --md-code-hl-punctuation-color:      #d4d4d4;
-    --md-code-hl-name-color:             #9cdcfe;
-    --md-code-hl-constant-color:         #9cdcfe;
-    --md-code-hl-variable-color:         #9cdcfe;
-    --md-code-hl-special-color:          #ce9178;
+    --md-code-hl-keyword-color:          #af00db;
+    --md-code-hl-string-color:           #a31515;
+    --md-code-hl-comment-color:          #008000;
+    --md-code-hl-number-color:           #098658;
+    --md-code-hl-function-color:         #795e26;
+    --md-code-hl-operator-color:         #0070c1;
+    --md-code-hl-punctuation-color:      #555555;
+    --md-code-hl-name-color:             #001080;
+    --md-code-hl-constant-color:         #001080;
+    --md-code-hl-variable-color:         #001080;
+    --md-code-hl-special-color:          #a31515;
 }
 
 /* PowerShell variables ($Name) - not covered by Material's built-in vars */
 .highlight .nv,
 .highlight .nv-g {
-    color: #9cdcfe;
+    color: #001080;
 }
 
 /* Comments italic */
