@@ -90,3 +90,60 @@ src: local(''),
     --md-accent-bg-color: #FFFFFF;
     --md-accent-fg-color: #00ABE8;
 }
+
+/* Code block dark background */
+.md-typeset .highlight {
+    background-color: #1e1e1e !important;
+}
+
+.md-typeset .highlight pre,
+.md-typeset .highlight code {
+    background-color: #1e1e1e !important;
+    color: #d4d4d4 !important;
+}
+
+/* Syntax Highlighting (VS Code Dark+ colours) */
+.highlight .k,
+.highlight .kn,
+.highlight .kr,
+.highlight .kd {
+    color: #c586c0;
+    font-weight: bold;
+}
+
+.highlight .nv,
+.highlight .nv-g {
+    color: #569cd6;
+}
+
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .si,
+.highlight .sh {
+    color: #ce9178;
+}
+
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs {
+    color: #6a9955;
+    font-style: italic;
+}
+
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .mo {
+    color: #098658;
+}
+
+.highlight .nb {
+    color: #795e26;
+}
+
+.highlight .nc {
+    color: #267f99;
+}
