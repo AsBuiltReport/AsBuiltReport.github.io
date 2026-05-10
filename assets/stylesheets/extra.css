@@ -91,28 +91,20 @@ src: local(''),
     --md-accent-fg-color: #00ABE8;
 }
 
-/* Code block colours (VS Code Dark+) */
+/* Syntax Highlighting (VS Code Dark+) */
 :root,
 [data-md-color-scheme="default"] {
-    --md-code-bg-color:                  #767676;
-    --md-code-fg-color:                  #d4d4d4;
     --md-code-hl-keyword-color:          #c586c0;
     --md-code-hl-string-color:           #ce9178;
     --md-code-hl-comment-color:          #6a9955;
     --md-code-hl-number-color:           #b5cea8;
     --md-code-hl-function-color:         #dcdcaa;
-    --md-code-hl-operator-color:         #d4d4d4;
+    --md-code-hl-operator-color:         #569cd6;
     --md-code-hl-punctuation-color:      #d4d4d4;
     --md-code-hl-name-color:             #9cdcfe;
     --md-code-hl-constant-color:         #9cdcfe;
     --md-code-hl-variable-color:         #9cdcfe;
     --md-code-hl-special-color:          #ce9178;
-}
-
-/* Direct background override — targets the element Material actually backgrounds */
-.md-typeset pre > code {
-    background-color: #767676;
-    color: #d4d4d4;
 }
 
 /* PowerShell variables ($Name) - not covered by Material's built-in vars */
