@@ -101,8 +101,8 @@ src: local(''),
     --md-code-hl-function-color:         #795e26;
     --md-code-hl-operator-color:         #0070c1;
     --md-code-hl-punctuation-color:      #555555;
-    --md-code-hl-name-color:             #001080;
-    --md-code-hl-constant-color:         #001080;
+    --md-code-hl-name-color:             #267f99;
+    --md-code-hl-constant-color:         #0070c1;
     --md-code-hl-variable-color:         #001080;
     --md-code-hl-special-color:          #a31515;
 }
