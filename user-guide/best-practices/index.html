@@ -69,27 +69,14 @@
   
   
 
-<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-K7FZNF4KKC"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-K7FZNF4KKC",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-K7FZNF4KKC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
   
     <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
   
 
     
     
-  
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Best Practices - AsBuiltReport" />
-<meta property="og:description" content="Essential recommendations for generating and managing AsBuiltReport documentation effectively" />
-<meta property="og:image" content="https://www.asbuiltreport.com/assets/images/social/user-guide/best-practices.png" />
-<meta property="og:image:type" content="image/png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://www.asbuiltreport.com/user-guide/best-practices/" />
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Best Practices - AsBuiltReport" />
-<meta property="twitter:description" content="Essential recommendations for generating and managing AsBuiltReport documentation effectively" />
-<meta property="twitter:image" content="https://www.asbuiltreport.com/assets/images/social/user-guide/best-practices.png" />
-</head>
+  </head>
   
   
     
@@ -3471,16 +3458,16 @@
 <h2 id="module-management">Module Management</h2>
 <h3 id="keep-modules-updated">Keep Modules Updated</h3>
 <p>Update modules regularly to benefit from bug fixes and new features:</p>
-<div class="language-powershell highlight"><span class="filename">Update AsBuiltReport modules</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Update AsBuiltReport modules</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.*</span>
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Module Updates</p>
 <p>After updating modules, regenerate your report JSON configuration files to ensure you have the latest structure and options.</p>
 </div>
 <h3 id="regenerate-configuration-files-after-updates">Regenerate Configuration Files After Updates</h3>
 <p>When you update a report module, regenerate the JSON configuration file to ensure you have the latest structure and options:</p>
-<div class="language-powershell highlight"><span class="filename">Regenerate report configuration file</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span> <span class="n">-Force</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Regenerate report configuration file</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span> <span class="n">-Force</span>
+</code></pre></div>
 <h2 id="report-generation">Report Generation</h2>
 <h3 id="start-with-default-infolevels">Start with Default InfoLevels</h3>
 <p>Begin with the default InfoLevels to understand report structure and generation time. Adjust only for sections requiring more or less detail.</p>
@@ -3492,30 +3479,30 @@
 </ul>
 <h3 id="enable-health-checks">Enable Health Checks</h3>
 <p>Always enable health checks for production reports to highlight configuration issues and best practice violations:</p>
-<div class="language-powershell highlight"><span class="filename">Enable health checks</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-EnableHealthCheck</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Enable health checks</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-EnableHealthCheck</span>
+</code></pre></div>
 <h3 id="use-descriptive-file-names">Use Descriptive File Names</h3>
 <p>Use the <code>-Filename</code> parameter to create meaningful report names:</p>
-<div class="language-powershell highlight"><span class="filename">Custom report filenames</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Weekly summary report</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Filename</span> <span class="s2">&quot;vSphere-Weekly-Summary&quot;</span> <span class="p">`</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Weekly</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c"># Client-specific report</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter-clienta</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Filename</span> <span class="s2">&quot;ClientA-vSphere-Production&quot;</span> <span class="p">`</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Clients</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c"># Combine with -Timestamp for dated reports</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Filename</span> <span class="s2">&quot;vSphere-Audit&quot;</span> <span class="n">-Timestamp</span> <span class="p">`</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Audit</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Custom report filenames</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Weekly summary report</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Filename</span> <span class="s2">&quot;vSphere-Weekly-Summary&quot;</span> <span class="p">`</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Weekly</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c"># Client-specific report</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter-clienta</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Filename</span> <span class="s2">&quot;ClientA-vSphere-Production&quot;</span> <span class="p">`</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Clients</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c"># Combine with -Timestamp for dated reports</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Filename</span> <span class="s2">&quot;vSphere-Audit&quot;</span> <span class="n">-Timestamp</span> <span class="p">`</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Audit</span>
+</code></pre></div>
 <p>Name configuration files based on purpose and scope:</p>
-<div class="language-text highlight"><span class="filename">Configuration file naming examples</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>✔️ AsBuiltReport.VMware.vSphere-Weekly-Summary.json
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>❌ config1.json
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Configuration file naming examples</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>✔️ AsBuiltReport.VMware.vSphere-Weekly-Summary.json
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>❌ config1.json
+</code></pre></div>
 <h2 id="credential-management">Credential Management</h2>
 <h3 id="use-dedicated-service-accounts">Use Dedicated Service Accounts</h3>
 <p>Create dedicated read-only service accounts for report generation:</p>
@@ -3528,27 +3515,27 @@
 <h3 id="never-store-credentials-in-scripts">Never Store Credentials in Scripts</h3>
 <p>Use secure credential storage methods:</p>
 <p><strong>Option 1: Encrypted Credential File</strong></p>
-<div class="language-powershell highlight"><span class="filename">Encrypted credential file</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># One-time setup</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Get-Credential</span> <span class="p">|</span> <span class="nb">Export-Clixml</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Secure</span><span class="p">\</span><span class="n">vcenter-cred</span><span class="p">.</span><span class="n">xml</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># In your script</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Import-Clixml</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Secure</span><span class="p">\</span><span class="n">vcenter-cred</span><span class="p">.</span><span class="n">xml</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Encrypted credential file</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># One-time setup</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Get-Credential</span> <span class="p">|</span> <span class="nb">Export-Clixml</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Secure</span><span class="p">\</span><span class="n">vcenter-cred</span><span class="p">.</span><span class="n">xml</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># In your script</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Import-Clixml</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Secure</span><span class="p">\</span><span class="n">vcenter-cred</span><span class="p">.</span><span class="n">xml</span>
+</code></pre></div>
 <p><strong>Option 2: PowerShell SecretManagement Module (Recommended)</strong></p>
-<div class="language-powershell highlight"><span class="filename">SecretManagement module</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># One-time setup - Install SecretManagement module</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">PowerShell</span><span class="p">.</span><span class="n">SecretManagement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">SecretStore</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c"># Configure the SecretStore (first time only)</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">Register-SecretVault</span> <span class="n">-Name</span> <span class="s1">&#39;LocalStore&#39;</span> <span class="n">-ModuleName</span> <span class="s1">&#39;Microsoft.PowerShell.SecretStore&#39;</span> <span class="n">-DefaultVault</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c"># Store credentials</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span> <span class="n">-Message</span> <span class="s2">&quot;Enter vCenter credentials&quot;</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">Set-Secret</span> <span class="n">-Name</span> <span class="s1">&#39;vCenter-Prod&#39;</span> <span class="n">-Secret</span> <span class="nv">$Credential</span> <span class="n">-Vault</span> <span class="s1">&#39;LocalStore&#39;</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c"># In your script - retrieve the credential</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Secret</span> <span class="n">-Name</span> <span class="s1">&#39;vCenter-Prod&#39;</span> <span class="n">-Vault</span> <span class="s1">&#39;LocalStore&#39;</span> <span class="n">-AsPlainText</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">SecretManagement module</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># One-time setup - Install SecretManagement module</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">Microsoft</span><span class="p">.</span><span class="n">PowerShell</span><span class="p">.</span><span class="n">SecretManagement</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">SecretStore</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c"># Configure the SecretStore (first time only)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">Register-SecretVault</span> <span class="n">-Name</span> <span class="s1">&#39;LocalStore&#39;</span> <span class="n">-ModuleName</span> <span class="s1">&#39;Microsoft.PowerShell.SecretStore&#39;</span> <span class="n">-DefaultVault</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c"># Store credentials</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Credential</span> <span class="n">-Message</span> <span class="s2">&quot;Enter vCenter credentials&quot;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">Set-Secret</span> <span class="n">-Name</span> <span class="s1">&#39;vCenter-Prod&#39;</span> <span class="n">-Secret</span> <span class="nv">$Credential</span> <span class="n">-Vault</span> <span class="s1">&#39;LocalStore&#39;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c"># In your script - retrieve the credential</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="nv">$Credential</span> <span class="p">=</span> <span class="nb">Get-Secret</span> <span class="n">-Name</span> <span class="s1">&#39;vCenter-Prod&#39;</span> <span class="n">-Vault</span> <span class="s1">&#39;LocalStore&#39;</span> <span class="n">-AsPlainText</span>
+</code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">SecretManagement Benefits</p>
 <p>The SecretManagement module provides a standardised interface for storing and retrieving secrets. It supports multiple vault extensions including Azure Key Vault, KeePass, and HashiCorp Vault for enterprise environments.</p>
@@ -3567,27 +3554,27 @@
 </ul>
 <h3 id="use-timestamps">Use Timestamps</h3>
 <p>Always use the <code>-Timestamp</code> parameter for scheduled reports to maintain history:</p>
-<div class="language-powershell highlight"><span class="filename">Generate report with timestamp</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Timestamp</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Archive</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Generate report with timestamp</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Timestamp</span> <span class="n">-OutputFolderPath</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Archive</span>
+</code></pre></div>
 <h2 id="organisation">Organisation</h2>
 <h3 id="use-folder-structure">Use Folder Structure</h3>
 <p>Organise reports and configurations logically:</p>
-<div class="language-text highlight"><span class="filename">Recommended folder structure</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>C:\Reports\
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── Production\
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├── Development\
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├── Archive\
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├── Config\
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>├── Logs\
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>└── Scripts\
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Recommended folder structure</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>C:\Reports\
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── Production\
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├── Development\
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├── Archive\
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├── Config\
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>├── Logs\
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>└── Scripts\
+</code></pre></div>
 <h3 id="version-control-configurations">Version Control Configurations</h3>
 <p>Use Git to track configuration changes:</p>
-<div class="language-powershell highlight"><span class="filename">Initialise Git repository for configurations</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Config</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">git</span> <span class="n">init</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">git</span> <span class="n">add</span> <span class="p">*.</span><span class="n">json</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;Initial commit of report configurations&quot;</span>
-</span></code></pre></div>
+<div class="highlight"><span class="filename">Initialise Git repository for configurations</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd </span><span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Config</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">git</span> <span class="n">init</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">git</span> <span class="n">add</span> <span class="p">*.</span><span class="n">json</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;Initial commit of report configurations&quot;</span>
+</code></pre></div>
 <h2 id="testing-and-validation">Testing and Validation</h2>
 <h3 id="validate-report-content">Validate Report Content</h3>
 <p>Periodically review reports to ensure:</p>
