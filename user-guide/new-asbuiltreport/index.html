@@ -1009,6 +1009,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filename
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#asbuiltconfigfilepath" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1045,7 +1056,7 @@
   <a href="#enablehealthcheck" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EnableHealthcheck
+        EnableHealthCheck
       
     </span>
   </a>
@@ -3418,6 +3429,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#filename" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Filename
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#asbuiltconfigfilepath" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3454,7 +3476,7 @@
   <a href="#enablehealthcheck" class="md-nav__link">
     <span class="md-ellipsis">
       
-        EnableHealthcheck
+        EnableHealthCheck
       
     </span>
   </a>
@@ -3692,6 +3714,13 @@
 <td>Report save location</td>
 </tr>
 <tr>
+<td>Filename</td>
+<td>String</td>
+<td>No</td>
+<td>-</td>
+<td>Custom report filename</td>
+</tr>
+<tr>
 <td>AsBuiltConfigFilePath</td>
 <td>String</td>
 <td>No</td>
@@ -3741,7 +3770,7 @@
 <p class="admonition-title">Note</p>
 <p>When specifying multiple targets, all systems must use the same credentials.</p>
 </div>
-<p>This parameter has the following aliases ; <code>Server</code>, <code>Cluster</code>, <code>IP</code></p>
+<p>This parameter has the following aliases: <code>Server</code>, <code>Cluster</code>, <code>IP</code></p>
 <p>This is a mandatory parameter.</p>
 <h3 id="credential">Credential</h3>
 <p>Specifies the stored credential of the target system.</p>
@@ -3788,6 +3817,10 @@
 <h3 id="outputfolderpath">OutputFolderPath</h3>
 <p>Specifies the folder path to save the report.</p>
 <p>This is a mandatory parameter.</p>
+<h3 id="filename">Filename</h3>
+<p>Specifies a custom filename for the report.</p>
+<p>This is an optional parameter.</p>
+<p>If not specified, the report filename is automatically generated from the report module name and version.</p>
 <h3 id="asbuiltconfigfilepath">AsBuiltConfigFilePath</h3>
 <p>Specifies the file path to the AsBuiltReport configuration JSON file.</p>
 <p>This is an optional parameter.</p>
@@ -3801,7 +3834,7 @@
 <p>Specifies whether to append a timestamp string to the report filename.</p>
 <p>This is an optional parameter.</p>
 <p>By default, the timestamp string is not added to the report filename.</p>
-<h3 id="enablehealthcheck">EnableHealthcheck</h3>
+<h3 id="enablehealthcheck">EnableHealthCheck</h3>
 <p>Highlights certain issues within the system report.</p>
 <p>Some reports may not provide this functionality.</p>
 <p>This is an optional parameter.</p>
@@ -3868,6 +3901,14 @@
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">-Format</span> <span class="n">HTML</span><span class="p">,</span><span class="n">Word</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span>
 </span></code></pre></div>
 </li>
+<li>
+<p>Creates a VMware vSphere report with a custom filename. The <code>-Filename</code> parameter overrides the default auto-generated filename, which is useful when generating reports for specific clients or environments where a consistent naming convention is required.</p>
+<div class="language-powershell highlight"><span class="filename">Example 9</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$Cred</span> <span class="p">=</span> <span class="nb">Get-Credential</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">VMware</span><span class="p">.</span><span class="n">vSphere</span> <span class="n">-Target</span> <span class="n">vcenter</span><span class="p">.</span><span class="n">example</span><span class="p">.</span><span class="n">com</span> <span class="p">`</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">-Credential</span> <span class="nv">$Cred</span> <span class="n">-Format</span> <span class="n">HTML</span><span class="p">,</span><span class="n">Word</span> <span class="n">-OutputFolderPath</span> <span class="s1">&#39;C:\Reports&#39;</span> <span class="p">`</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">-Filename</span> <span class="s1">&#39;Contoso-vSphere-AsBuiltReport&#39;</span>
+</span></code></pre></div>
+</li>
 </ol>
 <h2 id="see-also">See Also</h2>
 <ul>
@@ -3899,7 +3940,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2026 05:56:21 UTC">February 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2026 11:25:08 UTC">June 7, 2026</span>
   </span>
 
     

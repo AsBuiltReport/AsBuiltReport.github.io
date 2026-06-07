@@ -3602,12 +3602,13 @@
 <p>This setting allows you to run local scripts and signed remote scripts. For more information, see <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies">about_Execution_Policies</a>.</p>
 </div>
 <h3 id="module-dependencies">Module Dependencies</h3>
-<div class="admonition warning">
-<p class="admonition-title">AsBuiltReport.Core Required</p>
-<p>All AsBuiltReport report modules require <strong>AsBuiltReport.Core</strong> to be installed first. The Core module provides the framework that all report modules depend on.</p>
+<div class="admonition info">
+<p class="admonition-title">AsBuiltReport.Core</p>
+<p>All AsBuiltReport report modules depend on <strong>AsBuiltReport.Core</strong> to function.</p>
+<p><strong>PowerShell Gallery installs</strong> — Core is installed automatically as a dependency. No separate step is required.</p>
+<p><strong>Manual installs</strong> (GitHub or offline) — Core is not installed automatically. Install it before installing any report modules:</p>
 <div class="language-powershell highlight"><span class="filename">Install AsBuiltReport.Core</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Scope</span> <span class="s1">&#39;CurrentUser&#39;</span>
 </span></code></pre></div>
-<p>When installing from the PowerShell Gallery using <code>Install-Module</code>, dependencies are automatically installed. For manual installations (GitHub, offline), you must ensure AsBuiltReport.Core is installed first.</p>
 </div>
 <h3 id="third-party-powershell-modules">Third Party PowerShell Modules</h3>
 <p>Please refer to the <a href="../report-modules/overview/">report module user guide</a> to check the system requirements for each report. Please follow the report module instructions to install any third party PowerShell modules which may be required.</p>
@@ -4065,7 +4066,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2026 10:54:42 UTC">June 7, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2026 11:25:08 UTC">June 7, 2026</span>
   </span>
 
     
