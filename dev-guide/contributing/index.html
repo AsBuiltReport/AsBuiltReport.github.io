@@ -4140,8 +4140,8 @@
 <p>Whether contributing to an existing report module or developing a new one, all report sections are implemented as private functions in the module's <code>Src/Private/</code> folder.</p>
 <p>Private functions serve two distinct purposes:</p>
 <ul>
-<li><strong>Report section functions</strong> (<code>Get-AbrVendorSectionName</code>): each responsible for collecting data from the target system and rendering it as a PScribo section. Every report section function must have its own <code>.ps1</code> file named after the function (e.g. <code>Get-AbrVendorLocation.ps1</code>).</li>
-<li><strong>Utility helpers</strong> (<code>ConvertTo-HashToYN</code>, <code>ConvertTo-TextYN</code>, connection helpers, etc.): reusable functions that support report section functions. These may be grouped into a dedicated helper file.</li>
+<li><strong>Report section functions</strong> (<code>Get-Abr[VendorAbbr|Technology][Resource]</code>): each responsible for collecting data from the target system and rendering it as a PScribo section. Every report section function must have its own <code>.ps1</code> file named after the function (e.g. <code>Get-AbrVendorLocation.ps1</code>).</li>
+<li><strong>Utility helpers</strong> (<code>ConvertTo-HashToYN</code>, <code>ConvertTo-TextYN</code>, connection helpers, etc.): reusable functions that support report section functions. These may be grouped into a dedicated helper file (<code>Src/Private/Helpers.ps1</code>).</li>
 </ul>
 <p>Every <strong>report section function</strong> must be <strong>self-contained and readable in isolation</strong>. A reviewer should be able to understand what data is collected, what the table will look like, and how it is rendered, without opening any other file.</p>
 <p>For the complete function template, key principles, and annotated examples, see <a href="../creating-a-report-module/#private-functions">Private Functions</a> in the Creating a Report Module guide.</p>
@@ -4240,7 +4240,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2026 10:54:42 UTC">June 7, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 03:02:07 UTC">June 8, 2026</span>
   </span>
 
     
