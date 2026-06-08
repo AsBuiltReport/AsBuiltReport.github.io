@@ -2585,6 +2585,8 @@
       
         
       
+        
+      
     
     
     
@@ -2701,6 +2703,34 @@
     
   
     Known Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/blob/master/CHANGELOG.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Release Notes
   
 
     
@@ -3588,6 +3618,10 @@
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">git</span> <span class="n">add</span> <span class="p">*.</span><span class="n">json</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&quot;Initial commit of report configurations&quot;</span>
 </span></code></pre></div>
+<div class="language-powershell highlight"><span class="filename">Create a .gitignore to exclude credential files</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># Exclude encrypted credential files from version control</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="n">C</span><span class="p">:\</span><span class="n">Reports</span><span class="p">\</span><span class="n">Config</span><span class="p">\.</span><span class="n">gitignore</span> <span class="n">-Value</span> <span class="s2">&quot;*.xml&quot;</span>
+</span></code></pre></div>
+<p>This prevents encrypted credential files created by <code>Export-Clixml</code> from being accidentally committed alongside your configuration files.</p>
 <h2 id="testing-and-validation">Testing and Validation</h2>
 <h3 id="validate-report-content">Validate Report Content</h3>
 <p>Periodically review reports to ensure:</p>
@@ -3644,7 +3678,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2026 11:25:08 UTC">June 7, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 01:09:42 UTC">June 8, 2026</span>
   </span>
 
     

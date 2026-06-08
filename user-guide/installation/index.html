@@ -2597,6 +2597,8 @@
       
         
       
+        
+      
     
     
     
@@ -2713,6 +2715,34 @@
     
   
     Known Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/blob/master/CHANGELOG.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Release Notes
   
 
     
@@ -3630,8 +3660,16 @@
 <div class="language-powershell highlight"><span class="filename">Find and save AsBuiltReport modules</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Find AsBuiltReport modules published in the PowerShell Gallery</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">Find-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.*&#39;</span> <span class="n">-Repository</span> <span class="s1">&#39;PSGallery&#39;</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># Save AsBuiltReport module example</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Path\To\Specified\Folder&#39;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># Save dependencies first — none of these are installed automatically in a manual offline install</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;PScribo&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Path\To\Specified\Folder&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Path\To\Specified\Folder&#39;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c"># Save the report module</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;AsBuiltReport.VMware.vSphere&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Path\To\Specified\Folder&#39;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c"># Save any vendor modules required by the report module (check the module README for requirements)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c"># Example: VMware vSphere requires VCF.PowerCLI</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="nb">Save-Module</span> <span class="n">-Name</span> <span class="s1">&#39;VCF.PowerCLI&#39;</span> <span class="n">-Path</span> <span class="s1">&#39;C:\Path\To\Specified\Folder&#39;</span>
 </span></code></pre></div>
 <p>Copy the downloaded PowerShell module folders to a location that can be made accessible to the offline system.
 e.g. USB Flash Drive, Internal File Share etc.</p>
@@ -4066,7 +4104,7 @@ Install AsBuiltReport.Core first (see <a href="#module-dependencies">Module Depe
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 7, 2026 11:25:08 UTC">June 7, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 01:09:42 UTC">June 8, 2026</span>
   </span>
 
     
