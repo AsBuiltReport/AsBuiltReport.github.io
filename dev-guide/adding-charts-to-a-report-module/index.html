@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to integrate AsBuiltReport.Chart into report modules to add pie, bar, stacked bar, and signal chart visualisations">
+        <meta name="description" content="How to integrate AsBuiltReport.Chart into report modules to add pie, donut, bar, stacked bar, and signal chart visualisations">
       
       
         <meta name="author" content="Tim Carman">
@@ -79,7 +79,7 @@
   
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Adding Charts to a Report Module - AsBuiltReport" />
-<meta property="og:description" content="How to integrate AsBuiltReport.Chart into report modules to add pie, bar, stacked bar, and signal chart visualisations" />
+<meta property="og:description" content="How to integrate AsBuiltReport.Chart into report modules to add pie, donut, bar, stacked bar, and signal chart visualisations" />
 <meta property="og:image" content="https://www.asbuiltreport.com/assets/images/social/dev-guide/adding-charts-to-a-report-module.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -87,7 +87,7 @@
 <meta property="og:url" content="https://www.asbuiltreport.com/dev-guide/adding-charts-to-a-report-module/" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="Adding Charts to a Report Module - AsBuiltReport" />
-<meta property="twitter:description" content="How to integrate AsBuiltReport.Chart into report modules to add pie, bar, stacked bar, and signal chart visualisations" />
+<meta property="twitter:description" content="How to integrate AsBuiltReport.Chart into report modules to add pie, donut, bar, stacked bar, and signal chart visualisations" />
 <meta property="twitter:image" content="https://www.asbuiltreport.com/assets/images/social/dev-guide/adding-charts-to-a-report-module.png" />
 </head>
   
@@ -3568,7 +3568,7 @@
 
 
 <h1 id="adding-charts-to-a-report-module">Adding Charts to a Report Module</h1>
-<p>AsBuiltReport.Chart is an optional PowerShell module that adds chart generation capabilities to AsBuiltReport report modules. It provides five chart types — pie, bar, stacked bar, single stacked bar, and signal — and integrates directly with the PScribo document framework used by AsBuiltReport.</p>
+<p>AsBuiltReport.Chart is an optional PowerShell module that adds chart generation capabilities to AsBuiltReport report modules. It provides six chart types — pie, donut, bar, stacked bar, single stacked bar, and signal — and integrates directly with the PScribo document framework used by AsBuiltReport.</p>
 <p>Charts are generated in memory as base64-encoded images and embedded directly into the report output using PScribo's <code>Image</code> cmdlet. No intermediate files are written to disk.</p>
 <div class="admonition info">
 <p class="admonition-title">Prerequisite Reading</p>
@@ -3984,7 +3984,7 @@
 </span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="common-parameters-reference">Common Parameters Reference</h2>
-<p>The following parameters are available on all five chart cmdlets:</p>
+<p>The following parameters are available on all chart cmdlets:</p>
 <table>
 <thead>
 <tr>
@@ -4159,7 +4159,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 15:56:21 UTC">June 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 18:42:42 UTC">June 8, 2026</span>
   </span>
 
     
