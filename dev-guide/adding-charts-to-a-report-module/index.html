@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://www.asbuiltreport.com/dev-guide/adding-charts-to-a-report-module/">
       
       
+        <link rel="prev" href="../creating-a-report-module/">
+      
+      
+        <link rel="next" href="../creating-a-report-style/">
       
       
         
@@ -265,10 +269,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../contributing/" class="md-tabs__link">
           
   
@@ -2103,8 +2109,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2118,19 +2126,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -2148,7 +2159,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2191,10 +2202,14 @@
                 
   
   
+    
   
   
+  
     
     
+      
+        
       
         
       
@@ -2203,18 +2218,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   
@@ -2232,7 +2250,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2271,6 +2289,285 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding charts to a report module
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding charts to a report module
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declaring-the-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Declaring the Dependency
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-charts-are-embedded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Charts Are Embedded
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Preparation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chart-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chart Types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chart Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pie-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pie Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#donut-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Donut Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stacked-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stacked Bar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-stacked-bar-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Stacked Bar Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signal-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signal Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety Guards
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color Palettes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placing-charts-in-a-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Placing Charts in a Report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-private-function-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Private Function Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localising-chart-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localising Chart Text
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-parameters-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Parameters Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2296,17 +2593,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   
@@ -3098,6 +3398,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#donut-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Donut Chart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#bar-chart" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3272,7 +3583,7 @@
 <div class="language-powershell highlight"><span class="filename">Module manifest (.psd1) — RequiredModules</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">RequiredModules</span> <span class="p">=</span> <span class="p">@(</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">@{</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="n">ModuleName</span>    <span class="p">=</span> <span class="s1">&#39;AsBuiltReport.Core&#39;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">&#39;1.6.1&#39;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">&#39;1.6.4&#39;</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="p">}</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">@{</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">ModuleName</span>    <span class="p">=</span> <span class="s1">&#39;AsBuiltReport.Chart&#39;</span>
@@ -3332,308 +3643,345 @@
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
+<h5 id="pie-chart-example-output">Pie Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/piechart.png" /></p>
+<h3 id="donut-chart">Donut Chart</h3>
+<p>Use <code>New-DonutChart</code> for the same use cases as a pie chart when you want to emphasise completion. Donut charts can also be used to show progress towards a goal — for example, patch compliance percentage or licence consumption.</p>
+<div class="language-powershell highlight"><span class="filename">Donut chart — VM power state distribution</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s1">&#39;Compliant&#39;</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$ComputersPatched</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s1">&#39;Non-Compliant&#39;</span>   <span class="p">=</span> <span class="p">(</span><span class="nv">$ComputersNotPatched</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-DonutChart</span> <span class="p">`</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">-LegendAlignment</span> <span class="n">LowerCenter</span> <span class="p">`</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+</span></code></pre></div>
+<h5 id="donut-chart-example-output">Donut Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/donutchart.png" /></p>
 <h3 id="bar-chart">Bar Chart</h3>
 <p>Use <code>New-BarChart</code> to compare values across discrete categories — for example, backup job results by status, or compliance check outcomes.</p>
-<div class="language-powershell highlight"><span class="filename">Bar chart — backup job results by status</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s1">&#39;Success&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Success&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s1">&#39;Warning&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="s1">&#39;Failed&#39;</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Failed&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="s1">&#39;None&#39;</span>    <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;None&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">}</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
-</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="p">`</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">-Title</span> <span class="s1">&#39;Backup Job Results&#39;</span> <span class="p">`</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">-LabelXAxis</span> <span class="s1">&#39;Status&#39;</span> <span class="p">`</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">-LabelYAxis</span> <span class="s1">&#39;Job Count&#39;</span> <span class="p">`</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span> <span class="p">`</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
-</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="p">`</span>
-</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+<div class="language-powershell highlight"><span class="filename">Bar chart — backup job results by status</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="s1">&#39;Success&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Success&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="s1">&#39;Warning&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="s1">&#39;Failed&#39;</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Failed&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="s1">&#39;None&#39;</span>    <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;None&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="p">`</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="n">-Title</span> <span class="s1">&#39;Backup Job Results&#39;</span> <span class="p">`</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="n">-LabelXAxis</span> <span class="s1">&#39;Status&#39;</span> <span class="p">`</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">-LabelYAxis</span> <span class="s1">&#39;Job Count&#39;</span> <span class="p">`</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="p">`</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
+<h5 id="bar-chart-example-output">Bar Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/barchart.png" /></p>
 <h3 id="stacked-bar-chart">Stacked Bar Chart</h3>
 <p>Use <code>New-StackedBarChart</code> when each bar is composed of multiple segments — for example, repository used space vs. free space, or resource allocation across multiple hosts.</p>
 <p>The <code>-Values</code> parameter expects an array of arrays: one inner array per bar, with each element representing a segment value.</p>
-<div class="language-powershell highlight"><span class="filename">Stacked bar chart — repository space utilisation</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$sampleData</span> <span class="p">=</span> <span class="nv">$Repositories</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">UsedSpacePercent</span><span class="p">,</span> <span class="n">FreeSpacePercent</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nv">$chartLabels</span>    <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Name</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">$chartCategories</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;Used (%)&#39;</span><span class="p">,</span> <span class="s1">&#39;Free (%)&#39;</span><span class="p">)</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">$chartUsedValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">UsedSpacePercent</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">$chartFreeValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">FreeSpacePercent</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c"># Build array-of-arrays: one inner array per bar (one per repository)</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="p">@()</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$i</span> <span class="k">in</span> <span class="n">0</span><span class="p">..(</span><span class="nv">$chartLabels</span><span class="p">.</span><span class="n">Count</span> <span class="p">-</span> <span class="n">1</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="nv">$chartValues</span> <span class="p">+=</span> <span class="p">,</span> <span class="p">@(</span><span class="nv">$chartUsedValues</span><span class="p">[</span><span class="nv">$i</span><span class="p">],</span> <span class="nv">$chartFreeValues</span><span class="p">[</span><span class="nv">$i</span><span class="p">])</span>
-</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>
-</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-StackedBarChart</span> <span class="p">`</span>
-</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>    <span class="n">-Title</span> <span class="s1">&#39;Repository Space Utilisation&#39;</span> <span class="p">`</span>
-</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>    <span class="n">-LegendCategories</span> <span class="nv">$chartCategories</span> <span class="p">`</span>
-</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#DFF0D0&#39;</span><span class="p">)</span> <span class="p">`</span>
-</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">600</span> <span class="p">`</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="n">-AreaOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>    <span class="n">-LabelXAxis</span> <span class="s1">&#39;Space (%)&#39;</span> <span class="p">`</span>
-</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">-LabelYAxis</span> <span class="s1">&#39;Repository&#39;</span> <span class="p">`</span>
-</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>    <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span> <span class="p">`</span>
-</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+<div class="language-powershell highlight"><span class="filename">Stacked bar chart — repository space utilisation</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$sampleData</span> <span class="p">=</span> <span class="nv">$Repositories</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">UsedSpacePercent</span><span class="p">,</span> <span class="n">FreeSpacePercent</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nv">$chartLabels</span>    <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Name</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nv">$chartCategories</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;Used (%)&#39;</span><span class="p">,</span> <span class="s1">&#39;Free (%)&#39;</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nv">$chartUsedValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">UsedSpacePercent</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nv">$chartFreeValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">FreeSpacePercent</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="c"># Build array-of-arrays: one inner array per bar (one per repository)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="p">@()</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$i</span> <span class="k">in</span> <span class="n">0</span><span class="p">..(</span><span class="nv">$chartLabels</span><span class="p">.</span><span class="n">Count</span> <span class="p">-</span> <span class="n">1</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="nv">$chartValues</span> <span class="p">+=</span> <span class="p">,</span> <span class="p">@(</span><span class="nv">$chartUsedValues</span><span class="p">[</span><span class="nv">$i</span><span class="p">],</span> <span class="nv">$chartFreeValues</span><span class="p">[</span><span class="nv">$i</span><span class="p">])</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="p">}</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-StackedBarChart</span> <span class="p">`</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="n">-Title</span> <span class="s1">&#39;Repository Space Utilisation&#39;</span> <span class="p">`</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="n">-LegendCategories</span> <span class="nv">$chartCategories</span> <span class="p">`</span>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#DFF0D0&#39;</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">600</span> <span class="p">`</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    <span class="n">-AreaOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="n">-LabelXAxis</span> <span class="s1">&#39;Space (%)&#39;</span> <span class="p">`</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="n">-LabelYAxis</span> <span class="s1">&#39;Repository&#39;</span> <span class="p">`</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a>    <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">2</span> <span class="p">`</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
+<h5 id="stacked-bar-chart-example-output">Stacked Bar Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/stackedbarchart.png" /></p>
 <h3 id="single-stacked-bar-chart">Single Stacked Bar Chart</h3>
 <p>Use <code>New-SingleStackedBarChart</code> to show a single bar divided into labelled segments — useful for illustrating licence consumption or a single capacity resource.</p>
-<div class="language-powershell highlight"><span class="filename">Single stacked bar chart — licence consumption by workload type</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$LicenseUsage</span><span class="p">.</span><span class="n">WorkloadType</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$LicenseUsage</span><span class="p">.</span><span class="n">UsedInstances</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-SingleStackedBarChart</span> <span class="p">`</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">-Title</span> <span class="s1">&#39; &#39;</span> <span class="p">`</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">-Label</span> <span class="s1">&#39;Workload Type&#39;</span> <span class="p">`</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">-LegendCategories</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">,</span> <span class="s1">&#39;#B3E5FC&#39;</span><span class="p">,</span> <span class="s1">&#39;#F8BBD0&#39;</span><span class="p">)</span> <span class="p">`</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">200</span> <span class="p">`</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">-AreaOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+<div class="language-powershell highlight"><span class="filename">Single stacked bar chart — licence consumption by workload type</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$LicenseUsage</span><span class="p">.</span><span class="n">WorkloadType</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$LicenseUsage</span><span class="p">.</span><span class="n">UsedInstances</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-SingleStackedBarChart</span> <span class="p">`</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">-Title</span> <span class="s1">&#39; &#39;</span> <span class="p">`</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">-Label</span> <span class="s1">&#39;Workload Type&#39;</span> <span class="p">`</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">-LegendCategories</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">,</span> <span class="s1">&#39;#B3E5FC&#39;</span><span class="p">,</span> <span class="s1">&#39;#F8BBD0&#39;</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">200</span> <span class="p">`</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="n">-AreaOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
+<h5 id="single-stacked-bar-chart-example-output">Single Stacked Bar Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/singlestackedbarchart.png" /></p>
 <h3 id="signal-chart">Signal Chart</h3>
 <p>Use <code>New-SignalChart</code> for time-series or trend data — for example, CPU utilisation over time or throughput metrics. The <code>-Values</code> parameter expects an array of arrays, where each inner array represents one line.</p>
-<div class="language-powershell highlight"><span class="filename">Signal chart — CPU utilisation trend (single line)</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># Wrap a single line&#39;s values in a jagged array</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="p">@(,</span><span class="no">[double[]]</span><span class="p">@(</span><span class="n">42</span><span class="p">,</span> <span class="n">55</span><span class="p">,</span> <span class="n">61</span><span class="p">,</span> <span class="n">49</span><span class="p">,</span> <span class="n">78</span><span class="p">,</span> <span class="n">65</span><span class="p">,</span> <span class="n">53</span><span class="p">))</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-SignalChart</span> <span class="p">`</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">-Title</span> <span class="s1">&#39;CPU Utilisation (%)&#39;</span> <span class="p">`</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
-</span></code></pre></div>
-<div class="language-powershell highlight"><span class="filename">Signal chart — multi-line throughput trend</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$readThroughput</span>  <span class="p">=</span> <span class="no">[double[]]</span><span class="p">@(</span><span class="n">120</span><span class="p">,</span> <span class="n">145</span><span class="p">,</span> <span class="n">132</span><span class="p">,</span> <span class="n">160</span><span class="p">,</span> <span class="n">155</span><span class="p">)</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$writeThroughput</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="p">@(</span><span class="n">85</span><span class="p">,</span>  <span class="n">92</span><span class="p">,</span>  <span class="n">78</span><span class="p">,</span>  <span class="n">101</span><span class="p">,</span> <span class="n">96</span><span class="p">)</span>
+<div class="language-powershell highlight"><span class="filename">Signal chart — CPU utilisation trend (single line)</span><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Wrap a single line&#39;s values in a jagged array</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="p">@(,</span><span class="no">[double[]]</span><span class="p">@(</span><span class="n">42</span><span class="p">,</span> <span class="n">55</span><span class="p">,</span> <span class="n">61</span><span class="p">,</span> <span class="n">49</span><span class="p">,</span> <span class="n">78</span><span class="p">,</span> <span class="n">65</span><span class="p">,</span> <span class="n">53</span><span class="p">))</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="p">@(,</span><span class="nv">$readThroughput</span><span class="p">)</span> <span class="p">+</span> <span class="p">@(,</span><span class="nv">$writeThroughput</span><span class="p">)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-SignalChart</span> <span class="p">`</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">-Title</span> <span class="s1">&#39;Storage Throughput (MB/s)&#39;</span> <span class="p">`</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">-Labels</span> <span class="p">@(</span><span class="s1">&#39;Read&#39;</span><span class="p">,</span> <span class="s1">&#39;Write&#39;</span><span class="p">)</span> <span class="p">`</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-SignalChart</span> <span class="p">`</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">-Title</span> <span class="s1">&#39;CPU Utilisation (%)&#39;</span> <span class="p">`</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
+<h5 id="signal-chart-example-output">Signal Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/signalchart.png" /></p>
+<div class="language-powershell highlight"><span class="filename">Signal chart — multi-line throughput trend</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$readThroughput</span>  <span class="p">=</span> <span class="no">[double[]]</span><span class="p">@(</span><span class="n">120</span><span class="p">,</span> <span class="n">145</span><span class="p">,</span> <span class="n">132</span><span class="p">,</span> <span class="n">160</span><span class="p">,</span> <span class="n">155</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$writeThroughput</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="p">@(</span><span class="n">85</span><span class="p">,</span>  <span class="n">92</span><span class="p">,</span>  <span class="n">78</span><span class="p">,</span>  <span class="n">101</span><span class="p">,</span> <span class="n">96</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="p">@(,</span><span class="nv">$readThroughput</span><span class="p">)</span> <span class="p">+</span> <span class="p">@(,</span><span class="nv">$writeThroughput</span><span class="p">)</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-SignalChart</span> <span class="p">`</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">-Title</span> <span class="s1">&#39;Storage Throughput (MB/s)&#39;</span> <span class="p">`</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="n">-Labels</span> <span class="p">@(</span><span class="s1">&#39;Read&#39;</span><span class="p">,</span> <span class="s1">&#39;Write&#39;</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+</span></code></pre></div>
+<h5 id="multi-line-signal-chart-example-output">Multi-line Signal Chart example output:</h5>
+<p><img alt="alt text" src="../../assets/images/charts/signaladvchart.png" /></p>
 <h2 id="safety-guards">Safety Guards</h2>
 <p>Chart generation can return <code>$null</code> if data is empty or an error occurs. Always validate the return value before calling <code>Image</code>, and verify that the underlying data contains non-zero values before rendering the chart.</p>
-<div class="language-powershell highlight"><span class="filename">Chart safety guard pattern</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Chart alt text&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
+<div class="language-powershell highlight"><span class="filename">Chart safety guard pattern</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Chart alt text&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Wrap the entire chart generation block in a <code>try/catch</code> when the data collection itself could fail:</p>
-<div class="language-powershell highlight"><span class="filename">Chart generation with error handling</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="n">-Title</span> <span class="s1">&#39;Job Results&#39;</span> <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="n">-Format</span> <span class="n">base64</span> <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Backup job result distribution&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="p">}</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">&quot;Unable to generate chart: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span>
+<div class="language-powershell highlight"><span class="filename">Chart generation with error handling</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="n">-Title</span> <span class="s1">&#39;Job Results&#39;</span> <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>        <span class="n">-Format</span> <span class="n">base64</span> <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Backup job result distribution&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    <span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">&quot;Unable to generate chart: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="color-palettes">Color Palettes</h2>
 <p>AsBuiltReport.Chart supports 25 built-in colour palettes via the <code>-ColorPalette</code> parameter, or a custom palette via <code>-EnableCustomColorPalette</code> and <code>-CustomColorPalette</code>.</p>
 <p>For consistency across report modules, use the following standard palette when representing status outcomes (Success / Warning / Failed / Unknown):</p>
-<div class="language-powershell highlight"><span class="filename">Standard status colour palette</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">$statusCustomPalette</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="c"># Green = Success, Yellow = Warning, Pink = Failed, Gray = Unknown/None</span>
+<div class="language-powershell highlight"><span class="filename">Standard status colour palette</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$statusCustomPalette</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c"># Green = Success, Yellow = Warning, Pink = Failed, Gray = Unknown/None</span>
 </span></code></pre></div>
 <p>To use a built-in palette instead:</p>
-<div class="language-powershell highlight"><span class="filename">Using a built-in colour palette</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">New-PieChart</span> <span class="n">-Title</span> <span class="s1">&#39;Distribution&#39;</span> <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">-ColorPalette</span> <span class="n">Category20</span> <span class="n">-Format</span> <span class="n">base64</span> <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span>
+<div class="language-powershell highlight"><span class="filename">Using a built-in colour palette</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">New-PieChart</span> <span class="n">-Title</span> <span class="s1">&#39;Distribution&#39;</span> <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">-ColorPalette</span> <span class="n">Category20</span> <span class="n">-Format</span> <span class="n">base64</span> <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span>
 </span></code></pre></div>
 <p><strong>Available palettes:</strong> Amber, Category10, Category20, Aurora, Building, ColorblindFriendly, ColorblindFriendlyDark, Dark, DarkPastel, Frost, LightOcean, LightSpectrum, Microcharts, Nero, Nord, Normal, OneHalf, OneHalfDark, PastelWheel, Penumbra, PolarNight, Redness, SnowStorm, SummerSplash, Tsitsulin</p>
 <h2 id="placing-charts-in-a-report">Placing Charts in a Report</h2>
 <p>Charts should appear <strong>before</strong> their related data table within the same section, providing a visual summary that the table then backs with detail. Place the <code>Image</code> call, then a <code>BlankLine</code>, then the <code>Table</code> call.</p>
-<div class="language-powershell highlight"><span class="filename">Chart followed by table — recommended layout</span><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="s1">&#39;Job Status Summary&#39;</span> <span class="p">{</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Backup job result distribution&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="p">}</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">BlankLine</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="nv">$OutObj</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="s1">&#39;Name&#39;</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span>
+<div class="language-powershell highlight"><span class="filename">Chart followed by table — recommended layout</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="s1">&#39;Job Status Summary&#39;</span> <span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Backup job result distribution&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="p">}</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">BlankLine</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="nv">$OutObj</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="s1">&#39;Name&#39;</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="complete-private-function-example">Complete Private Function Example</h2>
 <p>The following example shows a complete private function that collects backup job data, generates a bar chart of job results by status, and renders the chart above a summary table — the pattern used throughout the AsBuiltReport ecosystem.</p>
-<div class="language-powershell highlight"><span class="filename">Get-AbrVbrBackupJobSummary.ps1</span><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">function</span> <span class="nb">Get-AbrVbrBackupJobSummary</span> <span class="p">{</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="cm">&lt;#</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cm">    </span><span class="sd">.SYNOPSIS</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="cm">        Used by As Built Report to retrieve Veeam VBR backup job summary information.</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="cm">    </span><span class="sd">.DESCRIPTION</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="cm">        Documents the configuration of Veeam VBR in Word/HTML/Text formats using PScribo.</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="cm">    </span><span class="sd">.NOTES</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="cm">        Version:    0.1.0</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="cm">        Author:     Your Name</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="cm">    </span><span class="sd">.LINK</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="cm">        https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="cm">    #&gt;</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>    <span class="k">param</span> <span class="p">()</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>    <span class="k">begin</span> <span class="p">{</span>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>        <span class="nb">Write-PScriboMessage</span> <span class="s2">&quot;Collecting backup job summary information.&quot;</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    <span class="p">}</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>    <span class="k">process</span> <span class="p">{</span>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>        <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>            <span class="nv">$Jobs</span> <span class="p">=</span> <span class="nb">Get-VBRJob</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
-</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$Jobs</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>                <span class="c"># Aggregate job results by status</span>
-</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>                <span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
-</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>                    <span class="s1">&#39;Success&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Success&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>                    <span class="s1">&#39;Warning&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>                    <span class="s1">&#39;Failed&#39;</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Failed&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>                    <span class="s1">&#39;None&#39;</span>    <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;None&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>                <span class="p">}</span>
-</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>
-</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>                <span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
-</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>                <span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
-</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>
-</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>                <span class="nv">$statusCustomPalette</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span>
-</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a>
-</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>                <span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="p">`</span>
-</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a>                    <span class="n">-Title</span> <span class="s1">&#39;Backup Job Results&#39;</span> <span class="p">`</span>
-</span><span id="__span-15-40"><a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a>                    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-15-41"><a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>                    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-15-42"><a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a>                    <span class="n">-LabelXAxis</span> <span class="s1">&#39;Status&#39;</span> <span class="p">`</span>
-</span><span id="__span-15-43"><a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>                    <span class="n">-LabelYAxis</span> <span class="s1">&#39;Job Count&#39;</span> <span class="p">`</span>
-</span><span id="__span-15-44"><a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>                    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
-</span><span id="__span-15-45"><a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>                    <span class="n">-CustomColorPalette</span> <span class="nv">$statusCustomPalette</span> <span class="p">`</span>
-</span><span id="__span-15-46"><a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a>                    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
-</span><span id="__span-15-47"><a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>                    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-15-48"><a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>                    <span class="n">-EnableLegend</span> <span class="p">`</span>
-</span><span id="__span-15-49"><a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a>                    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-15-50"><a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>                    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
-</span><span id="__span-15-51"><a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>                    <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="p">`</span>
-</span><span id="__span-15-52"><a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a>                    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-15-53"><a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a>                    <span class="n">-TitleFontSize</span> <span class="n">16</span>
-</span><span id="__span-15-54"><a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a>
-</span><span id="__span-15-55"><a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>                <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading3</span> <span class="s1">&#39;Backup Jobs&#39;</span> <span class="p">{</span>
-</span><span id="__span-15-56"><a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a>                    <span class="n">Paragraph</span> <span class="s2">&quot;The following section provides a summary of all backup jobs and their current status.&quot;</span>
-</span><span id="__span-15-57"><a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>                    <span class="n">BlankLine</span>
-</span><span id="__span-15-58"><a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>
-</span><span id="__span-15-59"><a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>                    <span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="s1">&#39;Job Status Summary&#39;</span> <span class="p">{</span>
-</span><span id="__span-15-60"><a id="__codelineno-15-60" name="__codelineno-15-60" href="#__codelineno-15-60"></a>                        <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-15-61"><a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a>                            <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Backup job result distribution&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
-</span><span id="__span-15-62"><a id="__codelineno-15-62" name="__codelineno-15-62" href="#__codelineno-15-62"></a>                        <span class="p">}</span>
-</span><span id="__span-15-63"><a id="__codelineno-15-63" name="__codelineno-15-63" href="#__codelineno-15-63"></a>                        <span class="n">BlankLine</span>
-</span><span id="__span-15-64"><a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a>
-</span><span id="__span-15-65"><a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a>                        <span class="nv">$OutObj</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Job</span> <span class="k">in</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">Name</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-15-66"><a id="__codelineno-15-66" name="__codelineno-15-66" href="#__codelineno-15-66"></a>                            <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-15-67"><a id="__codelineno-15-67" name="__codelineno-15-67" href="#__codelineno-15-67"></a>                                <span class="no">[PSCustomObject]</span><span class="p">@{</span>
-</span><span id="__span-15-68"><a id="__codelineno-15-68" name="__codelineno-15-68" href="#__codelineno-15-68"></a>                                    <span class="s1">&#39;Name&#39;</span>          <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">Name</span>
-</span><span id="__span-15-69"><a id="__codelineno-15-69" name="__codelineno-15-69" href="#__codelineno-15-69"></a>                                    <span class="s1">&#39;Type&#39;</span>          <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">JobType</span>
-</span><span id="__span-15-70"><a id="__codelineno-15-70" name="__codelineno-15-70" href="#__codelineno-15-70"></a>                                    <span class="s1">&#39;Last Result&#39;</span>   <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span>
-</span><span id="__span-15-71"><a id="__codelineno-15-71" name="__codelineno-15-71" href="#__codelineno-15-71"></a>                                    <span class="s1">&#39;Last Run&#39;</span>      <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">EndTimeUtc</span>
-</span><span id="__span-15-72"><a id="__codelineno-15-72" name="__codelineno-15-72" href="#__codelineno-15-72"></a>                                <span class="p">}</span>
-</span><span id="__span-15-73"><a id="__codelineno-15-73" name="__codelineno-15-73" href="#__codelineno-15-73"></a>                            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-15-74"><a id="__codelineno-15-74" name="__codelineno-15-74" href="#__codelineno-15-74"></a>                                <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$Job</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
-</span><span id="__span-15-75"><a id="__codelineno-15-75" name="__codelineno-15-75" href="#__codelineno-15-75"></a>                            <span class="p">}</span>
-</span><span id="__span-15-76"><a id="__codelineno-15-76" name="__codelineno-15-76" href="#__codelineno-15-76"></a>                        <span class="p">}</span>
-</span><span id="__span-15-77"><a id="__codelineno-15-77" name="__codelineno-15-77" href="#__codelineno-15-77"></a>
-</span><span id="__span-15-78"><a id="__codelineno-15-78" name="__codelineno-15-78" href="#__codelineno-15-78"></a>                        <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
-</span><span id="__span-15-79"><a id="__codelineno-15-79" name="__codelineno-15-79" href="#__codelineno-15-79"></a>                            <span class="n">Name</span>         <span class="p">=</span> <span class="s1">&#39;Backup Job Status&#39;</span>
-</span><span id="__span-15-80"><a id="__codelineno-15-80" name="__codelineno-15-80" href="#__codelineno-15-80"></a>                            <span class="n">List</span>         <span class="p">=</span> <span class="nv">$false</span>
-</span><span id="__span-15-81"><a id="__codelineno-15-81" name="__codelineno-15-81" href="#__codelineno-15-81"></a>                            <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">35</span><span class="p">,</span> <span class="n">25</span><span class="p">,</span> <span class="n">20</span><span class="p">,</span> <span class="n">20</span>
-</span><span id="__span-15-82"><a id="__codelineno-15-82" name="__codelineno-15-82" href="#__codelineno-15-82"></a>                        <span class="p">}</span>
-</span><span id="__span-15-83"><a id="__codelineno-15-83" name="__codelineno-15-83" href="#__codelineno-15-83"></a>                        <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-15-84"><a id="__codelineno-15-84" name="__codelineno-15-84" href="#__codelineno-15-84"></a>                            <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span>
-</span><span id="__span-15-85"><a id="__codelineno-15-85" name="__codelineno-15-85" href="#__codelineno-15-85"></a>                        <span class="p">}</span>
-</span><span id="__span-15-86"><a id="__codelineno-15-86" name="__codelineno-15-86" href="#__codelineno-15-86"></a>                        <span class="nv">$OutObj</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
-</span><span id="__span-15-87"><a id="__codelineno-15-87" name="__codelineno-15-87" href="#__codelineno-15-87"></a>                    <span class="p">}</span>
-</span><span id="__span-15-88"><a id="__codelineno-15-88" name="__codelineno-15-88" href="#__codelineno-15-88"></a>                <span class="p">}</span>
-</span><span id="__span-15-89"><a id="__codelineno-15-89" name="__codelineno-15-89" href="#__codelineno-15-89"></a>            <span class="p">}</span>
-</span><span id="__span-15-90"><a id="__codelineno-15-90" name="__codelineno-15-90" href="#__codelineno-15-90"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-15-91"><a id="__codelineno-15-91" name="__codelineno-15-91" href="#__codelineno-15-91"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">&quot;Backup Job Summary: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
-</span><span id="__span-15-92"><a id="__codelineno-15-92" name="__codelineno-15-92" href="#__codelineno-15-92"></a>        <span class="p">}</span>
-</span><span id="__span-15-93"><a id="__codelineno-15-93" name="__codelineno-15-93" href="#__codelineno-15-93"></a>    <span class="p">}</span>
-</span><span id="__span-15-94"><a id="__codelineno-15-94" name="__codelineno-15-94" href="#__codelineno-15-94"></a>    <span class="k">end</span> <span class="p">{}</span>
-</span><span id="__span-15-95"><a id="__codelineno-15-95" name="__codelineno-15-95" href="#__codelineno-15-95"></a><span class="p">}</span>
+<div class="language-powershell highlight"><span class="filename">Get-AbrVbrBackupJobSummary.ps1</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">function</span> <span class="nb">Get-AbrVbrBackupJobSummary</span> <span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="cm">&lt;#</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cm">    </span><span class="sd">.SYNOPSIS</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="cm">        Used by As Built Report to retrieve Veeam VBR backup job summary information.</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="cm">    </span><span class="sd">.DESCRIPTION</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="cm">        Documents the configuration of Veeam VBR in Word/HTML/Text formats using PScribo.</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="cm">    </span><span class="sd">.NOTES</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="cm">        Version:    0.1.0</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="cm">        Author:     Your Name</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="cm">    </span><span class="sd">.LINK</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="cm">        https://github.com/AsBuiltReport/AsBuiltReport.Veeam.VBR</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="cm">    #&gt;</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>    <span class="k">param</span> <span class="p">()</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    <span class="k">begin</span> <span class="p">{</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>        <span class="nb">Write-PScriboMessage</span> <span class="s2">&quot;Collecting backup job summary information.&quot;</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>    <span class="p">}</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>    <span class="k">process</span> <span class="p">{</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>        <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>            <span class="nv">$Jobs</span> <span class="p">=</span> <span class="nb">Get-VBRJob</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$Jobs</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>                <span class="c"># Aggregate job results by status</span>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>                <span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a>                    <span class="s1">&#39;Success&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Success&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>                    <span class="s1">&#39;Warning&#39;</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a>                    <span class="s1">&#39;Failed&#39;</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Failed&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>                    <span class="s1">&#39;None&#39;</span>    <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;None&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a>                <span class="p">}</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>                <span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a>                <span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a>
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>                <span class="nv">$statusCustomPalette</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span>
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a>
+</span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a>                <span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="p">`</span>
+</span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a>                    <span class="n">-Title</span> <span class="s1">&#39;Backup Job Results&#39;</span> <span class="p">`</span>
+</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a>                    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a>                    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-16-42"><a id="__codelineno-16-42" name="__codelineno-16-42" href="#__codelineno-16-42"></a>                    <span class="n">-LabelXAxis</span> <span class="s1">&#39;Status&#39;</span> <span class="p">`</span>
+</span><span id="__span-16-43"><a id="__codelineno-16-43" name="__codelineno-16-43" href="#__codelineno-16-43"></a>                    <span class="n">-LabelYAxis</span> <span class="s1">&#39;Job Count&#39;</span> <span class="p">`</span>
+</span><span id="__span-16-44"><a id="__codelineno-16-44" name="__codelineno-16-44" href="#__codelineno-16-44"></a>                    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-16-45"><a id="__codelineno-16-45" name="__codelineno-16-45" href="#__codelineno-16-45"></a>                    <span class="n">-CustomColorPalette</span> <span class="nv">$statusCustomPalette</span> <span class="p">`</span>
+</span><span id="__span-16-46"><a id="__codelineno-16-46" name="__codelineno-16-46" href="#__codelineno-16-46"></a>                    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-16-47"><a id="__codelineno-16-47" name="__codelineno-16-47" href="#__codelineno-16-47"></a>                    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-16-48"><a id="__codelineno-16-48" name="__codelineno-16-48" href="#__codelineno-16-48"></a>                    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-16-49"><a id="__codelineno-16-49" name="__codelineno-16-49" href="#__codelineno-16-49"></a>                    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-16-50"><a id="__codelineno-16-50" name="__codelineno-16-50" href="#__codelineno-16-50"></a>                    <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
+</span><span id="__span-16-51"><a id="__codelineno-16-51" name="__codelineno-16-51" href="#__codelineno-16-51"></a>                    <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="p">`</span>
+</span><span id="__span-16-52"><a id="__codelineno-16-52" name="__codelineno-16-52" href="#__codelineno-16-52"></a>                    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-16-53"><a id="__codelineno-16-53" name="__codelineno-16-53" href="#__codelineno-16-53"></a>                    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+</span><span id="__span-16-54"><a id="__codelineno-16-54" name="__codelineno-16-54" href="#__codelineno-16-54"></a>
+</span><span id="__span-16-55"><a id="__codelineno-16-55" name="__codelineno-16-55" href="#__codelineno-16-55"></a>                <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading3</span> <span class="s1">&#39;Backup Jobs&#39;</span> <span class="p">{</span>
+</span><span id="__span-16-56"><a id="__codelineno-16-56" name="__codelineno-16-56" href="#__codelineno-16-56"></a>                    <span class="n">Paragraph</span> <span class="s2">&quot;The following section provides a summary of all backup jobs and their current status.&quot;</span>
+</span><span id="__span-16-57"><a id="__codelineno-16-57" name="__codelineno-16-57" href="#__codelineno-16-57"></a>                    <span class="n">BlankLine</span>
+</span><span id="__span-16-58"><a id="__codelineno-16-58" name="__codelineno-16-58" href="#__codelineno-16-58"></a>
+</span><span id="__span-16-59"><a id="__codelineno-16-59" name="__codelineno-16-59" href="#__codelineno-16-59"></a>                    <span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="s1">&#39;Job Status Summary&#39;</span> <span class="p">{</span>
+</span><span id="__span-16-60"><a id="__codelineno-16-60" name="__codelineno-16-60" href="#__codelineno-16-60"></a>                        <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-16-61"><a id="__codelineno-16-61" name="__codelineno-16-61" href="#__codelineno-16-61"></a>                            <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">&#39;Backup job result distribution&#39;</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
+</span><span id="__span-16-62"><a id="__codelineno-16-62" name="__codelineno-16-62" href="#__codelineno-16-62"></a>                        <span class="p">}</span>
+</span><span id="__span-16-63"><a id="__codelineno-16-63" name="__codelineno-16-63" href="#__codelineno-16-63"></a>                        <span class="n">BlankLine</span>
+</span><span id="__span-16-64"><a id="__codelineno-16-64" name="__codelineno-16-64" href="#__codelineno-16-64"></a>
+</span><span id="__span-16-65"><a id="__codelineno-16-65" name="__codelineno-16-65" href="#__codelineno-16-65"></a>                        <span class="nv">$OutObj</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Job</span> <span class="k">in</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">Name</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-16-66"><a id="__codelineno-16-66" name="__codelineno-16-66" href="#__codelineno-16-66"></a>                            <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-16-67"><a id="__codelineno-16-67" name="__codelineno-16-67" href="#__codelineno-16-67"></a>                                <span class="no">[PSCustomObject]</span><span class="p">@{</span>
+</span><span id="__span-16-68"><a id="__codelineno-16-68" name="__codelineno-16-68" href="#__codelineno-16-68"></a>                                    <span class="s1">&#39;Name&#39;</span>          <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">Name</span>
+</span><span id="__span-16-69"><a id="__codelineno-16-69" name="__codelineno-16-69" href="#__codelineno-16-69"></a>                                    <span class="s1">&#39;Type&#39;</span>          <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">JobType</span>
+</span><span id="__span-16-70"><a id="__codelineno-16-70" name="__codelineno-16-70" href="#__codelineno-16-70"></a>                                    <span class="s1">&#39;Last Result&#39;</span>   <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span>
+</span><span id="__span-16-71"><a id="__codelineno-16-71" name="__codelineno-16-71" href="#__codelineno-16-71"></a>                                    <span class="s1">&#39;Last Run&#39;</span>      <span class="p">=</span> <span class="nv">$Job</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">EndTimeUtc</span>
+</span><span id="__span-16-72"><a id="__codelineno-16-72" name="__codelineno-16-72" href="#__codelineno-16-72"></a>                                <span class="p">}</span>
+</span><span id="__span-16-73"><a id="__codelineno-16-73" name="__codelineno-16-73" href="#__codelineno-16-73"></a>                            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-16-74"><a id="__codelineno-16-74" name="__codelineno-16-74" href="#__codelineno-16-74"></a>                                <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$Job</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
+</span><span id="__span-16-75"><a id="__codelineno-16-75" name="__codelineno-16-75" href="#__codelineno-16-75"></a>                            <span class="p">}</span>
+</span><span id="__span-16-76"><a id="__codelineno-16-76" name="__codelineno-16-76" href="#__codelineno-16-76"></a>                        <span class="p">}</span>
+</span><span id="__span-16-77"><a id="__codelineno-16-77" name="__codelineno-16-77" href="#__codelineno-16-77"></a>
+</span><span id="__span-16-78"><a id="__codelineno-16-78" name="__codelineno-16-78" href="#__codelineno-16-78"></a>                        <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-16-79"><a id="__codelineno-16-79" name="__codelineno-16-79" href="#__codelineno-16-79"></a>                            <span class="n">Name</span>         <span class="p">=</span> <span class="s1">&#39;Backup Job Status&#39;</span>
+</span><span id="__span-16-80"><a id="__codelineno-16-80" name="__codelineno-16-80" href="#__codelineno-16-80"></a>                            <span class="n">List</span>         <span class="p">=</span> <span class="nv">$false</span>
+</span><span id="__span-16-81"><a id="__codelineno-16-81" name="__codelineno-16-81" href="#__codelineno-16-81"></a>                            <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">35</span><span class="p">,</span> <span class="n">25</span><span class="p">,</span> <span class="n">20</span><span class="p">,</span> <span class="n">20</span>
+</span><span id="__span-16-82"><a id="__codelineno-16-82" name="__codelineno-16-82" href="#__codelineno-16-82"></a>                        <span class="p">}</span>
+</span><span id="__span-16-83"><a id="__codelineno-16-83" name="__codelineno-16-83" href="#__codelineno-16-83"></a>                        <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-16-84"><a id="__codelineno-16-84" name="__codelineno-16-84" href="#__codelineno-16-84"></a>                            <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="s2">&quot;- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">&quot;</span>
+</span><span id="__span-16-85"><a id="__codelineno-16-85" name="__codelineno-16-85" href="#__codelineno-16-85"></a>                        <span class="p">}</span>
+</span><span id="__span-16-86"><a id="__codelineno-16-86" name="__codelineno-16-86" href="#__codelineno-16-86"></a>                        <span class="nv">$OutObj</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
+</span><span id="__span-16-87"><a id="__codelineno-16-87" name="__codelineno-16-87" href="#__codelineno-16-87"></a>                    <span class="p">}</span>
+</span><span id="__span-16-88"><a id="__codelineno-16-88" name="__codelineno-16-88" href="#__codelineno-16-88"></a>                <span class="p">}</span>
+</span><span id="__span-16-89"><a id="__codelineno-16-89" name="__codelineno-16-89" href="#__codelineno-16-89"></a>            <span class="p">}</span>
+</span><span id="__span-16-90"><a id="__codelineno-16-90" name="__codelineno-16-90" href="#__codelineno-16-90"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-16-91"><a id="__codelineno-16-91" name="__codelineno-16-91" href="#__codelineno-16-91"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">&quot;Backup Job Summary: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
+</span><span id="__span-16-92"><a id="__codelineno-16-92" name="__codelineno-16-92" href="#__codelineno-16-92"></a>        <span class="p">}</span>
+</span><span id="__span-16-93"><a id="__codelineno-16-93" name="__codelineno-16-93" href="#__codelineno-16-93"></a>    <span class="p">}</span>
+</span><span id="__span-16-94"><a id="__codelineno-16-94" name="__codelineno-16-94" href="#__codelineno-16-94"></a>    <span class="k">end</span> <span class="p">{}</span>
+</span><span id="__span-16-95"><a id="__codelineno-16-95" name="__codelineno-16-95" href="#__codelineno-16-95"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="localising-chart-text">Localising Chart Text</h2>
 <p>When your module supports multiple languages, store chart titles and <code>Image</code> alt-text in your language file alongside other translated strings.</p>
-<div class="language-powershell highlight"><span class="filename">Language file entries for chart content (en-US)</span><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">GetAbrVbrBackupJobSummary</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@&#39;</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="sh">    Collecting     = Collecting backup job summary information.</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="sh">    Heading        = Backup Jobs</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="sh">    Paragraph      = The following section provides a summary of all backup jobs and their current status.</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="sh">    StatusSection  = Job Status Summary</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="sh">    ChartTitle     = Backup Job Results</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="sh">    ChartAltText   = Backup job result distribution</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="sh">    ChartXAxis     = Status</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="sh">    ChartYAxis     = Job Count</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="sh">    Success        = Success</span>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="sh">    Warning        = Warning</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="sh">    Failed         = Failed</span>
-</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="sh">    None           = None</span>
-</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="sh">&#39;@</span>
+<div class="language-powershell highlight"><span class="filename">Language file entries for chart content (en-US)</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">GetAbrVbrBackupJobSummary</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@&#39;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="sh">    Collecting     = Collecting backup job summary information.</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="sh">    Heading        = Backup Jobs</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="sh">    Paragraph      = The following section provides a summary of all backup jobs and their current status.</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="sh">    StatusSection  = Job Status Summary</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="sh">    ChartTitle     = Backup Job Results</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="sh">    ChartAltText   = Backup job result distribution</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="sh">    ChartXAxis     = Status</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="sh">    ChartYAxis     = Job Count</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="sh">    Success        = Success</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="sh">    Warning        = Warning</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="sh">    Failed         = Failed</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="sh">    None           = None</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="sh">&#39;@</span>
 </span></code></pre></div>
-<div class="language-powershell highlight"><span class="filename">Using $LocalizedData for chart content</span><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">begin</span> <span class="p">{</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">GetAbrVbrBackupJobSummary</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="nb">Write-PScriboMessage</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Collecting</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="k">process</span> <span class="p">{</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Success&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Warning</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Failed</span><span class="p">)</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Failed&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">None</span><span class="p">)</span>    <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;None&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    <span class="p">}</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    <span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    <span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>    <span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="p">`</span>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>        <span class="n">-Title</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartTitle</span> <span class="p">`</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>        <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>        <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>        <span class="n">-LabelXAxis</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartXAxis</span> <span class="p">`</span>
-</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>        <span class="n">-LabelYAxis</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartYAxis</span> <span class="p">`</span>
-</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>        <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
-</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>        <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span> <span class="p">`</span>
-</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>        <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
-</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>        <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>        <span class="n">-EnableLegend</span> <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
-</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>        <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="n">-TitleFontBold</span> <span class="n">-TitleFontSize</span> <span class="n">16</span>
-</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>
-</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartAltText</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
-</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>    <span class="p">}</span>
-</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="p">}</span>
+<div class="language-powershell highlight"><span class="filename">Using $LocalizedData for chart content</span><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">begin</span> <span class="p">{</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">GetAbrVbrBackupJobSummary</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="nb">Write-PScriboMessage</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Collecting</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="k">process</span> <span class="p">{</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>    <span class="nv">$sampleData</span> <span class="p">=</span> <span class="no">[ordered]</span><span class="p">@{</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Success&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Warning</span><span class="p">)</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Warning&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Failed</span><span class="p">)</span>  <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;Failed&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">None</span><span class="p">)</span>    <span class="p">=</span> <span class="p">(</span><span class="nv">$Jobs</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Info</span><span class="p">.</span><span class="n">LatestStatus</span> <span class="o">-eq</span> <span class="s1">&#39;None&#39;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Measure-Object</span><span class="p">).</span><span class="n">Count</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>    <span class="p">}</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    <span class="nv">$chartLabels</span> <span class="p">=</span> <span class="no">[string[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Keys</span>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>    <span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>    <span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-BarChart</span> <span class="p">`</span>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>        <span class="n">-Title</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartTitle</span> <span class="p">`</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>        <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>        <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>        <span class="n">-LabelXAxis</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartXAxis</span> <span class="p">`</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>        <span class="n">-LabelYAxis</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartYAxis</span> <span class="p">`</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>        <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a>        <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">&#39;#DFF0D0&#39;</span><span class="p">,</span> <span class="s1">&#39;#FFF3C4&#39;</span><span class="p">,</span> <span class="s1">&#39;#FECDD1&#39;</span><span class="p">,</span> <span class="s1">&#39;#ADACAF&#39;</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a>        <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a>        <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a>        <span class="n">-EnableLegend</span> <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="n">-LegendAlignment</span> <span class="n">UpperCenter</span> <span class="p">`</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a>        <span class="n">-AxesMarginsTop</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="n">-TitleFontBold</span> <span class="n">-TitleFontSize</span> <span class="n">16</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a>
+</span><span id="__span-18-30"><a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-18-31"><a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ChartAltText</span> <span class="n">-Align</span> <span class="s1">&#39;Center&#39;</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
+</span><span id="__span-18-32"><a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a>    <span class="p">}</span>
+</span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="common-parameters-reference">Common Parameters Reference</h2>
 <p>The following parameters are available on all five chart cmdlets:</p>
@@ -3811,7 +4159,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 04:01:56 UTC">June 8, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 8, 2026 15:56:21 UTC">June 8, 2026</span>
   </span>
 
     
@@ -3844,6 +4192,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../creating-a-report-module/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Creating a report module">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Creating a report module
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../creating-a-report-style/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating a report style">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Creating a report style
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
