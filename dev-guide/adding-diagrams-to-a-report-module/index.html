@@ -2985,10 +2985,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#theme-colors-not-applied" class="md-nav__link">
+  <a href="#theme-colours-not-applied" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Theme Colors Not Applied
+        Theme Colours Not Applied
       
     </span>
   </a>
@@ -4404,10 +4404,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#theme-colors-not-applied" class="md-nav__link">
+  <a href="#theme-colours-not-applied" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Theme Colors Not Applied
+        Theme Colours Not Applied
       
     </span>
   </a>
@@ -4712,7 +4712,7 @@
 <p>PSGraph uses scriptblocks to define the diagram hierarchy. Node and edge default attributes — shape, font, colour — are declared once at the top of the <code>Graph {}</code> block and inherited by all nodes and edges unless overridden.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code>New-AbrDiagram</code> handles the Graph section internally, so you only need to build the inner structure (nodes, edges, subgraphs) in your diagram builder function. The orchestration function will pass the resulting graph object to <code>New-AbrDiagram</code> for rendering. This setion is for demonstration purposes to show how to set graph-level defaults.</p>
+<p><code>New-AbrDiagram</code> handles the Graph section internally, so you only need to build the inner structure (nodes, edges, subgraphs) in your diagram builder function. The orchestration function will pass the resulting graph object to <code>New-AbrDiagram</code> for rendering. This section is for demonstration purposes to show how to set graph-level defaults.</p>
 </div>
 <div class="language-powershell highlight"><span class="filename">Graph with node and edge defaults</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$DiagramGraph</span> <span class="p">=</span> <span class="n">Graph</span> <span class="n">-Name</span> <span class="s1">&#39;VendorTechnology&#39;</span> <span class="n">-Attributes</span> <span class="p">@{</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">pad</span>        <span class="p">=</span> <span class="n">1</span><span class="p">.</span><span class="n">0</span>
@@ -4938,7 +4938,7 @@
 <h2 id="diagram-themes">Diagram Themes</h2>
 <p>AsBuiltReport.Diagram supports three built-in colour themes. Themes control the visual appearance of diagrams and should be applied consistently throughout your diagram functions.</p>
 <h3 id="theme-application">Theme Application</h3>
-<p>Define theme colors in the <code>begin</code> block of your diagram builder function, then use those variables throughout the graph assembly. This ensures theme changes propagate consistently:</p>
+<p>Define theme colours in the <code>begin</code> block of your diagram builder function, then use those variables throughout the graph assembly. This ensures theme changes propagate consistently:</p>
 <div class="language-powershell highlight"><span class="filename">Applying a diagram theme in the diagram builder</span><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">DiagramTheme</span> <span class="o">-eq</span> <span class="s1">&#39;Black&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="nv">$Edgecolor</span> <span class="p">=</span> <span class="s1">&#39;White&#39;</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="nv">$Fontcolor</span> <span class="p">=</span> <span class="s1">&#39;White&#39;</span>
@@ -4956,7 +4956,7 @@
 </span></code></pre></div>
 <h3 id="theme-usage-in-new-abrdiagram">Theme Usage in New-AbrDiagram</h3>
 <p>The orchestration function (<code>Export-AbrDiagram</code>) applies additional theme-specific parameters to <code>New-AbrDiagram</code>:</p>
-<div class="language-powershell highlight"><span class="filename">Applying theme colors in the orchestration function</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">switch</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">DiagramTheme</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-powershell highlight"><span class="filename">Applying theme colours in the orchestration function</span><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">switch</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">DiagramTheme</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="s1">&#39;Black&#39;</span> <span class="p">{</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>        <span class="nv">$DiagramParams</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;MainGraphBGColor&#39;</span><span class="p">,</span> <span class="s1">&#39;Black&#39;</span><span class="p">)</span>
 </span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>        <span class="nv">$DiagramParams</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;Edgecolor&#39;</span><span class="p">,</span> <span class="s1">&#39;White&#39;</span><span class="p">)</span>
@@ -4982,8 +4982,8 @@
 <tr>
 <th>Theme</th>
 <th>Background</th>
-<th>Font Color</th>
-<th>Edge Color</th>
+<th>Font Colour</th>
+<th>Edge Colour</th>
 <th>Use Case</th>
 </tr>
 </thead>
@@ -5036,7 +5036,7 @@
 <p>The diagram builder function collects infrastructure data and assembles the PSGraph structure. It reads from script-scoped variables (<code>$Options</code>, <code>$reportTranslate</code>, <code>$Images</code>) set by the AsBuiltReport framework.</p>
 <p>Key responsibilities:
 - Collect data from the target system
-- Apply theme-specific colors
+- Apply theme-specific colours
 - Build nodes and edges
 - Handle debug styling
 - Return the PSGraph object</p>
@@ -5160,7 +5160,7 @@
 <h3 id="2-diagram-orchestration-function-export-abrdiagram">2. Diagram Orchestration Function (Export-AbrDiagram)</h3>
 <p>The orchestration function handles rendering configuration, theme application, file export, and report embedding. This function acts as the integration point between the diagram builder and the report generation framework.</p>
 <p>Key responsibilities:
-- Apply theme-specific colors and styles
+- Apply theme-specific colours and styles
 - Configure icon path resolution
 - Handle file export when enabled
 - Generate base64 for report embedding
@@ -5184,7 +5184,7 @@
 <tr>
 <td><code>DiagramTheme</code></td>
 <td>String</td>
-<td>'White', 'Black', or 'Neon' for color scheme</td>
+<td>'White', 'Black', or 'Neon' for colour scheme</td>
 </tr>
 <tr>
 <td><code>ExportDiagrams</code></td>
@@ -5231,7 +5231,7 @@
 <p><strong>Export Flow with Format Handling:</strong></p>
 <p>When <code>ExportDiagrams</code> is true:</p>
 <ol>
-<li>Build the <code>$DiagramParams</code> hashtable with theme colors</li>
+<li>Build the <code>$DiagramParams</code> hashtable with theme colours</li>
 <li>Add the requested export formats to <code>$DiagramParams['Format']</code></li>
 <li>Call <code>New-AbrDiagram</code> to export files to <code>$OutputFolderPath</code></li>
 <li>Remove the format from <code>$DiagramParams</code> and set it to <code>'base64'</code></li>
@@ -5829,7 +5829,7 @@
 <li><strong>Separate diagram code from report code</strong> — place diagram functions in <code>Src/Private/Diagram/</code> so they are easy to locate and test independently.</li>
 <li><strong>Use the two-function pattern</strong> — separate the diagram builder (data collection + graph assembly) from the orchestration function (rendering + export). This ensures each function has a single responsibility.</li>
 <li><strong>Guard with <code>$Options.EnableDiagrams</code></strong> — diagrams depend on Graphviz and are slow to generate; always make them opt-in and exit early if disabled.</li>
-<li><strong>Configure theme colors once in <code>begin{}</code></strong> — read <code>$Options.DiagramTheme</code> once and store the resolved colours in variables, then use those throughout the graph assembly for consistency.</li>
+<li><strong>Configure theme colours once in <code>begin{}</code></strong> — read <code>$Options.DiagramTheme</code> once and store the resolved colours in variables, then use those throughout the graph assembly for consistency.</li>
 <li><strong>Enable debug mode during development</strong> — use <code>-EnableDiagramDebug</code> to render red-bordered placeholder boxes instead of real icons during layout iteration.</li>
 <li><strong>Use the two-pass render pattern</strong> — when <code>ExportDiagrams</code> is enabled, call <code>New-AbrDiagram</code> first with file formats, then again with <code>-Format base64</code> for embedding.</li>
 <li><strong>Resolve icons relative to module root</strong> — use <code>Split-Path (Split-Path $PSScriptRoot -Parent) -Parent</code> to find your module's root, then join to <code>Icons/</code> subdirectory.</li>
@@ -5938,10 +5938,10 @@
 </span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>    <span class="s1">&#39;Status&#39;</span> <span class="p">=</span> <span class="s1">&#39;Active &amp;amp; Ready&#39;</span>
 </span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="p">}</span>
 </span></code></pre></div></p>
-<h3 id="theme-colors-not-applied">Theme Colors Not Applied</h3>
+<h3 id="theme-colours-not-applied">Theme Colours Not Applied</h3>
 <p><strong>Cause:</strong> Theme variables are not propagated to all graph elements</p>
 <p><strong>Solution:</strong>
-- Ensure theme colors are set <strong>before</strong> building the graph:
+- Ensure theme colours are set <strong>before</strong> building the graph:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c"># In the diagram builder function&#39;s begin{} block</span>
 </span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">DiagramTheme</span> <span class="o">-eq</span> <span class="s1">&#39;Black&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>    <span class="nv">$Edgecolor</span> <span class="p">=</span> <span class="s1">&#39;White&#39;</span>
@@ -5961,7 +5961,7 @@
 </span></code></pre></div></p>
 <h3 id="performance-issues-with-export-diagrams">Performance Issues with Export Diagrams</h3>
 <p><strong>Dual-pass rendering (export + base64) is slow:</strong></p>
-<p><strong>Optimization:</strong>
+<p><strong>Optimisation:</strong>
 - Only export when explicitly requested:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">ExportDiagrams</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>    <span class="c"># First pass: export to disk</span>
@@ -6033,7 +6033,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 14, 2026 15:28:29 UTC">June 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 14, 2026 22:26:35 UTC">June 14, 2026</span>
   </span>
 
     
