@@ -2313,10 +2313,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grounding-your-ai-tool-in-project-standards" class="md-nav__link">
+  <a href="#using-the-projects-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grounding Your AI Tool in Project Standards
+        Using the Project's Resources
       
     </span>
   </a>
@@ -3345,10 +3345,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grounding-your-ai-tool-in-project-standards" class="md-nav__link">
+  <a href="#using-the-projects-resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grounding Your AI Tool in Project Standards
+        Using the Project's Resources
       
     </span>
   </a>
@@ -3445,15 +3445,22 @@
 
   <h1>AI Use Policy</h1>
 
-<p>The AsBuiltReport project welcomes contributors who use AI-assisted tools
-(such as GitHub Copilot, ChatGPT, Claude, or similar) as part of their
-development workflow. This page sets out the expectations that apply when
-AI tools are used to produce contributions.</p>
+<p>The AsBuiltReport project encourages contributors to develop code by hand,
+drawing on the project's Plaster template, developer documentation, and
+existing report modules as their primary references. This hands-on approach
+builds genuine understanding of the codebase and produces contributions that
+are easier to review, maintain, and extend.</p>
+<p>AI-assisted tools (such as GitHub Copilot, ChatGPT, Claude, or similar) are
+permitted where they help or enhance that process — for example, to clarify
+a vendor API, suggest a table structure, or refine documentation. This page
+sets out how AI tools fit into that workflow and the expectations that apply
+when they are used.</p>
 <div class="admonition info">
 <p class="admonition-title">Summary</p>
-<p>AI tools are permitted. You are responsible for everything you submit.
-Quality, testing, and coding standards apply equally to all contributions
-regardless of how they were produced.</p>
+<p>Hand-developed code is encouraged. AI tools are permitted as a supplement
+— to assist and enhance, not to replace the hands-on development process.
+You are responsible for everything you submit, regardless of how it was
+produced.</p>
 </div>
 <h2 id="core-principles">Core Principles</h2>
 <h3 id="you-own-what-you-submit">You Own What You Submit</h3>
@@ -3479,12 +3486,14 @@ outdated patterns, or hallucinated API calls. Before submitting a contribution:<
 or what data a table renders — do not submit it. AI-generated code you cannot
 explain is a maintenance liability for the project team. Maintainers will ask
 questions during review; "the AI wrote it" is not an acceptable answer.</p>
-<h2 id="grounding-your-ai-tool-in-project-standards">Grounding Your AI Tool in Project Standards</h2>
-<p>Before generating any code or documentation, provide your AI tool with the
-relevant project guidelines as context. This significantly reduces the amount
-of correction needed after generation and produces output that is much closer
-to the project's conventions from the outset.</p>
-<p>The following pages should be shared with your AI tool depending on the task:</p>
+<h2 id="using-the-projects-resources">Using the Project's Resources</h2>
+<p>The project provides everything needed to develop a contribution by hand.
+Establishing these foundations first — before writing any code or involving
+an AI tool — produces better results and reduces the amount of correction
+required later.</p>
+<p><strong>1. Read the developer documentation</strong></p>
+<p>Read the relevant Developer Guide sections before starting work. These define
+the conventions, structure, and patterns the project expects:</p>
 <table>
 <thead>
 <tr>
@@ -3515,11 +3524,24 @@ to the project's conventions from the outset.</p>
 </tr>
 </tbody>
 </table>
+<p><strong>2. Scaffold with the Plaster template</strong></p>
+<p>New report modules should always be created using the
+<a href="../creating-a-report-module/#scaffolding-your-module-with-plaster">AsBuiltReport Plaster template</a>.
+This generates the correct repository layout, module manifest, configuration
+file, and script stubs. Do not ask an AI tool to create this structure
+manually — the template is the authoritative starting point.</p>
+<p><strong>3. Study existing report modules</strong></p>
+<p>The <a href="https://github.com/AsBuiltReport" target="_blank">AsBuiltReport GitHub organisation</a>
+contains many published report modules. Before writing a new section or
+module, review how similar sections are implemented in an existing module.</p>
+<p>These same resources are just as useful when working with an AI tool. Sharing
+them as context means the tool's output is more likely to follow project
+conventions from the start, with less manual correction needed afterwards.</p>
 <div class="admonition tip">
-<p class="admonition-title">How to share context with your AI tool</p>
-<p>Most AI coding assistants allow you to attach files or paste content
-directly into the chat. Copy the relevant documentation page(s) into your
-session before asking the tool to generate or review code. Some tools
+<p class="admonition-title">Using project resources with your AI tool</p>
+<p>Paste the relevant documentation pages into your AI tool's session before
+asking it to generate or review code. Paste an example function from an
+existing module to give the tool a concrete pattern to follow. Some tools
 (such as GitHub Copilot Workspace or Claude Projects) support persistent
 context — upload the relevant pages there so the standards apply
 automatically across your entire session.</p>
@@ -3594,10 +3616,13 @@ yourself.</p>
 <p>All accepted contributions are licensed under the
 <a href="../../about/license/">MIT Licence</a>, consistent with the rest of the project.</p>
 <h2 id="in-summary">In Summary</h2>
-<p>AI tools are a legitimate part of modern development. The project does not
-prohibit their use. What we do require is that every contribution meets the
-same bar: tested against a real environment, compliant with our coding
-standards, and understood by the person submitting it.</p>
+<p>The project's Plaster template, developer documentation, and existing report
+modules give you everything you need to develop a contribution by hand. AI
+tools have a role to play alongside those resources — helping you understand
+a vendor API, drafting repetitive structures, or refining documentation —
+but they work best as a supplement to hands-on development, not a
+replacement for it. Every contribution must still be understood, tested
+against a real environment, and ready to be defended in review.</p>
 <p>If you have questions about whether a particular use of AI assistance is
 appropriate, raise it in the
 <a href="https://github.com/orgs/AsBuiltReport/discussions" target="_blank">Discussions board</a>
@@ -3622,7 +3647,7 @@ before submitting.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 17, 2026 00:46:44 UTC">June 17, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 17, 2026 01:58:03 UTC">June 17, 2026</span>
   </span>
 
     
