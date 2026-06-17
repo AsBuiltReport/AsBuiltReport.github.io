@@ -6,40 +6,40 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="AsBuiltReport is an open source configuration document framework which utilises Microsoft PowerShell to produce as-built documentation in multiple document formats for multiple vendors and technologies.">
+        <meta name="description" content="Guidelines for using AI-assisted tools when contributing to AsBuiltReport">
       
       
         <meta name="author" content="Tim Carman">
       
       
-        <link rel="canonical" href="https://www.asbuiltreport.com/blog/2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/">
+        <link rel="canonical" href="https://www.asbuiltreport.com/dev-guide/ai-use-policy/">
       
       
-        <link rel="prev" href="../../../../2025/09/05/Multilingual-support/">
+        <link rel="prev" href="../contributing/">
       
       
-        <link rel="next" href="../How-I-approach-building-a-new-AsBuiltReport-report-module/">
+        <link rel="next" href="../creating-a-report-module/">
       
       
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../../assets/images/logos/AsBuiltReport.png">
+      <link rel="icon" href="../../assets/images/logos/AsBuiltReport.png">
       <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.6">
     
     
       
-        <title>Stop Updating Your Design Doc and Calling It an As-Built - AsBuiltReport</title>
+        <title>AI Use Policy - AsBuiltReport</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,9 +58,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -78,17 +78,17 @@
     
   
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Stop Updating Your Design Doc and Calling It an As-Built - AsBuiltReport" />
-<meta property="og:description" content="AsBuiltReport is an open source configuration document framework which utilises Microsoft PowerShell to produce as-built documentation in multiple document formats for multiple vendors and technologies." />
-<meta property="og:image" content="https://www.asbuiltreport.com/assets/images/social/blog/2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built.png" />
+<meta property="og:title" content="AI Use Policy - AsBuiltReport" />
+<meta property="og:description" content="Guidelines for using AI-assisted tools when contributing to AsBuiltReport" />
+<meta property="og:image" content="https://www.asbuiltreport.com/assets/images/social/dev-guide/ai-use-policy.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:url" content="https://www.asbuiltreport.com/blog/2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built/" />
+<meta property="og:url" content="https://www.asbuiltreport.com/dev-guide/ai-use-policy/" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:title" content="Stop Updating Your Design Doc and Calling It an As-Built - AsBuiltReport" />
-<meta property="twitter:description" content="AsBuiltReport is an open source configuration document framework which utilises Microsoft PowerShell to produce as-built documentation in multiple document formats for multiple vendors and technologies." />
-<meta property="twitter:image" content="https://www.asbuiltreport.com/assets/images/social/blog/2026/03/03/Stop-Updating-Your-Design-Doc-and-Calling-It-an-As-Built.png" />
+<meta property="twitter:title" content="AI Use Policy - AsBuiltReport" />
+<meta property="twitter:description" content="Guidelines for using AI-assisted tools when contributing to AsBuiltReport" />
+<meta property="twitter:image" content="https://www.asbuiltreport.com/assets/images/social/dev-guide/ai-use-policy.png" />
 </head>
   
   
@@ -106,7 +106,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#stop-updating-your-design-doc-and-calling-it-an-as-built" class="md-skip">
+        <a href="#core-principles" class="md-skip">
           Skip to content
         </a>
       
@@ -122,9 +122,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="AsBuiltReport" class="md-header__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
+    <a href="../.." title="AsBuiltReport" class="md-header__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
       
-  <img src="../../../../../assets/images/logos/AsBuiltReport.png" alt="logo">
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -141,7 +141,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Stop Updating Your Design Doc and Calling It an As-Built
+              AI Use Policy
             
           </span>
         </div>
@@ -220,7 +220,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -248,7 +248,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../user-guide/quickstart/" class="md-tabs__link">
+        <a href="../../user-guide/quickstart/" class="md-tabs__link">
           
   
   
@@ -269,11 +269,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../../dev-guide/contributing/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../contributing/" class="md-tabs__link">
           
   
   
@@ -295,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../support/faq/" class="md-tabs__link">
+        <a href="../../support/faq/" class="md-tabs__link">
           
   
   
@@ -313,13 +315,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
           
   
   
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/contributors/" class="md-tabs__link">
+        <a href="../../about/contributors/" class="md-tabs__link">
           
   
   
@@ -372,9 +372,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -385,9 +383,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="AsBuiltReport" class="md-nav__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
+    <a href="../.." title="AsBuiltReport" class="md-nav__button md-logo" aria-label="AsBuiltReport" data-md-component="logo">
       
-  <img src="../../../../../assets/images/logos/AsBuiltReport.png" alt="logo">
+  <img src="../../assets/images/logos/AsBuiltReport.png" alt="logo">
 
     </a>
     AsBuiltReport
@@ -414,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -561,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/quickstart/" class="md-nav__link">
+      <a href="../../user-guide/quickstart/" class="md-nav__link">
         
   
   
@@ -589,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/installation/" class="md-nav__link">
+      <a href="../../user-guide/installation/" class="md-nav__link">
         
   
   
@@ -617,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/best-practices/" class="md-nav__link">
+      <a href="../../user-guide/best-practices/" class="md-nav__link">
         
   
   
@@ -713,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/new-asbuiltconfig/" class="md-nav__link">
+      <a href="../../user-guide/new-asbuiltconfig/" class="md-nav__link">
         
   
   
@@ -741,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/new-asbuiltreport/" class="md-nav__link">
+      <a href="../../user-guide/new-asbuiltreport/" class="md-nav__link">
         
   
   
@@ -769,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/new-asbuiltreportconfig/" class="md-nav__link">
+      <a href="../../user-guide/new-asbuiltreportconfig/" class="md-nav__link">
         
   
   
@@ -881,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guide/report-modules/overview/" class="md-nav__link">
+      <a href="../../user-guide/report-modules/overview/" class="md-nav__link">
         
   
   
@@ -2111,8 +2109,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -2128,19 +2128,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -2158,7 +2161,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2176,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -2201,10 +2204,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../dev-guide/ai-use-policy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Use Policy
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2220,6 +2248,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Principles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#you-own-what-you-submit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        You Own What You Submit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quality-standards-are-non-negotiable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Standards Are Non-Negotiable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-not-submit-code-you-do-not-understand" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do Not Submit Code You Do Not Understand
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptable-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptable Uses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-ai-tools-should-not-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What AI Tools Should Not Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licence-and-intellectual-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licence and Intellectual Property
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2246,17 +2397,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   
@@ -2292,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/creating-a-report-module/" class="md-nav__link">
+      <a href="../creating-a-report-module/" class="md-nav__link">
         
   
   
@@ -2320,7 +2474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/adding-charts-to-a-report-module/" class="md-nav__link">
+      <a href="../adding-charts-to-a-report-module/" class="md-nav__link">
         
   
   
@@ -2348,7 +2502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/adding-diagrams-to-a-report-module/" class="md-nav__link">
+      <a href="../adding-diagrams-to-a-report-module/" class="md-nav__link">
         
   
   
@@ -2394,17 +2548,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   
@@ -2440,7 +2597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../dev-guide/creating-a-report-style/" class="md-nav__link">
+      <a href="../creating-a-report-style/" class="md-nav__link">
         
   
   
@@ -2549,7 +2706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/faq/" class="md-nav__link">
+      <a href="../../support/faq/" class="md-nav__link">
         
   
   
@@ -2577,7 +2734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/troubleshooting/" class="md-nav__link">
+      <a href="../../support/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2605,7 +2762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/known-issues/" class="md-nav__link">
+      <a href="../../support/known-issues/" class="md-nav__link">
         
   
   
@@ -2689,7 +2846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../support/donate/" class="md-nav__link">
+      <a href="../../support/donate/" class="md-nav__link">
         
   
   
@@ -2721,8 +2878,6 @@
       
   
   
-    
-  
   
   
     
@@ -2738,23 +2893,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../blog/" class="md-nav__link ">
               
   
   
@@ -2772,13 +2924,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2812,20 +2964,17 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
   
   
@@ -2863,7 +3012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/announcements/" class="md-nav__link">
+      <a href="../../blog/category/announcements/" class="md-nav__link">
         
   
   
@@ -2893,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/features/" class="md-nav__link">
+      <a href="../../blog/category/features/" class="md-nav__link">
         
   
   
@@ -2923,7 +3072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/general/" class="md-nav__link">
+      <a href="../../blog/category/general/" class="md-nav__link">
         
   
   
@@ -3026,7 +3175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/contributors/" class="md-nav__link">
+      <a href="../../about/contributors/" class="md-nav__link">
         
   
   
@@ -3054,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/contact/" class="md-nav__link">
+      <a href="../../about/contact/" class="md-nav__link">
         
   
   
@@ -3082,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/license/" class="md-nav__link">
+      <a href="../../about/license/" class="md-nav__link">
         
   
   
@@ -3118,8 +3267,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -3129,8 +3276,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3139,66 +3284,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-a-design-document-is-for" class="md-nav__link">
+  <a href="#core-principles" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What a Design Document Is For
+        Core Principles
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-an-as-built-document-is-for" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What an As-Built Document Is For
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-information-that-cannot-exist-until-the-system-is-built" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Information That Cannot Exist Until the System Is Built
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#a-real-world-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A Real-World Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automating-the-as-built" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automating the As-Built
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Automating the As-Built">
+    <nav class="md-nav" aria-label="Core Principles">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#becoming-familiar-with-a-new-environment" class="md-nav__link">
+  <a href="#you-own-what-you-submit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Becoming Familiar with a New Environment
+        You Own What You Submit
       
     </span>
   </a>
@@ -3206,10 +3307,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#auditing-and-compliance" class="md-nav__link">
+  <a href="#quality-standards-are-non-negotiable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Auditing and Compliance
+        Quality Standards Are Non-Negotiable
       
     </span>
   </a>
@@ -3217,21 +3318,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#disaster-recovery-and-environment-rebuild" class="md-nav__link">
+  <a href="#do-not-submit-code-you-do-not-understand" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disaster Recovery and Environment Rebuild
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#differential-outputs-and-change-tracking" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Differential Outputs and Change Tracking
+        Do Not Submit Code You Do Not Understand
       
     </span>
   </a>
@@ -3244,10 +3334,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-bottom-line" class="md-nav__link">
+  <a href="#acceptable-uses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Bottom Line
+        Acceptable Uses
       
     </span>
   </a>
@@ -3255,10 +3345,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#getting-started-with-asbuiltreport" class="md-nav__link">
+  <a href="#what-ai-tools-should-not-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting Started with AsBuiltReport
+        What AI Tools Should Not Do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licence-and-intellectual-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licence and Intellectual Property
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In Summary
       
     </span>
   </a>
@@ -3274,100 +3397,15 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    Back to index
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="/assets/images/contributors/tim-carman.jpg" alt="Tim Carman">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          Tim Carman
-                        
-                      </strong>
-                      <br>
-                      Creator
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    Metadata
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-03-03 00:00:00+00:00" class="md-ellipsis">Mar 3, 2026</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            in
-                            
-                              <a href="../../../../category/general/">General</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              7 min read
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
-  
-
+                  
 
 
   
-    <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/edit/master/docs/blog/posts/Stop-updating-your-design-doc-and-calling-it-an-as-built.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/edit/master/docs/dev-guide/ai-use-policy.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3376,91 +3414,127 @@
     
       
     
-    <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/raw/master/docs/blog/posts/Stop-updating-your-design-doc-and-calling-it-an-as-built.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/AsBuiltReport/AsBuiltReport.Core/raw/master/docs/dev-guide/ai-use-policy.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="stop-updating-your-design-doc-and-calling-it-an-as-built">Stop Updating Your Design Doc and Calling It an As-Built</h1>
-<p>In nearly 20 years delivering enterprise infrastructure solutions, there is a common misconception I have encountered time and again — that an as-built document is simply a design document updated to reflect what was built, a past-tense version of the original plan. It is an understandable assumption, but it is fundamentally wrong. The two documents serve entirely different purposes, capture entirely different information, and should never be confused with one another.</p>
-<p>This distinction matters. Getting it wrong means critical information goes undocumented, environments become harder to support, and the as-built loses its value as a source of truth.</p>
-<h2 id="what-a-design-document-is-for">What a Design Document Is For</h2>
-<p>A design document is created before a single component is deployed. Its purpose is to record <strong>intent</strong> — to describe what will be built, why it will be built that way, and how the proposed solution meets the requirements of the business.</p>
-<p>A well-structured design document will typically capture:</p>
-<ul>
-<li><strong>Business requirements</strong> and how the proposed architecture meets them</li>
-<li><strong>Assumptions</strong> made during the design process — for example, that a specific network segment will be available, or that a licensing tier will be in place</li>
-<li><strong>Constraints</strong> that influenced design decisions, such as budget limits, existing infrastructure, or compliance obligations</li>
-<li><strong>Risks</strong> identified and how they are mitigated</li>
-<li><strong>Planned architecture</strong> — topology diagrams, component lists, configuration standards</li>
-<li><strong>Design decisions and justifications</strong> — the specific choices made during the design process and the reasoning behind them, such as why a particular platform, topology, or configuration approach was selected over alternatives</li>
-</ul>
-<p>Critically, a design document captures the <strong>why</strong>. Why was this platform chosen over an alternative? Why is the solution architected this way? Why were certain trade-offs made? This reasoning is invaluable for future engineers who need to understand the intent behind a system — but it belongs in the design document, not the as-built.</p>
-<h2 id="what-an-as-built-document-is-for">What an As-Built Document Is For</h2>
-<p>An as-built document is not written in advance. It is generated <strong>from the system itself</strong>, after deployment, and its sole purpose is to record reality — what was actually deployed, how it is configured, and what it looks like right now.</p>
-<p>An as-built document does not need to explain the <em>why</em>. Its focus is entirely on the <em>is</em>.</p>
-<p>A thorough as-built document will capture:</p>
-<ul>
-<li>The actual deployed configuration of every component</li>
-<li>Network addressing, VLANs, and routing as they exist in the environment</li>
-<li>Storage configurations, datastores, and volume assignments</li>
-<li>Identity and access configurations</li>
-<li>The current state of services, roles, and features</li>
-</ul>
-<p>And here is the key point that the "updated design" misconception completely misses.</p>
-<h2 id="the-information-that-cannot-exist-until-the-system-is-built">The Information That Cannot Exist Until the System Is Built</h2>
-<p>A design document is authored before the environment exists. By definition, it cannot contain information that is only generated at provisioning time. Yet this is precisely the information that is most valuable in an as-built document.</p>
-<p>Consider the following examples:</p>
-<p><strong>VMware environments:</strong>
-- Virtual machine instance UUIDs assigned at creation
-- Managed Object Reference IDs (MOREFs) for vCenter objects
-- Datastore URNs
-- MAC addresses assigned to virtual network adapters</p>
-<p><strong>Microsoft Azure:</strong>
-- Resource GUIDs for every deployed resource
-- Subscription and tenant IDs
-- Managed identity object IDs
-- Auto-generated storage account endpoints and connection strings
-- Deployment correlation IDs</p>
-<p><strong>Active Directory and Windows:</strong>
-- Security Identifiers (SIDs) for users, groups, and computer accounts
-- ObjectGUIDs for directory objects
-- GPO GUIDs</p>
-<p>None of these values exist at design time. No engineer can write them into a design document, and no amount of updating a design document to past tense will produce them. They can only be captured by interrogating the live system after deployment.</p>
-<p>This is why an as-built document must be <strong>generated from the system</strong>, not authored by hand. Manual documentation of these values is error-prone, time-consuming, and almost always incomplete.</p>
-<!-- more -->
+  <h1>AI Use Policy</h1>
 
-<h2 id="a-real-world-example">A Real-World Example</h2>
-<p>Consider a large-scale VMware deployment across multiple datacentres. The design document will describe the intended cluster topology, the networking architecture, the storage layout, and the vSphere configuration standards. It will explain why certain design decisions were made, reference the business requirements, and document the assumptions and risks.</p>
-<p>Once the environment is deployed, that design document becomes a historical artefact. It describes what was intended. The as-built document describes what exists. In a project of any complexity, there will always be deviations — configurations adjusted during deployment, IP addresses reallocated, resource names that followed a slightly different convention than planned. The as-built captures these realities.</p>
-<p>More importantly, the as-built captures every GUID, every UUID, every system-generated identifier that now forms part of the operational fabric of the environment. These are the values that support engineers need when troubleshooting, that security teams need during audits, and that migration teams need when planning future change.</p>
-<h2 id="automating-the-as-built">Automating the As-Built</h2>
-<p>This is exactly the problem that <a href="https://www.asbuiltreport.com">AsBuiltReport</a> was built to solve.</p>
-<p>AsBuiltReport is an open-source PowerShell framework that connects directly to live infrastructure — VMware vSphere, Microsoft Azure, Windows Server, networking platforms, and more — and generates structured, professional as-built documentation automatically. Rather than asking engineers to manually capture hundreds of configuration values, AsBuiltReport interrogates the environment and produces accurate, consistent documentation in minutes.</p>
-<p>The result is an as-built document that contains the information a design document never could: the real hostnames, the actual GUIDs, the live configuration state of every component in the environment. It is a forensic record of reality, not a sanitised version of a plan.</p>
-<p>With over 240,000 downloads from the PowerShell Gallery, AsBuiltReport has become a widely adopted tool across infrastructure teams who understand that documentation quality directly impacts operational resilience.</p>
-<h3 id="becoming-familiar-with-a-new-environment">Becoming Familiar with a New Environment</h3>
-<p>One of the most immediate use cases for AsBuiltReport is onboarding. When an engineer inherits responsibility for an environment they have never worked in — whether joining a new organisation, taking over from a colleague, or engaging with a client's infrastructure for the first time — accurate as-built documentation is invaluable. Rather than spending days manually exploring the environment and piecing together a picture of what exists, AsBuiltReport can produce a comprehensive snapshot in minutes. That snapshot becomes the starting point for understanding the environment's topology, configuration standards, and current state.</p>
-<h3 id="auditing-and-compliance">Auditing and Compliance</h3>
-<p>As-built documentation plays a critical role in security audits, compliance reviews, and internal governance processes. Auditors need evidence of what is deployed and how it is configured — not what was planned. AsBuiltReport provides a consistent, repeatable output that can be generated on demand, ensuring that the documentation presented during an audit accurately reflects the environment at that point in time. For organisations operating under frameworks such as ISO 27001, SOC 2, or government security standards, this capability is not a nice-to-have — it is essential.</p>
-<h3 id="disaster-recovery-and-environment-rebuild">Disaster Recovery and Environment Rebuild</h3>
-<p>An as-built document is an essential component of any disaster recovery strategy. In the event of an unplanned change — a misconfiguration, a failed update, or an unexpected system behaviour — having an accurate record of how the environment was configured before the incident can be the difference between a swift recovery and hours of guesswork. Engineers can refer directly to the as-built to understand what the environment looked like at a known good state and work methodically to restore it.</p>
-<p>In a full disaster recovery scenario, the value is even greater. Rebuilding an environment from memory or from an outdated design document is slow, error-prone, and incomplete. An accurate, detailed as-built document — one that captures every configuration value, every system-generated identifier, and every deployed component — provides the blueprint needed to reconstruct the environment with confidence. This is particularly critical in complex environments where the interdependencies between systems, the specific configuration of network components, or the precise values of identifiers like GUIDs and UUIDs must be restored exactly as they were.</p>
-<h3 id="differential-outputs-and-change-tracking">Differential Outputs and Change Tracking</h3>
-<p>Perhaps one of the most powerful but underutilised use cases is comparing as-built outputs over time. By generating reports at regular intervals — or before and after a change window — teams can produce differential outputs that clearly show what has changed in an environment. This is invaluable for change validation, incident investigation, and identifying configuration drift. If something breaks after a maintenance window, a differential comparison between the pre- and post-change as-built can quickly surface what changed and where. This level of visibility is simply not possible with manually maintained documentation.</p>
-<h2 id="the-bottom-line">The Bottom Line</h2>
-<p>A design document and an as-built document are not versions of the same thing. They serve different purposes, are created at different stages of a project, and contain fundamentally different types of information.</p>
+<p>The AsBuiltReport project welcomes contributors who use AI-assisted tools
+(such as GitHub Copilot, ChatGPT, Claude, or similar) as part of their
+development workflow. This page sets out the expectations that apply when
+AI tools are used to produce contributions.</p>
+<div class="admonition info">
+<p class="admonition-title">Summary</p>
+<p>AI tools are permitted. You are responsible for everything you submit.
+Quality, testing, and coding standards apply equally to all contributions
+regardless of how they were produced.</p>
+</div>
+<h2 id="core-principles">Core Principles</h2>
+<h3 id="you-own-what-you-submit">You Own What You Submit</h3>
+<p>All contributions — whether written by hand or generated with AI assistance —
+are submitted under your name and are subject to the same review standards.
+Maintainers cannot distinguish AI-generated code from human-written code during
+review, nor should they need to. It is your responsibility to understand,
+test, and stand behind every line you submit.</p>
+<h3 id="quality-standards-are-non-negotiable">Quality Standards Are Non-Negotiable</h3>
+<p>AI tools can produce code that looks correct but contains subtle errors,
+outdated patterns, or hallucinated API calls. Before submitting a contribution:</p>
 <ul>
-<li>A <strong>design document</strong> captures intent, rationale, and planning — it explains what will be built and why.</li>
-<li>An <strong>as-built document</strong> captures reality — it records what was deployed, how it is configured, and the system-generated information that could not exist until the environment was built.</li>
+<li>Run <a href="https://github.com/PowerShell/PSScriptAnalyzer" target="_blank">PSScriptAnalyzer</a> and
+  resolve all <code>Warning</code> and <code>Error</code> severity findings</li>
+<li>Follow the <a href="../contributing/#coding-style-guidelines">Coding Style Guidelines</a>
+  exactly — AI output frequently diverges from project conventions and must be
+  corrected before submission</li>
+<li>Complete the <a href="../contributing/#manual-testing-checklist">Manual Testing Checklist</a>
+  against a real target system — not a mocked or simulated environment</li>
 </ul>
-<p>If your as-built process involves opening a design document and changing verb tenses, you are not producing an as-built. You are producing an incomplete document and leaving critical operational information undocumented.</p>
-<h2 id="getting-started-with-asbuiltreport">Getting Started with AsBuiltReport</h2>
-<p>AsBuiltReport is free and open source. Whether you are looking to document an existing environment, prepare for an audit, or simply get up to speed on an infrastructure you have inherited, the best place to start is the <a href="https://www.asbuiltreport.com/user-guide/quickstart/">Quickstart Guide</a>, which walks through installation, configuration, and generating your first report.</p>
-<p>For those who want to go further — whether that means contributing to an existing report module, building a new one for a platform not yet covered, or extending the framework for your own use case — the <a href="https://www.asbuiltreport.com/dev-guide/contributing/">Developer Guide</a> provides everything you need to get started. AsBuiltReport is built on a modular architecture, making it straightforward to develop report modules for virtually any infrastructure platform that exposes a PowerShell interface or API.</p>
-<p>The project is actively maintained and welcomes contributions from the community. If you are working with infrastructure platforms that are not yet covered, or have ideas for improving existing reports, the project's <a href="https://github.com/orgs/AsBuiltReport/discussions" target="_blank">GitHub Discussions</a> is the right place to start that conversation.</p>
+<h3 id="do-not-submit-code-you-do-not-understand">Do Not Submit Code You Do Not Understand</h3>
+<p>If you cannot explain what a function does, why a particular pattern was chosen,
+or what data a table renders — do not submit it. AI-generated code you cannot
+explain is a maintenance liability for the project team. Maintainers will ask
+questions during review; "the AI wrote it" is not an acceptable answer.</p>
+<h2 id="acceptable-uses">Acceptable Uses</h2>
+<p>The following uses of AI assistance are consistent with project standards:</p>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drafting boilerplate or scaffolding</td>
+<td>Must be reviewed and corrected to match project conventions</td>
+</tr>
+<tr>
+<td>Generating <code>PSCustomObject</code> table structures</td>
+<td>Verify property names match the vendor API</td>
+</tr>
+<tr>
+<td>Writing or improving inline comments</td>
+<td>Comments must remain accurate after edits</td>
+</tr>
+<tr>
+<td>Drafting or refining documentation</td>
+<td>Accuracy must be verified against actual module behaviour</td>
+</tr>
+<tr>
+<td>Suggesting test cases or edge cases</td>
+<td>All test cases must be validated manually</td>
+</tr>
+<tr>
+<td>Translating report strings for language support</td>
+<td>Verify translations with a native speaker where possible</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-ai-tools-should-not-do">What AI Tools Should Not Do</h2>
+<p><span class="twemoji x-circle-fill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657M6.03 4.97a.75.75 0 0 0-1.042.018.75.75 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.75.75 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.75.75 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.75.75 0 0 0-.734.215L8 6.94Z"/></svg></span> DO NOT use AI tools to:</p>
+<ul>
+<li><strong>Generate an entire report module end-to-end without hands-on development.</strong>
+  Report modules require real-environment testing against the target vendor's
+  API. A module that has never been run against a live system is not ready for
+  contribution.</li>
+<li><strong>Fabricate sample output, API responses, or configuration values.</strong> All
+  data structures in code and documentation must reflect what the vendor API
+  actually returns.</li>
+<li><strong>Bypass the review process.</strong> Generating a large volume of AI-produced PRs
+  in quick succession to flood the review queue is not acceptable.</li>
+<li><strong>Hardcode credentials, secrets, or sensitive data</strong>, whether AI-suggested
+  or otherwise. See the <a href="../contributing/#coding-style-guidelines">DO NOT</a>
+  section of the Coding Style Guidelines.</li>
+<li><strong>Introduce dependencies or imports</strong> that are not already part of the
+  project's declared requirements without prior discussion.</li>
+</ul>
+<h2 id="disclosure">Disclosure</h2>
+<p>You are not required to declare that you used an AI tool when submitting a
+contribution. However, if AI assistance played a significant role — for
+example, if the majority of a function or document section was AI-generated —
+it is good practice to note this in the PR description. This helps reviewers
+calibrate how closely to check for accuracy and convention compliance.</p>
+<h2 id="licence-and-intellectual-property">Licence and Intellectual Property</h2>
+<p>By submitting a contribution you confirm that, to the best of your knowledge,
+the contribution does not infringe third-party intellectual property rights.
+AI tools trained on public code can occasionally reproduce protected content
+verbatim. If you recognise content in AI output that appears to originate
+from a specific third-party source, remove it and write the equivalent
+yourself.</p>
+<p>All accepted contributions are licensed under the
+<a href="../../about/license/">MIT Licence</a>, consistent with the rest of the project.</p>
+<h2 id="in-summary">In Summary</h2>
+<p>AI tools are a legitimate part of modern development. The project does not
+prohibit their use. What we do require is that every contribution meets the
+same bar: tested against a real environment, compliant with our coding
+standards, and understood by the person submitting it.</p>
+<p>If you have questions about whether a particular use of AI assistance is
+appropriate, raise it in the
+<a href="https://github.com/orgs/AsBuiltReport/discussions" target="_blank">Discussions board</a>
+before submitting.</p>
 
 
 
@@ -3481,7 +3555,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 13, 2026 20:59:53 UTC">March 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 17, 2026 00:36:33 UTC">June 17, 2026</span>
   </span>
 
     
@@ -3494,14 +3568,12 @@
   
 
 
-  
 
 
-
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -3518,12 +3590,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../../2025/09/05/Multilingual-support/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Multilingual support now available for AsBuiltReport">
+          <a href="../contributing/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Contributing Guide">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3533,20 +3603,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Multilingual support now available for AsBuiltReport
+                Contributing Guide
               </div>
             </div>
           </a>
         
         
           
-          <a href="../How-I-approach-building-a-new-AsBuiltReport-report-module/" class="md-footer__link md-footer__link--next" aria-label="Next: How I Approach Building a New AsBuiltReport Report Module">
+          <a href="../creating-a-report-module/" class="md-footer__link md-footer__link--next" aria-label="Next: Creating a report module">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                How I Approach Building a New AsBuiltReport Report Module
+                Creating a report module
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3611,10 +3681,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "navigation.tracking", "content.code.copy", "search.highlight"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "navigation.tracking", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
