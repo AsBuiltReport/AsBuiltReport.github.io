@@ -3015,10 +3015,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#theme-colours-not-applied" class="md-nav__link">
+  <a href="#theme-colour-not-applied" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Theme Colours Not Applied
+        Theme Colour Not Applied
       
     </span>
   </a>
@@ -4434,10 +4434,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#theme-colours-not-applied" class="md-nav__link">
+  <a href="#theme-colour-not-applied" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Theme Colours Not Applied
+        Theme Colour Not Applied
       
     </span>
   </a>
@@ -4524,10 +4524,13 @@
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Reference Implementation</p>
-<p>For a complete, production-ready example of diagram implementation, see the <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources">AsBuiltReport.System.Resources</a> repository. This project includes:
-- <code>Src/Private/Diagram/Export-AbrDiagram.ps1</code> — Orchestration function
-- <code>Src/Private/Diagram/Get-AbrProcessDiagram.ps1</code> — Diagram builder function
-- <code>Icons/</code> directory with 100×150 PNG icon files</p>
+<p>For a complete, production-ready example of diagram implementation, see the <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources">AsBuiltReport.System.Resources</a> repository. 
+This project includes:</p>
+<ul>
+<li><code>Src/Private/Diagram/Export-AbrDiagram.ps1</code> — Orchestration function</li>
+<li><code>Src/Private/Diagram/Get-AbrProcessDiagram.ps1</code> — Diagram builder function</li>
+<li><code>Icons/</code> — directory with 100×150 PNG icon files</li>
+</ul>
 <p>This reference implementation demonstrates all patterns discussed in this guide.</p>
 </div>
 <h2 id="prerequisites">Prerequisites</h2>
@@ -5059,17 +5062,21 @@
 <h2 id="complete-private-function-example">Complete Private Function Example</h2>
 <h3 id="reference-implementation-source">Reference Implementation Source</h3>
 <p>The example functions below are from the <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources">AsBuiltReport.System.Resources</a> repository. These are production-ready implementations that demonstrate all the patterns and best practices discussed in this guide.</p>
-<p><strong>View the full source code:</strong>
-- <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Export-AbrDiagram.ps1">Export-AbrDiagram.ps1</a>
-- <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Diagram/Get-AbrProcessDiagram.ps1">Get-AbrProcessDiagram.ps1</a></p>
+<p><strong>View the full source code:</strong></p>
+<ul>
+<li><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Export-AbrDiagram.ps1">Export-AbrDiagram.ps1</a></li>
+<li><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Diagram/Get-AbrProcessDiagram.ps1">Get-AbrProcessDiagram.ps1</a></li>
+</ul>
 <h3 id="1-diagram-builder-function-get-abrprocessdiagram">1. Diagram Builder Function (Get-AbrProcessDiagram)</h3>
 <p>The diagram builder function collects infrastructure data and assembles the PSGraph structure. It reads from script-scoped variables (<code>$Options</code>, <code>$reportTranslate</code>, <code>$Images</code>) set by the AsBuiltReport framework.</p>
-<p>Key responsibilities:
-- Collect data from the target system
-- Apply theme-specific colours
-- Build nodes and edges
-- Handle debug styling
-- Return the PSGraph object</p>
+<p>Key responsibilities:</p>
+<ul>
+<li>Collect data from the target system</li>
+<li>Apply theme-specific colours</li>
+<li>Build nodes and edges</li>
+<li>Handle debug styling</li>
+<li>Return the PSGraph object</li>
+</ul>
 <div class="language-powershell highlight"><span class="filename">Src/Private/Diagram/Get-AbrProcessDiagram.ps1</span><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">function</span> <span class="nb">Get-AbrProcessDiagram</span> <span class="p">{</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="cm">&lt;#</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="cm">    </span><span class="sd">.SYNOPSIS</span>
@@ -5189,13 +5196,15 @@
 </span></code></pre></div>
 <h3 id="2-diagram-orchestration-function-export-abrdiagram">2. Diagram Orchestration Function (Export-AbrDiagram)</h3>
 <p>The orchestration function handles rendering configuration, theme application, file export, and report embedding. This function acts as the integration point between the diagram builder and the report generation framework.</p>
-<p>Key responsibilities:
-- Apply theme-specific colours and styles
-- Configure icon path resolution
-- Handle file export when enabled
-- Generate base64 for report embedding
-- Manage watermarks and signatures
-- Provide error handling and logging</p>
+<p>Key responsibilities:</p>
+<ul>
+<li>Apply theme-specific colours and styles</li>
+<li>Configure icon path resolution</li>
+<li>Handle file export when enabled</li>
+<li>Generate base64 for report embedding</li>
+<li>Manage watermarks and signatures</li>
+<li>Provide error handling and logging</li>
+</ul>
 <p>The orchestration function reads these <code>$Options</code> keys:</p>
 <table>
 <thead>
@@ -5214,7 +5223,7 @@
 <tr>
 <td><code>DiagramTheme</code></td>
 <td>String</td>
-<td>'White', 'Black', or 'Neon' for colour scheme</td>
+<td>'White', 'Black', or 'Neon' for color scheme</td>
 </tr>
 <tr>
 <td><code>ExportDiagrams</code></td>
@@ -5309,10 +5318,12 @@
 </span></code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Two-Pass Rendering Pattern</p>
-<p>This dual-pass approach (export first, then base64) ensures:
-- <strong>Consistency</strong>: Same rendering engine for both outputs
-- <strong>Efficiency</strong>: Graphviz rendering is only done once per format
-- <strong>Flexibility</strong>: Users can export standalone files <em>and</em> embed in reports simultaneously</p>
+<p>This dual-pass approach (export first, then base64) ensures:</p>
+<ul>
+<li><strong>Consistency</strong>: Same rendering engine for both outputs</li>
+<li><strong>Efficiency</strong>: Graphviz rendering is only done once per format</li>
+<li><strong>Flexibility</strong>: Users can export standalone files <em>and</em> embed in reports simultaneously</li>
+</ul>
 </div>
 <h3 id="integrating-with-report-section-functions">Integrating with Report Section Functions</h3>
 <p>Diagram builder functions are called from report section functions (e.g., <code>Get-AbrProcessInfo</code>). The report section function calls <code>Export-AbrDiagram</code> to handle rendering:</p>
@@ -5459,32 +5470,42 @@
 </span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="what-is-handled-by-new-abrdiagram">What is handled by New-AbrDiagram</h2>
-<p>The <code>New-AbrDiagram</code> handles the Main logo, label, watermark and signature rendering, as well as applying theme colors and exporting to multiple formats. This allows your diagram builder function to focus solely on assembling the PSGraph structure (nodes, edges, subgraphs) without needing to manage rendering details.</p>
+<p>The <code>New-AbrDiagram</code> handles the Main logo, label, watermark and signature rendering, as well as applying theme colours and exporting to multiple formats. This allows your diagram builder function to focus solely on assembling the PSGraph structure (nodes, edges, subgraphs) without needing to manage rendering details.</p>
 <p><img alt="New-AbrDiagram" src="../../assets/images/diagrams/draftmodediagram.png" /></p>
 <h2 id="reference-implementations">Reference Implementations</h2>
 <p>For additional guidance and working examples, refer to the following production-ready repositories:</p>
 <h3 id="asbuiltreportsystemresources">AsBuiltReport.System.Resources</h3>
 <p>The <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources">AsBuiltReport.System.Resources</a> repository is the primary reference implementation for diagram functionality.</p>
-<p><strong>Key Files:</strong>
-- <a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Export-AbrDiagram.ps1"><code>Src/Private/Diagram/Export-AbrDiagram.ps1</code></a> (255 lines)
-  - Complete orchestration function
-  - Dual-pass rendering implementation
-  - Theme application pattern
-  - File export handling</p>
+<p><strong>Key Files:</strong></p>
+<ol>
+<li>
+<p><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Export-AbrDiagram.ps1"><code>Src/Private/Diagram/Export-AbrDiagram.ps1</code></a></p>
 <ul>
-<li><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Diagram/Get-AbrProcessDiagram.ps1"><code>Src/Private/Diagram/Get-AbrProcessDiagram.ps1</code></a> (105 lines)</li>
+<li>Complete orchestration function</li>
+<li>Dual-pass rendering implementation</li>
+<li>Theme application pattern</li>
+<li>File export handling</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources/blob/dev/AsBuiltReport.System.Resources/Src/Private/Diagram/Get-AbrProcessDiagram.ps1"><code>Src/Private/Diagram/Get-AbrProcessDiagram.ps1</code></a></p>
+<ul>
 <li>Diagram builder function</li>
 <li>Data collection and assembly</li>
 <li>Theme color handling</li>
 <li>Debug mode styling</li>
 </ul>
-<p><strong>What to Study:</strong>
-- How themes are applied at both the builder and orchestration layers
-- Icon path resolution from module root
-- Two-pass rendering for export + embedding
-- Error handling with graceful degradation
-- Script-scoped variable usage
-- SubGraph grouping and node creation</p>
+</li>
+</ol>
+<p><strong>What to Study:</strong></p>
+<ul>
+<li>How themes are applied at both the builder and orchestration layers</li>
+<li>Icon path resolution from module root</li>
+<li>Two-pass rendering for export + embedding</li>
+<li>Error handling with graceful degradation</li>
+<li>Script-scoped variable usage</li>
+<li>SubGraph grouping and node creation</li>
+</ul>
 <p><strong>Directory Structure:</strong>
 <div class="language-text highlight"><span class="filename">Text Only</span><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>AsBuiltReport.System.Resources/
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>├── Icons/                           # 100×150 PNG files
@@ -5513,34 +5534,36 @@
 </li>
 <li>
 <p><strong>Study the diagram functions:</strong></p>
-</li>
+<ul>
 <li>Open <code>Src/Private/Diagram/Get-AbrProcessDiagram.ps1</code> to understand diagram assembly</li>
 <li>Open <code>Src/Private/Diagram/Export-AbrDiagram.ps1</code> to understand orchestration</li>
-<li>
-<p>Compare against the examples in this guide</p>
+<li>Compare against the examples in this guide</li>
+</ul>
 </li>
 <li>
 <p><strong>Review the Icons directory:</strong></p>
-</li>
+<ul>
 <li>Examine icon sizes and formats</li>
 <li>Note the naming convention for icon files</li>
-<li>
-<p>See how the <code>$Images</code> hashtable maps names to filenames</p>
+<li>See how the <code>$Images</code> hashtable maps names to filenames</li>
+</ul>
 </li>
 <li>
 <p><strong>Trace the calling pattern:</strong></p>
-</li>
+<ul>
 <li>Find where <code>Get-AbrProcessDiagram</code> is called</li>
 <li>Follow how <code>Export-AbrDiagram</code> is invoked</li>
-<li>
-<p>Understand how <code>$script:</code> variables are initialized</p>
+<li>Understand how <code>$script:</code> variables are initialized</li>
+</ul>
 </li>
 <li>
 <p><strong>Adapt the patterns to your module:</strong></p>
-</li>
+<ul>
 <li>Create your own <code>Get-AbrYourModuleDiagram.ps1</code> function</li>
 <li>Adapt <code>Export-AbrDiagram.ps1</code> for your specific needs</li>
 <li>Collect your own icons or use the same set</li>
+</ul>
+</li>
 </ol>
 <h2 id="common-parameters-reference">Common Parameters Reference</h2>
 <h3 id="new-abrdiagram">New-AbrDiagram</h3>
@@ -5875,53 +5898,58 @@
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="graphviz-not-found">Graphviz Not Found</h3>
 <p><strong>Error:</strong> <code>The term 'dot.exe' (or 'dot') is not recognized as an internal or external command</code></p>
-<p><strong>Solution:</strong>
-- On <strong>Windows</strong>, ensure PSGraph is installed. Graphviz is bundled. Try uninstalling and reinstalling PSGraph:
+<p><strong>Solution:</strong></p>
+<ul>
+<li>On <strong>Windows</strong>, ensure PSGraph is installed. Graphviz is bundled. Try uninstalling and reinstalling PSGraph:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">Uninstall-Module</span> <span class="n">PSGraph</span> <span class="n">-Force</span>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">Install-Module</span> <span class="n">PSGraph</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
-</span></code></pre></div>
-- On <strong>Linux/macOS</strong>, install Graphviz with your package manager (see Prerequisites section)
-- Verify installation:
+</span></code></pre></div></li>
+<li>On <strong>Linux/macOS</strong>, install Graphviz with your package manager (see Prerequisites section)</li>
+<li>Verify installation:
   <div class="language-bash highlight"><span class="filename">Bash</span><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Linux/macOS</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>which<span class="w"> </span>dot
 </span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
 </span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1"># Windows (in PowerShell)</span>
 </span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>Get-Command<span class="w"> </span>dot.exe
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ul>
 <h3 id="icons-not-found">Icons Not Found</h3>
 <p><strong>Error:</strong> <code>The icon file 'Server.png' could not be found at path ...</code></p>
-<p><strong>Causes &amp; Solutions:</strong>
-- Icon files are not in the specified <code>-IconPath</code> directory — verify icons exist and the path is correct:
+<p><strong>Causes &amp; Solutions:</strong></p>
+<ul>
+<li>Icon files are not in the specified <code>-IconPath</code> directory — verify icons exist and the path is correct:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">Test-Path</span> <span class="s1">&#39;C:\Path\To\Icons\Server.png&#39;</span>
 </span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">Get-ChildItem</span> <span class="s1">&#39;C:\Path\To\Icons\&#39;</span>
-</span></code></pre></div>
-- Icon name in hashtable doesn't match filename — ensure <code>-ImagesObj</code> key matches the filename exactly (case-sensitive on Linux/macOS):
+</span></code></pre></div></li>
+<li>Icon name in hashtable doesn't match filename — ensure <code>-ImagesObj</code> key matches the filename exactly (case-sensitive on Linux/macOS):
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c"># Incorrect: filename is &quot;Server.png&quot;, but hashtable key is &quot;server&quot;</span>
 </span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nv">$Images</span> <span class="p">=</span> <span class="p">@{</span> <span class="s1">&#39;server&#39;</span> <span class="p">=</span> <span class="s1">&#39;Server.png&#39;</span> <span class="p">}</span>  <span class="c"># Won&#39;t work on Linux</span>
 </span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
 </span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="c"># Correct:</span>
 </span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="nv">$Images</span> <span class="p">=</span> <span class="p">@{</span> <span class="s1">&#39;Server&#39;</span> <span class="p">=</span> <span class="s1">&#39;Server.png&#39;</span> <span class="p">}</span>
-</span></code></pre></div>
-- Icon path is relative but working directory is incorrect — use absolute paths or resolve relative to module root:
+</span></code></pre></div></li>
+<li>Icon path is relative but working directory is incorrect — use absolute paths or resolve relative to module root:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c"># Resolve from module root</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nv">$ModuleRoot</span> <span class="p">=</span> <span class="nb">Split-Path</span> <span class="p">(</span><span class="nb">Split-Path</span> <span class="nv">$PSScriptRoot</span> <span class="n">-Parent</span><span class="p">)</span> <span class="n">-Parent</span>
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="nv">$IconPath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="n">-Path</span> <span class="nv">$ModuleRoot</span> <span class="n">-ChildPath</span> <span class="s1">&#39;Icons&#39;</span>
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ul>
 <h3 id="diagram-wont-render-or-appears-blank">Diagram Won't Render or Appears Blank</h3>
-<p><strong>Causes &amp; Solutions:</strong>
-- No nodes or edges defined — verify the PSGraph object is not empty:
+<p><strong>Causes &amp; Solutions:</strong></p>
+<ul>
+<li>No nodes or edges defined — verify the PSGraph object is not empty:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c"># Debug: write the graph object to understand its structure</span>
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nv">$DiagramGraph</span> <span class="p">|</span> <span class="nb">Format-List</span>
-</span></code></pre></div>
-- Invalid node or edge names — Graphviz requires valid identifiers. Sanitise all node names:
+</span></code></pre></div></li>
+<li>Invalid node or edge names — Graphviz requires valid identifiers. Sanitise all node names:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nv">$NodeName</span> <span class="p">=</span> <span class="s1">&#39;My Server (prod)&#39;</span> <span class="o">-replace</span> <span class="s1">&#39;[^a-zA-Z0-9_]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span>  <span class="c"># Result: &#39;MyServerprod&#39;</span>
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="nb">Add-NodeIcon</span> <span class="n">-Name</span> <span class="nv">$NodeName</span> <span class="p">...</span>
-</span></code></pre></div>
-- Format not supported — verify the requested format is supported:
+</span></code></pre></div></li>
+<li>Format not supported — verify the requested format is supported:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c"># Valid formats</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="n">-Format</span> <span class="p">@(</span><span class="s1">&#39;pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="s1">&#39;svg&#39;</span><span class="p">,</span> <span class="s1">&#39;jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;dot&#39;</span><span class="p">,</span> <span class="s1">&#39;base64&#39;</span><span class="p">)</span>
-</span></code></pre></div>
-- <code>New-AbrDiagram</code> failed silently — always check the return value and examine Graphviz error log:
+</span></code></pre></div></li>
+<li><code>New-AbrDiagram</code> failed silently — always check the return value and examine Graphviz error log:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="k">try</span> <span class="p">{</span>
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>    <span class="nv">$Diagram</span> <span class="p">=</span> <span class="nb">New-AbrDiagram</span> <span class="n">-InputObject</span> <span class="nv">$DiagramGraph</span> <span class="n">-Format</span> <span class="s1">&#39;base64&#39;</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
 </span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>    <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$Diagram</span><span class="p">)</span> <span class="p">{</span>
@@ -5930,24 +5958,27 @@
 </span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
 </span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Diagram generation failed: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">&quot;</span>
 </span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="p">}</span>
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ul>
 <h3 id="diagram-takes-too-long-to-generate">Diagram Takes Too Long to Generate</h3>
 <p><strong>Cause:</strong> Large graphs with many nodes/edges or complex layout calculations</p>
-<p><strong>Solutions:</strong>
-- Use <strong>draft mode</strong> during development to skip icon rendering:
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Use <strong>draft mode</strong> during development to skip icon rendering:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">-DraftMode</span><span class="p">:</span><span class="nv">$true</span>
-</span></code></pre></div>
-- Simplify the graph — reduce the number of nodes or use simpler layouts:
+</span></code></pre></div></li>
+<li>Simplify the graph — reduce the number of nodes or use simpler layouts:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c"># Use left-to-right instead of top-to-bottom for complex hierarchies</span>
 </span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="n">-Direction</span> <span class="s1">&#39;left-to-right&#39;</span>
-</span></code></pre></div>
-- Disable diagram generation during testing — add <code>-EnableDiagrams $false</code> to your test JSON config</p>
+</span></code></pre></div></li>
+<li>Disable diagram generation during testing — add <code>-EnableDiagrams $false</code> to your test JSON config</li>
+</ul>
 <h3 id="report-embedding-issues-htmlword-output">Report Embedding Issues (HTML/Word Output)</h3>
 <p><strong>Diagram appears too small or distorted:</strong></p>
-<p><strong>Solution:</strong> Use <code>Get-BestImageAspectRatio</code> to calculate optimal dimensions:
+<p><strong>Solution:</strong> Use <code>Get-BestImageAspectRatio</code> to calculate optimal dimensions:</p>
 <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nv">$BestAspectRatio</span> <span class="p">=</span> <span class="nb">Get-BestImageAspectRatio</span> <span class="n">-GraphObj</span> <span class="nv">$Diagram</span> <span class="n">-MaxWidth</span> <span class="n">800</span> <span class="n">-MaxHeight</span> <span class="n">600</span>
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">Image</span> <span class="n">-Base64</span> <span class="nv">$Diagram</span> <span class="n">-Width</span> <span class="nv">$BestAspectRatio</span><span class="p">.</span><span class="n">Width</span> <span class="n">-Height</span> <span class="nv">$BestAspectRatio</span><span class="p">.</span><span class="n">Height</span>
-</span></code></pre></div></p>
+</span></code></pre></div>
 <p><strong>Diagram layout breaks across pages in Word:</strong></p>
 <p><strong>Solution:</strong> Add <code>PageBreak</code> before the diagram section:
 <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="n">PageBreak</span>
@@ -5968,10 +5999,11 @@
 </span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>    <span class="s1">&#39;Status&#39;</span> <span class="p">=</span> <span class="s1">&#39;Active &amp;amp; Ready&#39;</span>
 </span><span id="__span-44-9"><a id="__codelineno-44-9" name="__codelineno-44-9" href="#__codelineno-44-9"></a><span class="p">}</span>
 </span></code></pre></div></p>
-<h3 id="theme-colours-not-applied">Theme Colours Not Applied</h3>
+<h3 id="theme-colour-not-applied">Theme Colour Not Applied</h3>
 <p><strong>Cause:</strong> Theme variables are not propagated to all graph elements</p>
-<p><strong>Solution:</strong>
-- Ensure theme colours are set <strong>before</strong> building the graph:
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Ensure theme colours are set <strong>before</strong> building the graph:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c"># In the diagram builder function&#39;s begin{} block</span>
 </span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">DiagramTheme</span> <span class="o">-eq</span> <span class="s1">&#39;Black&#39;</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>    <span class="nv">$Edgecolor</span> <span class="p">=</span> <span class="s1">&#39;White&#39;</span>
@@ -5980,19 +6012,21 @@
 </span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>
 </span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="c"># Then use the variables in graph construction</span>
 </span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="n">Edge</span> <span class="p">@{</span> <span class="n">color</span> <span class="p">=</span> <span class="nv">$Edgecolor</span> <span class="p">}</span>
-</span></code></pre></div>
-- Verify the orchestration function applies theme to <code>New-AbrDiagram</code>:
+</span></code></pre></div></li>
+<li>Verify the orchestration function applies theme to <code>New-AbrDiagram</code>:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nv">$DiagramParams</span> <span class="p">=</span> <span class="p">@{</span>
 </span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>    <span class="n">MainGraphBGColor</span> <span class="p">=</span> <span class="s1">&#39;Black&#39;</span>
 </span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    <span class="n">Fontcolor</span> <span class="p">=</span> <span class="s1">&#39;White&#39;</span>
 </span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>    <span class="c"># ... other params</span>
 </span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="p">}</span>
 </span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="nb">New-AbrDiagram</span> <span class="nv">@DiagramParams</span> <span class="n">-InputObject</span> <span class="nv">$DiagramGraph</span>
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ul>
 <h3 id="performance-issues-with-export-diagrams">Performance Issues with Export Diagrams</h3>
 <p><strong>Dual-pass rendering (export + base64) is slow:</strong></p>
-<p><strong>Optimisation:</strong>
-- Only export when explicitly requested:
+<p><strong>Optimisation:</strong></p>
+<ul>
+<li>Only export when explicitly requested:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Options</span><span class="p">.</span><span class="n">ExportDiagrams</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>    <span class="c"># First pass: export to disk</span>
 </span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>    <span class="nb">New-AbrDiagram</span> <span class="n">-InputObject</span> <span class="nv">$Graph</span> <span class="n">-Format</span> <span class="nv">$Options</span><span class="p">.</span><span class="n">ExportDiagramsFormat</span> <span class="p">...</span>
@@ -6000,17 +6034,20 @@
 </span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>
 </span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="c"># Second pass: always base64 for embedding</span>
 </span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="nv">$Diagram</span> <span class="p">=</span> <span class="nb">New-AbrDiagram</span> <span class="n">-InputObject</span> <span class="nv">$Graph</span> <span class="n">-Format</span> <span class="s1">&#39;base64&#39;</span> <span class="p">...</span>
-</span></code></pre></div>
-- Consider caching the Graphviz output if running multiple diagrams</p>
+</span></code></pre></div></li>
+<li>Consider caching the Graphviz output if running multiple diagrams</li>
+</ul>
 <h3 id="diagram-functions-not-found">Diagram Functions Not Found</h3>
 <p><strong>Error:</strong> <code>The term 'Add-NodeIcon' is not recognized</code></p>
-<p><strong>Solution:</strong>
-- Ensure AsBuiltReport.Diagram module is imported:
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Ensure AsBuiltReport.Diagram module is imported:
   <div class="language-powershell highlight"><span class="filename">PowerShell</span><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nb">Import-Module</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Diagram</span>
 </span><span id="__span-48-2"><a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="nb">Get-Command</span> <span class="n">-Module</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Diagram</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">5</span>
-</span></code></pre></div>
-- Verify the module is listed in <code>RequiredModules</code> in your module manifest (<code>.psd1</code>)
-- Check that the function name is correct — AsBuiltReport.Diagram uses <code>Add-NodeIcon</code> (not <code>New-NodeIcon</code>)</p>
+</span></code></pre></div></li>
+<li>Verify the module is listed in <code>RequiredModules</code> in your module manifest (<code>.psd1</code>)</li>
+<li>Check that the function name is correct — AsBuiltReport.Diagram uses <code>Add-NodeIcon</code> (not <code>New-NodeIcon</code>)</li>
+</ul>
 <h3 id="still-stuck">Still Stuck?</h3>
 <p>If you encounter issues not covered here:</p>
 <ol>
@@ -6032,16 +6069,18 @@
 </li>
 <li>
 <p><strong>Consult the reference implementation:</strong></p>
-</li>
+<ul>
 <li><a href="https://github.com/AsBuiltReport/AsBuiltReport.System.Resources">AsBuiltReport.System.Resources</a></li>
-<li>
-<p><a href="https://diagrammer.techmyth.blog/">Diagrammer.Core Documentation</a></p>
+<li><a href="https://diagrammer.techmyth.blog/">Diagrammer.Core Documentation</a></li>
+</ul>
 </li>
 <li>
 <p><strong>Open an issue on GitHub:</strong></p>
-</li>
+<ul>
 <li><a href="https://github.com/AsBuiltReport/AsBuiltReport.Diagram/issues">AsBuiltReport.Diagram Issues</a></li>
 <li>Include your diagram builder function, the error message, and the input data that triggers the issue</li>
+</ul>
+</li>
 </ol>
 
 
@@ -6063,7 +6102,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 14, 2026 22:26:35 UTC">June 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 24, 2026 12:44:37 UTC">June 24, 2026</span>
   </span>
 
     
