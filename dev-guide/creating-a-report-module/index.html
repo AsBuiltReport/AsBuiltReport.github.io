@@ -2805,10 +2805,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#supported-language-codes" class="md-nav__link">
+  <a href="#culture-fallback-mappings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Language Codes
+        Culture Fallback Mappings
       
     </span>
   </a>
@@ -4504,10 +4504,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#supported-language-codes" class="md-nav__link">
+  <a href="#culture-fallback-mappings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Language Codes
+        Culture Fallback Mappings
       
     </span>
   </a>
@@ -4999,7 +4999,7 @@
 <h3 id="repository-structure">Repository Structure</h3>
 <p>Organise your module repository with the following standard structure:</p>
 <div class="language-text highlight"><span class="filename">Repository folder structure</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>AsBuiltReport.Vendor.Technology/                                # Repository root
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── .github/                                                    # GitHub workflows and templates
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── .github/                                                    # GitHub workflows, issue/PR templates and Dependabot configuration
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── .vscode/                                                    # VS Code configuration
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── AsBuiltReport.Vendor.Technology/                            # PowerShell module directory
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── AsBuiltReport.Vendor.Technology.json                    # Report configuration file
@@ -5011,21 +5011,23 @@
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│   │   └── &lt;language&gt;-&lt;REGION&gt;/                                # Additional language support folders
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│   │       └── VendorTechnology.psd1
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│   └── Src/
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│       ├── Private/                                            # Private functions
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│       │   └── Get-Abr[VendorAbbr|Technology][Resource].ps1       # One file per resource type
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│       ├── Private/                                            # Private functions (no subfolders, see Module Script pattern)
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│       │   └── Get-Abr[VendorAbbr|Technology][Resource].ps1    # One file per resource type
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│       └── Public/                                             # Exported functions
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│           └── Invoke-AsBuiltReport.Vendor.Technology.ps1
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>├── Samples/                                                    # Sample report outputs in Word, HTML, and Text formats generated against a real target environment
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>├── Tests/                                                      # Pester test suite
 </span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│   ├── AsBuiltReport.Vendor.Technology.Tests.ps1               # Module manifest and structure tests
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   ├── LocalizationData.Tests.ps1                              # Localization key validation tests
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│   ├── LocalizationData.Tests.ps1                              # Localization key validation tests (not scaffolded, add manually)
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│   └── Invoke-Tests.ps1                                        # Test runner
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>├── README.md                                                   # Module documentation
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>├── CHANGELOG.md                                                # Version history
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>├── CODE_OF_CONDUCT.md                                          # Code of Conduct policy
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>├── CONTRIBUTING.md                                             # Contributing guidelines
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>├── SECURITY.md                                                 # Security policy
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>└── LICENSE                                                     # MIT License
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>├── .gitignore                                                  # Git ignore rules
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>├── AsBuiltReport.png                                           # Module icon (referenced by IconUri in the manifest)
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>├── README.md                                                   # Module documentation
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>├── CHANGELOG.md                                                # Version history
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>├── CODE_OF_CONDUCT.md                                          # Code of Conduct policy
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>├── CONTRIBUTING.md                                             # Contributing guidelines
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>├── SECURITY.md                                                 # Security policy
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>└── LICENSE                                                     # MIT License
 </span></code></pre></div>
 <h3 id="github-actions-workflows">GitHub Actions Workflows</h3>
 <p>The <code>.github/workflows/</code> folder scaffolded by Plaster contains four pre-configured workflows:</p>
@@ -5046,7 +5048,7 @@
 <tr>
 <td><code>Pester.yml</code></td>
 <td>Push/PR to <code>dev</code>, <code>master</code>, <code>main</code></td>
-<td>Runs the Pester test suite across Windows, Linux, and macOS on both Windows PowerShell 5.1 and PowerShell 7+</td>
+<td>Runs the Pester test suite on PowerShell 7+ across Windows, Linux, and macOS, and on Windows PowerShell 5.1 on Windows</td>
 </tr>
 <tr>
 <td><code>Release.yml</code></td>
@@ -5056,7 +5058,7 @@
 <tr>
 <td><code>Stale.yml</code></td>
 <td>Daily schedule</td>
-<td>Marks issues and PRs stale after 90 days of inactivity and closes them after a further 7 days</td>
+<td>Marks issues and PRs stale after 60 days of inactivity and closes them after a further 7 days</td>
 </tr>
 </tbody>
 </table>
@@ -5170,16 +5172,19 @@
 <li><strong>Initialise git</strong> — run <code>git init</code>, commit your scaffolded files, then add your personal GitHub repository as the remote and push: <code>git remote add origin https://github.com/&lt;your-username&gt;/AsBuiltReport.Vendor.Technology.git &amp;&amp; git push -u origin dev</code></li>
 </ol>
 <h4 id="4-testing-your-module-locally">4. Testing your module locally</h4>
-<p>You can import and test your module entirely from a local path. This inner development loop does not require a GitHub repository.</p>
+<p>You can test your module entirely from your local development folder. This inner development loop does not require a GitHub repository.</p>
 <p><strong>1. Install AsBuiltReport.Core</strong></p>
 <div class="language-powershell highlight"><span class="filename">Install AsBuiltReport.Core</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Core</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
 </span></code></pre></div>
-<p><strong>2. Import your local module</strong></p>
-<div class="language-powershell highlight"><span class="filename">Import the local module</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Import-Module</span> <span class="s1">'C:\Development\AsBuiltReport.Vendor.Technology\AsBuiltReport.Vendor.Technology.psd1'</span> <span class="n">-Force</span>
+<p><strong>2. Make your local module discoverable</strong></p>
+<p><code>New-AsBuiltReport</code> and <code>New-AsBuiltReportConfig</code> only find report modules located in a folder listed in <code>$env:PSModulePath</code>. Importing the module from an arbitrary path with <code>Import-Module</code> is not enough. Add your repository root (the folder that contains the module folder) to <code>$env:PSModulePath</code> for the current session, then import the module:</p>
+<div class="language-powershell highlight"><span class="filename">Add the local module to PSModulePath</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$env:PSModulePath</span> <span class="p">=</span> <span class="s1">'C:\Development\AsBuiltReport.Vendor.Technology'</span> <span class="p">+</span> <span class="no">[System.IO.Path]</span><span class="p">::</span><span class="n">PathSeparator</span> <span class="p">+</span> <span class="nv">$env:PSModulePath</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">Import-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="n">-Force</span>
 </span></code></pre></div>
+<p>Re-run <code>Import-Module -Force</code> after making code changes to reload the module.</p>
 <p><strong>3. Generate a report configuration file</strong></p>
-<p>Use <code>New-AsBuiltReportConfig</code> to generate a copy of your module's JSON configuration file at a writable path. This is the file you edit to set InfoLevel and HealthCheck values for each test run.</p>
-<div class="language-powershell highlight"><span class="filename">Generate a report configuration file</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="s1">'Vendor.Technology'</span> <span class="n">-FolderPath</span> <span class="s1">'C:\Reports'</span> <span class="n">-Filename</span> <span class="s1">'VendorTechnology.json'</span>
+<p>Use <code>New-AsBuiltReportConfig</code> to generate a copy of your module's JSON configuration file at a writable path. This is the file you edit to set InfoLevel and HealthCheck values for each test run. The <code>-Filename</code> value is specified without an extension, as <code>.json</code> is appended automatically.</p>
+<div class="language-powershell highlight"><span class="filename">Generate a report configuration file</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">New-AsBuiltReportConfig</span> <span class="n">-Report</span> <span class="s1">'Vendor.Technology'</span> <span class="n">-FolderPath</span> <span class="s1">'C:\Reports'</span> <span class="n">-Filename</span> <span class="s1">'VendorTechnology'</span>
 </span></code></pre></div>
 <p><strong>4. Run a test report</strong></p>
 <div class="language-powershell highlight"><span class="filename">Run a test report</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="s1">'Vendor.Technology'</span> <span class="n">-Target</span> <span class="s1">'192.168.1.100'</span> <span class="n">-Credential</span> <span class="p">(</span><span class="nb">Get-Credential</span><span class="p">)</span> <span class="n">-Format</span> <span class="n">HTML</span> <span class="n">-OutputFolderPath</span> <span class="s1">'C:\Reports'</span> <span class="n">-ReportConfigFilePath</span> <span class="s1">'C:\Reports\VendorTechnology.json'</span>
@@ -5210,7 +5215,7 @@
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">RequiredModules</span> <span class="p">=</span> <span class="p">@(</span>
 </span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        <span class="p">@{</span>
 </span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>            <span class="n">ModuleName</span> <span class="p">=</span> <span class="s1">'AsBuiltReport.Core'</span>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>            <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">'1.6.1'</span>               <span class="c"># Minimum required version</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>            <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">'1.6.2'</span>               <span class="c"># Minimum required version</span>
 </span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>        <span class="p">}</span>
 </span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>        <span class="c"># Add vendor-specific modules as needed</span>
 </span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    <span class="p">)</span>
@@ -5220,7 +5225,7 @@
 </span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="n">PrivateData</span> <span class="p">=</span> <span class="p">@{</span>
 </span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>        <span class="n">PSData</span> <span class="p">=</span> <span class="p">@{</span>
 </span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>            <span class="n">Tags</span> <span class="p">=</span> <span class="p">@(</span><span class="s1">'AsBuiltReport'</span><span class="p">,</span> <span class="s1">'Report'</span><span class="p">,</span> <span class="s1">'Documentation'</span><span class="p">,</span> <span class="s1">'PScribo'</span><span class="p">,</span> <span class="s1">'Windows'</span><span class="p">,</span> <span class="s1">'Linux'</span><span class="p">,</span> <span class="s1">'MacOS'</span><span class="p">,</span> <span class="s1">'PSEdition_Desktop'</span><span class="p">,</span> <span class="s1">'PSEdition_Core'</span><span class="p">,</span> <span class="s1">'[Vendor]'</span><span class="p">,</span> <span class="s1">'[Technology]'</span><span class="p">)</span>     <span class="c"># Include tags which are applicable</span>
-</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>            <span class="n">LicenseUri</span> <span class="p">=</span> <span class="s1">'https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology/blob/master/LICENSE'</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>            <span class="n">LicenseUri</span> <span class="p">=</span> <span class="s1">'https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Vendor.Technology/master/LICENSE'</span>
 </span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>            <span class="n">ProjectUri</span> <span class="p">=</span> <span class="s1">'https://github.com/AsBuiltReport/AsBuiltReport.Vendor.Technology'</span>
 </span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a>            <span class="n">IconUri</span> <span class="p">=</span> <span class="s1">'AsBuiltReport.png'</span>
 </span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a>            <span class="n">ReleaseNotes</span> <span class="p">=</span> <span class="s1">'https://raw.githubusercontent.com/AsBuiltReport/AsBuiltReport.Vendor.Technology/master/CHANGELOG.md'</span>
@@ -5230,25 +5235,27 @@
 </span></code></pre></div>
 <h2 id="module-script-psm1-pattern">Module Script (.psm1) Pattern</h2>
 <p>The <code>.psm1</code> file should dynamically discover and load all function files from <code>Src/Public</code> and <code>Src/Private</code> using dot-sourcing. This avoids maintaining a manual import list as the module grows.</p>
-<div class="language-powershell highlight"><span class="filename">Module script (.psm1) template</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Dot-source all Public and Private function files</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Folder</span> <span class="k">in</span> <span class="p">@(</span><span class="s1">'Public'</span><span class="p">,</span> <span class="s1">'Private'</span><span class="p">))</span> <span class="p">{</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nv">$FolderPath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span> <span class="n">-ChildPath</span> <span class="s2">"Src\$Folder"</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Path</span> <span class="n">-Path</span> <span class="nv">$FolderPath</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="nv">$FolderPath</span> <span class="n">-Filter</span> <span class="s1">'*.ps1'</span> <span class="n">-Recurse</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>            <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>                <span class="p">.</span> <span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>                <span class="nb">Write-Warning</span> <span class="s2">"Failed to import function </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">FullName</span><span class="p">)</span><span class="s2">: $_"</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>            <span class="p">}</span>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        <span class="p">}</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>    <span class="p">}</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="p">}</span>
+<div class="language-powershell highlight"><span class="filename">Module script (.psm1) template</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c"># Get public and private function definition files and dot source them</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nv">$Public</span> <span class="p">=</span> <span class="p">@(</span><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span><span class="p">\</span><span class="n">Src</span><span class="p">\</span><span class="n">Public</span><span class="p">\*.</span><span class="n">ps1</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nv">$Private</span> <span class="p">=</span> <span class="p">@(</span><span class="nb">Get-ChildItem</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span><span class="p">\</span><span class="n">Src</span><span class="p">\</span><span class="n">Private</span><span class="p">\*.</span><span class="n">ps1</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$Module</span> <span class="k">in</span> <span class="p">@(</span><span class="nv">$Public</span> <span class="p">+</span> <span class="nv">$Private</span><span class="p">))</span> <span class="p">{</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="p">.</span> <span class="nv">$Module</span><span class="p">.</span><span class="n">FullName</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="nb">Write-Error</span> <span class="n">-Message</span> <span class="s2">"Failed to import function </span><span class="p">$(</span><span class="nv">$Module</span><span class="p">.</span><span class="n">FullName</span><span class="p">)</span><span class="s2">: $_"</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    <span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nb">Export-ModuleMember</span> <span class="n">-Function</span> <span class="nv">$Public</span><span class="p">.</span><span class="n">BaseName</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="nb">Export-ModuleMember</span> <span class="n">-Function</span> <span class="nv">$Private</span><span class="p">.</span><span class="n">BaseName</span>
 </span></code></pre></div>
 <p><strong>Key points:</strong></p>
 <ul>
 <li>Uses <code>$PSScriptRoot</code> for portable path resolution — do not use relative paths</li>
-<li>Errors on individual files are non-fatal (warns and continues loading)</li>
-<li>No explicit <code>Export-ModuleMember</code> call is needed; the <code>FunctionsToExport</code> field in the <code>.psd1</code> manifest controls what is exported to callers</li>
+<li>Only <code>.ps1</code> files directly inside <code>Src/Public</code> and <code>Src/Private</code> are loaded. Subfolders are not searched, so do not place function files in nested folders unless you also update the <code>.psm1</code> to search recursively (<code>-Recurse</code>)</li>
+<li>A file that fails to load writes an error, and loading continues with the remaining files</li>
+<li>The <code>FunctionsToExport</code> field in the <code>.psd1</code> manifest controls what is ultimately exported to callers, so only <code>Invoke-AsBuiltReport.Vendor.Technology</code> is visible outside the module</li>
 </ul>
 <h2 id="configuration-file-standards">Configuration File Standards</h2>
 <h3 id="json-configuration-structure">JSON Configuration Structure</h3>
@@ -5300,84 +5307,90 @@
 <tr>
 <td><strong>en-US (default)</strong></td>
 <td>English (United States)</td>
-<td><strong>hu-HU</strong></td>
-<td>Hungarian (Hungary)</td>
-</tr>
-<tr>
-<td><strong>en-GB</strong></td>
-<td>English (United Kingdom)</td>
-<td><strong>it-IT</strong></td>
-<td>Italian (Italy)</td>
-</tr>
-<tr>
-<td><strong>ar-SA</strong></td>
-<td>Arabic (Saudi Arabia)</td>
-<td><strong>ja-JP</strong></td>
-<td>Japanese (Japan)</td>
-</tr>
-<tr>
-<td><strong>cs-CZ</strong></td>
-<td>Czech (Czech Republic)</td>
 <td><strong>ko-KR</strong></td>
 <td>Korean (South Korea)</td>
 </tr>
 <tr>
-<td><strong>da-DK</strong></td>
-<td>Danish (Denmark)</td>
+<td><strong>en-GB</strong></td>
+<td>English (United Kingdom)</td>
 <td><strong>nb-NO</strong></td>
 <td>Norwegian Bokmål (Norway)</td>
 </tr>
 <tr>
-<td><strong>de-DE</strong></td>
-<td>German (Germany)</td>
+<td><strong>ar-SA</strong></td>
+<td>Arabic (Saudi Arabia)</td>
 <td><strong>nl-NL</strong></td>
 <td>Dutch (Netherlands)</td>
 </tr>
 <tr>
-<td><strong>el-GR</strong></td>
-<td>Greek (Greece)</td>
+<td><strong>cs-CZ</strong></td>
+<td>Czech (Czech Republic)</td>
 <td><strong>pl-PL</strong></td>
 <td>Polish (Poland)</td>
 </tr>
 <tr>
-<td><strong>es-ES</strong></td>
-<td>Spanish (Spain)</td>
+<td><strong>da-DK</strong></td>
+<td>Danish (Denmark)</td>
 <td><strong>pt-PT</strong></td>
 <td>Portuguese (Portugal)</td>
 </tr>
 <tr>
-<td><strong>fi-FI</strong></td>
-<td>Finnish (Finland)</td>
+<td><strong>de-DE</strong></td>
+<td>German (Germany)</td>
 <td><strong>ru-RU</strong></td>
 <td>Russian (Russia)</td>
 </tr>
 <tr>
-<td><strong>fr-FR</strong></td>
-<td>French (France)</td>
+<td><strong>el-GR</strong></td>
+<td>Greek (Greece)</td>
+<td><strong>si-LK</strong></td>
+<td>Sinhala (Sri Lanka)</td>
+</tr>
+<tr>
+<td><strong>es-ES</strong></td>
+<td>Spanish (Spain)</td>
 <td><strong>sv-SE</strong></td>
 <td>Swedish (Sweden)</td>
 </tr>
 <tr>
-<td><strong>he-IL</strong></td>
-<td>Hebrew (Israel)</td>
+<td><strong>fi-FI</strong></td>
+<td>Finnish (Finland)</td>
+<td><strong>ta-IN</strong></td>
+<td>Tamil (India)</td>
+</tr>
+<tr>
+<td><strong>fr-FR</strong></td>
+<td>French (France)</td>
 <td><strong>th-TH</strong></td>
 <td>Thai (Thailand)</td>
 </tr>
 <tr>
-<td><strong>hi-IN</strong></td>
-<td>Hindi (India)</td>
+<td><strong>he-IL</strong></td>
+<td>Hebrew (Israel)</td>
 <td><strong>tr-TR</strong></td>
 <td>Turkish (Turkey)</td>
 </tr>
 <tr>
+<td><strong>hi-IN</strong></td>
+<td>Hindi (India)</td>
 <td><strong>vi-VN</strong></td>
 <td>Vietnamese (Vietnam)</td>
+</tr>
+<tr>
+<td><strong>hu-HU</strong></td>
+<td>Hungarian (Hungary)</td>
 <td><strong>zh-CN</strong></td>
 <td>Chinese (China, Simplified)</td>
 </tr>
 <tr>
+<td><strong>it-IT</strong></td>
+<td>Italian (Italy)</td>
 <td><strong>zh-Hans</strong></td>
 <td>Chinese (Simplified)</td>
+</tr>
+<tr>
+<td><strong>ja-JP</strong></td>
+<td>Japanese (Japan)</td>
 <td><strong>zh-Hant</strong></td>
 <td>Chinese (Traditional)</td>
 </tr>
@@ -5475,11 +5488,13 @@
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">Get-Command</span> <span class="n">-Module</span> <span class="n">PScribo</span>
 </span></code></pre></div>
 <h4 id="document-structure">Document Structure</h4>
-<p>PScribo section styles control both visual hierarchy and Table of Contents (TOC) inclusion. To keep the TOC readable, headings at <code>Heading5</code> and above should use a <code>NOTOCHeading</code> style so they do not appear in the TOC.</p>
+<p>PScribo section styles control the visual hierarchy of the report. To keep the Table of Contents (TOC) readable, headings at level 5 and below should be excluded from the TOC.</p>
+<p>A section is excluded from the TOC only by the <code>-ExcludeFromTOC</code> switch on <code>Section</code>; the style alone does not exclude it. Use the matching <code>NOTOCHeading</code> style together with <code>-ExcludeFromTOC</code> so the heading keeps the correct visual formatting.</p>
 <table>
 <thead>
 <tr>
 <th>Style</th>
+<th><code>-ExcludeFromTOC</code></th>
 <th>TOC</th>
 <th>Typical use</th>
 </tr>
@@ -5487,31 +5502,37 @@
 <tbody>
 <tr>
 <td><code>Heading1</code></td>
+<td>No</td>
 <td>Yes</td>
 <td>Top-level report section (e.g. tenant, site)</td>
 </tr>
 <tr>
 <td><code>Heading2</code></td>
+<td>No</td>
 <td>Yes</td>
 <td>Major resource category</td>
 </tr>
 <tr>
 <td><code>Heading3</code></td>
+<td>No</td>
 <td>Yes</td>
 <td>Resource type within a category</td>
 </tr>
 <tr>
 <td><code>Heading4</code></td>
+<td>No</td>
 <td>Yes</td>
 <td>Individual resource instance</td>
 </tr>
 <tr>
 <td><code>NOTOCHeading5</code></td>
+<td>Yes</td>
 <td>No</td>
 <td>Sub-detail within a resource instance</td>
 </tr>
 <tr>
 <td><code>NOTOCHeading6</code></td>
+<td>Yes</td>
 <td>No</td>
 <td>Further nesting below Heading5</td>
 </tr>
@@ -5526,7 +5547,7 @@
 </span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>            <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VM</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>                <span class="n">Section</span> <span class="n">-Name</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">Name</span> <span class="n">-Style</span> <span class="n">Heading4</span> <span class="p">{</span>
 </span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>                    <span class="n">Section</span> <span class="n">-Name</span> <span class="s1">'Network Adapters'</span> <span class="n">-Style</span> <span class="n">NOTOCHeading5</span> <span class="p">{</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>                    <span class="n">Section</span> <span class="n">-Name</span> <span class="s1">'Network Adapters'</span> <span class="n">-Style</span> <span class="n">NOTOCHeading5</span> <span class="n">-ExcludeFromTOC</span> <span class="p">{</span>
 </span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>                        <span class="c"># Detail tables that should not clutter the TOC</span>
 </span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>                    <span class="p">}</span>
 </span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>                <span class="p">}</span>
@@ -5639,7 +5660,7 @@
 </tr>
 </tbody>
 </table>
-<p>Both variables are set in the script scope by AsBuiltReport.Core immediately before your module's main function is called. This means they are readable anywhere in your module — including inside private functions — without needing to be passed as parameters.</p>
+<p>Both variables are set in the global scope by AsBuiltReport.Core before your module's main function is called. This means they are readable anywhere in your module — including inside private functions — without needing to be passed as parameters.</p>
 <div class="language-powershell highlight"><span class="filename">Access report configuration</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># Access configuration sections in your module</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">$Report</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nv">$InfoLevel</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
@@ -5764,64 +5785,61 @@
 </span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="cm">        PS C:\&gt; Invoke-AsBuiltReport.Vendor.Technology -Target '192.168.1.100' -Credential $cred</span>
 </span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="cm">    #&gt;</span>
 </span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>
-</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
-</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>    <span class="k">param</span> <span class="p">(</span>
-</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>        <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">,</span> <span class="k">ValueFromPipeline</span> <span class="p">=</span> <span class="nv">$false</span><span class="p">)]</span>
-</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>        <span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
-</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>        <span class="no">[String[]]</span> <span class="nv">$Target</span><span class="p">,</span>
-</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>
-</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>        <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">,</span> <span class="k">ValueFromPipeline</span> <span class="p">=</span> <span class="nv">$false</span><span class="p">)]</span>
-</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>        <span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
-</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a>        <span class="no">[PSCredential]</span> <span class="nv">$Credential</span>
-</span><span id="__span-27-31"><a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a>    <span class="p">)</span>
-</span><span id="__span-27-32"><a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a>
-</span><span id="__span-27-33"><a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a>    <span class="c"># Displays the module name and version number at the start of report generation</span>
-</span><span id="__span-27-34"><a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a>    <span class="nb">Write-ReportModuleInfo</span> <span class="n">-ModuleName</span> <span class="s1">'Vendor.Technology'</span>
-</span><span id="__span-27-35"><a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a>
-</span><span id="__span-27-36"><a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a>    <span class="c"># Import Report Configuration</span>
-</span><span id="__span-27-37"><a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a>    <span class="nv">$Report</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
-</span><span id="__span-27-38"><a id="__codelineno-27-38" name="__codelineno-27-38" href="#__codelineno-27-38"></a>    <span class="nv">$InfoLevel</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
-</span><span id="__span-27-39"><a id="__codelineno-27-39" name="__codelineno-27-39" href="#__codelineno-27-39"></a>    <span class="nv">$Options</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Options</span>
-</span><span id="__span-27-40"><a id="__codelineno-27-40" name="__codelineno-27-40" href="#__codelineno-27-40"></a>    <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">InvokeAsBuiltReportVendorTechnology</span>
-</span><span id="__span-27-41"><a id="__codelineno-27-41" name="__codelineno-27-41" href="#__codelineno-27-41"></a>
-</span><span id="__span-27-42"><a id="__codelineno-27-42" name="__codelineno-27-42" href="#__codelineno-27-42"></a>    <span class="c"># Used to convert strings to TitleCase where required, e.g. $TextInfo.ToTitleCase('powered on') returns 'Powered On'</span>
-</span><span id="__span-27-43"><a id="__codelineno-27-43" name="__codelineno-27-43" href="#__codelineno-27-43"></a>    <span class="nv">$TextInfo</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Culture</span><span class="p">).</span><span class="n">TextInfo</span>
-</span><span id="__span-27-44"><a id="__codelineno-27-44" name="__codelineno-27-44" href="#__codelineno-27-44"></a>
-</span><span id="__span-27-45"><a id="__codelineno-27-45" name="__codelineno-27-45" href="#__codelineno-27-45"></a>    <span class="c">#region foreach loop</span>
-</span><span id="__span-27-46"><a id="__codelineno-27-46" name="__codelineno-27-46" href="#__codelineno-27-46"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$System</span> <span class="k">in</span> <span class="nv">$Target</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-27-47"><a id="__codelineno-27-47" name="__codelineno-27-47" href="#__codelineno-27-47"></a>        <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-27-48"><a id="__codelineno-27-48" name="__codelineno-27-48" href="#__codelineno-27-48"></a>            <span class="nb">Write-PScriboMessage</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Connecting</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">)</span>
-</span><span id="__span-27-49"><a id="__codelineno-27-49" name="__codelineno-27-49" href="#__codelineno-27-49"></a>
-</span><span id="__span-27-50"><a id="__codelineno-27-50" name="__codelineno-27-50" href="#__codelineno-27-50"></a>            <span class="c"># Establish a connection to the target system.</span>
-</span><span id="__span-27-51"><a id="__codelineno-27-51" name="__codelineno-27-51" href="#__codelineno-27-51"></a>            <span class="c"># Replace this with the appropriate connection cmdlet for your technology.</span>
-</span><span id="__span-27-52"><a id="__codelineno-27-52" name="__codelineno-27-52" href="#__codelineno-27-52"></a>            <span class="c"># Store the connection object so it can be used by private functions and</span>
-</span><span id="__span-27-53"><a id="__codelineno-27-53" name="__codelineno-27-53" href="#__codelineno-27-53"></a>            <span class="c"># closed in the end{} block.</span>
-</span><span id="__span-27-54"><a id="__codelineno-27-54" name="__codelineno-27-54" href="#__codelineno-27-54"></a>            <span class="nv">$script:Connection</span> <span class="p">=</span> <span class="nb">Connect-VendorSystem</span> <span class="n">-Server</span> <span class="nv">$System</span> <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>  <span class="c"># script: scope makes this readable by all Get-Abr* private functions without passing it as a parameter</span>
-</span><span id="__span-27-55"><a id="__codelineno-27-55" name="__codelineno-27-55" href="#__codelineno-27-55"></a>
-</span><span id="__span-27-56"><a id="__codelineno-27-56" name="__codelineno-27-56" href="#__codelineno-27-56"></a>            <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="nv">$System</span> <span class="p">{</span>
-</span><span id="__span-27-57"><a id="__codelineno-27-57" name="__codelineno-27-57" href="#__codelineno-27-57"></a>                <span class="c"># Call private functions here, one per report section.</span>
-</span><span id="__span-27-58"><a id="__codelineno-27-58" name="__codelineno-27-58" href="#__codelineno-27-58"></a>                <span class="c"># Each function collects data from $script:Connection and renders a PScribo section.</span>
-</span><span id="__span-27-59"><a id="__codelineno-27-59" name="__codelineno-27-59" href="#__codelineno-27-59"></a>                <span class="nb">Get-Abr</span><span class="p">[</span><span class="n">VendorAbbr</span><span class="p">|</span><span class="n">Technology</span><span class="p">]</span><span class="no">[Resource]</span>
-</span><span id="__span-27-60"><a id="__codelineno-27-60" name="__codelineno-27-60" href="#__codelineno-27-60"></a>            <span class="p">}</span>
-</span><span id="__span-27-61"><a id="__codelineno-27-61" name="__codelineno-27-61" href="#__codelineno-27-61"></a>
-</span><span id="__span-27-62"><a id="__codelineno-27-62" name="__codelineno-27-62" href="#__codelineno-27-62"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-27-63"><a id="__codelineno-27-63" name="__codelineno-27-63" href="#__codelineno-27-63"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ConnectionError</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">,</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span>
-</span><span id="__span-27-64"><a id="__codelineno-27-64" name="__codelineno-27-64" href="#__codelineno-27-64"></a>        <span class="p">}</span>
-</span><span id="__span-27-65"><a id="__codelineno-27-65" name="__codelineno-27-65" href="#__codelineno-27-65"></a>    <span class="p">}</span>
-</span><span id="__span-27-66"><a id="__codelineno-27-66" name="__codelineno-27-66" href="#__codelineno-27-66"></a>    <span class="c">#endregion foreach loop</span>
-</span><span id="__span-27-67"><a id="__codelineno-27-67" name="__codelineno-27-67" href="#__codelineno-27-67"></a>
-</span><span id="__span-27-68"><a id="__codelineno-27-68" name="__codelineno-27-68" href="#__codelineno-27-68"></a>    <span class="k">end</span> <span class="p">{</span>
-</span><span id="__span-27-69"><a id="__codelineno-27-69" name="__codelineno-27-69" href="#__codelineno-27-69"></a>        <span class="c"># Disconnect from the target system and clean up any open sessions.</span>
-</span><span id="__span-27-70"><a id="__codelineno-27-70" name="__codelineno-27-70" href="#__codelineno-27-70"></a>        <span class="k">if</span> <span class="p">(</span><span class="nv">$script:Connection</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-27-71"><a id="__codelineno-27-71" name="__codelineno-27-71" href="#__codelineno-27-71"></a>            <span class="nb">Disconnect-VendorSystem</span> <span class="n">-Connection</span> <span class="nv">$script:Connection</span> <span class="n">-Confirm</span><span class="p">:</span><span class="nv">$false</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
-</span><span id="__span-27-72"><a id="__codelineno-27-72" name="__codelineno-27-72" href="#__codelineno-27-72"></a>        <span class="p">}</span>
-</span><span id="__span-27-73"><a id="__codelineno-27-73" name="__codelineno-27-73" href="#__codelineno-27-73"></a>    <span class="p">}</span>
-</span><span id="__span-27-74"><a id="__codelineno-27-74" name="__codelineno-27-74" href="#__codelineno-27-74"></a><span class="p">}</span>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>    <span class="c"># Do not remove or add to these parameters. AsBuiltReport.Core passes -Target and -Credential;</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>    <span class="c"># do not mark them as mandatory, as Core can also invoke the function using API token or</span>
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>    <span class="c"># interactive authentication without a credential.</span>
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>    <span class="k">param</span> <span class="p">(</span>
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>        <span class="no">[String[]]</span> <span class="nv">$Target</span><span class="p">,</span>
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>        <span class="no">[PSCredential]</span> <span class="nv">$Credential</span>
+</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>    <span class="p">)</span>
+</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a>
+</span><span id="__span-27-31"><a id="__codelineno-27-31" name="__codelineno-27-31" href="#__codelineno-27-31"></a>    <span class="c"># Displays the module name and version number at the start of report generation</span>
+</span><span id="__span-27-32"><a id="__codelineno-27-32" name="__codelineno-27-32" href="#__codelineno-27-32"></a>    <span class="nb">Write-ReportModuleInfo</span> <span class="n">-ModuleName</span> <span class="s1">'Vendor.Technology'</span>
+</span><span id="__span-27-33"><a id="__codelineno-27-33" name="__codelineno-27-33" href="#__codelineno-27-33"></a>
+</span><span id="__span-27-34"><a id="__codelineno-27-34" name="__codelineno-27-34" href="#__codelineno-27-34"></a>    <span class="c"># Import Report Configuration</span>
+</span><span id="__span-27-35"><a id="__codelineno-27-35" name="__codelineno-27-35" href="#__codelineno-27-35"></a>    <span class="nv">$Report</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
+</span><span id="__span-27-36"><a id="__codelineno-27-36" name="__codelineno-27-36" href="#__codelineno-27-36"></a>    <span class="nv">$InfoLevel</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
+</span><span id="__span-27-37"><a id="__codelineno-27-37" name="__codelineno-27-37" href="#__codelineno-27-37"></a>    <span class="nv">$Options</span> <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Options</span>
+</span><span id="__span-27-38"><a id="__codelineno-27-38" name="__codelineno-27-38" href="#__codelineno-27-38"></a>    <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">InvokeAsBuiltReportVendorTechnology</span>
+</span><span id="__span-27-39"><a id="__codelineno-27-39" name="__codelineno-27-39" href="#__codelineno-27-39"></a>
+</span><span id="__span-27-40"><a id="__codelineno-27-40" name="__codelineno-27-40" href="#__codelineno-27-40"></a>    <span class="c"># Used to convert strings to TitleCase where required, e.g. $TextInfo.ToTitleCase('powered on') returns 'Powered On'</span>
+</span><span id="__span-27-41"><a id="__codelineno-27-41" name="__codelineno-27-41" href="#__codelineno-27-41"></a>    <span class="nv">$TextInfo</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Culture</span><span class="p">).</span><span class="n">TextInfo</span>
+</span><span id="__span-27-42"><a id="__codelineno-27-42" name="__codelineno-27-42" href="#__codelineno-27-42"></a>
+</span><span id="__span-27-43"><a id="__codelineno-27-43" name="__codelineno-27-43" href="#__codelineno-27-43"></a>    <span class="c">#region foreach loop</span>
+</span><span id="__span-27-44"><a id="__codelineno-27-44" name="__codelineno-27-44" href="#__codelineno-27-44"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$System</span> <span class="k">in</span> <span class="nv">$Target</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-27-45"><a id="__codelineno-27-45" name="__codelineno-27-45" href="#__codelineno-27-45"></a>        <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-27-46"><a id="__codelineno-27-46" name="__codelineno-27-46" href="#__codelineno-27-46"></a>            <span class="nb">Write-PScriboMessage</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Connecting</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">)</span>
+</span><span id="__span-27-47"><a id="__codelineno-27-47" name="__codelineno-27-47" href="#__codelineno-27-47"></a>
+</span><span id="__span-27-48"><a id="__codelineno-27-48" name="__codelineno-27-48" href="#__codelineno-27-48"></a>            <span class="c"># Establish a connection to the target system.</span>
+</span><span id="__span-27-49"><a id="__codelineno-27-49" name="__codelineno-27-49" href="#__codelineno-27-49"></a>            <span class="c"># Replace this with the appropriate connection cmdlet for your technology.</span>
+</span><span id="__span-27-50"><a id="__codelineno-27-50" name="__codelineno-27-50" href="#__codelineno-27-50"></a>            <span class="c"># Store the connection object so it can be used by private functions and</span>
+</span><span id="__span-27-51"><a id="__codelineno-27-51" name="__codelineno-27-51" href="#__codelineno-27-51"></a>            <span class="c"># closed in the finally{} block.</span>
+</span><span id="__span-27-52"><a id="__codelineno-27-52" name="__codelineno-27-52" href="#__codelineno-27-52"></a>            <span class="nv">$script:Connection</span> <span class="p">=</span> <span class="nb">Connect-VendorSystem</span> <span class="n">-Server</span> <span class="nv">$System</span> <span class="n">-Credential</span> <span class="nv">$Credential</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>  <span class="c"># script: scope makes this readable by all Get-Abr* private functions without passing it as a parameter</span>
+</span><span id="__span-27-53"><a id="__codelineno-27-53" name="__codelineno-27-53" href="#__codelineno-27-53"></a>
+</span><span id="__span-27-54"><a id="__codelineno-27-54" name="__codelineno-27-54" href="#__codelineno-27-54"></a>            <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="nv">$System</span> <span class="p">{</span>
+</span><span id="__span-27-55"><a id="__codelineno-27-55" name="__codelineno-27-55" href="#__codelineno-27-55"></a>                <span class="c"># Call private functions here, one per report section.</span>
+</span><span id="__span-27-56"><a id="__codelineno-27-56" name="__codelineno-27-56" href="#__codelineno-27-56"></a>                <span class="c"># Each function collects data from $script:Connection and renders a PScribo section.</span>
+</span><span id="__span-27-57"><a id="__codelineno-27-57" name="__codelineno-27-57" href="#__codelineno-27-57"></a>                <span class="nb">Get-Abr</span><span class="p">[</span><span class="n">VendorAbbr</span><span class="p">|</span><span class="n">Technology</span><span class="p">]</span><span class="no">[Resource]</span>
+</span><span id="__span-27-58"><a id="__codelineno-27-58" name="__codelineno-27-58" href="#__codelineno-27-58"></a>            <span class="p">}</span>
+</span><span id="__span-27-59"><a id="__codelineno-27-59" name="__codelineno-27-59" href="#__codelineno-27-59"></a>
+</span><span id="__span-27-60"><a id="__codelineno-27-60" name="__codelineno-27-60" href="#__codelineno-27-60"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-27-61"><a id="__codelineno-27-61" name="__codelineno-27-61" href="#__codelineno-27-61"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ConnectionError</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">,</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span>
+</span><span id="__span-27-62"><a id="__codelineno-27-62" name="__codelineno-27-62" href="#__codelineno-27-62"></a>        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+</span><span id="__span-27-63"><a id="__codelineno-27-63" name="__codelineno-27-63" href="#__codelineno-27-63"></a>            <span class="c"># Disconnect from the target system before moving on to the next one.</span>
+</span><span id="__span-27-64"><a id="__codelineno-27-64" name="__codelineno-27-64" href="#__codelineno-27-64"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$script:Connection</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-27-65"><a id="__codelineno-27-65" name="__codelineno-27-65" href="#__codelineno-27-65"></a>                <span class="nb">Disconnect-VendorSystem</span> <span class="n">-Connection</span> <span class="nv">$script:Connection</span> <span class="n">-Confirm</span><span class="p">:</span><span class="nv">$false</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span><span id="__span-27-66"><a id="__codelineno-27-66" name="__codelineno-27-66" href="#__codelineno-27-66"></a>                <span class="nv">$script:Connection</span> <span class="p">=</span> <span class="nv">$null</span>
+</span><span id="__span-27-67"><a id="__codelineno-27-67" name="__codelineno-27-67" href="#__codelineno-27-67"></a>            <span class="p">}</span>
+</span><span id="__span-27-68"><a id="__codelineno-27-68" name="__codelineno-27-68" href="#__codelineno-27-68"></a>        <span class="p">}</span>
+</span><span id="__span-27-69"><a id="__codelineno-27-69" name="__codelineno-27-69" href="#__codelineno-27-69"></a>    <span class="p">}</span>
+</span><span id="__span-27-70"><a id="__codelineno-27-70" name="__codelineno-27-70" href="#__codelineno-27-70"></a>    <span class="c">#endregion foreach loop</span>
+</span><span id="__span-27-71"><a id="__codelineno-27-71" name="__codelineno-27-71" href="#__codelineno-27-71"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="private-functions">Private Functions</h3>
 <p>Private functions in <code>Src/Private/</code> serve two distinct purposes:</p>
 <ul>
-<li><strong>Report section functions</strong> (<code>Get-Abr[VendorAbbr|Technology][Resource]</code>) — each responsible for collecting data from the target system and rendering it as a PScribo section. Every report section function must have its own <code>.ps1</code> file named after the function (e.g. <code>Get-AbrVendorLocation.ps1</code>). Following PowerShell naming conventions, the resource noun must be <strong>singular</strong> (e.g. <code>Get-AbrVbrBackupJob</code>, not <code>Get-AbrvSphereVMHost</code>).</li>
+<li><strong>Report section functions</strong> (<code>Get-Abr[VendorAbbr|Technology][Resource]</code>) — each responsible for collecting data from the target system and rendering it as a PScribo section. Every report section function must have its own <code>.ps1</code> file named after the function (e.g. <code>Get-AbrVendorLocation.ps1</code>). Following PowerShell naming conventions, the resource noun must be <strong>singular</strong> (e.g. <code>Get-AbrVbrBackupJob</code>, not <code>Get-AbrVbrBackupJobs</code>).</li>
 <li><strong>Utility helpers</strong> (<code>ConvertTo-HashToYN</code>, <code>ConvertTo-TextYN</code>, connection helpers, etc.) — reusable functions that support report section functions. These may be grouped into a dedicated helper file (<code>Src/Private/Helpers.ps1</code>).</li>
 </ul>
 <h4 id="functions-must-be-self-contained">Functions must be self-contained</h4>
@@ -5935,49 +5953,51 @@
 </span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>    <span class="c"># Main module translations</span>
 </span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="n">InvokeAsBuiltReportVendorTechnology</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
 </span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="sh">        Connecting = Connecting to {0}.</span>
-</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="sh">        DefaultOrder = No custom section order specified. Using default order.</span>
-</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="sh">        CustomOrder = Using custom section order from report JSON configuration.</span>
-</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="sh">        InfoLevelNotFound = InfoLevel for '{0}' not found.</span>
-</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="sh">        SectionError = Error processing section '{0}': {1}</span>
-</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="sh">'@</span>
-</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
-</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>    <span class="c"># Virtual Machine section translations (Get-AbrVirtualMachine)</span>
-</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>    <span class="n">GetAbrVirtualMachine</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
-</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="sh">        InfoLevel = VirtualMachine InfoLevel set at {0}.</span>
-</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="sh">        Collecting = Collecting Virtual Machine information.</span>
-</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="sh">        SectionInfo = Virtual machines provide compute resources in a virtualized environment.</span>
-</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="sh">        ParagraphSummary = The following table summarizes the virtual machines within the {0} environment.</span>
-</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>
-</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a><span class="sh">        Heading = Virtual Machines</span>
-</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="sh">        TableHeading = Virtual Machines</span>
-</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a><span class="sh">        Name = Name</span>
-</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a><span class="sh">        PowerState = Power State</span>
-</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a><span class="sh">        PoweredOn = Powered On</span>
-</span><span id="__span-30-24"><a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a><span class="sh">        PoweredOff = Powered Off</span>
-</span><span id="__span-30-25"><a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a><span class="sh">        CPUCount = CPU Count</span>
-</span><span id="__span-30-26"><a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a><span class="sh">        MemoryGB = Memory (GB)</span>
-</span><span id="__span-30-27"><a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a><span class="sh">        StorageGB = Storage (GB)</span>
-</span><span id="__span-30-28"><a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a><span class="sh">        GuestOS = Guest OS</span>
-</span><span id="__span-30-29"><a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a><span class="sh">        IPAddress = IP Address</span>
-</span><span id="__span-30-30"><a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a><span class="sh">        None = None</span>
-</span><span id="__span-30-31"><a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a><span class="sh">'@</span>
-</span><span id="__span-30-32"><a id="__codelineno-30-32" name="__codelineno-30-32" href="#__codelineno-30-32"></a>
-</span><span id="__span-30-33"><a id="__codelineno-30-33" name="__codelineno-30-33" href="#__codelineno-30-33"></a>    <span class="c"># Storage section translations (Get-AbrStorageInfo)</span>
-</span><span id="__span-30-34"><a id="__codelineno-30-34" name="__codelineno-30-34" href="#__codelineno-30-34"></a>    <span class="n">GetAbrStorageInfo</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
-</span><span id="__span-30-35"><a id="__codelineno-30-35" name="__codelineno-30-35" href="#__codelineno-30-35"></a><span class="sh">        InfoLevel = Storage InfoLevel set at {0}.</span>
-</span><span id="__span-30-36"><a id="__codelineno-30-36" name="__codelineno-30-36" href="#__codelineno-30-36"></a><span class="sh">        Collecting = Collecting Storage information.</span>
-</span><span id="__span-30-37"><a id="__codelineno-30-37" name="__codelineno-30-37" href="#__codelineno-30-37"></a><span class="sh">        ParagraphSummary = The following table summarizes the storage configuration within the {0} environment.</span>
-</span><span id="__span-30-38"><a id="__codelineno-30-38" name="__codelineno-30-38" href="#__codelineno-30-38"></a>
-</span><span id="__span-30-39"><a id="__codelineno-30-39" name="__codelineno-30-39" href="#__codelineno-30-39"></a><span class="sh">        Heading = Storage</span>
-</span><span id="__span-30-40"><a id="__codelineno-30-40" name="__codelineno-30-40" href="#__codelineno-30-40"></a><span class="sh">        TableHeading = Storage Details</span>
-</span><span id="__span-30-41"><a id="__codelineno-30-41" name="__codelineno-30-41" href="#__codelineno-30-41"></a><span class="sh">        Name = Name</span>
-</span><span id="__span-30-42"><a id="__codelineno-30-42" name="__codelineno-30-42" href="#__codelineno-30-42"></a><span class="sh">        Type = Type</span>
-</span><span id="__span-30-43"><a id="__codelineno-30-43" name="__codelineno-30-43" href="#__codelineno-30-43"></a><span class="sh">        CapacityGB = Capacity (GB)</span>
-</span><span id="__span-30-44"><a id="__codelineno-30-44" name="__codelineno-30-44" href="#__codelineno-30-44"></a><span class="sh">        UsedGB = Used (GB)</span>
-</span><span id="__span-30-45"><a id="__codelineno-30-45" name="__codelineno-30-45" href="#__codelineno-30-45"></a><span class="sh">        FreeGB = Free (GB)</span>
-</span><span id="__span-30-46"><a id="__codelineno-30-46" name="__codelineno-30-46" href="#__codelineno-30-46"></a><span class="sh">        PercentUsed = Percent Used</span>
-</span><span id="__span-30-47"><a id="__codelineno-30-47" name="__codelineno-30-47" href="#__codelineno-30-47"></a><span class="sh">'@</span>
-</span><span id="__span-30-48"><a id="__codelineno-30-48" name="__codelineno-30-48" href="#__codelineno-30-48"></a><span class="p">}</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="sh">        ConnectionError = Unable to connect to {0}: {1}</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="sh">        DefaultOrder = No custom section order specified. Using default order.</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="sh">        CustomOrder = Using custom section order from report JSON configuration.</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="sh">        InfoLevelNotFound = InfoLevel for '{0}' not found.</span>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="sh">        SectionError = Error processing section '{0}': {1}</span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a><span class="sh">'@</span>
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>    <span class="c"># Virtual Machine section translations (Get-AbrVirtualMachine)</span>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>    <span class="n">GetAbrVirtualMachine</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a><span class="sh">        InfoLevel = VirtualMachine InfoLevel set at {0}.</span>
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="sh">        Collecting = Collecting Virtual Machine information.</span>
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a><span class="sh">        SectionInfo = Virtual machines provide compute resources in a virtualized environment.</span>
+</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a><span class="sh">        ParagraphSummary = The following table summarizes the virtual machines within the {0} environment.</span>
+</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>
+</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="sh">        Heading = Virtual Machines</span>
+</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a><span class="sh">        TableHeading = Virtual Machines</span>
+</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a><span class="sh">        Name = Name</span>
+</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a><span class="sh">        PowerState = Power State</span>
+</span><span id="__span-30-24"><a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a><span class="sh">        PoweredOn = Powered On</span>
+</span><span id="__span-30-25"><a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a><span class="sh">        PoweredOff = Powered Off</span>
+</span><span id="__span-30-26"><a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a><span class="sh">        CPUCount = CPU Count</span>
+</span><span id="__span-30-27"><a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a><span class="sh">        MemoryGB = Memory (GB)</span>
+</span><span id="__span-30-28"><a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a><span class="sh">        StorageGB = Storage (GB)</span>
+</span><span id="__span-30-29"><a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a><span class="sh">        GuestOS = Guest OS</span>
+</span><span id="__span-30-30"><a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a><span class="sh">        IPAddress = IP Address</span>
+</span><span id="__span-30-31"><a id="__codelineno-30-31" name="__codelineno-30-31" href="#__codelineno-30-31"></a><span class="sh">        None = None</span>
+</span><span id="__span-30-32"><a id="__codelineno-30-32" name="__codelineno-30-32" href="#__codelineno-30-32"></a><span class="sh">        ErrorMessage = Unable to collect Virtual Machine information:</span>
+</span><span id="__span-30-33"><a id="__codelineno-30-33" name="__codelineno-30-33" href="#__codelineno-30-33"></a><span class="sh">'@</span>
+</span><span id="__span-30-34"><a id="__codelineno-30-34" name="__codelineno-30-34" href="#__codelineno-30-34"></a>
+</span><span id="__span-30-35"><a id="__codelineno-30-35" name="__codelineno-30-35" href="#__codelineno-30-35"></a>    <span class="c"># Storage section translations (Get-AbrStorageInfo)</span>
+</span><span id="__span-30-36"><a id="__codelineno-30-36" name="__codelineno-30-36" href="#__codelineno-30-36"></a>    <span class="n">GetAbrStorageInfo</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
+</span><span id="__span-30-37"><a id="__codelineno-30-37" name="__codelineno-30-37" href="#__codelineno-30-37"></a><span class="sh">        InfoLevel = Storage InfoLevel set at {0}.</span>
+</span><span id="__span-30-38"><a id="__codelineno-30-38" name="__codelineno-30-38" href="#__codelineno-30-38"></a><span class="sh">        Collecting = Collecting Storage information.</span>
+</span><span id="__span-30-39"><a id="__codelineno-30-39" name="__codelineno-30-39" href="#__codelineno-30-39"></a><span class="sh">        ParagraphSummary = The following table summarizes the storage configuration within the {0} environment.</span>
+</span><span id="__span-30-40"><a id="__codelineno-30-40" name="__codelineno-30-40" href="#__codelineno-30-40"></a>
+</span><span id="__span-30-41"><a id="__codelineno-30-41" name="__codelineno-30-41" href="#__codelineno-30-41"></a><span class="sh">        Heading = Storage</span>
+</span><span id="__span-30-42"><a id="__codelineno-30-42" name="__codelineno-30-42" href="#__codelineno-30-42"></a><span class="sh">        TableHeading = Storage Details</span>
+</span><span id="__span-30-43"><a id="__codelineno-30-43" name="__codelineno-30-43" href="#__codelineno-30-43"></a><span class="sh">        Name = Name</span>
+</span><span id="__span-30-44"><a id="__codelineno-30-44" name="__codelineno-30-44" href="#__codelineno-30-44"></a><span class="sh">        Type = Type</span>
+</span><span id="__span-30-45"><a id="__codelineno-30-45" name="__codelineno-30-45" href="#__codelineno-30-45"></a><span class="sh">        CapacityGB = Capacity (GB)</span>
+</span><span id="__span-30-46"><a id="__codelineno-30-46" name="__codelineno-30-46" href="#__codelineno-30-46"></a><span class="sh">        UsedGB = Used (GB)</span>
+</span><span id="__span-30-47"><a id="__codelineno-30-47" name="__codelineno-30-47" href="#__codelineno-30-47"></a><span class="sh">        FreeGB = Free (GB)</span>
+</span><span id="__span-30-48"><a id="__codelineno-30-48" name="__codelineno-30-48" href="#__codelineno-30-48"></a><span class="sh">        PercentUsed = Percent Used</span>
+</span><span id="__span-30-49"><a id="__codelineno-30-49" name="__codelineno-30-49" href="#__codelineno-30-49"></a><span class="sh">'@</span>
+</span><span id="__span-30-50"><a id="__codelineno-30-50" name="__codelineno-30-50" href="#__codelineno-30-50"></a><span class="p">}</span>
 </span></code></pre></div>
 <p><strong>Spanish (es-ES) example:</strong>
 <div class="language-powershell highlight"><span class="filename">Language file example (es-ES)</span><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c"># culture = 'es-ES'</span>
@@ -5985,49 +6005,51 @@
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="c"># Traducciones principales del módulo</span>
 </span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="n">InvokeAsBuiltReportVendorTechnology</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
 </span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="sh">        Connecting = Conectando a {0}.</span>
-</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="sh">        DefaultOrder = No se especificó un orden de sección personalizado. Usando orden predeterminado.</span>
-</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="sh">        CustomOrder = Usando orden de sección personalizado de la configuración JSON del informe.</span>
-</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="sh">        InfoLevelNotFound = InfoLevel para '{0}' no encontrado.</span>
-</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="sh">        SectionError = Error al procesar la sección '{0}': {1}</span>
-</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="sh">'@</span>
-</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>
-</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>    <span class="c"># Traducciones de sección de máquinas virtuales</span>
-</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>    <span class="n">GetAbrVirtualMachine</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
-</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a><span class="sh">        InfoLevel = VirtualMachine InfoLevel establecido en {0}.</span>
-</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="sh">        Collecting = Recopilando información de máquinas virtuales.</span>
-</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="sh">        SectionInfo = Las máquinas virtuales proporcionan recursos informáticos en un entorno virtualizado.</span>
-</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="sh">        ParagraphSummary = La siguiente tabla resume las máquinas virtuales en el entorno {0}.</span>
-</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>
-</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a><span class="sh">        Heading = Máquinas Virtuales</span>
-</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="sh">        TableHeading = Máquinas Virtuales</span>
-</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a><span class="sh">        Name = Nombre</span>
-</span><span id="__span-31-22"><a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a><span class="sh">        PowerState = Estado de Energía</span>
-</span><span id="__span-31-23"><a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a><span class="sh">        PoweredOn = Encendido</span>
-</span><span id="__span-31-24"><a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a><span class="sh">        PoweredOff = Apagado</span>
-</span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a><span class="sh">        CPUCount = Recuento de CPU</span>
-</span><span id="__span-31-26"><a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a><span class="sh">        MemoryGB = Memoria (GB)</span>
-</span><span id="__span-31-27"><a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a><span class="sh">        StorageGB = Almacenamiento (GB)</span>
-</span><span id="__span-31-28"><a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a><span class="sh">        GuestOS = SO Invitado</span>
-</span><span id="__span-31-29"><a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a><span class="sh">        IPAddress = Dirección IP</span>
-</span><span id="__span-31-30"><a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a><span class="sh">        None = Ninguno</span>
-</span><span id="__span-31-31"><a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a><span class="sh">'@</span>
-</span><span id="__span-31-32"><a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a>
-</span><span id="__span-31-33"><a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a>    <span class="c"># Traducciones de sección de almacenamiento</span>
-</span><span id="__span-31-34"><a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a>    <span class="n">GetAbrStorageInfo</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
-</span><span id="__span-31-35"><a id="__codelineno-31-35" name="__codelineno-31-35" href="#__codelineno-31-35"></a><span class="sh">        InfoLevel = Storage InfoLevel establecido en {0}.</span>
-</span><span id="__span-31-36"><a id="__codelineno-31-36" name="__codelineno-31-36" href="#__codelineno-31-36"></a><span class="sh">        Collecting = Recopilando información de almacenamiento.</span>
-</span><span id="__span-31-37"><a id="__codelineno-31-37" name="__codelineno-31-37" href="#__codelineno-31-37"></a><span class="sh">        ParagraphSummary = La siguiente tabla resume la configuración de almacenamiento en el entorno {0}.</span>
-</span><span id="__span-31-38"><a id="__codelineno-31-38" name="__codelineno-31-38" href="#__codelineno-31-38"></a>
-</span><span id="__span-31-39"><a id="__codelineno-31-39" name="__codelineno-31-39" href="#__codelineno-31-39"></a><span class="sh">        Heading = Almacenamiento</span>
-</span><span id="__span-31-40"><a id="__codelineno-31-40" name="__codelineno-31-40" href="#__codelineno-31-40"></a><span class="sh">        TableHeading = Detalles de Almacenamiento</span>
-</span><span id="__span-31-41"><a id="__codelineno-31-41" name="__codelineno-31-41" href="#__codelineno-31-41"></a><span class="sh">        Name = Nombre</span>
-</span><span id="__span-31-42"><a id="__codelineno-31-42" name="__codelineno-31-42" href="#__codelineno-31-42"></a><span class="sh">        Type = Tipo</span>
-</span><span id="__span-31-43"><a id="__codelineno-31-43" name="__codelineno-31-43" href="#__codelineno-31-43"></a><span class="sh">        CapacityGB = Capacidad (GB)</span>
-</span><span id="__span-31-44"><a id="__codelineno-31-44" name="__codelineno-31-44" href="#__codelineno-31-44"></a><span class="sh">        UsedGB = Usado (GB)</span>
-</span><span id="__span-31-45"><a id="__codelineno-31-45" name="__codelineno-31-45" href="#__codelineno-31-45"></a><span class="sh">        FreeGB = Libre (GB)</span>
-</span><span id="__span-31-46"><a id="__codelineno-31-46" name="__codelineno-31-46" href="#__codelineno-31-46"></a><span class="sh">        PercentUsed = Porcentaje Usado</span>
-</span><span id="__span-31-47"><a id="__codelineno-31-47" name="__codelineno-31-47" href="#__codelineno-31-47"></a><span class="sh">'@</span>
-</span><span id="__span-31-48"><a id="__codelineno-31-48" name="__codelineno-31-48" href="#__codelineno-31-48"></a><span class="p">}</span>
+</span><span id="__span-31-6"><a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="sh">        ConnectionError = No se puede conectar a {0}: {1}</span>
+</span><span id="__span-31-7"><a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a><span class="sh">        DefaultOrder = No se especificó un orden de sección personalizado. Usando orden predeterminado.</span>
+</span><span id="__span-31-8"><a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a><span class="sh">        CustomOrder = Usando orden de sección personalizado de la configuración JSON del informe.</span>
+</span><span id="__span-31-9"><a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a><span class="sh">        InfoLevelNotFound = InfoLevel para '{0}' no encontrado.</span>
+</span><span id="__span-31-10"><a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a><span class="sh">        SectionError = Error al procesar la sección '{0}': {1}</span>
+</span><span id="__span-31-11"><a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a><span class="sh">'@</span>
+</span><span id="__span-31-12"><a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>
+</span><span id="__span-31-13"><a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>    <span class="c"># Traducciones de sección de máquinas virtuales</span>
+</span><span id="__span-31-14"><a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>    <span class="n">GetAbrVirtualMachine</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
+</span><span id="__span-31-15"><a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a><span class="sh">        InfoLevel = VirtualMachine InfoLevel establecido en {0}.</span>
+</span><span id="__span-31-16"><a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a><span class="sh">        Collecting = Recopilando información de máquinas virtuales.</span>
+</span><span id="__span-31-17"><a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a><span class="sh">        SectionInfo = Las máquinas virtuales proporcionan recursos informáticos en un entorno virtualizado.</span>
+</span><span id="__span-31-18"><a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a><span class="sh">        ParagraphSummary = La siguiente tabla resume las máquinas virtuales en el entorno {0}.</span>
+</span><span id="__span-31-19"><a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>
+</span><span id="__span-31-20"><a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a><span class="sh">        Heading = Máquinas Virtuales</span>
+</span><span id="__span-31-21"><a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a><span class="sh">        TableHeading = Máquinas Virtuales</span>
+</span><span id="__span-31-22"><a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a><span class="sh">        Name = Nombre</span>
+</span><span id="__span-31-23"><a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a><span class="sh">        PowerState = Estado de Energía</span>
+</span><span id="__span-31-24"><a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a><span class="sh">        PoweredOn = Encendido</span>
+</span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25" href="#__codelineno-31-25"></a><span class="sh">        PoweredOff = Apagado</span>
+</span><span id="__span-31-26"><a id="__codelineno-31-26" name="__codelineno-31-26" href="#__codelineno-31-26"></a><span class="sh">        CPUCount = Recuento de CPU</span>
+</span><span id="__span-31-27"><a id="__codelineno-31-27" name="__codelineno-31-27" href="#__codelineno-31-27"></a><span class="sh">        MemoryGB = Memoria (GB)</span>
+</span><span id="__span-31-28"><a id="__codelineno-31-28" name="__codelineno-31-28" href="#__codelineno-31-28"></a><span class="sh">        StorageGB = Almacenamiento (GB)</span>
+</span><span id="__span-31-29"><a id="__codelineno-31-29" name="__codelineno-31-29" href="#__codelineno-31-29"></a><span class="sh">        GuestOS = SO Invitado</span>
+</span><span id="__span-31-30"><a id="__codelineno-31-30" name="__codelineno-31-30" href="#__codelineno-31-30"></a><span class="sh">        IPAddress = Dirección IP</span>
+</span><span id="__span-31-31"><a id="__codelineno-31-31" name="__codelineno-31-31" href="#__codelineno-31-31"></a><span class="sh">        None = Ninguno</span>
+</span><span id="__span-31-32"><a id="__codelineno-31-32" name="__codelineno-31-32" href="#__codelineno-31-32"></a><span class="sh">        ErrorMessage = No se puede recopilar la información de las máquinas virtuales:</span>
+</span><span id="__span-31-33"><a id="__codelineno-31-33" name="__codelineno-31-33" href="#__codelineno-31-33"></a><span class="sh">'@</span>
+</span><span id="__span-31-34"><a id="__codelineno-31-34" name="__codelineno-31-34" href="#__codelineno-31-34"></a>
+</span><span id="__span-31-35"><a id="__codelineno-31-35" name="__codelineno-31-35" href="#__codelineno-31-35"></a>    <span class="c"># Traducciones de sección de almacenamiento</span>
+</span><span id="__span-31-36"><a id="__codelineno-31-36" name="__codelineno-31-36" href="#__codelineno-31-36"></a>    <span class="n">GetAbrStorageInfo</span> <span class="p">=</span> <span class="nb">ConvertFrom-StringData</span> <span class="sh">@'</span>
+</span><span id="__span-31-37"><a id="__codelineno-31-37" name="__codelineno-31-37" href="#__codelineno-31-37"></a><span class="sh">        InfoLevel = Storage InfoLevel establecido en {0}.</span>
+</span><span id="__span-31-38"><a id="__codelineno-31-38" name="__codelineno-31-38" href="#__codelineno-31-38"></a><span class="sh">        Collecting = Recopilando información de almacenamiento.</span>
+</span><span id="__span-31-39"><a id="__codelineno-31-39" name="__codelineno-31-39" href="#__codelineno-31-39"></a><span class="sh">        ParagraphSummary = La siguiente tabla resume la configuración de almacenamiento en el entorno {0}.</span>
+</span><span id="__span-31-40"><a id="__codelineno-31-40" name="__codelineno-31-40" href="#__codelineno-31-40"></a>
+</span><span id="__span-31-41"><a id="__codelineno-31-41" name="__codelineno-31-41" href="#__codelineno-31-41"></a><span class="sh">        Heading = Almacenamiento</span>
+</span><span id="__span-31-42"><a id="__codelineno-31-42" name="__codelineno-31-42" href="#__codelineno-31-42"></a><span class="sh">        TableHeading = Detalles de Almacenamiento</span>
+</span><span id="__span-31-43"><a id="__codelineno-31-43" name="__codelineno-31-43" href="#__codelineno-31-43"></a><span class="sh">        Name = Nombre</span>
+</span><span id="__span-31-44"><a id="__codelineno-31-44" name="__codelineno-31-44" href="#__codelineno-31-44"></a><span class="sh">        Type = Tipo</span>
+</span><span id="__span-31-45"><a id="__codelineno-31-45" name="__codelineno-31-45" href="#__codelineno-31-45"></a><span class="sh">        CapacityGB = Capacidad (GB)</span>
+</span><span id="__span-31-46"><a id="__codelineno-31-46" name="__codelineno-31-46" href="#__codelineno-31-46"></a><span class="sh">        UsedGB = Usado (GB)</span>
+</span><span id="__span-31-47"><a id="__codelineno-31-47" name="__codelineno-31-47" href="#__codelineno-31-47"></a><span class="sh">        FreeGB = Libre (GB)</span>
+</span><span id="__span-31-48"><a id="__codelineno-31-48" name="__codelineno-31-48" href="#__codelineno-31-48"></a><span class="sh">        PercentUsed = Porcentaje Usado</span>
+</span><span id="__span-31-49"><a id="__codelineno-31-49" name="__codelineno-31-49" href="#__codelineno-31-49"></a><span class="sh">'@</span>
+</span><span id="__span-31-50"><a id="__codelineno-31-50" name="__codelineno-31-50" href="#__codelineno-31-50"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <p><strong>Key formatting requirements:</strong></p>
 <ul>
@@ -6115,8 +6137,8 @@
 - <code>en-AU</code> (English-Australia) → <code>en-GB</code> → <code>en-US</code>
 - <code>zh-HK</code> (Chinese-Hong Kong) → <code>zh-Hant</code> → <code>zh-TW</code> → <code>en-US</code></p>
 <p>This ensures that if a specific regional translation isn't available, the module will use the parent language before falling back to English.</p>
-<h3 id="supported-language-codes">Supported Language Codes</h3>
-<p>The following language codes are supported with comprehensive fallback mappings:</p>
+<h3 id="culture-fallback-mappings">Culture Fallback Mappings</h3>
+<p><code>Resolve-Culture</code> includes fallback mappings for more than 60 culture codes. The following table lists the most common. Cultures that are not explicitly mapped fall back to their parent language family (e.g. <code>de-XX</code> → <code>de-DE</code> → <code>en-US</code>).</p>
 <table>
 <thead>
 <tr>
@@ -6223,6 +6245,12 @@
 <td>vi-VN</td>
 <td>Vietnamese</td>
 </tr>
+<tr>
+<td>si-LK</td>
+<td>Sinhala</td>
+<td>ta-IN</td>
+<td>Tamil</td>
+</tr>
 </tbody>
 </table>
 <h3 id="best-practices">Best Practices</h3>
@@ -6248,93 +6276,91 @@
 </span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="c"># Test with French (uses configuration file setting)</span>
 </span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="n">-Target</span> <span class="n">server01</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-ReportConfigFilePath</span> <span class="s1">'C:\Config\report-fr.json'</span>
 </span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>
-</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="c"># Test fallback (if es-MX not available, falls back to es-ES)</span>
-</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="n">-Target</span> <span class="n">server01</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-ReportLanguage</span> <span class="s1">'es-MX'</span>
+</span><span id="__span-36-7"><a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a><span class="c"># Test fallback: set "Language": "es-MX" in the JSON configuration file. If no es-MX folder exists, es-ES is used.</span>
+</span><span id="__span-36-8"><a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="c"># (-ReportLanguage only accepts languages that have a folder in the module's Language directory.)</span>
+</span><span id="__span-36-9"><a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a><span class="nb">New-AsBuiltReport</span> <span class="n">-Report</span> <span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="n">-Target</span> <span class="n">server01</span> <span class="n">-Credential</span> <span class="nv">$cred</span> <span class="n">-ReportConfigFilePath</span> <span class="s1">'C:\Config\report-es-MX.json'</span>
 </span></code></pre></div>
 <h3 id="example-complete-language-implementation">Example: Complete Language Implementation</h3>
 <p>Here's a complete example showing language support implementation:</p>
 <div class="language-powershell highlight"><span class="filename">Complete language implementation example</span><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">function</span> <span class="nb">Invoke-AsBuiltReport</span><span class="p">.</span><span class="n">Vendor</span><span class="p">.</span><span class="n">Technology</span> <span class="p">{</span>
 </span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
 </span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>    <span class="k">param</span> <span class="p">(</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>        <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">)]</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>        <span class="no">[String[]]</span> <span class="nv">$Target</span><span class="p">,</span>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>        <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$true</span><span class="p">)]</span>
-</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>        <span class="no">[PSCredential]</span> <span class="nv">$Credential</span>
-</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>    <span class="p">)</span>
-</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>
-</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>    <span class="nv">$Report</span>     <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
-</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>    <span class="nv">$InfoLevel</span>  <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
-</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>    <span class="nv">$Options</span>    <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Options</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>        <span class="no">[String[]]</span> <span class="nv">$Target</span><span class="p">,</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>        <span class="no">[PSCredential]</span> <span class="nv">$Credential</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>    <span class="p">)</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>    <span class="nv">$Report</span>     <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Report</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>    <span class="nv">$InfoLevel</span>  <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">InfoLevel</span>
+</span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>    <span class="nv">$Options</span>    <span class="p">=</span> <span class="nv">$ReportConfig</span><span class="p">.</span><span class="n">Options</span>
+</span><span id="__span-37-11"><a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>
+</span><span id="__span-37-12"><a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>    <span class="c"># Scope translations for this function from the global $reportTranslate hashtable</span>
+</span><span id="__span-37-13"><a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>    <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">InvokeAsBuiltReportVendorTechnology</span>
 </span><span id="__span-37-14"><a id="__codelineno-37-14" name="__codelineno-37-14" href="#__codelineno-37-14"></a>
-</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>    <span class="c"># Scope translations for this function from the global $reportTranslate hashtable</span>
-</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>    <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">InvokeAsBuiltReportVendorTechnology</span>
-</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>
-</span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$System</span> <span class="k">in</span> <span class="nv">$Target</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>        <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>            <span class="nb">Write-PScriboMessage</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Connecting</span> <span class="o">-f</span> <span class="nv">$Target</span><span class="p">)</span>
-</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>
-</span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>            <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Heading</span> <span class="p">{</span>
-</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>                <span class="nb">Get-AbrVTVirtualMachine</span>
-</span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>            <span class="p">}</span>
-</span><span id="__span-37-25"><a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-37-26"><a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ConnectionError</span> <span class="o">-f</span> <span class="nv">$Target</span><span class="p">,</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span>
-</span><span id="__span-37-27"><a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a>        <span class="p">}</span>
-</span><span id="__span-37-28"><a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a>    <span class="p">}</span>
-</span><span id="__span-37-29"><a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a><span class="p">}</span>
-</span><span id="__span-37-30"><a id="__codelineno-37-30" name="__codelineno-37-30" href="#__codelineno-37-30"></a>
-</span><span id="__span-37-31"><a id="__codelineno-37-31" name="__codelineno-37-31" href="#__codelineno-37-31"></a><span class="k">function</span> <span class="nb">Get-AbrVTVirtualMachine</span> <span class="p">{</span>
-</span><span id="__span-37-32"><a id="__codelineno-37-32" name="__codelineno-37-32" href="#__codelineno-37-32"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
-</span><span id="__span-37-33"><a id="__codelineno-37-33" name="__codelineno-37-33" href="#__codelineno-37-33"></a>    <span class="k">param</span> <span class="p">()</span>
-</span><span id="__span-37-34"><a id="__codelineno-37-34" name="__codelineno-37-34" href="#__codelineno-37-34"></a>
-</span><span id="__span-37-35"><a id="__codelineno-37-35" name="__codelineno-37-35" href="#__codelineno-37-35"></a>    <span class="k">begin</span> <span class="p">{</span>
-</span><span id="__span-37-36"><a id="__codelineno-37-36" name="__codelineno-37-36" href="#__codelineno-37-36"></a>        <span class="c"># Scope translations for this function</span>
-</span><span id="__span-37-37"><a id="__codelineno-37-37" name="__codelineno-37-37" href="#__codelineno-37-37"></a>        <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">GetAbrVTVirtualMachine</span>
-</span><span id="__span-37-38"><a id="__codelineno-37-38" name="__codelineno-37-38" href="#__codelineno-37-38"></a>        <span class="nb">Write-PScriboMessage</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">InfoLevel</span> <span class="o">-f</span> <span class="nv">$InfoLevel</span><span class="p">.</span><span class="n">VirtualMachine</span><span class="p">)</span>
-</span><span id="__span-37-39"><a id="__codelineno-37-39" name="__codelineno-37-39" href="#__codelineno-37-39"></a>        <span class="nb">Write-PScriboMessage</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Collecting</span>
-</span><span id="__span-37-40"><a id="__codelineno-37-40" name="__codelineno-37-40" href="#__codelineno-37-40"></a>    <span class="p">}</span>
-</span><span id="__span-37-41"><a id="__codelineno-37-41" name="__codelineno-37-41" href="#__codelineno-37-41"></a>
-</span><span id="__span-37-42"><a id="__codelineno-37-42" name="__codelineno-37-42" href="#__codelineno-37-42"></a>    <span class="k">process</span> <span class="p">{</span>
-</span><span id="__span-37-43"><a id="__codelineno-37-43" name="__codelineno-37-43" href="#__codelineno-37-43"></a>        <span class="k">try</span> <span class="p">{</span>
-</span><span id="__span-37-44"><a id="__codelineno-37-44" name="__codelineno-37-44" href="#__codelineno-37-44"></a>            <span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-VTVirtualMachine</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span><span id="__span-37-15"><a id="__codelineno-37-15" name="__codelineno-37-15" href="#__codelineno-37-15"></a>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$System</span> <span class="k">in</span> <span class="nv">$Target</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-37-16"><a id="__codelineno-37-16" name="__codelineno-37-16" href="#__codelineno-37-16"></a>        <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-37-17"><a id="__codelineno-37-17" name="__codelineno-37-17" href="#__codelineno-37-17"></a>            <span class="nb">Write-PScriboMessage</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Connecting</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">)</span>
+</span><span id="__span-37-18"><a id="__codelineno-37-18" name="__codelineno-37-18" href="#__codelineno-37-18"></a>
+</span><span id="__span-37-19"><a id="__codelineno-37-19" name="__codelineno-37-19" href="#__codelineno-37-19"></a>            <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading1</span> <span class="nv">$System</span> <span class="p">{</span>
+</span><span id="__span-37-20"><a id="__codelineno-37-20" name="__codelineno-37-20" href="#__codelineno-37-20"></a>                <span class="nb">Get-AbrVirtualMachine</span>
+</span><span id="__span-37-21"><a id="__codelineno-37-21" name="__codelineno-37-21" href="#__codelineno-37-21"></a>            <span class="p">}</span>
+</span><span id="__span-37-22"><a id="__codelineno-37-22" name="__codelineno-37-22" href="#__codelineno-37-22"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-37-23"><a id="__codelineno-37-23" name="__codelineno-37-23" href="#__codelineno-37-23"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ConnectionError</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">,</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span>
+</span><span id="__span-37-24"><a id="__codelineno-37-24" name="__codelineno-37-24" href="#__codelineno-37-24"></a>        <span class="p">}</span>
+</span><span id="__span-37-25"><a id="__codelineno-37-25" name="__codelineno-37-25" href="#__codelineno-37-25"></a>    <span class="p">}</span>
+</span><span id="__span-37-26"><a id="__codelineno-37-26" name="__codelineno-37-26" href="#__codelineno-37-26"></a><span class="p">}</span>
+</span><span id="__span-37-27"><a id="__codelineno-37-27" name="__codelineno-37-27" href="#__codelineno-37-27"></a>
+</span><span id="__span-37-28"><a id="__codelineno-37-28" name="__codelineno-37-28" href="#__codelineno-37-28"></a><span class="k">function</span> <span class="nb">Get-AbrVirtualMachine</span> <span class="p">{</span>
+</span><span id="__span-37-29"><a id="__codelineno-37-29" name="__codelineno-37-29" href="#__codelineno-37-29"></a>    <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
+</span><span id="__span-37-30"><a id="__codelineno-37-30" name="__codelineno-37-30" href="#__codelineno-37-30"></a>    <span class="k">param</span> <span class="p">()</span>
+</span><span id="__span-37-31"><a id="__codelineno-37-31" name="__codelineno-37-31" href="#__codelineno-37-31"></a>
+</span><span id="__span-37-32"><a id="__codelineno-37-32" name="__codelineno-37-32" href="#__codelineno-37-32"></a>    <span class="k">begin</span> <span class="p">{</span>
+</span><span id="__span-37-33"><a id="__codelineno-37-33" name="__codelineno-37-33" href="#__codelineno-37-33"></a>        <span class="c"># Scope translations for this function</span>
+</span><span id="__span-37-34"><a id="__codelineno-37-34" name="__codelineno-37-34" href="#__codelineno-37-34"></a>        <span class="nv">$LocalizedData</span> <span class="p">=</span> <span class="nv">$reportTranslate</span><span class="p">.</span><span class="n">GetAbrVirtualMachine</span>
+</span><span id="__span-37-35"><a id="__codelineno-37-35" name="__codelineno-37-35" href="#__codelineno-37-35"></a>        <span class="nb">Write-PScriboMessage</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">InfoLevel</span> <span class="o">-f</span> <span class="nv">$InfoLevel</span><span class="p">.</span><span class="n">VirtualMachine</span><span class="p">)</span>
+</span><span id="__span-37-36"><a id="__codelineno-37-36" name="__codelineno-37-36" href="#__codelineno-37-36"></a>        <span class="nb">Write-PScriboMessage</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Collecting</span>
+</span><span id="__span-37-37"><a id="__codelineno-37-37" name="__codelineno-37-37" href="#__codelineno-37-37"></a>    <span class="p">}</span>
+</span><span id="__span-37-38"><a id="__codelineno-37-38" name="__codelineno-37-38" href="#__codelineno-37-38"></a>
+</span><span id="__span-37-39"><a id="__codelineno-37-39" name="__codelineno-37-39" href="#__codelineno-37-39"></a>    <span class="k">process</span> <span class="p">{</span>
+</span><span id="__span-37-40"><a id="__codelineno-37-40" name="__codelineno-37-40" href="#__codelineno-37-40"></a>        <span class="k">try</span> <span class="p">{</span>
+</span><span id="__span-37-41"><a id="__codelineno-37-41" name="__codelineno-37-41" href="#__codelineno-37-41"></a>            <span class="nv">$VMs</span> <span class="p">=</span> <span class="nb">Get-VTVirtualMachine</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span>
+</span><span id="__span-37-42"><a id="__codelineno-37-42" name="__codelineno-37-42" href="#__codelineno-37-42"></a>
+</span><span id="__span-37-43"><a id="__codelineno-37-43" name="__codelineno-37-43" href="#__codelineno-37-43"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-37-44"><a id="__codelineno-37-44" name="__codelineno-37-44" href="#__codelineno-37-44"></a>                <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading2</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Heading</span> <span class="p">{</span>
 </span><span id="__span-37-45"><a id="__codelineno-37-45" name="__codelineno-37-45" href="#__codelineno-37-45"></a>
-</span><span id="__span-37-46"><a id="__codelineno-37-46" name="__codelineno-37-46" href="#__codelineno-37-46"></a>            <span class="k">if</span> <span class="p">(</span><span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-37-47"><a id="__codelineno-37-47" name="__codelineno-37-47" href="#__codelineno-37-47"></a>                <span class="n">Section</span> <span class="n">-Style</span> <span class="n">Heading2</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Heading</span> <span class="p">{</span>
+</span><span id="__span-37-46"><a id="__codelineno-37-46" name="__codelineno-37-46" href="#__codelineno-37-46"></a>                    <span class="n">Paragraph</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">SectionInfo</span>
+</span><span id="__span-37-47"><a id="__codelineno-37-47" name="__codelineno-37-47" href="#__codelineno-37-47"></a>                    <span class="n">Paragraph</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ParagraphSummary</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">)</span>
 </span><span id="__span-37-48"><a id="__codelineno-37-48" name="__codelineno-37-48" href="#__codelineno-37-48"></a>
-</span><span id="__span-37-49"><a id="__codelineno-37-49" name="__codelineno-37-49" href="#__codelineno-37-49"></a>                    <span class="n">Paragraph</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">SectionInfo</span>
-</span><span id="__span-37-50"><a id="__codelineno-37-50" name="__codelineno-37-50" href="#__codelineno-37-50"></a>                    <span class="n">Paragraph</span> <span class="p">(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ParagraphSummary</span> <span class="o">-f</span> <span class="nv">$System</span><span class="p">)</span>
-</span><span id="__span-37-51"><a id="__codelineno-37-51" name="__codelineno-37-51" href="#__codelineno-37-51"></a>
-</span><span id="__span-37-52"><a id="__codelineno-37-52" name="__codelineno-37-52" href="#__codelineno-37-52"></a>                    <span class="nv">$VMInfo</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VM</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-37-53"><a id="__codelineno-37-53" name="__codelineno-37-53" href="#__codelineno-37-53"></a>                        <span class="no">[Ordered]</span><span class="p">@{</span>
-</span><span id="__span-37-54"><a id="__codelineno-37-54" name="__codelineno-37-54" href="#__codelineno-37-54"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Name</span>       <span class="p">=</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">Name</span>
-</span><span id="__span-37-55"><a id="__codelineno-37-55" name="__codelineno-37-55" href="#__codelineno-37-55"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">PowerState</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$VM</span><span class="p">.</span><span class="n">PowerState</span> <span class="o">-eq</span> <span class="s1">'PoweredOn'</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-37-56"><a id="__codelineno-37-56" name="__codelineno-37-56" href="#__codelineno-37-56"></a>                                <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">PoweredOn</span>
-</span><span id="__span-37-57"><a id="__codelineno-37-57" name="__codelineno-37-57" href="#__codelineno-37-57"></a>                            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span id="__span-37-58"><a id="__codelineno-37-58" name="__codelineno-37-58" href="#__codelineno-37-58"></a>                                <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">PoweredOff</span>
-</span><span id="__span-37-59"><a id="__codelineno-37-59" name="__codelineno-37-59" href="#__codelineno-37-59"></a>                            <span class="p">}</span>
-</span><span id="__span-37-60"><a id="__codelineno-37-60" name="__codelineno-37-60" href="#__codelineno-37-60"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">CPUCount</span>   <span class="p">=</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">NumCpu</span>
-</span><span id="__span-37-61"><a id="__codelineno-37-61" name="__codelineno-37-61" href="#__codelineno-37-61"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">MemoryGB</span>   <span class="p">=</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">MemoryGB</span>
-</span><span id="__span-37-62"><a id="__codelineno-37-62" name="__codelineno-37-62" href="#__codelineno-37-62"></a>                        <span class="p">}</span>
-</span><span id="__span-37-63"><a id="__codelineno-37-63" name="__codelineno-37-63" href="#__codelineno-37-63"></a>                    <span class="p">}</span>
-</span><span id="__span-37-64"><a id="__codelineno-37-64" name="__codelineno-37-64" href="#__codelineno-37-64"></a>
-</span><span id="__span-37-65"><a id="__codelineno-37-65" name="__codelineno-37-65" href="#__codelineno-37-65"></a>                    <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
-</span><span id="__span-37-66"><a id="__codelineno-37-66" name="__codelineno-37-66" href="#__codelineno-37-66"></a>                        <span class="n">Name</span>         <span class="p">=</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">TableHeading</span>
-</span><span id="__span-37-67"><a id="__codelineno-37-67" name="__codelineno-37-67" href="#__codelineno-37-67"></a>                        <span class="n">List</span>         <span class="p">=</span> <span class="nv">$false</span>
-</span><span id="__span-37-68"><a id="__codelineno-37-68" name="__codelineno-37-68" href="#__codelineno-37-68"></a>                        <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">30</span><span class="p">,</span> <span class="n">20</span><span class="p">,</span> <span class="n">25</span><span class="p">,</span> <span class="n">25</span>
+</span><span id="__span-37-49"><a id="__codelineno-37-49" name="__codelineno-37-49" href="#__codelineno-37-49"></a>                    <span class="nv">$VMInfo</span> <span class="p">=</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$VM</span> <span class="k">in</span> <span class="nv">$VMs</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-37-50"><a id="__codelineno-37-50" name="__codelineno-37-50" href="#__codelineno-37-50"></a>                        <span class="no">[Ordered]</span><span class="p">@{</span>
+</span><span id="__span-37-51"><a id="__codelineno-37-51" name="__codelineno-37-51" href="#__codelineno-37-51"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Name</span>       <span class="p">=</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">Name</span>
+</span><span id="__span-37-52"><a id="__codelineno-37-52" name="__codelineno-37-52" href="#__codelineno-37-52"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">PowerState</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$VM</span><span class="p">.</span><span class="n">PowerState</span> <span class="o">-eq</span> <span class="s1">'PoweredOn'</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-37-53"><a id="__codelineno-37-53" name="__codelineno-37-53" href="#__codelineno-37-53"></a>                                <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">PoweredOn</span>
+</span><span id="__span-37-54"><a id="__codelineno-37-54" name="__codelineno-37-54" href="#__codelineno-37-54"></a>                            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-37-55"><a id="__codelineno-37-55" name="__codelineno-37-55" href="#__codelineno-37-55"></a>                                <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">PoweredOff</span>
+</span><span id="__span-37-56"><a id="__codelineno-37-56" name="__codelineno-37-56" href="#__codelineno-37-56"></a>                            <span class="p">}</span>
+</span><span id="__span-37-57"><a id="__codelineno-37-57" name="__codelineno-37-57" href="#__codelineno-37-57"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">CPUCount</span>   <span class="p">=</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">NumCpu</span>
+</span><span id="__span-37-58"><a id="__codelineno-37-58" name="__codelineno-37-58" href="#__codelineno-37-58"></a>                            <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">MemoryGB</span>   <span class="p">=</span> <span class="nv">$VM</span><span class="p">.</span><span class="n">MemoryGB</span>
+</span><span id="__span-37-59"><a id="__codelineno-37-59" name="__codelineno-37-59" href="#__codelineno-37-59"></a>                        <span class="p">}</span>
+</span><span id="__span-37-60"><a id="__codelineno-37-60" name="__codelineno-37-60" href="#__codelineno-37-60"></a>                    <span class="p">}</span>
+</span><span id="__span-37-61"><a id="__codelineno-37-61" name="__codelineno-37-61" href="#__codelineno-37-61"></a>
+</span><span id="__span-37-62"><a id="__codelineno-37-62" name="__codelineno-37-62" href="#__codelineno-37-62"></a>                    <span class="nv">$TableParams</span> <span class="p">=</span> <span class="p">@{</span>
+</span><span id="__span-37-63"><a id="__codelineno-37-63" name="__codelineno-37-63" href="#__codelineno-37-63"></a>                        <span class="n">Name</span>         <span class="p">=</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">TableHeading</span>
+</span><span id="__span-37-64"><a id="__codelineno-37-64" name="__codelineno-37-64" href="#__codelineno-37-64"></a>                        <span class="n">List</span>         <span class="p">=</span> <span class="nv">$false</span>
+</span><span id="__span-37-65"><a id="__codelineno-37-65" name="__codelineno-37-65" href="#__codelineno-37-65"></a>                        <span class="n">ColumnWidths</span> <span class="p">=</span> <span class="n">30</span><span class="p">,</span> <span class="n">20</span><span class="p">,</span> <span class="n">25</span><span class="p">,</span> <span class="n">25</span>
+</span><span id="__span-37-66"><a id="__codelineno-37-66" name="__codelineno-37-66" href="#__codelineno-37-66"></a>                    <span class="p">}</span>
+</span><span id="__span-37-67"><a id="__codelineno-37-67" name="__codelineno-37-67" href="#__codelineno-37-67"></a>                    <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
+</span><span id="__span-37-68"><a id="__codelineno-37-68" name="__codelineno-37-68" href="#__codelineno-37-68"></a>                        <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">'Caption'</span><span class="p">]</span> <span class="p">=</span> <span class="s2">"- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">"</span>
 </span><span id="__span-37-69"><a id="__codelineno-37-69" name="__codelineno-37-69" href="#__codelineno-37-69"></a>                    <span class="p">}</span>
-</span><span id="__span-37-70"><a id="__codelineno-37-70" name="__codelineno-37-70" href="#__codelineno-37-70"></a>                    <span class="k">if</span> <span class="p">(</span><span class="nv">$Report</span><span class="p">.</span><span class="n">ShowTableCaptions</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-37-71"><a id="__codelineno-37-71" name="__codelineno-37-71" href="#__codelineno-37-71"></a>                        <span class="nv">$TableParams</span><span class="p">[</span><span class="s1">'Caption'</span><span class="p">]</span> <span class="p">=</span> <span class="s2">"- </span><span class="p">$(</span><span class="nv">$TableParams</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span><span class="s2">"</span>
-</span><span id="__span-37-72"><a id="__codelineno-37-72" name="__codelineno-37-72" href="#__codelineno-37-72"></a>                    <span class="p">}</span>
-</span><span id="__span-37-73"><a id="__codelineno-37-73" name="__codelineno-37-73" href="#__codelineno-37-73"></a>                    <span class="nv">$VMInfo</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Name</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
-</span><span id="__span-37-74"><a id="__codelineno-37-74" name="__codelineno-37-74" href="#__codelineno-37-74"></a>                <span class="p">}</span>
-</span><span id="__span-37-75"><a id="__codelineno-37-75" name="__codelineno-37-75" href="#__codelineno-37-75"></a>            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span id="__span-37-76"><a id="__codelineno-37-76" name="__codelineno-37-76" href="#__codelineno-37-76"></a>                <span class="n">Paragraph</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">None</span>
-</span><span id="__span-37-77"><a id="__codelineno-37-77" name="__codelineno-37-77" href="#__codelineno-37-77"></a>            <span class="p">}</span>
-</span><span id="__span-37-78"><a id="__codelineno-37-78" name="__codelineno-37-78" href="#__codelineno-37-78"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
-</span><span id="__span-37-79"><a id="__codelineno-37-79" name="__codelineno-37-79" href="#__codelineno-37-79"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">"</span><span class="p">$(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ErrorMessage</span><span class="p">)</span><span class="s2"> </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">"</span>
-</span><span id="__span-37-80"><a id="__codelineno-37-80" name="__codelineno-37-80" href="#__codelineno-37-80"></a>        <span class="p">}</span>
-</span><span id="__span-37-81"><a id="__codelineno-37-81" name="__codelineno-37-81" href="#__codelineno-37-81"></a>    <span class="p">}</span>
-</span><span id="__span-37-82"><a id="__codelineno-37-82" name="__codelineno-37-82" href="#__codelineno-37-82"></a><span class="p">}</span>
+</span><span id="__span-37-70"><a id="__codelineno-37-70" name="__codelineno-37-70" href="#__codelineno-37-70"></a>                    <span class="nv">$VMInfo</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">Name</span> <span class="p">|</span> <span class="n">Table</span> <span class="nv">@TableParams</span>
+</span><span id="__span-37-71"><a id="__codelineno-37-71" name="__codelineno-37-71" href="#__codelineno-37-71"></a>                <span class="p">}</span>
+</span><span id="__span-37-72"><a id="__codelineno-37-72" name="__codelineno-37-72" href="#__codelineno-37-72"></a>            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span id="__span-37-73"><a id="__codelineno-37-73" name="__codelineno-37-73" href="#__codelineno-37-73"></a>                <span class="n">Paragraph</span> <span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">None</span>
+</span><span id="__span-37-74"><a id="__codelineno-37-74" name="__codelineno-37-74" href="#__codelineno-37-74"></a>            <span class="p">}</span>
+</span><span id="__span-37-75"><a id="__codelineno-37-75" name="__codelineno-37-75" href="#__codelineno-37-75"></a>        <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+</span><span id="__span-37-76"><a id="__codelineno-37-76" name="__codelineno-37-76" href="#__codelineno-37-76"></a>            <span class="nb">Write-PScriboMessage</span> <span class="n">-IsWarning</span> <span class="s2">"</span><span class="p">$(</span><span class="nv">$LocalizedData</span><span class="p">.</span><span class="n">ErrorMessage</span><span class="p">)</span><span class="s2"> </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">)</span><span class="s2">"</span>
+</span><span id="__span-37-77"><a id="__codelineno-37-77" name="__codelineno-37-77" href="#__codelineno-37-77"></a>        <span class="p">}</span>
+</span><span id="__span-37-78"><a id="__codelineno-37-78" name="__codelineno-37-78" href="#__codelineno-37-78"></a>    <span class="p">}</span>
+</span><span id="__span-37-79"><a id="__codelineno-37-79" name="__codelineno-37-79" href="#__codelineno-37-79"></a><span class="p">}</span>
 </span></code></pre></div>
 <h3 id="migration-guide-for-existing-modules">Migration Guide for Existing Modules</h3>
 <p>To add language support to an existing report module:</p>
@@ -6445,7 +6471,7 @@
 </span><span id="__span-38-40"><a id="__codelineno-38-40" name="__codelineno-38-40" href="#__codelineno-38-40"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <p><span class="twemoji x-circle-fill"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.343 13.657A8 8 0 1 1 13.658 2.343 8 8 0 0 1 2.343 13.657M6.03 4.97a.75.75 0 0 0-1.042.018.75.75 0 0 0-.018 1.042L6.94 8 4.97 9.97a.749.749 0 0 0 .326 1.275.75.75 0 0 0 .734-.215L8 9.06l1.97 1.97a.749.749 0 0 0 1.275-.326.75.75 0 0 0-.215-.734L9.06 8l1.97-1.97a.749.749 0 0 0-.326-1.275.75.75 0 0 0-.734.215L8 6.94Z"/></svg></span> DO NOT
-<div class="language-powershell highlight"><span class="filename">Avoid these practices</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c"># Avoid functions within report scripts</span>
+<div class="language-powershell highlight"><span class="filename">Avoid these practices</span><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c"># Avoid defining functions inline within other functions; place each function in its own file under Src/</span>
 </span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="c"># Avoid hardcoded credentials</span>
 </span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="c"># Avoid excessive global variables</span>
 </span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="c"># Avoid unclear variable names like $a, $temp, $data</span>
@@ -6675,15 +6701,15 @@
 <tbody>
 <tr>
 <td><code>AsBuiltReport.Vendor.Technology.Tests.ps1</code></td>
-<td>Module manifest validation, directory structure, exported functions, private function inventory, JSON config schema, PSScriptAnalyzer</td>
+<td>Scaffolded by Plaster with basic manifest and exported function tests. Expand it to cover directory structure, private function inventory, JSON config schema and PSScriptAnalyzer</td>
 </tr>
 <tr>
 <td><code>LocalizationData.Tests.ps1</code></td>
-<td>Validates that all language files have identical keys and that no keys are missing from non-en-US files</td>
+<td>Not scaffolded by Plaster; create it yourself. Validates that all language files have identical keys and that no keys are missing from non-en-US files</td>
 </tr>
 <tr>
 <td><code>Invoke-Tests.ps1</code></td>
-<td>Test runner — invokes Pester with project-standard settings</td>
+<td>Scaffolded by Plaster. Test runner that invokes Pester with project-standard settings</td>
 </tr>
 </tbody>
 </table>
@@ -6788,7 +6814,7 @@
 <li><strong>Minimise API Calls</strong>: Batch requests when possible</li>
 <li><strong>Efficient Data Structures</strong>: Use appropriate collection types</li>
 <li><strong>Memory Management</strong>: Dispose of large objects when done</li>
-<li><strong>Parallel Processing</strong>: Consider workflow parallelisation for large environments</li>
+<li><strong>Parallel Processing</strong>: For large environments, consider collecting data in parallel (e.g. <code>ForEach-Object -Parallel</code> on PowerShell 7+). PowerShell workflows are not supported in PowerShell 7</li>
 </ul>
 <h3 id="performance-testing">Performance Testing</h3>
 <p>Test your module with:</p>
@@ -6853,7 +6879,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2026 06:40:23 UTC">October 9, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2026 06:52:27 UTC">October 9, 2026</span>
   </span>
 
     
