@@ -4974,12 +4974,12 @@
 <li>The PowerShell editions and platforms you intend to support (Windows PowerShell 5.1, PowerShell 7+, or both)</li>
 <li>A rough outline of the report sections you have in mind</li>
 </ul>
-<p>Once your module proposal and module name have been approved, create a new GitHub repository under your own account using the approved name. Do not create the repository until the name has been approved, so it does not need to be renamed later. Review the naming standards and repository structure below, then use the AsBuiltReport Plaster template to scaffold the module before beginning development.</p>
-<p>When your module is ready for review, it will be transferred into the AsBuiltReport organisation. See <a href="#5-transferring-your-repository-to-the-asbuiltreport-organisation">Transferring your repository</a> for details.</p>
 <div class="admonition warning">
 <p class="admonition-title">Seek Approval Before Proceeding</p>
 <p>Do not create a repository or begin development until both your module proposal and module name have been approved by the project maintainers. Modules developed without prior approval may not be accepted into the AsBuiltReport organisation, and repositories created under an unapproved name may need to be renamed or recreated.</p>
 </div>
+<p>Once your module proposal and module name have been approved, create a new GitHub repository under your own account using the approved name. Review the naming standards and repository structure below, then use the AsBuiltReport Plaster template to scaffold the module before beginning development.</p>
+<p>When your module is ready for review, it will be transferred into the AsBuiltReport organisation. See <a href="#5-transferring-your-repository-to-the-asbuiltreport-organisation">Transferring your repository</a> for details.</p>
 <p>The naming convention is not just cosmetic — it is how AsBuiltReport.Core locates your module at runtime. When you run <code>New-AsBuiltReport -Report 'Vendor.Technology'</code>, the framework constructs the module name <code>AsBuiltReport.Vendor.Technology</code> and the function name <code>Invoke-AsBuiltReport.Vendor.Technology</code> from that string, imports the module, and calls the function directly. No registration step is required beyond following the naming convention.</p>
 <div class="admonition failure">
 <p class="admonition-title">Do Not Publish AsBuiltReport Modules to the PowerShell Gallery Using Your Personal Account</p>
@@ -6853,7 +6853,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2026 06:26:08 UTC">October 9, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 9, 2026 06:40:23 UTC">October 9, 2026</span>
   </span>
 
     
