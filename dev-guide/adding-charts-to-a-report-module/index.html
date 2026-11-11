@@ -28,7 +28,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/images/logos/AsBuiltReport.png">
-      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.1">
     
     
       
@@ -36,10 +36,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3734,9 +3734,13 @@
 <p class="admonition-title">Prerequisite Reading</p>
 <p>This guide assumes you are already familiar with creating AsBuiltReport report modules. If not, read the <a href="../creating-a-report-module/">Creating a Report Module</a> guide first.</p>
 </div>
+<div class="admonition failure">
+<p class="admonition-title">Images are not supported when using Linux &amp; macOS</p>
+<p>Unfortunately due to <a href="https://learn.microsoft.com/en-gb/dotnet/core/compatibility/core-libraries/6.0/system-drawing-common-windows-only" target="_blank">breaking changes</a> in .NET 6, images are no longer supported for reports generated using Linux or macOS.</p>
+</div>
 <h2 id="installation">Installation</h2>
 <p>Install AsBuiltReport.Chart from the PowerShell Gallery:</p>
-<div class="language-powershell highlight"><span class="filename">Install AsBuiltReport.Chart</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Chart</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
+<div class="language-powershell highlight"><span class="filename">Install AsBuiltReport.Chart</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">AsBuiltReport</span><span class="p">.</span><span class="n">Chart</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
 </span></code></pre></div>
 <h2 id="declaring-the-dependency">Declaring the Dependency</h2>
 <p>Add <code>AsBuiltReport.Chart</code> to the <code>RequiredModules</code> array in your module manifest (<code>.psd1</code>). This ensures the module is automatically installed when your report module is installed.</p>
@@ -3747,7 +3751,7 @@
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="p">}</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">@{</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">ModuleName</span>    <span class="p">=</span> <span class="s1">'AsBuiltReport.Chart'</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">'0.3.2'</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">ModuleVersion</span> <span class="p">=</span> <span class="s1">'0.3.4'</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="p">}</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">)</span>
 </span></code></pre></div>
@@ -3790,7 +3794,7 @@
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-PieChart</span> <span class="p">`</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">-Title</span> <span class="s1">' '</span> <span class="p">`</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">-Title</span> <span class="s1">'VM power state distribution'</span> <span class="p">`</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
@@ -3803,7 +3807,7 @@
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="pie-chart-example-output">Pie Chart example output:</h5>
+<h4 id="pie-chart-example-output">Pie Chart example output</h4>
 <p><img alt="Pie Chart" src="../../assets/images/charts/piechart.png" /></p>
 <h3 id="donut-chart">Donut Chart</h3>
 <p>Use <code>New-DonutChart</code> for the same use cases as a pie chart when you want to emphasise completion. Donut charts can also be used to show progress towards a goal — for example, patch compliance percentage or licence consumption.</p>
@@ -3816,17 +3820,18 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nv">$chartValues</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="nv">$sampleData</span><span class="p">.</span><span class="n">Values</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="nv">$chartFileItem</span> <span class="p">=</span> <span class="nb">New-DonutChart</span> <span class="p">`</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">'#DFF0D0'</span><span class="p">,</span> <span class="s1">'#FECDD1'</span><span class="p">)</span> <span class="p">`</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
-</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">-LegendAlignment</span> <span class="n">LowerCenter</span> <span class="p">`</span>
-</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">-Title</span> <span class="s1">'VM power state distribution'</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">-Values</span> <span class="nv">$chartValues</span> <span class="p">`</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">-Labels</span> <span class="nv">$chartLabels</span> <span class="p">`</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">-EnableCustomColorPalette</span> <span class="p">`</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">-CustomColorPalette</span> <span class="p">@(</span><span class="s1">'#DFF0D0'</span><span class="p">,</span> <span class="s1">'#FECDD1'</span><span class="p">)</span> <span class="p">`</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span> <span class="p">`</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="n">-Format</span> <span class="n">base64</span> <span class="p">`</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>    <span class="n">-EnableLegend</span> <span class="p">`</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>    <span class="n">-LegendOrientation</span> <span class="n">Horizontal</span> <span class="p">`</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>    <span class="n">-LegendAlignment</span> <span class="n">LowerCenter</span> <span class="p">`</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span> <span class="p">`</span>
 </span></code></pre></div>
 <h5 id="donut-chart-example-output">Donut Chart example output:</h5>
 <p><img alt="Donut Chart" src="../../assets/images/charts/donutchart.png" /></p>
@@ -3859,7 +3864,7 @@
 </span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="bar-chart-example-output">Bar Chart example output:</h5>
+<h4 id="bar-chart-example-output">Bar Chart example output</h4>
 <p><img alt="Bar Chart" src="../../assets/images/charts/barchart.png" /></p>
 <h3 id="stacked-bar-chart">Stacked Bar Chart</h3>
 <p>Use <code>New-StackedBarChart</code> when each bar is composed of multiple segments — for example, repository used space vs. free space, or resource allocation across multiple hosts.</p>
@@ -3896,7 +3901,7 @@
 </span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="stacked-bar-chart-example-output">Stacked Bar Chart example output:</h5>
+<h4 id="stacked-bar-chart-example-output">Stacked Bar Chart example output</h4>
 <p><img alt="Stacked Bar Chart" src="../../assets/images/charts/stackedbarchart.png" /></p>
 <h3 id="single-stacked-bar-chart">Single Stacked Bar Chart</h3>
 <p>Use <code>New-SingleStackedBarChart</code> to show a single bar divided into labelled segments — useful for illustrating licence consumption or a single capacity resource.</p>
@@ -3919,7 +3924,7 @@
 </span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="single-stacked-bar-chart-example-output">Single Stacked Bar Chart example output:</h5>
+<h4 id="single-stacked-bar-chart-example-output">Single Stacked Bar Chart example output</h4>
 <p><img alt="Single Stacked Bar Chart" src="../../assets/images/charts/singlestackedbarchart.png" /></p>
 <h3 id="signal-chart">Signal Chart</h3>
 <p>Use <code>New-SignalChart</code> for time-series or trend data — for example, CPU utilisation over time or throughput metrics. The <code>-Values</code> parameter expects an array of arrays, where each inner array represents one line.</p>
@@ -3934,7 +3939,7 @@
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="signal-chart-example-output">Signal Chart example output:</h5>
+<h4 id="signal-chart-example-output">Signal Chart example output</h4>
 <p><img alt="Signal Chart" src="../../assets/images/charts/signalchart.png" /></p>
 <div class="language-powershell highlight"><span class="filename">Signal chart — multi-line throughput trend</span><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$readThroughput</span>  <span class="p">=</span> <span class="no">[double[]]</span><span class="p">@(</span><span class="n">120</span><span class="p">,</span> <span class="n">145</span><span class="p">,</span> <span class="n">132</span><span class="p">,</span> <span class="n">160</span><span class="p">,</span> <span class="n">155</span><span class="p">)</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$writeThroughput</span> <span class="p">=</span> <span class="no">[double[]]</span><span class="p">@(</span><span class="n">85</span><span class="p">,</span>  <span class="n">92</span><span class="p">,</span>  <span class="n">78</span><span class="p">,</span>  <span class="n">101</span><span class="p">,</span> <span class="n">96</span><span class="p">)</span>
@@ -3953,7 +3958,7 @@
 </span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="multi-line-signal-chart-example-output">Multi-line Signal Chart example output:</h5>
+<h4 id="multi-line-signal-chart-example-output">Multi-line Signal Chart example output</h4>
 <p><img alt="Multi-line Signal Chart" src="../../assets/images/charts/signaladvchart.png" /></p>
 <h3 id="radar-chart">Radar Chart</h3>
 <p>Use <code>New-RadarChart</code> to compare multiple categories across datasets — for example, security posture scores across different data centres, or feature compatibility across product versions. The radar chart is ideal for multi-dimensional performance metrics or assessment matrices where each "spoke" represents a discrete category.</p>
@@ -3996,17 +4001,17 @@
 </span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>    <span class="n">-TitleFontBold</span> <span class="p">`</span>
 </span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>    <span class="n">-TitleFontSize</span> <span class="n">16</span>
 </span></code></pre></div>
-<h5 id="radar-chart-example-output">Radar Chart example output:</h5>
+<h4 id="radar-chart-example-output">Radar Chart example output</h4>
 <p><img alt="Radar Chart" src="../../assets/images/charts/radarchart.png" /></p>
 <p><strong>Key parameters:</strong></p>
 <ul>
 <li><code>-Values</code> — Array or array of arrays of numeric values (one value per spoke, one array per dataset)</li>
 <li><code>-LegendLabels</code> — Labels for each dataset (one label per array in <code>-Values</code>)</li>
 <li><code>-SpokeLabels</code> — Optional labels for each spoke/axis on the radar</li>
-<li><code>-SpokesLength</code> — Length of the spokes (axes); omit or set to 0 for auto-scaling</li>
+<li><code>-SpokesLength</code> — Length of the spokes (axes); 5 to 50</li>
 </ul>
 <h2 id="safety-guards">Safety Guards</h2>
-<p>Chart generation can return <code>$null</code> if data is empty or an error occurs. Always validate the return value before calling <code>Image</code>, and verify that the underlying data contains non-zero values before rendering the chart.</p>
+<p>Chart generation can return <code>ArgumentException</code> if data is empty or an error occurs. Always validate the return value before calling <code>Image</code>, and verify that the underlying data contains non-zero values before rendering the chart.</p>
 <div class="language-powershell highlight"><span class="filename">Chart safety guard pattern</span><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">'Chart alt text'</span> <span class="n">-Align</span> <span class="s1">'Center'</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">}</span>
@@ -4131,11 +4136,11 @@
 </span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    <span class="n">-WatermarkOpacity</span> <span class="n">0</span><span class="p">.</span><span class="n">5</span> <span class="p">`</span>
 </span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    <span class="n">-Width</span> <span class="n">600</span> <span class="n">-Height</span> <span class="n">400</span>
 </span></code></pre></div>
-<h5 id="example-output-with-watermarks">Example output with watermarks:</h5>
+<h4 id="example-output-with-watermarks">Example output with watermarks</h4>
 <p><img alt="Watermarks" src="../../assets/images/charts/watermark.png" /></p>
 <h2 id="placing-charts-in-a-report">Placing Charts in a Report</h2>
 <p>Charts should appear <strong>before</strong> their related data table within the same section, providing a visual summary that the table then backs with detail. Place the <code>Image</code> call, then a <code>BlankLine</code>, then the <code>Table</code> call.</p>
-<div class="language-powershell highlight"><span class="filename">Chart followed by table — recommended layout</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="s1">'Job Status Summary'</span> <span class="p">{</span>
+<div class="language-powershell highlight"><span class="filename">Chart followed by table — recommended layout</span><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="n">-ExcludeFromTOC</span> <span class="s1">'Job Status Summary'</span> <span class="p">{</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>        <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">'Backup job result distribution'</span> <span class="n">-Align</span> <span class="s1">'Center'</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="p">}</span>
@@ -4203,7 +4208,7 @@
 </span><span id="__span-22-56"><a id="__codelineno-22-56" name="__codelineno-22-56" href="#__codelineno-22-56"></a>                    <span class="n">Paragraph</span> <span class="s2">"The following section provides a summary of all backup jobs and their current status."</span>
 </span><span id="__span-22-57"><a id="__codelineno-22-57" name="__codelineno-22-57" href="#__codelineno-22-57"></a>                    <span class="n">BlankLine</span>
 </span><span id="__span-22-58"><a id="__codelineno-22-58" name="__codelineno-22-58" href="#__codelineno-22-58"></a>
-</span><span id="__span-22-59"><a id="__codelineno-22-59" name="__codelineno-22-59" href="#__codelineno-22-59"></a>                    <span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="s1">'Job Status Summary'</span> <span class="p">{</span>
+</span><span id="__span-22-59"><a id="__codelineno-22-59" name="__codelineno-22-59" href="#__codelineno-22-59"></a>                    <span class="n">Section</span> <span class="n">-Style</span> <span class="n">NOTOCHeading4</span> <span class="n">-ExcludeFromTOC</span> <span class="s1">'Job Status Summary'</span> <span class="p">{</span>
 </span><span id="__span-22-60"><a id="__codelineno-22-60" name="__codelineno-22-60" href="#__codelineno-22-60"></a>                        <span class="k">if</span> <span class="p">(</span><span class="nv">$chartFileItem</span> <span class="o">-and</span> <span class="p">(</span><span class="nv">$chartValues</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Sum</span><span class="p">).</span><span class="n">Sum</span> <span class="o">-ne</span> <span class="n">0</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-22-61"><a id="__codelineno-22-61" name="__codelineno-22-61" href="#__codelineno-22-61"></a>                            <span class="n">Image</span> <span class="n">-Text</span> <span class="s1">'Backup job result distribution'</span> <span class="n">-Align</span> <span class="s1">'Center'</span> <span class="n">-Percent</span> <span class="n">100</span> <span class="n">-Base64</span> <span class="nv">$chartFileItem</span>
 </span><span id="__span-22-62"><a id="__codelineno-22-62" name="__codelineno-22-62" href="#__codelineno-22-62"></a>                        <span class="p">}</span>
@@ -4389,22 +4394,28 @@
 <td>Array of hex colour codes</td>
 </tr>
 <tr>
-<td><code>-EnableBorder</code></td>
+<td><code>-EnableChartBorder</code></td>
 <td>Switch</td>
 <td>—</td>
 <td>Draw a border around the chart</td>
 </tr>
 <tr>
-<td><code>-BorderColor</code></td>
+<td><code>-ChartBorderColor</code></td>
 <td>BasicColors</td>
 <td>—</td>
 <td>Border colour</td>
 </tr>
 <tr>
-<td><code>-BorderSize</code></td>
+<td><code>-ChartBorderSize</code></td>
 <td>Int</td>
 <td>—</td>
 <td>Border thickness</td>
+</tr>
+<tr>
+<td><code>-ChartBorderStyle</code></td>
+<td>BorderStyle</td>
+<td>—</td>
+<td>BorderStyles enum (Solid, Dashed etc..)</td>
 </tr>
 <tr>
 <td><code>-EnableWatermark</code></td>
@@ -4425,8 +4436,20 @@
 <td>Watermark opacity (0.0–1.0)</td>
 </tr>
 <tr>
+<td><code>-WatermarkAlignment</code></td>
+<td>Alignments</td>
+<td>MiddleCenter</td>
+<td>Watermark alignment</td>
+</tr>
+<tr>
+<td><code>-WatermarkRotation</code></td>
+<td>String</td>
+<td>0</td>
+<td>Watermark rotation</td>
+</tr>
+<tr>
 <td><code>-OutputFolderPath</code></td>
-<td>DirectoryInfo</td>
+<td>String</td>
 <td>—</td>
 <td>Write chart to this folder (not needed with <code>base64</code>)</td>
 </tr>
@@ -4445,7 +4468,7 @@
 <li><strong>Cast arrays explicitly</strong> — <code>[string[]]</code> for labels, <code>[double[]]</code> for values. Passing untyped arrays causes parameter binding errors.</li>
 <li><strong>Use the standard status palette</strong> — <code>@('#DFF0D0', '#FFF3C4', '#FECDD1', '#ADACAF')</code> (green, yellow, pink, grey) for consistent status visualisations across modules.</li>
 <li><strong>Place charts before tables</strong> — charts provide visual context; the table provides the underlying detail.</li>
-<li><strong>Keep chart sections out of the TOC</strong> — use <code>NOTOCHeading4</code> or <code>NOTOCHeading5</code> for the section containing the chart and table so individual chart sections do not clutter the Table of Contents.</li>
+<li><strong>Keep chart sections out of the TOC</strong> — use <code>NOTOCHeading4</code> or <code>NOTOCHeading5</code> with the <code>ExcludeFromTOC</code> switch for the section containing the chart and table so individual chart sections do not clutter the Table of Contents.</li>
 <li><strong>Localise chart text</strong> — store chart titles, axis labels, and <code>Image</code> alt-text in your language file alongside other translatable strings.</li>
 </ul>
 
@@ -4468,7 +4491,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 14, 2026 22:26:35 UTC">June 14, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2026 16:03:37 UTC">November 11, 2026</span>
   </span>
 
     
@@ -4594,10 +4617,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "navigation.tracking", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.action.view", "content.code.annotate", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.sections", "navigation.indexes", "navigation.footer", "navigation.tracking", "content.code.copy", "search.highlight"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
