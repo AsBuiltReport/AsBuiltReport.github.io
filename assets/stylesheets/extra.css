@@ -412,8 +412,12 @@
 }
 
 .abr-hero__note {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
     margin: 0;
     font-size: 0.7rem;
+    line-height: 1.5;
     color: #9DB7E8;
 }
 
