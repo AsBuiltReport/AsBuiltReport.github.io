@@ -75,6 +75,15 @@
     --abr-th-bg: #012456;
     --abr-code-border: transparent;
     --abr-band: #FFF6D6;
+
+    --abr-adm-note: #1F5FD0;
+    --abr-adm-note-bg: rgba(31, 95, 208, 0.08);
+    --abr-adm-tip: #012456;
+    --abr-adm-tip-bg: #E9EFF8;
+    --abr-adm-warn-bg: #FFF6D6;
+    --abr-adm-warn-icon: #012456;
+    --abr-adm-fail: #C62828;
+    --abr-adm-fail-bg: rgba(198, 40, 40, 0.08);
 }
 
 /* ---------- Dark mode ---------- */
@@ -107,6 +116,15 @@
     --abr-th-bg: #0B3470;
     --abr-code-border: #24406F;
     --abr-band: #0B2147;
+
+    --abr-adm-note: #8AB4FF;
+    --abr-adm-note-bg: rgba(138, 180, 255, 0.1);
+    --abr-adm-tip: #9DB7E8;
+    --abr-adm-tip-bg: #0B2147;
+    --abr-adm-warn-bg: rgba(255, 208, 43, 0.12);
+    --abr-adm-warn-icon: #FFD02B;
+    --abr-adm-fail: #FF7A7A;
+    --abr-adm-fail-bg: rgba(255, 122, 122, 0.1);
 }
 
 /* ---------- Header, tabs, navigation ---------- */
@@ -176,13 +194,22 @@
 }
 
 /* ---------- Tables ---------- */
+/* Square, fully ruled tables, matching the tables in a generated report */
 .md-typeset table:not([class]) {
-    border-color: var(--abr-border);
-    border-radius: 6px;
+    border: 1px solid var(--abr-border);
+    border-radius: 0;
+    font-size: 0.7rem;
+}
+
+.md-typeset table:not([class]) th,
+.md-typeset table:not([class]) td {
+    padding: 0.55em 0.9em;
+    border: 1px solid var(--abr-border);
 }
 
 .md-typeset table:not([class]) th {
     background-color: var(--abr-th-bg);
+    border-color: var(--abr-th-bg);
     color: #FFFFFF;
     font-weight: 600;
 }
@@ -192,9 +219,6 @@
     text-decoration: underline;
 }
 
-.md-typeset table:not([class]) td {
-    border-top-color: var(--abr-border);
-}
 
 /* ---------- Code blocks: always console blue ---------- */
 .md-typeset pre,
@@ -271,23 +295,51 @@
     color: #FFD02B !important;
 }
 
-/* ---------- Admonitions ---------- */
-.md-typeset .admonition,
-.md-typeset details {
-    border-radius: 6px;
+/* ---------- Admonitions ----------
+   Four brand colours instead of Material's twelve:
+   link blue for notes, console blue for tips, highlighter yellow
+   for warnings and a single red for failures. */
+[data-md-color-scheme] .md-typeset :is(.admonition, details) {
+    --abr-adm: var(--abr-adm-note);
+    --abr-adm-bg: var(--abr-adm-note-bg);
+    --abr-adm-icon: var(--abr-adm-note);
+    border-width: 0 0 0 0.2rem;
+    border-color: var(--abr-adm);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+[data-md-color-scheme] .md-typeset :is(.admonition, details):is(.tip, .hint, .success, .check, .done) {
+    --abr-adm: var(--abr-adm-tip);
+    --abr-adm-bg: var(--abr-adm-tip-bg);
+    --abr-adm-icon: var(--abr-adm-tip);
+}
+
+[data-md-color-scheme] .md-typeset :is(.admonition, details):is(.warning, .caution, .attention) {
+    --abr-adm: #FFD02B;
+    --abr-adm-bg: var(--abr-adm-warn-bg);
+    --abr-adm-icon: var(--abr-adm-warn-icon);
+}
+
+[data-md-color-scheme] .md-typeset :is(.admonition, details):is(.failure, .fail, .missing, .danger, .error, .bug) {
+    --abr-adm: var(--abr-adm-fail);
+    --abr-adm-bg: var(--abr-adm-fail-bg);
+    --abr-adm-icon: var(--abr-adm-fail);
+}
+
+[data-md-color-scheme] .md-typeset :is(.admonition, details) > :is(.admonition-title, summary) {
+    background-color: var(--abr-adm-bg);
+    border-radius: 0;
+}
+
+[data-md-color-scheme] .md-typeset :is(.admonition, details) > :is(.admonition-title, summary)::before,
+[data-md-color-scheme] .md-typeset details > summary::after {
+    background-color: var(--abr-adm-icon);
 }
 
 /* ---------- Icons used in page content ---------- */
-.twitter {
-    color: #1DA1F2;
-}
-
 .youtube {
     color: #FF0000;
-}
-
-.slack {
-    color: #1D1C1D;
 }
 
 .check-circle {
@@ -584,23 +636,23 @@
     clip-path: inset(0 -100vmax);
 }
 
-/* Three numbered steps */
+/* Three numbered steps, laid out like a runbook: instructions on the
+   left, the command on the right so it never needs scrolling */
 .md-typeset .abr-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1.6rem;
     counter-reset: abr-step;
+    border-top: 2px solid var(--abr-heading);
 }
 
 .md-typeset .abr-step {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 1.3rem 0;
+    border-bottom: 1px solid var(--abr-border);
     counter-increment: abr-step;
 }
 
 .md-typeset .abr-step > .highlight {
-    margin: auto 0 0;
+    margin: 0.4rem 0 0;
 }
 
 .md-typeset .abr-step h3 {
@@ -629,8 +681,24 @@
 }
 
 .md-typeset .abr-step p {
-    margin: 0 0 0.7rem;
+    margin: 0;
+    padding-left: 2.8rem;
     color: var(--abr-muted);
+}
+
+@media screen and (min-width: 60em) {
+    .md-typeset .abr-step {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+        grid-template-rows: auto 1fr;
+        column-gap: 2.4rem;
+        align-items: start;
+    }
+
+    .md-typeset .abr-step > .highlight {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        margin: 0;
+    }
 }
 
 /* Two-column heading plus specification list */
@@ -681,7 +749,8 @@
     color: var(--md-typeset-color);
 }
 
-/* Icon tile used beside feature and component names */
+/* Icon beside feature names: a ruled square in the heading colour.
+   Yellow is kept for highlights and actions. */
 .md-typeset .abr-icon {
     display: inline-flex;
     flex: 0 0 auto;
@@ -689,9 +758,8 @@
     justify-content: center;
     width: 2rem;
     height: 2rem;
-    border-radius: 4px;
-    background-color: var(--abr-yellow);
-    color: #012456;
+    border: 1.5px solid var(--abr-heading);
+    color: var(--abr-heading);
 }
 
 .md-typeset .abr-icon svg {
@@ -760,14 +828,26 @@
     color: #012456;
 }
 
-/* Use cases */
+/* Use cases: one, two or four across, so no item sits alone on a row */
 .md-typeset .abr-grid > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.4rem 2rem;
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+@media screen and (min-width: 30em) {
+    .md-typeset .abr-grid > ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 76.25em) {
+    .md-typeset .abr-grid > ul {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 .md-typeset .abr-grid > ul > li {
@@ -822,57 +902,385 @@
     margin: 0;
 }
 
-/* Title block */
-.md-typeset .abr-titleblock {
+/* Contribute band in dark mode: a full yellow slab glares on a dark page,
+   so the band turns console blue and keeps yellow for the cursor and button */
+[data-md-color-scheme="slate"] .md-typeset .abr-band {
+    --abr-bleed-bg: #0B2147;
+    color: #E6EDF8;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .abr-band h2 {
+    color: #FFFFFF;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .abr-band h2::after {
+    content: "";
+    display: block;
+    width: 2.4rem;
+    height: 0.3rem;
+    margin-top: 0.6rem;
+    background-color: var(--abr-yellow);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .abr-btn--dark {
+    background-color: #FFD02B;
+    border-color: #FFD02B;
+    color: #012456;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .abr-btn--dark:hover {
+    background-color: #FFE9A3;
+    border-color: #FFE9A3;
+    color: #012456;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .abr-btn--outline {
+    border-color: #9DB7E8;
+    color: #FFFFFF;
+}
+
+[data-md-color-scheme="slate"] .md-typeset .abr-btn--outline:hover {
+    border-color: #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
+}
+
+/* ---------- How the pieces fit: flow diagram ---------- */
+.md-typeset .abr-flow {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    margin: 3rem 0 1rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.2rem;
+    max-width: 34rem;
+    margin-top: 0.4rem;
+}
+
+.md-typeset .abr-flow__stage {
+    position: relative;
+    padding: 1rem 1.1rem 1.1rem;
     border: 1.5px solid var(--abr-heading);
+    background-color: var(--abr-panel);
 }
 
-.md-typeset .abr-titleblock > div {
-    padding: 0.8rem 1.1rem;
-    border: 0.75px solid var(--abr-heading);
+.md-typeset .abr-flow__stage h3 {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.25;
 }
 
-.md-typeset .abr-titleblock__brand {
+.md-typeset .abr-flow__stage > p {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.55;
+    color: var(--abr-muted);
+}
+
+.md-typeset .abr-flow__stage > ul {
+    margin: 0.9rem 0 0;
+    padding: 0.8rem 0 0;
+    list-style: none;
+    border-top: 1px solid var(--abr-border);
+}
+
+.md-typeset .abr-flow__stage > ul > li {
+    margin: 0 0 0.7rem;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: var(--abr-muted);
+}
+
+.md-typeset .abr-flow__stage > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+.md-typeset .abr-flow__stage > ul > li code {
+    padding: 0;
+    background: none;
+    color: var(--abr-heading);
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+/* The finished report gets the same yellow offset as the report page in the hero */
+.md-typeset .abr-flow__stage--out {
+    box-shadow: 0.35rem 0.35rem 0 #FFD02B;
+}
+
+/* Arrows between stages: drawn in the heading colour with a mask */
+.md-typeset .abr-flow__stage:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 1.6rem;
+    bottom: -2.2rem;
+    width: 0.8rem;
+    height: 2.2rem;
+    background-color: var(--abr-heading);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 44'%3E%3Cpath d='M7 4h2v28h5l-6 10-6-10h5z'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 44'%3E%3Cpath d='M7 4h2v28h5l-6 10-6-10h5z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+@media screen and (min-width: 76.25em) {
+    .md-typeset .abr-flow {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        max-width: none;
+    }
+
+    .md-typeset .abr-flow__stage:not(:last-child)::after {
+        left: auto;
+        right: -2.2rem;
+        top: 1.15rem;
+        bottom: auto;
+        width: 2.2rem;
+        height: 0.8rem;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 16'%3E%3Cpath d='M4 7h28V2l10 6-10 6V9H4z'/%3E%3C/svg%3E");
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 16'%3E%3Cpath d='M4 7h28V2l10 6-10 6V9H4z'/%3E%3C/svg%3E");
+    }
+}
+
+/* ---------- Hero: one load sequence ----------
+   The command appears line by line, then the report page lands on top.
+   Nothing moves when reduced motion is requested. */
+@media (prefers-reduced-motion: no-preference) {
+    .abr-console__body .abr-line {
+        animation: abr-show 0s linear both;
+    }
+
+    .abr-console__body .abr-line:nth-child(1) { animation-delay: 0.25s; }
+    .abr-console__body .abr-line:nth-child(2) { animation-delay: 0.45s; }
+    .abr-console__body .abr-line:nth-child(3) { animation-delay: 0.65s; }
+    .abr-console__body .abr-line:nth-child(4) { animation-delay: 0.85s; }
+    .abr-console__body .abr-line:nth-child(5) { animation-delay: 1.05s; }
+    .abr-console__body .abr-line:nth-child(6) { animation-delay: 1.25s; }
+    .abr-console__body .abr-line:nth-child(7) { animation-delay: 1.75s; }
+    .abr-console__body .abr-line:nth-child(8) { animation-delay: 1.95s; }
+
+    .abr-paper {
+        animation: abr-paper-in 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) 2s both;
+    }
+
+    .abr-console__cursor {
+        animation: abr-blink 1.1s steps(1) 2.6s 4;
+    }
+}
+
+@keyframes abr-show {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes abr-paper-in {
+    from {
+        opacity: 0;
+        transform: translateY(1.2rem);
+        box-shadow: 0 0 0 #FFD02B;
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        box-shadow: 0.5rem 0.5rem 0 #FFD02B;
+    }
+}
+
+@keyframes abr-blink {
+    50% { background-color: transparent; color: transparent; }
+}
+
+.abr-hero__note strong {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   Footer: the drawing title block, on every page
+   ========================================================================== */
+.md-footer-meta.abr-footer {
+    background-color: var(--md-footer-bg-color--dark);
+}
+
+.abr-footer__inner {
+    padding: 1.6rem 0.8rem 1.8rem;
+}
+
+.abr-titleblock {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 1.5px solid #9DB7E8;
+    color: #FFFFFF;
+}
+
+.abr-titleblock > div {
+    min-width: 0;
+    padding: 0.75rem 1rem;
+    border: 0.75px solid rgba(157, 183, 232, 0.45);
+}
+
+.abr-titleblock__brand {
     grid-column: span 2;
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 800;
     font-stretch: 112%;
-    color: var(--abr-heading);
 }
 
-.md-typeset .abr-titleblock__brand img {
-    width: 2.2rem;
-    height: 2.2rem;
+.abr-titleblock__brand img {
+    width: 2rem;
+    height: 2rem;
 }
 
-.md-typeset .abr-titleblock dt {
+.abr-titleblock dl {
+    margin: 0;
+}
+
+.abr-titleblock dt {
+    font-size: 0.6rem;
+    color: #9DB7E8;
+}
+
+.abr-titleblock dd {
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.abr-titleblock a {
+    color: #FFFFFF;
+    text-decoration: underline;
+    text-decoration-color: rgba(157, 183, 232, 0.6);
+    text-underline-offset: 0.15em;
+}
+
+.abr-titleblock a:hover,
+.abr-titleblock a:focus-visible {
+    color: #FFD02B;
+    text-decoration-color: #FFD02B;
+}
+
+.abr-titleblock .md-social {
+    padding: 0;
+    margin: 0.1rem 0 0 -0.2rem;
+}
+
+.abr-titleblock .md-social__link {
+    color: #FFFFFF;
+}
+
+.abr-titleblock .md-social__link:hover,
+.abr-titleblock .md-social__link:focus-visible {
+    color: #FFD02B;
+}
+
+@media screen and (min-width: 60em) {
+    .abr-titleblock {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .abr-titleblock__wide {
+        grid-column: span 2;
+    }
+}
+
+/* ==========================================================================
+   Documentation pages: running header, like the head of a report page
+   ========================================================================== */
+.md-typeset .abr-runhead {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.2rem 1rem;
+    margin: 0 0 1.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--abr-border);
     font-size: 0.65rem;
-    font-weight: 400;
     color: var(--abr-muted);
 }
 
-.md-typeset .abr-titleblock dd {
-    margin: 0.15rem 0 0;
-    font-size: 0.85rem;
-    font-weight: 600;
+/* Leave room for Material's edit and view buttons on the right */
+.md-typeset .abr-runhead + .md-content__button,
+.md-typeset .abr-runhead ~ .md-content__button {
+    margin-top: -0.2rem;
 }
 
-.md-typeset .abr-titleblock dl {
-    margin: 0;
+/* ==========================================================================
+   Blog index: date in its own column, like a revision log
+   ========================================================================== */
+.md-post--excerpt.abr-post {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.6rem 1.6rem;
+    margin-bottom: 0;
+    padding: 1.6rem 0;
+    border-top: 1px solid var(--abr-border);
+}
+
+.md-post--excerpt.abr-post:first-of-type {
+    border-top: 2px solid var(--abr-heading);
+}
+
+.abr-post__date {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: var(--abr-heading);
+}
+
+.abr-post__day {
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-stretch: 112%;
+    line-height: 1;
+}
+
+.abr-post__month {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--abr-muted);
+}
+
+.abr-post .md-post__header {
+    margin-bottom: 0;
+}
+
+.abr-post .md-post__content h2 {
+    margin-top: 0.2rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    font-stretch: 112%;
+}
+
+.abr-post .md-post__content h2 a {
+    color: var(--abr-heading);
+}
+
+.abr-post .md-post__content h2 a:hover {
+    color: var(--md-typeset-a-color);
+}
+
+.abr-post .md-post__content img {
+    display: block;
+    width: 100%;
+    max-height: 14rem;
+    object-fit: cover;
+}
+
+@media screen and (min-width: 45em) {
+    .md-post--excerpt.abr-post {
+        grid-template-columns: 6rem minmax(0, 1fr);
+    }
+
+    .abr-post__date {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .abr-post__day {
+        font-size: 2.2rem;
+    }
 }
 
 @media screen and (max-width: 44.9375em) {
     .abr-hero__inner {
         padding: 2rem 0.8rem 3rem;
-    }
-
-    .md-typeset .abr-titleblock {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
